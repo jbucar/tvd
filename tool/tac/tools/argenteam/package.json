@@ -1,0 +1,22 @@
+{
+	"name": "argenteam",
+	"version": "1.0.0",
+	"description": "Movies/Series fetcher tool",
+	"main": "argenteam.js",
+	"dependencies": {
+		"bluebird": "^3.1.4",
+		"fs-extra": "^0.26.7",
+		"lodash": "^4.0.0",
+		"fs-extra": "0.30.0",
+		"minimist": "latest",
+		"request": "^2.72.0",
+		"feedme": "^0.3.0",		
+		"mktemp": "^0.4.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

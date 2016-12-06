@@ -1,0 +1,24 @@
+#MenuHeader {
+	margin-top: 4%;
+	margin-left: 9%;
+	flex-direction: row;
+}
+
+#MenuHeader * {
+	align-self: center;
+}
+
+#MenuHeader > label {
+	margin-left: 1%;
+	font-family: 'Oswald-Light';
+	font-size: 1.5rem;
+	color: rgb(151, 156, 159);
+}
+
+#MenuHeader > img {
+	width: 3%;
+}
+
+#MenuHeader > .session {
+	margin-left: 38%;
+}

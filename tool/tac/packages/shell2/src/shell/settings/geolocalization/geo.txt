@@ -1,0 +1,6 @@
+{
+	"carrouselName": "Geolocalización",
+	"enabled": "Habilitado",
+	"title": "GEOLOCALIZACIÓN",
+	"description": "Habilitando el servicio de geolocalización la TAC podrá acceder a su posición geográfica. Esto permite que las aplicaciones que utilicen este servicio puedan brindarte una mejor experiencia."
+}

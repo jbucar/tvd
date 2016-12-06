@@ -1,0 +1,75 @@
+#DetailsMenu {
+	margin-left: 10%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Oswald-Light';
+	color: white;
+	line-height: 1.62rem;
+}
+
+#DetailsMenuCarrousel {
+	position: absolute;
+	top: 52%;
+}
+
+.DetailsMenuLabel {
+	font-size: 1.28rem;
+}
+
+#DetailsMenuTitle {
+	display: flex;
+	align-items: center;
+	max-width: 60%;
+	margin-top: 3%;
+	margin-bottom: 1.5%;
+	font-family: 'Oswald-Regular';
+	font-size: 2rem;
+	line-height: initial;
+	flex-shrink: 0;
+}
+
+#DetailsMenuRanking {
+	margin-left: 2%;
+	margin-right: 0.5%;
+}
+
+#DetailsMenuSummary {
+	max-width: 60%;
+	margin-top: 1.5%;
+	font-size: 1.4rem;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.Video {
+	width: 15vw;
+	height: 35vh;
+}
+
+.VideoIcon {
+	width: 100%;
+	height: 84%;
+	background-color: white;
+}
+
+.VideoTitle {
+	width: 100%;
+	height: 16%;
+	background-color: rgb(56, 56, 56);
+	display: flex;
+}
+
+.VideoTitle.selected {
+	background-color: rgb(65,160,41);
+}
+
+.VideoTitle label {
+	width: 100%;
+	margin: auto;
+	padding-left: 5%;
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 1.3em;
+}

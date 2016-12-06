@@ -1,0 +1,22 @@
+--- a/src/node.cc	2015-11-24 12:43:35.150983830 -0300
++++ b/src/node.cc	2015-11-24 12:45:23.783934152 -0300
+@@ -2023,6 +2023,11 @@
+   exit(args[0]->Int32Value());
+ }
+ 
++void Exit2(const FunctionCallbackInfo<Value>& args) {
++  Environment* env = Environment::GetCurrent(args.GetIsolate());
++  HandleScope scope(env->isolate());
++  _exit(args[0]->Int32Value());
++}
+ 
+ static void Uptime(const FunctionCallbackInfo<Value>& args) {
+   Environment* env = Environment::GetCurrent(args);
+@@ -2987,6 +2992,7 @@
+   env->SetMethod(process, "_getActiveRequests", GetActiveRequests);
+   env->SetMethod(process, "_getActiveHandles", GetActiveHandles);
+   env->SetMethod(process, "reallyExit", Exit);
++  env->SetMethod(process, "tvdExit", Exit2);
+   env->SetMethod(process, "abort", Abort);
+   env->SetMethod(process, "chdir", Chdir);
+   env->SetMethod(process, "cwd", Cwd);

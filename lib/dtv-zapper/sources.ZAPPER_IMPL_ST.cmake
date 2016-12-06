@@ -1,0 +1,28 @@
+ADD_SOURCES(
+	src/impl/st/screen.h
+	src/impl/st/screen.cpp
+	src/impl/st/st.h
+	src/impl/st/st.cpp
+	src/impl/st/clonner.cpp
+	src/impl/st/zapper.h
+	src/impl/st/zapper.cpp
+	src/impl/st/provider.h
+	src/impl/st/provider.cpp
+	src/impl/st/frontend.h
+	src/impl/st/frontend.cpp
+	src/impl/st/filter.h
+	src/impl/st/filter.cpp
+	src/impl/st/psifilter.h
+	src/impl/st/psifilter.cpp
+	src/impl/st/pesfilter.h
+	src/impl/st/pesfilter.cpp
+	src/impl/st/player.h
+	src/impl/st/player.cpp
+	src/impl/st/mediaplayer.h
+	src/impl/st/mediaplayer.cpp
+	src/impl/st/streamsinfo.h
+	src/impl/st/streamsinfo.cpp
+	src/impl/st/audio.h
+	src/impl/st/audio.cpp
+)
+

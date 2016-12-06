@@ -1,0 +1,20 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.platform",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"system": true,
+	"update": false,
+	"user": false,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.platform",
+			"name": "Platform factory",
+			"type": "service",
+			"version": "1.0.0",
+			"main": "main.js"
+		}
+	]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+  <gui>
+    <input>
+      <linux>
+        <enabled>true</enabled>
+      </linux>
+    </input>
+  </gui>
+  <tuner>
+    <demuxer>
+      <psi>
+        <timeout>6</timeout>
+        <filterTID>true</filterTID>
+      </psi>
+    </demuxer>
+    <provider>
+      <use>dvb</use>
+     <dvb>
+       <adapter>0</adapter>
+        <buffer>1600000</buffer>
+     </dvb>
+    </provider>
+  </tuner>
+</root>

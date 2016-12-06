@@ -1,0 +1,20 @@
+#VideosHeader {
+	position: absolute;
+	width: 100vw;
+	height: 20vh;
+	display: flex;
+	align-items: center;
+}
+
+#VideosHeaderTitle {
+	color: rgb(140,140,140);
+	font-family: Oswald-Light;
+	font-size: 1.583rem;
+	margin-left: 1%;
+}
+
+#VideosHeaderIcon {
+	margin-left: 6%;
+	width: 3%;
+	-webkit-filter: invert(40%);
+}

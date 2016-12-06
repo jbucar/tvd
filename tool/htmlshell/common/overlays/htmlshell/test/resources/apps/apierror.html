@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<title>Test Error</title>
+
+<script type="text/javascript">
+function quit( err, result ) {
+	console.log("checkError callback called: error=" + err.message);
+	var code = 0;
+	if (err.message === "Error description") {
+		code = 11;
+	}
+	HtmlShellCall("JsApiTestStop", [code]);
+}
+
+function main() {
+	console.log("Testing api error");
+	HtmlShellCall("JsApiTestError", [], quit);
+}
+window.onload = main;
+</script>
+
+</head>
+
+<body>
+<h1>Api error test</h1>
+<p>Testea la terminacion del shell con un codigo de error</p>
+</body>
+
+</html>

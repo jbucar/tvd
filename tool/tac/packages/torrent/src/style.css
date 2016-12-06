@@ -1,0 +1,13 @@
+<style>
+#TorrentsSection {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#TorrentDetails {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+</style>

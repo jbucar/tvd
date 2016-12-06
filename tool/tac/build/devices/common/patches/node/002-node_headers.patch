@@ -1,0 +1,79 @@
+--- a/deps/v8/include/v8.h	2015-11-24 12:45:57.800480885 -0300
++++ b/deps/v8/include/v8.h	2015-11-24 12:53:37.798859050 -0300
+@@ -22,6 +22,8 @@
+ #include "v8-version.h"
+ #include "v8config.h"
+ 
++#define UNUSED(x) ((void)x)
++
+ // We reserve the V8_* prefix for macros defined in V8 public API and
+ // assume there are no name conflicts with the embedder's code.
+ 
+@@ -658,8 +660,8 @@
+   typedef Persistent<T, NonCopyablePersistentTraits<T> > NonCopyablePersistent;
+   static const bool kResetInDestructor = false;
+   template<class S, class M>
+-  V8_INLINE static void Copy(const Persistent<S, M>& source,
+-                             NonCopyablePersistent* dest) {
++  V8_INLINE static void Copy(const Persistent<S, M>&,
++                             NonCopyablePersistent*) {
+     Uncompilable<Object>();
+   }
+   // TODO(dcarney): come up with a good compile error here.
+@@ -678,8 +680,8 @@
+   typedef Persistent<T, CopyablePersistentTraits<T> > CopyablePersistent;
+   static const bool kResetInDestructor = true;
+   template<class S, class M>
+-  static V8_INLINE void Copy(const Persistent<S, M>& source,
+-                             CopyablePersistent* dest) {
++  static V8_INLINE void Copy(const Persistent<S, M>& /* source */,
++                             CopyablePersistent* /* dest */) {
+     // do nothing, just allow copy
+   }
+ };
+@@ -4740,7 +4742,7 @@
+             int source_length = -1);
+   virtual ~Extension() { }
+   virtual v8::Local<v8::FunctionTemplate> GetNativeFunctionTemplate(
+-      v8::Isolate* isolate, v8::Local<v8::String> name) {
++      v8::Isolate* isolate, v8::Local<v8::String>) {
+     return v8::Local<v8::FunctionTemplate>();
+   }
+ 
+@@ -5156,7 +5158,7 @@
+ class V8_EXPORT ExternalResourceVisitor {  // NOLINT
+  public:
+   virtual ~ExternalResourceVisitor() {}
+-  virtual void VisitExternalString(Local<String> string) {}
++  virtual void VisitExternalString(Local<String>) {}
+ };
+ 
+ 
+@@ -5166,8 +5168,8 @@
+ class V8_EXPORT PersistentHandleVisitor {  // NOLINT
+  public:
+   virtual ~PersistentHandleVisitor() {}
+-  virtual void VisitPersistentHandle(Persistent<Value>* value,
+-                                     uint16_t class_id) {}
++  virtual void VisitPersistentHandle(Persistent<Value>*,
++                                     uint16_t) {}
+ };
+ 
+ 
+@@ -7006,6 +7008,7 @@
+ 
+   V8_EXPORT static void CheckInitializedImpl(v8::Isolate* isolate);
+   V8_INLINE static void CheckInitialized(v8::Isolate* isolate) {
++    UNUSED(isolate);
+ #ifdef V8_ENABLE_CHECKS
+     CheckInitializedImpl(isolate);
+ #endif
+@@ -7446,7 +7449,7 @@
+ 
+ template<typename T>
+ template<typename S>
+-void ReturnValue<T>::Set(S* whatever) {
++void ReturnValue<T>::Set(S* /* whatever */) {
+   // Uncompilable to prevent inadvertent misuse.
+   TYPE_CHECK(S*, Primitive);
+ }

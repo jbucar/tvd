@@ -1,0 +1,11 @@
+{
+	"name": "aml_power",
+	"version": "1.0.0",
+	"description": "TAC aml_power service",
+	"main": "src/main.js",
+	"dependencies": {
+		"lodash": "^4.0.0"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

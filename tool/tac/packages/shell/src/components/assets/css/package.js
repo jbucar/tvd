@@ -1,0 +1,19 @@
+enyo.depends(
+	'util.css',
+	'microkinds.css',
+	'shellscrollbar.css',
+	'textpaginator.css',
+	'detailpanels.css',
+	'input.css',
+	'arrows.css',
+	'carousel.css',
+	'flipper.css',
+	'menu.css',
+	'formitems.css',
+	'flexlayout.css',
+	'shellbutton.css',
+	'view.css',
+	'popup.css',
+	'preloaderbar.css',
+	'progressbar.css'
+);

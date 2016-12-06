@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>240</x>
+      <y>224</y>
+      <w>96</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>/System/
+--
+--
+run()
+/exit()/
+/registerTimer()/
+/addIO()/
+/addSocket()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>232</x>
+      <y>416</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>/Player/
+--
+--
+/MediaPlayer *create()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>184</x>
+      <y>232</y>
+      <w>72</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+</panel_attributes>
+    <additional_attributes>48;208;24;208;24;24;56;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>520</x>
+      <y>160</y>
+      <w>120</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/Window/
+--
+--
+resize()
+supportFullScreen()
+fullScreen()
+iconify()
+redraw()
+moveVideo()
+resizeVideo()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>312</x>
+      <y>160</y>
+      <w>224</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>24;96;184;96;184;24;208;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>368</x>
+      <y>120</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>/Canvas/
+--
+--
+/createSurface()/
+destroy( Surface* )
+flush()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>312</x>
+      <y>144</y>
+      <w>72</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>24;104;32;104;32;24;56;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>672</x>
+      <y>112</y>
+      <w>112</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>/Surface/
+--
+--
+setClip()
+drawLine()
+drawRect()
+fillRect()
+drawRoundRect()
+fillRoundRect()
+drawPolygon()
+fillPolygon()
+drawEllipse()
+fillEllipse()
+drawText()
+measureText()
+fontAscent()
+fontDescent()
+drawImage()
+blit()
+scale()
+rotate()
+resize()
+flush()
+markDirty()
+clear()
+getBounds()
+getLocation()
+getSize()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>456</x>
+      <y>120</y>
+      <w>232</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1..n</panel_attributes>
+    <additional_attributes>24;24;64;24;216;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>616</x>
+      <y>160</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>24;24;56;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>528</x>
+      <y>344</y>
+      <w>96</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>/WebViewer/
+--
+--
+/load()/
+/stop()/
+/draw()/
+resize()
+move()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>600</x>
+      <y>192</y>
+      <w>88</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>24;176;48;176;48;24;72;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>392</x>
+      <y>272</y>
+      <w>96</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>/MediaPlayer/
+--
+--
+/play()/
+/stop()/
+/pause()/
+/mute()/
+volume()
+move()
+resize()
+bounds()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>312</x>
+      <y>248</y>
+      <w>96</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>24;24;64;24;64;48;80;48</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>280</x>
+      <y>432</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>232</x>
+      <y>472</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>vlc::Player
+--
+--
+MediaPlayer *create()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>384</x>
+      <y>416</y>
+      <w>112</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>vlc::MediaPlayer
+--
+--
+play()
+stop()
+pause()
+mute()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>416</x>
+      <y>376</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>240</x>
+      <y>328</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>gtk::System
+--
+--
+exit()
+registerTimer()
+addIO()
+addSocket()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>264</x>
+      <y>288</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>368</x>
+      <y>200</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>cairo::Canvas
+--
+--
+createSurface()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>160</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>680</x>
+      <y>480</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>cairo::Surface
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>704</x>
+      <y>440</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>520</x>
+      <y>448</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>gtk::WebViewer
+--
+--
+load()
+stop()
+draw()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>552</x>
+      <y>408</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>528</x>
+      <y>288</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>gtk::Window
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>552</x>
+      <y>248</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;40</additional_attributes>
+  </element>
+</diagram>

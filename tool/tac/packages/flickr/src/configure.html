@@ -1,0 +1,49 @@
+<html>
+	<title>Flickr configuration</title>
+	<script type="text/javascript">
+		/* exported setUser */
+		function setUser(usr) {
+			flickr.setUserName(usr, function(err) {
+				var result = document.getElementById('result');
+				var uname = document.getElementById('usr_name');
+				if (err) {
+					console.error('Fail to set flickr user name! err=' + err.message);
+					result.style.color = 'red';
+					result.innerHTML = 'No se pudo guardar el usuario: ' + err.message;
+					uname.value = '';
+				} else {
+					uname.value = usr;
+					result.style.color = 'green';
+					var text = 'Se mostrar&aacute;n las fotos p&uacute;blicas ';
+					if (usr) {
+						result.innerHTML = text + 'del usuario ' + usr;
+					} else {
+						result.innerHTML = text + 'm&aacute;s recientes de Flickr';
+					}
+				}
+				result.style.display = 'block';
+				setTimeout(()=>result.style.display='none', 3000);
+			});
+		}
+
+		window.onload = function() {
+			flickr.getUserName(function(err, name) {
+				if (err) {
+					log.error('Fail to get user name from flickr provider! err=' + err.message);
+				} else {
+					document.getElementById('usr_name').value = name;
+				}
+			});
+		};
+	</script>
+	<body>
+		<h3>Configuraci&oacute;n del proveedor de im&aacute;genes de Flickr</h3>
+		<span id="result" style='display: none;'></span>
+		<p>Para ver fotos p&uacute;blicas de un usuario en particular ingrese el nombre del usuario y presione guardar.</p>
+		<label for="usr_name">Nombre de usuario:</label>
+		<input id="usr_name"></input>
+		<button type="button"  onclick="setUser(document.getElementById('usr_name').value)">Guardar</button>
+		<p>Para ver las fotos p&uacute;blicas m&aacute;s recientes: </p>
+		<button type="button"  onclick="setUser('')">Fotos recientes</button>
+	</body>
+</html>

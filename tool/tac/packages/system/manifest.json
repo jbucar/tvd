@@ -1,0 +1,49 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.system",
+	"version": "1.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"update": false,
+	"system": true,
+	"user": false,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.srv_cfg",
+			"name": "Service configuration app",
+			"type": "app",
+			"bg_transparent": false,
+			"version": "1.0.0",
+			"main": "configure.html"
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.system",
+			"name": "System",
+			"type": "service",
+			"version": "1.0",
+			"main": "system.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.platform"
+			]
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.notification",
+			"name": "Notification service",
+			"type": "service",
+			"version": "1.0",
+			"main": "notification.js"
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.system_web",
+			"name": "System web services",
+			"type": "service",
+			"version": "1.0.0",
+			"main": "web.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.system",
+				"ar.edu.unlp.info.lifia.tvd.remoteapi"
+			]
+		}
+	]
+}

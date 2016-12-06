@@ -1,0 +1,20 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.torrent",
+	"vendor": "LIFIA",
+    "vendor-url": "http://www.minplan.gob.ar/",
+    "version": "1.0.0",
+    "platform": "all",
+    "api-level": "1.0.0",
+    "components": [{
+		"id": "ar.edu.unlp.info.lifia.tvd.torrent",
+		"name": "Torrent downloader/web",
+		"type": "service",
+		"version": "1.0.0",
+		"main": "main.js",
+		"user": false,
+		"dependencies": [
+			"ar.edu.unlp.info.lifia.tvd.downloader",
+			"ar.edu.unlp.info.lifia.tvd.remoteapi"
+		]
+	}]
+}

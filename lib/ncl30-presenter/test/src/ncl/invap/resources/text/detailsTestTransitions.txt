@@ -1,0 +1,1 @@
+Test para probar los efectos de transiciones en un media. El media que aparece en el borde inferior izq tiene una transicion barWipe con el subtipo topToBottom. El media que aparece en el borde inferior derecho tien una transicion barWipe con el subtipo leftToRight

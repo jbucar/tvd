@@ -1,0 +1,6 @@
+{
+	"carrouselName": "Ginga.ar",
+	"title": "GINGA.AR",
+	"btnGinga": "Habilitado",
+	"description": "En esta sección podrá habilitar y deshabilitar Ginga.ar. Este módulo es el encargado de proveer interactividad a los programas de televisión. Cuando un programa presente interactividad, y este módulo esté habilitado, se le notificará automáticamente y podrá hacer uso de la misma. Mientras se encuentre deshabilitado no recibirá notificaciones."
+}

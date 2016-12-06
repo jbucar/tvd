@@ -1,0 +1,2 @@
+find_package( PPAPI REQUIRED )
+ADD_DEPENDENTS( PPAPI )

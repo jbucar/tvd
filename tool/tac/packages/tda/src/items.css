@@ -1,0 +1,19 @@
+.item {
+	margin-right: 0.7vw;
+	align-self: center;
+	float: left;
+}
+
+.item.selected {
+	box-shadow: 0 0 1em black;
+}
+
+.item.animated {
+	transition: transform 1s;
+	z-index: 0;
+}
+
+.item.selected.animated {
+	z-index: 1;
+	transform: scale(1.15);
+}

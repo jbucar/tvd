@@ -1,0 +1,46 @@
+#MenuHeader {
+	margin-top: 4%;
+	margin-left: 9%;
+	flex-direction: row;
+}
+
+#MenuHeader * {
+	align-self: center;
+}
+
+#MenuHeader label {
+	margin-left: 1%;
+	font-family: 'Oswald-Light';
+	font-size: 1.5rem;
+	color: rgb(151, 156, 159);
+}
+
+#MenuHeader img {
+	width: 3%;
+}
+
+.settings_item {
+	height: 25vh;
+	width: 14.0625vw;
+	background-color: rgb(55, 90, 100);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.settings_item.selected {
+	background-color: rgb(80, 126, 141);
+}
+
+.settings_item img {
+	margin: auto;
+	width: 65%;
+}
+
+.settings_item label {
+	font-family: 'Oswald-Light';
+	font-size: 1.5rem;
+	width: 100%;
+	height: 20%;
+	overflow: hidden;
+}

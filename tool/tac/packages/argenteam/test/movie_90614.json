@@ -1,0 +1,75 @@
+{
+	"id": 90614,
+	"title": "Gods of Egypt (2016)",
+	"info": {
+		"title": "Gods of Egypt",
+		"imdb": "2404233",
+		"year": 2016,
+		"rating": 5.6,
+		"runtime": null,
+		"alternativeTitle": "",
+		"country": "USA",
+		"poster": "http://www.argenteam.net/resources/covers/4e915f81007bcdedf026e6cc7257f0b1.jpg",
+		"director": "Alex Proyas",
+		"actors": "Brenton Thwaites, Nikolaj Coster-Waldau, Gerard Butler"
+	},
+	"summary": "La supervivencia de la humanidad pende de un hilo al tiempo que un inesperado héroe mortal llamado Bek emprende un viaje para salvar el mundo y rescatar a su verdadero amor. Para tener éxito, deberá contar con la ayuda del poderoso Dios, Horus, formando una improbable alianza contra Set, el despiadado Dios de la oscuridad que ha usurpado el trono de Egipto, sumiendo al en su día próspero y pacífico imperio en el caos. Mientras su batalla contra Set y sus secuaces les lleva al Más Allá a través de los cielos, el Dios y el mortal deberán pasar pruebas de valentía y sacrificio si quieren tener esperanzas de prevalecer cuando llegue la confrontación final.",
+	"releases": [{
+		"source": "BDRip",
+		"codec": "x264",
+		"team": "DRONES",
+		"tags": "AAC",
+		"size": "1.2 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:afe89848128887e508143e50c6d31695000f5b5a&dn=Gods.of.Egypt.2016.BDRip.x264-DRONES&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Gods.of.Egypt.(2016).BDRip.x264-DRONES.mkv|1242448421|871A48DB7992B3A72CDC2664423AD32C|h=F7UDHY22YSYUWB3I2VGGZ7APH3CCU4AP|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/61253/Gods.of.Egypt.%282016%29.BDRip.x264.AAC-DRONES",
+			"count": 61487
+		}]
+	}, {
+		"source": "BDRip",
+		"codec": "x264",
+		"team": "DRONES",
+		"tags": "720p DTS",
+		"size": "5.5 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:c316fdd6ad02b3bf2d77922e847b4a058e52d3ec&dn=Gods.of.Egypt.2016.720p.BluRay.x264-DRONES&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Gods.Of.Egypt.2016.720p.BluRay.x264-DRONES.[sharethefiles.com].mkv|5868114546|8490C540B2848BB2979A2927FC88ACAC|h=D2DZJEQ52XZMLPDITFEIEUMHDZ7GC5ZD|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/61254/Gods.of.Egypt.%282016%29.BDRip.x264.720p.DTS-DRONES",
+			"count": 61487
+		}]
+	}, {
+		"source": "BDRip",
+		"codec": "x264",
+		"team": "DRONES",
+		"tags": "1080p DTS",
+		"size": "9.8 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:a0b21ba8cbf5a1d7a0e45476c66ef6caf0568b91&dn=Gods.of.Egypt.2016.1080p.BluRay.x264-DRONES&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/61255/Gods.of.Egypt.%282016%29.BDRip.x264.1080p.DTS-DRONES",
+			"count": 61487
+		}]
+	}, {
+		"source": "BDRip",
+		"codec": "x264",
+		"team": "PSYCHD",
+		"tags": "1080p 3D SBS DTS",
+		"size": "11 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:5644b0ae2190e91c2217f772856d2cec40128424&dn=Gods.of.Egypt.2016.3D.1080p.BluRay.x264-PSYCHD&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [],
+		"subtitles": []
+	}]
+}

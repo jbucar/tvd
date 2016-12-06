@@ -1,0 +1,22 @@
+{
+  "name": "shell",
+  "version": "1.0.0",
+  "authors": [
+    "Nicolas Baglivo <nicolas.baglivo@gmail.com>"
+  ],
+  "description": "official shell tac package",
+  "keywords": [
+    "tac",
+    "shell"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "~2.3.0",
+    "eventEmitter": "~4.2.11",
+    "mocha": "~2.2.4",
+    "sinon": "~1.14.1",
+    "sinon-browser-only": "~1.12.1",
+    "WebConsole": "*",
+    "lodash": "~3.8.0"
+  }
+}

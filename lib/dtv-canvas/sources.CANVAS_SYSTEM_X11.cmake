@@ -1,0 +1,10 @@
+ADD_SOURCES(
+	src/impl/x11/window.h
+	src/impl/x11/system.h
+	src/impl/x11/render.h
+	src/impl/x11/videooverlay.h
+	src/impl/x11/window.cpp
+	src/impl/x11/system.cpp
+	src/impl/x11/render.cpp
+	src/impl/x11/videooverlay.cpp
+)

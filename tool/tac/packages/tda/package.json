@@ -1,0 +1,8 @@
+{
+	"name": "tda",
+	"version": "1.0.0",
+	"description": "TAC tda app",
+	"main": "src/main.js",
+	"author": "LIFIA",
+	"license": "ISC"
+}

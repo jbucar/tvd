@@ -1,0 +1,354 @@
+.guide-container {
+	height: 100%;
+}
+
+.guide-channels {
+	width: 1135px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	min-width: 500px;
+}
+
+.guide-channels .header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+	font-family: 'Oswald-Light';
+}
+
+.guide-channels .scroller {
+	margin-left: 3px;
+}
+
+.guide-channels.view-content .upper-side {
+	height: 4.7%;
+}
+
+/* main scroll */
+.guide-vertical-scroller {
+	min-height: 186px;
+}
+
+.guide-vertical-scroller .moon-scroller-v-column.v-scroll-enabled {
+	opacity: 1;
+	width: 4px;
+}
+
+.guide-vertical-scroller .moon-scroller-client-wrapper.v-scroll-enabled {
+	padding-right: 10px;
+}
+
+.guide-vertical-scroller .moon-scroller-client-wrapper.h-scroll-enabled {
+	padding-bottom: 0px;
+}
+
+.guide-vertical-scroller .moon-scroller-vthumb.hidden {
+	opacity: 1;
+}
+
+.guide-vertical-scroller .moon-scroller-vthumb {
+	right: 0px;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.guide-vertical-scroller .moon-scroller-vthumb-container {
+	top: 0px;
+	bottom: 0px;
+	background: rgba(255, 255, 255, 0.15);
+	width: 4px;
+}
+/* main scroll */
+
+.scroller {
+	min-width: 912px;
+	max-width: 912px;
+	height: 100%;
+}
+
+.guide-gridwrapper {
+	display: flex;
+	max-height: 186px;
+}
+
+.guide-time-cell {
+	width: 290px;
+	height: 30px;
+	background-color: rgba(190, 216, 255, 0.3);
+	font-size: 16px;
+	color: white;
+}
+
+.guide-cell {
+	height: 34px;
+	line-height: 34px;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.20);
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.gridcell-show-title {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+
+.dummy.guide-cell{
+	background-color: rgba(255, 255, 255, 0.10);
+}
+
+.guide-row.ch .guide-cell {
+	margin-right: 3px;
+}
+
+.guide-cell.all {
+	font-size: 14pt;
+	min-width: 200px;
+	max-width: 200px;
+	background-color: rgba(255, 255, 255, 0.35);
+	text-align: center;
+}
+
+.header .guide-cell {
+	height: 27px;
+	line-height: 27px;
+}
+
+.guide-cell.spotlight{
+	box-sizing: border-box;
+	border-bottom: solid 4px rgb(255, 227, 190);
+}
+
+.guide-chnames {
+	min-width: 200px;
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+}
+
+.guide-vertical-scroller .matrix3dsurface {
+	transform-style: preserve-3d !important;
+}
+
+.guide-chnames .guide-cell {
+	text-align: center;
+	margin-bottom: 4px;
+}
+
+.guide-row.ch {
+	font-family: 'Oswald-Light';
+	font-size: 12pt;
+	margin-bottom: 4px;
+}
+
+.guide-row, .guide-header-row {
+	height: 34px;
+	display: flex;
+	flex-direction: row;
+}
+
+.guide-scroll-wrapper {
+	display: flex;
+}
+
+.guide-ch-filter {
+	min-width: 150px;
+}
+
+.time-header .guide-cell {
+	text-align: left;
+	min-width: 227px;
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.time-header {
+	width: 100%;
+	height: 27px;
+	font-size: 10pt;
+	color: white;
+}
+
+.guide-channel-cell {
+	height: 34px;
+	margin-right: 7px;
+	margin-bottom: 4px;
+	min-width: 200px;
+	max-width: 200px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: rgba(255,255,255,0.35);
+	box-sizing: border-box;
+	border-bottom: solid 4px transparent;
+}
+
+.guide-title-icon {
+	width: 24px;
+	height: 24px;
+	margin-right: 7px;
+}
+
+.guide-channel-name {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	font-size: 16px;
+}
+
+.guide-channel-cell.spotlight{
+	border-bottom-color: rgb(255, 227, 190);
+}
+
+.guide-header {
+	margin-left: 3px;
+	height: 27px;
+}
+
+.guide-header-row {
+	height: 23px;
+}
+
+.guide-header-time {
+	height: 30px;
+}
+
+.guide-header .progressbar .progressbar-line {
+	height: 4px;
+	width: 912px;
+	background-color: transparent;
+}
+
+.guide-header .progressbar .progressbar-progress {
+	margin-top: -4px;
+	height: 3px;
+	background: rgba(239, 239, 239, 0.35);
+}
+
+.guide-header .progressbar .progressbar-knob {
+	width: 6px;
+	height: 6px;
+	margin-top: -5px;
+	background: rgb(239, 239, 239);
+	z-index: 1;
+}
+
+.guide-back-arrow {
+	width: 114px;
+	height: 55px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 50px;
+}
+
+.guide-ch-detail {
+	height: 157px;
+	padding-bottom: 12px;
+	display: flex;
+}
+
+.guide-info {
+	max-width: 81%;
+	min-width: 81%;
+	margin-left: 12px;
+	color: white;
+}
+
+.guide-info-header {
+	font-family: 'Oswald-Regular';
+	font-size: 16pt;
+	line-height: 20pt;
+	display: flex;
+	width: 100%;
+}
+
+.guide-info-header-text {
+	min-width: 92%;
+	max-width: 92%;
+}
+
+.guide-info-text {
+	padding-top: 10px;
+	font-family: 'Oswald-Light';
+	font-size: 15pt;
+	line-height: 26px;
+	max-width: 1100px;
+	min-height: 78px;
+	max-height: 78px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.guide-placeholder {
+	min-width: 200px;
+	max-width: 200px;
+	min-height: 150px;
+}
+
+.guide-box {
+	min-height: 400px;
+	max-height: 400px;
+	min-width: 1111px;
+	max-width: 1111px;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.guide-popup {
+	width: 55.2% !important;
+	height: 48.6% !important;
+	text-align: left !important;
+	padding: 0px 30px 0px 30px !important;
+}
+
+.guide-popup-title-wrapper {
+	display: flex;
+	margin-bottom: 12px;
+}
+
+.guide-popup-icon {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 10px;
+}
+
+.guide-popup-title {
+	max-width: 630px;
+	margin-right: auto;
+	font-family: 'Oswald-Regular';
+	font-size: 20pt;
+	color: rgb(241, 116, 0);
+}
+
+.guide-popup-details, .guide-popup-description {
+	font-family: 'Oswald-Light';
+	color: rgb(0, 0, 0);
+	font-size: 14pt;
+}
+
+.guide-scroller-desc {
+	margin-bottom: 20px;
+}
+
+.guide-popup-description {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	line-height: 22pt;
+	height: 90px;
+}
+
+.guide-popup-btn-container {
+	text-align: center;
+}
+
+.guide-popup-btn-container > * {
+	width: 164px !important;
+}
+
+.guide-popup-btn-container > *.spotlight {
+	background: rgb(241, 116, 0) !important;
+}

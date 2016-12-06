@@ -1,0 +1,26 @@
+.popupbox_container {
+	overflow: hidden;
+}
+
+.popup {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition-timing-function: ease-out;
+}
+
+.popup.ltr {
+	transition: right;
+}
+
+.popup.ltr.visible {
+	right: 0% !important;
+}
+
+.popup.rtl {
+	transition: left;
+}
+
+.popup.rtl.visible {
+	left: 0% !important;
+}

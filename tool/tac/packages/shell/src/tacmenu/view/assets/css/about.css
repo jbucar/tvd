@@ -1,0 +1,28 @@
+.about {
+	display: flex;
+	flex-direction: column wrap;
+}
+
+.about-image {
+	width: 240px;
+	height: 190px;
+	margin: 65px 50px 100px 50px;
+}
+
+.about-body {
+	margin: 10px 0px 0px 0px;
+	width: 800px;
+}
+
+.about-body-sysinfo, .about-body-legal {
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 22pt;
+	margin: 10px 0px 20px 0px;
+}
+
+.about-body-title {
+	font-family: 'Oswald-Regular';
+	font-size: 38pt; /* 38.5pt*/
+	margin: 10px 0px 20px 0px;
+}

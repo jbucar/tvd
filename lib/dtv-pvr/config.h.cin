@@ -1,0 +1,2 @@
+//	Filter mobile channels
+#define FILTER_MOBILE_CHANNELS  ${PVR_FILTER_MOBILE_CHANNELS}

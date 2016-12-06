@@ -1,0 +1,21 @@
+{
+	"name": "platform",
+	"version": "1.0.0",
+	"description": "TAC platform service",
+	"main": "src/main.js",
+	"dependencies": {
+		"lodash": "^4.0.0"
+	},
+	"devDependencies": {
+		"chai": "^3.4.1",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

@@ -1,0 +1,213 @@
+local statistics = {}
+local currentChannel
+local timeFormat = "%Y-%m-%d %H:%M"
+
+local showingSetupScreen = false
+local checkingServerStatus = false
+local lastServerStatus = ""
+local mainCanvas
+local counter = 0
+local max_loop = 3
+
+
+
+function channelNew( aChannelID )
+  local ch = {}
+  ch.number = tostring(channels.get(aChannelID).channel)
+  return ch
+end
+
+function  startWatching( aChannel )
+  aChannel.onBegin = mainWindow.getTime(timeFormat)
+  aChannel.onEnd = "                   --              "
+end
+
+function  stopWatching( aChannel )
+  aChannel.onEnd = mainWindow.getTime(timeFormat)
+end
+
+function addToStatisticsTable( aChannel )
+  table.insert(statistics,aChannel)
+end
+
+function initStatistics()
+  local newChannelID = channel.current()
+  if newChannelID ~= -1 then
+    currentChannel = channelNew(newChannelID)
+    startWatching(currentChannel)
+    addToStatisticsTable(currentChannel)
+  end
+end
+
+function updateStatistics( aChannelID )
+  if (aChannelID ~= -1) then
+    if currentChannel then
+      stopWatching(currentChannel)
+    end
+    currentChannel = channelNew(aChannelID)
+    startWatching(currentChannel)
+    addToStatisticsTable(currentChannel)
+  end
+end
+
+function resetStatistics()
+  statistics = {}
+  currentChannel = nil
+end
+
+function stopAnimationTimer()
+  if animationTimerID then
+    timer.cancel(animationTimerID)
+  end
+end
+
+function drawStatistics( aSurface )
+  local bg = canvas.createSurfaceFromPath('imgs/Audimetro_config.png')
+  aSurface:blit(24,13,bg)
+  aSurface:setColor(0,0,0,255)
+
+  local maxRows = 11
+
+  -- DRAW CHANNEL STATISTICS
+  if #statistics > 0 then
+    aSurface:setFont("Tiresias",15)
+    local channelColumn = {}
+    channelColumn.x = 105
+    channelColumn.y = 170
+    
+    local beginTimeColumn = {}
+    beginTimeColumn.x = 255
+    beginTimeColumn.y = 170
+
+    local endTimeColumn = {}
+    endTimeColumn.x = 480
+    endTimeColumn.y = 170
+
+    local rowOffsetY = 0
+    if #statistics <= maxRows then
+      for i,each in pairs(statistics) do
+        aSurface:drawText(channelColumn.x, channelColumn.y+rowOffsetY, each.number)
+        aSurface:drawText(beginTimeColumn.x, beginTimeColumn.y+rowOffsetY, each.onBegin)
+        aSurface:drawText(endTimeColumn.x, endTimeColumn.y+rowOffsetY, each.onEnd)
+        rowOffsetY = rowOffsetY + 26        
+      end
+    else
+      for index=1,maxRows do
+        local each = statistics[index]
+        aSurface:drawText(channelColumn.x, channelColumn.y+rowOffsetY, each.number)
+        aSurface:drawText(beginTimeColumn.x, beginTimeColumn.y+rowOffsetY, each.onBegin)
+        aSurface:drawText(endTimeColumn.x, endTimeColumn.y+rowOffsetY, each.onEnd)
+        rowOffsetY = rowOffsetY + 26        
+      end
+    end
+
+  end
+  aSurface:flush()
+end
+
+function start( mainSurface )
+  initStatistics()
+  return true
+end
+
+function stop()
+  stopAnimationTimer()
+  resetStatistics()
+  return true
+end
+
+function startSetup( mainSurface )
+  showingSetupScreen = true
+  mainCanvas = mainSurface
+  drawStatistics( mainSurface )
+  return true
+end
+
+function stopSetup( mainSurface )
+  stopAnimationTimer()
+  showingSetupScreen = false
+  checkingServerStatus = false
+  counter = 0
+end
+
+function handleEvent( evt )
+  if (evt.type == 'key') and (evt.isUp == 0) and ((evt.value == KEY_RED) or (evt.value == KEY_F1)) then
+    if showingSetupScreen then
+      startCheckServerStatus()
+    end
+  end
+
+  if (evt.type == 'channelChanged') then
+    updateStatistics(evt.value)
+  end
+
+  if (evt.type == "timeOut") and (animationTimerID == evt.value) then
+    drawServerStatus()
+  end
+
+  return true
+end
+
+
+
+-- Check server status
+
+function cleanServerStatus()
+  mainCanvas:setFont("Tiresias",20)
+  mainCanvas:setColor(230,230,230,255)
+  mainCanvas:fillRect(576,511,mainCanvas:measureText(lastServerStatus))
+  lastServerStatus = ""
+end
+
+function startCheckServerStatus()
+  if checkingServerStatus == false then
+    animationTimerID = timer.register(500)
+    --clean surface
+    cleanServerStatus()
+    checkingServerStatus = true
+  end
+end
+
+function drawServerStatus()
+  mainCanvas:setFont("Tiresias",20)
+  if checkingServerStatus then
+    mainCanvas:setColor(0,0,0,255)
+    if counter < max_loop then
+      counter = counter +1
+      lastServerStatus = lastServerStatus.."."
+      mainCanvas:drawText(576,530,lastServerStatus)      
+      animationTimerID = timer.register(500)
+    else
+      --clean surface
+      cleanServerStatus()
+      lastServerStatus = "OK"
+      -- draw fake status
+      mainCanvas:setColor(0,150,0,255)
+      mainCanvas:drawText(576,531,lastServerStatus)
+      counter = 0
+      checkingServerStatus = false
+    end
+  end
+  mainCanvas:flush()
+end
+
+function describe()
+  local app = {}
+
+  app.name = "Audímetro"
+  app.desc = "Es un servicio para medir la audiencia en los canales"
+  app.version = "0.1"
+  app.icon = "imgs/audimetroBlanco.png"
+  app.selectedIcon = "imgs/audimetroNaranja.png"
+  app.interactive = false
+
+  app.methods = {
+    ['start'] = start,
+    ['stop'] = stop,
+    ['startSetup'] = startSetup,
+    ['stopSetup'] = stopSetup,
+    ['handleEvent'] = handleEvent
+  }
+
+  return app
+end

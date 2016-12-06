@@ -1,0 +1,224 @@
+.infobox {
+	position: absolute;
+	margin-left: 245px;
+	margin-top: 60px;
+	width: 790px;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 300;
+	border: 2px solid rgb(241, 116, 0);
+}
+
+.infobox.full {
+	max-height: 560px;
+}
+
+.infobox-show-desc {
+	font-family: 'Oswald-Light';
+	font-size: 15pt;
+	min-width: 700px;
+	max-width: 700px;
+	max-height: 300px;
+	margin-bottom: 5px;
+	color: white;
+	left: 100px;
+	position: relative;
+}
+
+.infobox-icon {
+	margin-top: auto;
+	margin-bottom: auto;
+	width: auto;
+	height: 22px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.infobox-icon.transparent {
+	background: transparent;
+}
+
+.infobox-details-container {
+	color: white;
+	height: 145px;
+	display: flex;
+}
+
+.infobox-details-container.full {
+	height: 180px;
+}
+
+.infobox-channel-container {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+}
+
+.infobox-channel-group {
+	height: 60px;
+}
+
+.infobox-channel-txt {
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	line-height: 16pt;
+	margin-bottom: 17px;
+}
+
+.infobox-channel-txt.big {
+	font-size: 29pt;
+	margin-top: -2px;
+}
+
+.infobox-fields-container {
+	margin-top: 10px;
+	display: flex;
+}
+
+.infobox-transparent {
+	flex: auto;
+}
+
+.infobox-logo-container {
+	background: rgba(255, 255, 255, 0.8);
+	min-height: 120px;
+	min-width: 120px;
+	width: 120px;
+	height: 120px;
+	margin-left: 23px;
+	margin-right: 29px;
+	margin-top: 2px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.infobox-logo {
+	max-height: 90px;
+	max-width: 80px;
+}
+
+/* iconbar and actionbar */
+.infobox-iconbar, .infobox-actionbar {
+	height: 40px;
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 14pt;
+	display: flex;
+	border-width: 0px;
+	border-style: solid;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.infobox-iconbar-container-a {
+	background: rgb(241, 116, 0);
+	display: inherit;
+}
+
+.infobox-iconbar-container-b {
+	display: inherit;
+}
+
+.infobox-iconbar-separator {
+	width: 0;
+	height: 0;
+	border-width: 0px;
+	border-style: solid;
+	border-top: 40px solid rgb(241, 116, 0);
+	border-left: 40px solid transparent;
+}
+
+.infobox-actionbar-txt {
+	font-size: 20px;
+	display: flex;
+}
+
+.infobox-actionbar-txt.option {
+	font-family: 'Oswald-Regular';
+	margin-left: 10px;
+}
+
+.infobox-actionbar-txt.action {
+	font-family: 'Oswald-Light';
+	margin-left: 4px;
+	margin-right: 10px;
+}
+
+.infobox-actionbar-separator {
+	width: 0;
+	height: 0;
+	border-bottom: 40px solid rgb(241, 116, 0);
+	border-right: 40px solid transparent;
+}
+
+/* field */
+.infobox-field {
+	display: flex;
+	flex-direction: column;
+}
+
+.infobox-field.program {
+	width: 40%;
+}
+
+.infobox-field.field {
+	width: 15%;
+}
+
+.infobox-field.field.small {
+	width: 13%;
+}
+
+.infobox-field-title {
+	color: rgb(241, 116, 0);
+	font-size: 14pt;
+	font-family: 'Oswald-Regular';
+	letter-spacing: 0.05em;
+}
+
+.infobox-field-data {
+	overflow: hidden;
+	color: white;
+	font-family: 'Oswald-Light';
+	height: 28px;
+	line-height: 25px;
+	padding-right: 5px;
+	font-size: 15pt;
+	letter-spacing: 0.03em;
+}
+
+.infobox-field-data.spotlight {
+	color: blue;
+}
+
+.infobox-field-data.description {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 600px;
+	height: 80px;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+}
+
+/* calendar and time */
+.infobox-calendar, .infobox-time {
+	font-family: 'Oswald-Light';
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: row;
+}
+
+.infobox-progressbar {
+	height: 10px;
+	margin-left: 248px;
+	margin-top: 10px;
+}
+
+.infobox-progressbar-line {
+	background-color: gray;
+}

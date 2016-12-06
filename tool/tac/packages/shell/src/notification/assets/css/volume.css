@@ -1,0 +1,56 @@
+.volume-background {
+	background-color: rgba(0,0,0, 0.85);
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(241, 116, 0);
+	width: 60px;
+	height: 270px;
+	position: absolute;
+	top: 418px;
+	left: 60px;
+}
+
+.level-not-filled {
+	background-color: rgba(255, 255, 255, .2);
+	width: 27px;
+	height: 185px;
+	position: absolute;
+	top: 38px;
+	left: 17px;
+}
+
+.level {
+	background-color: rgb(241, 116, 0);
+	width: 27px;
+	height: 100px;
+	position: absolute;
+	left:17px;
+	top: 85px;
+}
+
+.level.mute {
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.volume-text {
+	position: absolute;
+	top: 0px;
+	width: 60px;
+	line-height: 38px;
+	text-align: center;
+	height: 38px;
+	font-family: "Oswald-Light";
+	font-size: 16pt;
+	color: rgb(255, 255, 255);
+}
+
+.image-box {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 223px;
+	height: 48px;
+	width: 60px;
+}

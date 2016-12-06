@@ -1,0 +1,11 @@
+{
+	"movies": "PELÍCULAS",
+	"series": "SERIES",
+	"others": "Otros",
+    "genre": "Género",
+    "director": "Dirección",
+    "actors": "Actores",
+    "runtime": "Duración",
+    "addQueued": "Descargar",
+    "discardQueued": "Descartar"
+}

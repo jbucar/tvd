@@ -1,0 +1,23 @@
+#FFRWDialog {
+	position: absolute;
+	top: 4%;
+	right: 4%; 
+	width: 8vw;
+	height: 7vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(29,31,32);
+	color: rgb(212,212,212);
+	font-family: "Oswald-Light";
+	font-size: 2rem;
+}
+
+#FFRWDialogImg {
+	height: 50%;
+	margin-left: 6%;
+}
+
+#FFRWDialogLabel {
+	margin-right: 6%;
+}

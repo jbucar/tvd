@@ -1,0 +1,24 @@
+.view-port {
+	overflow: hidden;
+	display: flex;
+	height: 100%;
+}
+
+.client {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+.shell-menu {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	height: 100%;
+}
+
+.placeholder {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}

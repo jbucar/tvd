@@ -1,0 +1,88 @@
+.ginga-app-selector {
+	position: absolute;
+	margin-left: 440px;
+	margin-top: 210px;
+	width: 400px;
+	height: 300px;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 300;
+	border: 2px solid rgb(241, 116, 0);
+}
+
+.ginga-app-selector-img {
+	margin-left: 159px;
+	margin-top: 25px;
+}
+
+.ginga-app-scroller {
+	width: 342px;
+	height: 80px;
+	margin-left: 31px;
+	margin-top: 10px;
+}
+
+.ginga-font {
+	overflow: hidden;
+	color: white;
+	font-family: 'Oswald-Light';
+	height: 38px;
+	line-height: 38px;
+	font-size: 15pt;
+	letter-spacing: 0.03em;
+}
+
+.ginga-app-title {
+	font-size: 18pt;
+	font-family: 'Oswald-Regular';
+	color: rgb(241,116,0);
+	text-align: center;
+}
+
+.ginga-unavailable {
+	height: 65px;
+	margin: 25px auto auto 72px;
+}
+
+.ginga-app {
+	text-align: left;
+	text-indent: 12px;
+}
+
+.ginga-app.spotlight {
+	background-color: rgba(255, 255, 255, 0.25);
+	border-bottom: solid 2px rgb(241, 116, 0);
+}
+
+.ginga-app-selector-btn {
+	width: 127px;
+	height: 38px;
+	font-size: 20px;
+	margin: 40px auto auto auto;
+	background: rgb(68, 68, 68);
+	border-bottom: solid 2px rgb(68, 68, 68); !important;
+}
+
+.ginga-app-selector-btn.spotlight {
+	width: 127px;
+	height: 38px;
+	font-size: 20px;
+	background: rgb(68, 68, 68);
+	border-bottom: solid 2px rgb(241, 116, 0) !important;
+}
+
+.ginga-download {
+	position: absolute;
+	height: 35px;
+	width: 460px;
+	left: 400px;
+	top: 550px;
+	z-index: 300;
+	border: solid 2px rgb(241, 116, 0);
+	background-color: black;
+	font-size: 16px;
+}
+
+.ginga-bar-bg {
+	height: 100%;
+	background-color: rgb(241, 116, 0);
+}

@@ -1,0 +1,30 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.youtube",
+	"vendor": "LIFIA",
+    "vendor-url": "http://www.minplan.gob.ar/",
+    "version": "1.0.0",
+    "platform": "all",
+    "api-level": "1.0.0",
+    "components": [{
+        "id": "ar.edu.unlp.info.lifia.tvd.youtube.app",
+        "type": "app",
+        "name": "Youtube",
+        "description": "Reproductor de videos YouTube.",
+        "version": "1.0.0",
+        "main": "https://www.youtube.com/tv#/browse-sets?c=UCo_SSxK4fstXlbzWI3Q1Jhw",
+        "icon": "icon.png",
+        "hw_codecs_only": true,
+        "categories": ["Tiempo Libre"]
+    },{
+		"id": "ar.edu.unlp.info.lifia.tvd.youtube.srv",
+		"name": "youtube downloader/web",
+		"type": "service",
+		"version": "1.0.0",
+		"main": "main.js",
+		"user": false,
+		"dependencies": [
+			"ar.edu.unlp.info.lifia.tvd.downloader",
+			"ar.edu.unlp.info.lifia.tvd.remoteapi"
+		]
+	}]
+}

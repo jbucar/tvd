@@ -1,0 +1,15 @@
+ADD_SOURCES(
+	src/impl/directfb/canvas.h
+	src/impl/directfb/canvas.cpp
+	src/impl/directfb/dfb.h
+	src/impl/directfb/font.h
+	src/impl/directfb/font.cpp
+	src/impl/directfb/glyphrun.h
+	src/impl/directfb/glyphrun.cpp
+	src/impl/directfb/surface.h
+	src/impl/directfb/surface.cpp
+	src/impl/directfb/system.h
+	src/impl/directfb/system.cpp
+	src/impl/directfb/window.h
+	src/impl/directfb/window.cpp
+)

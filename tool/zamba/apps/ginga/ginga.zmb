@@ -1,0 +1,33 @@
+function start( mainSurface )
+  middleware.enable( TRUE )
+  return true
+end
+
+function stop()
+  middleware.enable( FALSE )
+  return true
+end
+
+function status()
+	return middleware.isEnabled()
+end
+
+function describe()
+  local app = {}
+
+  app.name = "Ginga.Ar"
+  app.desc = "Es un servicio que permite correr aplicaciones interactivas"
+  app.version = middleware.getVersion()
+  app.icon = "imgs/gingaBlanco.png"
+  app.selectedIcon = "imgs/gingaNaranja.png"
+  app.interactive = false
+  app.enableDefault = true
+
+  app.methods = {
+    ['start'] = start,
+    ['stop'] = stop,
+    ['stopSetup'] = stopSetup,
+  }
+
+  return app
+end

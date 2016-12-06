@@ -1,0 +1,28 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.shell2",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"system": true,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.shell2",
+			"name": "Shell2 Application",
+			"type": "app",
+			"version": "1.0.0",
+			"main": "index.html",
+			"user": false,
+			"bg_transparent": true,
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.pkgmgr",
+				"ar.edu.unlp.info.lifia.tvd.srvmgr",
+				"ar.edu.unlp.info.lifia.tvd.system",
+				"ar.edu.unlp.info.lifia.tvd.notification",
+				"ar.edu.unlp.info.lifia.tvd.appmgr",
+				"ar.edu.unlp.info.lifia.tvd.network"
+			]
+		}
+	]
+}

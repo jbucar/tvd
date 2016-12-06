@@ -1,0 +1,25 @@
+.dialog .wrapper.tvlayer {
+	background: rgb(0, 0, 0);
+	border: solid 3px rgb(241, 116, 0);
+	color: white;
+}
+
+.dialog .actions.tvlayer > *.spotlight {
+	background: rgb(241, 116, 0);
+}
+
+.dialog .title.tvlayer {
+	color: rgb(241, 116, 0);
+}
+
+.dialog .icon.tvlayer {
+	background: rgb(241, 116, 0);
+}
+
+.tvlayer-keyboard-action.spotlight {
+	background: rgb(241, 116, 0);
+}
+
+.tvlayer-keyboard-btn.spotlight {
+	color: rgb(241, 116, 0);
+}

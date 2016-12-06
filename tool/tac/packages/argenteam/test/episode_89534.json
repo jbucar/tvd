@@ -1,0 +1,63 @@
+{
+	"id": 89534,
+	"tvdb": "5537607",
+	"season": 9,
+	"number": "19",
+	"title": "The Solder Excursion Diversion",
+	"summary": "Amy is shocked at a revelation from Sheldon after she buys him a new laptop. Koothrappali sells out Leonard and Wolowitz after they lie to their wives in order to attend an early screening of a movie.",
+	"releases": [{
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "LOL",
+		"tags": "",
+		"size": "150 MB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:c724903f3b343429af77f1e503b561062caa3566&dn=The.Big.Bang.Theory.S09E19.HDTV.x264-LOL%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|The.Big.Bang.Theory.S09E19.The.Solder.Excursion.Diversion.HDTV.x264-LOL.mp4|151822800|31B42736405EC0876836D52AEB51E1E2|h=CXHOUIYE5XIN6O3RWKEHJJ23F4ULZNZB|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/60599/The.Big.Bang.Theory.%282007%29.S09E19-The.Solder.Excursion.Diversion.HDTV.x264-LOL",
+			"count": 60343
+		}]
+	}, {
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "DIMENSION",
+		"tags": "720p",
+		"size": "500 MB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:40938ee5078bf3ac4101e3d76cd6cc2859540e17&dn=The.Big.Bang.Theory.S09E19.720p.HDTV.X264-DIMENSION%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|The.Big.Bang.Theory.S09E19.The.Solder.Excursion.Diversion.720p.HDTV.x264-DIMENSION.mkv|519927397|B8C3DCD8D7C1C599DC812F8E9AD72CFD|h=63PIRPT3IS6X2RN4BPKZTNVZZ7WUAFIG|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/60600/The.Big.Bang.Theory.%282007%29.S09E19-The.Solder.Excursion.Diversion.HDTV.x264.720p-DIMENSION",
+			"count": 60343
+		}]
+	}, {
+		"source": "WEB-DL",
+		"codec": "H.264",
+		"team": "VietHD",
+		"tags": "1080p",
+		"size": "800 MB",
+		"torrents": [],
+		"elinks": [{
+			"uri": "ed2k://|file|The.Big.Bang.Theory.S09E19.The.Solder.Excursion.Diversion.1080p.WEB-DL.DD5.1.H.264-VietHD.mkv|848418435|3558D72AF8E942B34DA7B11C1B9B2785|h=SSGRBA2XCG2PPLTY5NYCGLNUFEJL5GBJ|/"
+		}],
+		"subtitles": []
+	}, {
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "DIMENSION",
+		"tags": "1080p",
+		"size": "1.4 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:2d1be0d56e9dcec4ecde5f60a6152ecb64e6b6df&dn=The.Big.Bang.Theory.S09E19.1080p.HDTV.X264-DIMENSION%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [],
+		"subtitles": []
+	}]
+}

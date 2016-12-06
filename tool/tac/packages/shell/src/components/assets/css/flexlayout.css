@@ -1,0 +1,17 @@
+.flexlayout {
+	width: 100%;
+	display: flex;
+	font-family: "Oswald-Light";
+	letter-spacing: 0.01em;
+}
+
+.flexlayout.vertical {
+	flex-direction: column;
+}
+
+.flexlayout.vertical > .client {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

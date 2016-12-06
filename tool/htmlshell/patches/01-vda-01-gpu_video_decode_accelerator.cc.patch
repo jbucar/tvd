@@ -1,0 +1,22 @@
+--- content/common/gpu/media/gpu_video_decode_accelerator.cc.orig
++++ content/common/gpu/media/gpu_video_decode_accelerator.cc
+@@ -184,6 +184,19 @@ GpuVideoDecodeAccelerator::GetCapabilities() {
+       VTVideoDecodeAccelerator::GetSupportedProfiles();
+ #elif defined(OS_ANDROID)
+   capabilities = AndroidVideoDecodeAccelerator::GetCapabilities();
++#elif defined(USE_OZONE)
++  LOG(INFO) << __FUNCTION__ << "() Appending h264 profiles!";
++  media::VideoDecodeAccelerator::SupportedProfiles profiles;
++  media::VideoDecodeAccelerator::SupportedProfile profile;
++  int min_profile = media::H264PROFILE_MIN;
++  int max_profile = media::H264PROFILE_MAX;
++  for (int media_profile = min_profile; media_profile <= max_profile; ++media_profile) {
++    profile.profile = static_cast<media::VideoCodecProfile>(media_profile);
++    profile.min_resolution.SetSize(720, 576);
++    profile.max_resolution.SetSize(1920, 1088);
++    profiles.push_back(profile);
++  }
++ GpuVideoAcceleratorUtil::InsertUniqueDecodeProfiles(profiles, &capabilities.supported_profiles);
+ #endif
+   return GpuVideoAcceleratorUtil::ConvertMediaToGpuDecodeCapabilities(
+       capabilities);

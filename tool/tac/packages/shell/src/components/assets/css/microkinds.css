@@ -1,0 +1,25 @@
+.icons-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	width: 100%
+}
+
+.icons-wrapper > .left {
+	flex-grow: 10;
+	text-align: left;
+}
+
+.shell-scroller .moon-scroller-vthumb-container {
+    background-color: rgba(255, 255, 255, 0.14902);
+}
+
+.detail-component {
+	display: flex;
+	font-size: 15pt;
+}
+
+.detail-info {
+	padding-left: 7px;
+	font-family: 'Oswald-Light', 'CKJFont';
+}

@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <help_text/>
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>855</x>
+      <y>27</y>
+      <w>135</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>PluginManager
+--
+add()
+isPresent()
+isEnabled()
+start()
+stop()
+isStarted()
+registerService()
+unregisterService()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>756</x>
+      <y>0</y>
+      <w>117</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+mgr</panel_attributes>
+    <additional_attributes>99;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>693</x>
+      <y>27</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Zapper
+--
+start()
+stop()
+run()
+exit()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>954</x>
+      <y>36</y>
+      <w>135</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=*
+services</panel_attributes>
+    <additional_attributes>27;171;90;171;90;27;36;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>846</x>
+      <y>198</y>
+      <w>135</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Service
+--
+isStarted()
+start()
+	void stop()
+addDependency()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1107</x>
+      <y>81</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Plugin
+--
+isEnabled()
+enable()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>585</x>
+      <y>27</y>
+      <w>117</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+input</panel_attributes>
+    <additional_attributes>45;342;45;45;108;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>963</x>
+      <y>0</y>
+      <w>243</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=       *
+plugins</panel_attributes>
+    <additional_attributes>207;81;207;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1125</x>
+      <y>369</y>
+      <w>126</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ChannelService
+--
+master()
+addPlayer()
+setFullScreen()
+resize();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1161</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1296</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1260</x>
+      <y>369</y>
+      <w>144</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>control::Service
+--
+enabled()
+sessionIsOpen()
+checkPIN()
+setPIN()
+setTimeExpiration()
+parentalContent()
+setParentalContent()
+parentalAge()
+setParentalAge()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1413</x>
+      <y>369</y>
+      <w>144</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>ChannelManager
+--
+remove()
+removeAll()
+unblockAll()
+showOneSeg()
+showOneSeg(show)
+toggleOneSeg()
+nextChannel()
+nextFavorite()
+haveChannels()
+channelCount()
+getAll()
+get()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1458</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1620</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1566</x>
+      <y>369</y>
+      <w>180</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>audio::Service
+--
+isMuted()
+mute(needMute)
+toggleMute();
+volumeUp();
+volumeDown();
+volume(vol);
+volume()
+setAudioChannel()
+getCurrentAudioChannel()
+supportedAudioChannels()
+defaultAudioChannel()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>954</x>
+      <y>369</y>
+      <w>162</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>DisplayService
+--
+supportedConnectors()
+getActiveConnector()
+supportedModes( )
+setMode()
+getCurrentVideoMode()
+supportedAspects()
+setAspect()
+getCurrentAspect()
+supportedModulators()
+setModulator()
+getCurrentModulator()
+setTransparency()
+getTransparency()
+getLayer()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1035</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1395</x>
+      <y>558</y>
+      <w>106</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=       *
+channels</panel_attributes>
+    <additional_attributes>54;63;54;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1314</x>
+      <y>297</y>
+      <w>143</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;
+control</panel_attributes>
+    <additional_attributes>126;72;126;45;27;45;27;72</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1125</x>
+      <y>558</y>
+      <w>126</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>ChannelPlayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1143</x>
+      <y>432</y>
+      <w>81</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+player</panel_attributes>
+    <additional_attributes>45;126;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1224</x>
+      <y>513</y>
+      <w>121</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+control</panel_attributes>
+    <additional_attributes>81;27;81;54;27;54</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1224</x>
+      <y>549</y>
+      <w>152</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+chs</panel_attributes>
+    <additional_attributes>135;90;81;90;81;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>450</x>
+      <y>495</y>
+      <w>153</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>MediaPlayer
+--
+isPlaying()
+play()
+stop()
+restart()
+pause(pause)
+nextAudio()
+audioCount()
+nextVideo()
+videoCount()
+nextSubtitle()
+subtitleCount()
+setFullScreen()
+resize()
+beginStartService()
+endStartService()
+beginStopService()
+endStopService()
+getAudio()
+getAspect()
+getResolution()
+url()
+mute(needMute)
+volume(vol)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>558</y>
+      <w>648</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+player</panel_attributes>
+    <additional_attributes>27;306;612;306;612;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>414</y>
+      <w>99</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=*
+players</panel_attributes>
+    <additional_attributes>90;180;54;180;54;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>882</x>
+      <y>261</y>
+      <w>782</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;27;72;765;72</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1359</x>
+      <y>621</y>
+      <w>153</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>Channel
+--
+name()
+channel()
+getCurrentShow()
+getShowsBetween()
+isProtected()
+parentalAge()
+parentalContent()
+toggleFavorite()
+isFavorite()
+toggleBlocked()
+unblock()
+isBlocked()
+isOneSeg()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1485</x>
+      <y>594</y>
+      <w>98</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=*
+shows</panel_attributes>
+    <additional_attributes>81;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1485</x>
+      <y>675</y>
+      <w>152</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+present</panel_attributes>
+    <additional_attributes>108;27;108;54;27;54</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1485</x>
+      <y>675</y>
+      <w>232</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+following</panel_attributes>
+    <additional_attributes>180;27;180;27;180;99;27;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1566</x>
+      <y>576</y>
+      <w>126</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Show
+--
+name()
+description()
+start()
+duration()
+parentalAge()
+parentalContent()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1206</x>
+      <y>558</y>
+      <w>170</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+ch</panel_attributes>
+    <additional_attributes>153;108;36;108;36;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>810</x>
+      <y>522</y>
+      <w>126</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ApplicationInfo
+--
+status(newSt)
+id()
+status()
+name()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>819</x>
+      <y>432</y>
+      <w>80</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=    *
+apps</panel_attributes>
+    <additional_attributes>45;90;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>954</x>
+      <y>657</y>
+      <w>162</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Layer
+--
+enable()
+disable()
+clear()
+flush()
+defaultResolution()
+supportedResolutions()
+setMode()
+setColorKey()
+setAlpha()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>864</x>
+      <y>657</y>
+      <w>107</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+
+layer</panel_attributes>
+    <additional_attributes>90;45;45;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>729</x>
+      <y>693</y>
+      <w>162</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>ApplicationController
+--
+enable()
+disable()
+setResolution()
+setAspect()
+layer()
+reserveKeys()
+resizeVideo()
+setupLayerResolution()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>738</x>
+      <y>432</y>
+      <w>78</w>
+      <h>278</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+ctrol</panel_attributes>
+    <additional_attributes>45;261;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>711</x>
+      <y>432</y>
+      <w>70</w>
+      <h>278</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+srv</panel_attributes>
+    <additional_attributes>36;27;36;261</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>981</x>
+      <y>585</y>
+      <w>88</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+m1=    *
+layers</panel_attributes>
+    <additional_attributes>45;72;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>837</x>
+      <y>306</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>657</x>
+      <y>297</y>
+      <w>197</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+
+input</panel_attributes>
+    <additional_attributes>27;72;27;45;180;45;180;72</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>729</x>
+      <y>369</y>
+      <w>216</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ApplicationService
+--
+getMiddlewareVersion()
+getApplications()
+start()
+disableApplications(needDisable)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>585</x>
+      <y>369</y>
+      <w>135</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>InputService
+--
+dispatchKey()
+reserveKeys()
+dispatchButton()
+reserveButtons()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>45</x>
+      <y>306</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;27;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>450</x>
+      <y>369</y>
+      <w>126</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>MountService
+--
+mount()
+registerExtension()
+getFiles()
+addPath()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>495</x>
+      <y>306</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>306</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>297</x>
+      <y>369</y>
+      <w>144</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>PlayerService
+--
+MediaPlayer *create()
+destroy(mediaPlayer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>162</x>
+      <y>369</y>
+      <w>126</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>Tuner
+--
+startService()
+stopService()
+currentNetwork()
+startFilter()
+stopFilter()
+isScanning()
+startScan()
+stopScan()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>369</y>
+      <w>153</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>UpdateService
+--
+onDownloadProgress()
+apply()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>351</x>
+      <y>306</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>306</y>
+      <w>36</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;63;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>288</x>
+      <y>414</y>
+      <w>81</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+player</panel_attributes>
+    <additional_attributes>45;180;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>225</x>
+      <y>594</y>
+      <w>162</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+MediaPlayer *create()
+destroy(mediaPlayer)
+setResolution()
+getDisplayResolution()
+setAspectRatio()
+getDisplayAspect()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>135</x>
+      <y>495</y>
+      <w>99</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+tuner</panel_attributes>
+    <additional_attributes>45;27;45;117;90;117</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>45</x>
+      <y>306</y>
+      <w>881</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>864;27;27;27</additional_attributes>
+  </element>
+</diagram>

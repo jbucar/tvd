@@ -1,0 +1,42 @@
+{
+	"id": 89160,
+	"tvdb": null,
+	"season": 2,
+	"number": "19-20",
+	"title": "Twilight of the Apprentice: Parts I & II",
+	"summary": "Tras conseguir información sobre los Sith, Kanan, Ezra y Ahsoka luchan contra los inquisidores con la ayuda de un nuevo aliado, pero son superados cuando arriba Vader. (PARTES I & II)\r\n<br><br>\r\n<font color=orangered><b><u>NOTA:<\/u><\/b> Los WEB-DL suman 1 a la numeración porque el grupo que los lanza considera como S02E01 al episodio S02E00 <i>The Siege of Lothal.<\/i><\/font>\r\n<br><br>\r\n<b><font color=yellow>* * *<\/font> <font color=orangered>FINAL DE TEMPORADA<\/font> <font color=yellow>* * *<\/font><\/b>",
+	"releases": [{
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "UAV",
+		"tags": "",
+		"size": "300 MB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:d17462b5d4ce1fff8dd8f3c7d1f9dd3edae91252&dn=Star.Wars.Rebels.S02E19.HDTV.x264-UAV%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Star.Wars.Rebels.S02E19-E20.Twilight.Of.The.Apprentice.HDTV.x264-UAV.mp4|302335776|DEB8A5AC06F86FD3FE3661B2416A9589|h=COZTZ4D7KRZ46YTUPCHGZAUAUPAOEYF3|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/60605/Star.Wars.Rebels.%282014%29.S02E19-20-Twilight.of.the.Apprentice.Parts.I.II.HDTV.x264-UAV",
+			"count": 60343
+		}]
+	}, {
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "UAV",
+		"tags": "720p",
+		"size": "1.0 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:94be37dffd7d8805a403cd58997f663507d93e5a&dn=Star.Wars.Rebels.S02E19.720p.HDTV.X264-UAV%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Star.Wars.Rebels.S02E19-E20.Twilight.Of.The.Apprentice.720p.HDTV.X264-UAV.mkv|1075489358|17B638B60DE700542DF4B905507436DA|h=XUNWYO53TD5URFTNTGCLSDUZOYQZT3ZO|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/60606/Star.Wars.Rebels.%282014%29.S02E19-20-Twilight.of.the.Apprentice.Parts.I.II.HDTV.x264.720p-UAV",
+			"count": 60343
+		}]
+	}]
+}
+

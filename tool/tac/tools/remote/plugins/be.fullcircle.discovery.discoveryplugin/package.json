@@ -1,0 +1,16 @@
+{
+    "version": "0.0.1",
+    "name": "be.fullcircle.discovery.discoveryplugin",
+    "cordova_name": "DiscoveryPlugin",
+    "description": "Network broadcasting plugin to discover devices on network",
+    "license": "MIT",
+    "platforms": [
+        "android"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}

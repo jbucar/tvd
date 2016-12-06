@@ -1,0 +1,15 @@
+// Documentation: http://www.jshint.com/docs/options/
+{
+	"extends": "../../tools/jshint/jshintconf.json",
+	"browser": true,
+	"validthis": true,
+	"globals": {
+		"ui": true,
+		"log": true,
+		"notification": true,
+		"tacKeyboardLayout": true,
+		"Ractive": true,
+		"vsprintf": true,
+		"sprintf": true
+	}
+}

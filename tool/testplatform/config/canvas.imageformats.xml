@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<root>
+  <Items>
+  	<item>bmp</item>
+    <item>jpg</item>
+    <item>jp2</item>
+    <item>png</item>
+    <item>gif</item>
+    <item>tiff</item>
+  </Items>
+</root>

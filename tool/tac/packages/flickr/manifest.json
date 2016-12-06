@@ -1,0 +1,25 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.flickr",
+	"version": "1.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"system": true,
+	"user": true,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.flickr",
+			"name": "Imágenes de Flickr",
+			"description": "Permite ver en la galería de imágenes las fotos públicas de Flickr más recientes.",
+			"type": "service",
+			"version": "1.0",
+			"main": "./main.js",
+			"user": true,
+			"configure": "configure.html",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.media.image"
+			]
+		}
+	]
+}

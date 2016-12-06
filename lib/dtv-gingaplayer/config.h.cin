@@ -1,0 +1,4 @@
+/* Defines the PATH of the Connector socket */
+#define GINGA_CONNECTOR_SOCKET ${GINGA_CONNECTOR_SOCKET}
+/* Defines the default file for lua persistent storage, if it is empty no storage will be performed */
+#define GINGAPLAYER_LUA_PERSISTENT_FILE ${GINGAPLAYER_LUA_PERSISTENT_FILE}

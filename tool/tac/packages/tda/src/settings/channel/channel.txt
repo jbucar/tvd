@@ -1,0 +1,11 @@
+{
+    "btnView": "Ver canal",
+    "view_description": "TODO",
+    "btnFav": "Favorito",
+    "fav_description": "TODO fav",
+    "btnBlock": "Bloquear",
+    "block_description": "TODO block",
+    "channel": "Número de canal",
+    "frecuency": "Frecuencia",
+    "srvID": "Identificar de servicio"
+}

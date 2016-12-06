@@ -1,0 +1,8 @@
+{
+	"name": "videos",
+	"version": "1.0.0",
+	"description": "Videos app",
+	"main": "src/main.js",
+	"author": "LIFIA",
+	"license": "ISC"
+}

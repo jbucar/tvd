@@ -1,0 +1,11 @@
+ADD_SOURCES(
+	src/impl/gtk/system.h
+	src/impl/gtk/window.h
+	src/impl/gtk/videooverlay.h
+	src/impl/gtk/dispatcher.h
+	src/impl/gtk/keys.cpp
+	src/impl/gtk/system.cpp
+	src/impl/gtk/window.cpp
+	src/impl/gtk/videooverlay.cpp
+	src/impl/gtk/dispatcher.cpp
+)

@@ -1,0 +1,17 @@
+{
+	"title": "DETALLES TÉCNICOS",
+	"audio": "Audio",
+	"pid": "PID",
+	"channels": "Número de canales",
+	"rate": "Rate",
+    "video": "Video",
+    "resolution": "Resolución",
+    "signal": "Señal",
+    "signalLevel": "Nivel",
+    "signalQuality": "Calidad",
+    "frequency": "Frecuencia",
+    "channel": "Canal",
+    "channelID": "Service ID",
+    "channelNumber": "Número de canal"
+}
+

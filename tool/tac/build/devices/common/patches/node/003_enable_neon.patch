@@ -1,0 +1,13 @@
+--- a/configure	2015-11-24 12:53:59.308783211 -0300
++++ b/configure	2015-11-24 12:56:53.774834755 -0300
+@@ -637,8 +637,8 @@
+     arm_fpu = 'vfpv3'
+     o['variables']['arm_version'] = '7'
+ 
+-  o['variables']['arm_fpu'] = options.arm_fpu or arm_fpu
+-
++  o['variables']['arm_fpu'] = 'neon'  # V8 3.18 no longer supports VFP2.
++  o['variables']['arm_neon'] = 1
+ 
+ def configure_mips(o):
+   can_use_fpu_instructions = (options.mips_float_abi != 'soft')

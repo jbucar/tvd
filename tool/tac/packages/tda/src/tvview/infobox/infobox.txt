@@ -1,0 +1,5 @@
+{
+	"Spanish": "Español",
+	"English": "Inglés",
+	"Portuguese": "Portugués"
+}

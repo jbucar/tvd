@@ -1,0 +1,2 @@
+Find_Package( Breakpad REQUIRED )
+ADD_DEPENDENTS( BREAKPAD )

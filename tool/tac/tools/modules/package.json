@@ -1,0 +1,19 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "Modules fetcher tool",
+  "main": "get_modules.js",
+  "dependencies": {
+    "bluebird": "^3.1.4",
+    "fs-extra": "^0.26.7",
+    "lodash": "^4.0.0",
+    "fs-extra": "0.30.0",
+    "mktemp": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LIFIA",
+  "license": "ISC"
+}

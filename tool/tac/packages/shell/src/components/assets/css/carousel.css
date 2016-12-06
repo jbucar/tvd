@@ -1,0 +1,196 @@
+.carousel-container {
+	align-self: center;
+}
+
+.carousel {
+	width: 83%;
+	max-width: 1000px; /* Hardcoded to 5 items 200x200 */
+	height: 100%;
+	display: flex;
+	align-content: center;
+	overflow: hidden;
+}
+
+.carousel.selected {
+	width: 89%;
+	max-width: 1150px; /* Hardcoded to 5 items 200x200 Plus 100 grow width and 50 left margin */
+}
+
+.carousel.center:not(.selected) {
+	justify-content: center;
+}
+
+.container-wrapper {
+	margin-top: 90px;
+}
+
+.selected .container-wrapper {
+	margin-left: 50px;
+}
+
+.carousel .client {
+	align-items: center;
+}
+
+/* Arrows */
+
+.arrows-wrapper {
+	align-self: center;
+}
+
+.arrows {
+	position: absolute;
+	width: 340px;
+	display: none;
+	transition: opacity .3s;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.carousel.selected .arrows {
+	display: flex;
+}
+
+.right-left {
+	width: 100%;
+	height: 290px;
+	min-height: 290px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	visibility: visible;
+}
+
+.arrow.img {
+	height: 22px;
+	width: 40px;
+	min-height: 22px;
+	min-width: 40px;
+}
+
+.arrow.img.left {
+	align-self: flex-start;
+	transform: rotate(-90deg);
+}
+
+.arrow.img.right {
+	align-self: flex-end;
+	transform: rotate(90deg);
+	/* Fix rotation */
+	margin-top: -22px;
+}
+
+.arrow.center {
+	width: 100%;
+	height: 60px;
+	min-height: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.arrow.center.down {
+	height: 60px;
+	min-height: 60px;
+	align-items: flex-end;
+}
+
+.carousel:not(.selected) .pos-indicator {
+	display: none;
+}
+
+.pos-indicator {
+	color: rgb(150,150,150);
+	height: 40px;
+	font-size: 22px;
+	font-family: "Oswald-light";
+	position: absolute;
+	right: 90px;
+	top: 65px;
+}
+
+/* CarouselItem */
+.carousel-item {
+	width: 190px;
+	height: 190px;
+	min-width: 190px;
+	min-height: 190px;
+
+	margin-right: 10px;
+
+	display: flex;
+	justify-content: center;
+}
+
+.carousel-item-wrapper {
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	position: relative;
+}
+
+.carousel-item-image {
+	margin: auto;
+	width: auto;
+	height: auto;
+	max-width: 100px;
+	max-height: 100px;
+	align-self: center;
+}
+
+.carousel-item.spotlight, .carousel-item.highlight {
+	margin-right: 60px;
+}
+
+.carousel-iconbar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	width: 100%
+}
+
+.carousel.selected .icons-wrapper > .show-on-selected {
+	display: block;
+}
+
+.carousel:not(.selected) .icons-wrapper > .show-on-selected {
+	display: none;
+}
+
+.carousel.selected .carousel-item-wrapper {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-item-txt {
+	font-family: 'Oswald-Light';
+	font-size: 20pt;
+	margin: 0px;
+	text-align: center;
+	color: black;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.carousel-item-txt.selected {
+	color: white;
+	margin-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.spotlight .carousel-item-txt.selected {
+	border-bottom: 3px solid;
+}
+
+/* Client */
+.layout-carousel-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}

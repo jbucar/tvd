@@ -1,0 +1,11 @@
+--- a/lib/spotlight/enyo.Spotlight.js.orig
++++ b/lib/spotlight/enyo.Spotlight.js
+@@ -36,7 +36,7 @@
+         * @default true
+         * @private
+         */
+-        _bPointerMode = true,
++        _bPointerMode = false,
+ 
+         /**
+         * Whether Spotlight has `_oCurrent`.

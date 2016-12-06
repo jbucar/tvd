@@ -1,0 +1,41 @@
+--- media/blink/webmediaplayer_impl.cc.orig
++++ media/blink/webmediaplayer_impl.cc
+@@ -10,6 +10,8 @@
+ #include <string>
+ #include <utility>
+ 
++#include "htmlshell/src/media/video_proxy.h"
++
+ #include "base/bind.h"
+ #include "base/callback.h"
+ #include "base/callback_helpers.h"
+@@ -174,7 +176,8 @@ WebMediaPlayerImpl::WebMediaPlayerImpl(
+       compositor_(new VideoFrameCompositor(
+           compositor_task_runner_,
+           BIND_TO_RENDER_LOOP(&WebMediaPlayerImpl::OnNaturalSizeChanged),
+-          BIND_TO_RENDER_LOOP(&WebMediaPlayerImpl::OnOpacityChanged))),
++          BIND_TO_RENDER_LOOP(&WebMediaPlayerImpl::OnOpacityChanged),
++          base::Bind(&WebMediaPlayerImpl::videoBounds, base::Unretained(this)))),
+       encrypted_media_support_(cdm_factory,
+                                encrypted_client,
+                                params.media_permission(),
+@@ -1527,4 +1530,8 @@ void WebMediaPlayerImpl::FinishMemoryUsageReport(int64_t demuxer_memory_usage) {
+   adjust_allocated_memory_cb_.Run(delta);
+ }
+ 
++gfx::Rect WebMediaPlayerImpl::videoBounds() const {
++	return tvd::video::computeVideoBounds(video_weblayer_->layer());
++}
++
+ }  // namespace media
+--- media/blink/webmediaplayer_impl.h.orig
++++ media/blink/webmediaplayer_impl.h
+@@ -191,6 +191,8 @@ class MEDIA_EXPORT WebMediaPlayerImpl
+   void OnAddTextTrack(const TextTrackConfig& config,
+                       const AddTextTrackDoneCB& done_cb);
+ 
++  gfx::Rect videoBounds() const;
++
+   // WebMediaPlayerDelegate::Observer implementation.
+   void OnHidden() override;
+   void OnShown() override;

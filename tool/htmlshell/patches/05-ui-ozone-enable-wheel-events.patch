@@ -1,0 +1,61 @@
+--- ui/events/ozone/evdev/event_converter_evdev_impl.cc.orig
++++ ui/events/ozone/evdev/event_converter_evdev_impl.cc
+@@ -159,6 +159,9 @@ void EventConverterEvdevImpl::ConvertMouseMoveEvent(const input_event& input) {
+     case REL_Y:
+       y_offset_ = input.value;
+       break;
++    case REL_WHEEL:
++      wheel_offset_ = input.value;
++      break;
+   }
+ }
+ 
+@@ -232,18 +236,28 @@ void EventConverterEvdevImpl::OnButtonChange(int code,
+ }
+ 
+ void EventConverterEvdevImpl::FlushEvents(const input_event& input) {
+-  if (!cursor_ || (x_offset_ == 0 && y_offset_ == 0))
++  if (!cursor_) {
+     return;
++  }
+ 
+-  cursor_->MoveCursor(gfx::Vector2dF(x_offset_, y_offset_));
++  if (wheel_offset_ != 0) {
++    dispatcher_->DispatchMouseWheelEvent(MouseWheelEventParams(
++        input_device_.id, cursor_->GetLocation(),
++        gfx::Vector2d(0,wheel_offset_*50), TimeDeltaFromInputEvent(input)));
++    wheel_offset_ = 0;
++  }
+ 
+-  dispatcher_->DispatchMouseMoveEvent(
+-      MouseMoveEventParams(input_device_.id, cursor_->GetLocation(),
+-                           PointerDetails(EventPointerType::POINTER_TYPE_MOUSE),
+-                           TimeDeltaFromInputEvent(input)));
++  if (x_offset_ != 0 || y_offset_ != 0) {
++    cursor_->MoveCursor(gfx::Vector2dF(x_offset_, y_offset_));
+ 
+-  x_offset_ = 0;
+-  y_offset_ = 0;
++    dispatcher_->DispatchMouseMoveEvent(
++        MouseMoveEventParams(input_device_.id, cursor_->GetLocation(),
++                             PointerDetails(EventPointerType::POINTER_TYPE_MOUSE),
++                             TimeDeltaFromInputEvent(input)));
++
++    x_offset_ = 0;
++    y_offset_ = 0;
++  }
+ }
+ 
+ }  // namespace ui
+--- ui/events/ozone/evdev/event_converter_evdev_impl.h.orig
++++ ui/events/ozone/evdev/event_converter_evdev_impl.h
+@@ -77,6 +77,9 @@ class EVENTS_OZONE_EVDEV_EXPORT EventConverterEvdevImpl
+   // Save y-axis events of relative devices to be flushed at EV_SYN time.
+   int y_offset_ = 0;
+ 
++  // Save wheel events of relative devices to be flushed at EV_SYN time.
++  int wheel_offset_ = 0;
++
+   // Controller for watching the input fd.
+   base::MessagePumpLibevent::FileDescriptorWatcher controller_;
+ 

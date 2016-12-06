@@ -1,0 +1,122 @@
+package ar.edu.unlp.info.lifia.tvd.htmlshell;
+
+message PingCommand {
+	required int32 id = 1;
+}
+
+message VersionCommand {
+	required int32 major = 1;
+	required int32 minor = 2;
+}
+
+message ExitCommand {
+	required int32 id = 1;
+}
+
+//	Browser commands/events
+message Rect {
+	required int32 x = 1 [default = -1];
+	required int32 y = 2 [default = -1];
+	required int32 w = 3 [default = -1];
+	required int32 h = 4 [default = -1];
+}
+
+message LaunchBrowserOptions {
+	required string js = 1;
+	required bool bgTransparent = 2;
+	required bool focus = 3;
+	required Rect bounds = 4;
+	required bool visible = 5;
+	required int32 zIndex = 6;
+	repeated string plugins = 7;
+	required bool enableMouse = 8;
+	required bool enableGeolocation = 9;
+	required string extraUA = 10;
+}
+
+message LaunchBrowserCommand {
+	required int32 browserID = 1;
+	required string url = 2;
+	required LaunchBrowserOptions options = 3;
+}
+
+message CloseBrowserCommand {
+	required int32 browserID = 1;
+}
+
+message ShowBrowserCommand {
+	required int32 browserID = 1;
+	required bool show = 2;
+	required bool focus = 3;
+}
+
+message BrowserKeyEvent {
+	required int32 browserID = 1;
+	required int32 code = 2;
+	required bool isUp = 3;
+}
+
+message BrowserLaunchedEvent {
+	required int32 browserID = 1;
+}
+
+message BrowserClosedEvent {
+	required int32 browserID = 1;
+	required string error = 2;
+}
+
+message BrowserLoadedEvent {
+	required int32 browserID = 1;
+}
+
+message BrowserWebLog {
+	required int32 level = 1;
+	required int32 line = 2;
+	required string source = 3;
+	required string message = 4;
+}
+
+message BrowserWebLogEvent {
+	required int32 browserID = 1;
+	required BrowserWebLog logData = 2;
+}
+
+//	Web
+message JsRequestCommand {
+	required int32 browserID = 1;
+	required int32 queryID = 2;
+	required string params = 3;
+}
+
+message JsResponseCommand {
+	required int32 browserID = 1;
+	required int32 queryID = 2;
+	required bool isSignal = 3;
+	required string error = 4;
+	required string params = 5;
+}
+
+message Request {
+	oneof data {
+		VersionCommand version = 1;
+		PingCommand ping = 2;
+		ExitCommand exit = 3;
+		LaunchBrowserCommand launchBrowser = 4;
+		CloseBrowserCommand closeBrowser = 5;
+		ShowBrowserCommand showBrowser = 6;
+		JsResponseCommand jsResponse = 7;
+	}
+}
+
+message Response {
+	oneof data {
+		VersionCommand version = 1;
+		PingCommand pingAck = 2;
+		BrowserLaunchedEvent bLaunched = 3;
+		BrowserClosedEvent bClosed = 4;
+		BrowserLoadedEvent bLoaded = 5;
+		BrowserKeyEvent bKey = 6;
+		BrowserWebLogEvent bWebLog = 7;
+		JsRequestCommand jsRequest = 8;
+	}
+}

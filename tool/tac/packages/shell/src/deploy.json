@@ -1,0 +1,6 @@
+{
+	"assets": [
+		"./images",
+		"./third-party/fonts/src"
+	]
+}

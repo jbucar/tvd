@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config>
+	<tool>
+		<ginga>
+			<version>1</version>
+			<information>bla</information>
+			<enabled>true</enabled>
+		</ginga>
+	</tool>
+	<provider>
+		<dvb>
+			<version>2</version>
+			<information>blalala</information>
+			<enabled>false</enabled>
+			<network>
+				<ip>192.168.1.1</ip>
+				<no>2</no>
+			</network>
+		</dvb>
+	</provider>
+</config>

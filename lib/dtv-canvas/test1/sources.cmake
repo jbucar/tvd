@@ -1,0 +1,24 @@
+ADD_SOURCES(
+	test1/src/main.cpp
+	test1/src/screen.cpp
+	test1/src/mediaplayer/mediaplayer.h
+	test1/src/mediaplayer/mediaplayer.cpp
+	test1/src/mediaplayer/basic.cpp
+	test1/src/mediaplayer/render.cpp
+	test1/src/mediaplayer/streams.cpp
+	test1/src/mediaplayer/volume.cpp
+	test1/src/mediaplayer/signals.cpp
+	test1/src/mediaplayer/single.cpp
+	test1/src/mediaplayer/multithread.cpp
+	test1/src/fontmanager.cpp
+	test1/src/point.cpp
+	test1/src/rect.cpp
+	test1/src/size.cpp
+	test1/src/color.cpp
+	test1/src/font.cpp
+	test1/src/audio.cpp
+	test1/src/layer.cpp
+	test1/src/settings/audiosettings.cpp
+	test1/src/settings/layersettings.cpp
+	test1/src/settings/screensettings.cpp
+)

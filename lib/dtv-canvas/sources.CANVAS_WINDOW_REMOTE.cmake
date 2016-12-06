@@ -1,0 +1,19 @@
+ADD_HEADERS(
+	src/remote/server.h
+	src/remote/serverimpl.h
+	src/remote/window.h
+	src/remote/memory.h
+	src/remote/layer.h
+)
+
+ADD_SOURCES(
+	src/remote/layer.cpp
+	src/remote/server.h
+	src/remote/server.cpp
+	src/remote/serverimpl.h
+	src/remote/serverimpl.cpp
+	src/remote/window.h
+	src/remote/window.cpp
+	src/remote/memory.h
+	src/remote/memory.cpp
+)

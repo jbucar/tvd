@@ -1,0 +1,32 @@
+{
+	"name": "tda",
+	"useConcat": true,
+	"web_modules": {
+		"source": [
+			"components/util",
+			"components/tvmenu",
+			"components/popupbox",
+			"components/carrousel",
+			"components/setting_view",
+			"components/dialogs"
+		],
+		"libs": [
+			"libs/bluebird.min.js",
+			"libs/EventEmitter.min.js",
+			"libs/ractive.min.js",
+			"libs/sprintf.min.js"
+		],
+		"css": [
+			"css/common.css",
+			"css/fonts.css"
+		],
+		"fonts": [
+			"fonts/Asap.woff2",
+			"fonts/Oswald-Bold.ttf",
+			"fonts/Oswald-Light.ttf",
+			"fonts/Oswald-Regular.ttf",
+			"fonts/tituscbz.ttf"
+		]
+	}
+}
+

@@ -1,0 +1,167 @@
+--- base/threading/post_task_and_reply_impl.h.orig
++++ base/threading/post_task_and_reply_impl.h
+@@ -25,7 +25,7 @@ namespace internal {
+ // may want base::WorkerPool.
+ class PostTaskAndReplyImpl {
+  public:
+-  virtual ~PostTaskAndReplyImpl() = default;
++  virtual ~PostTaskAndReplyImpl() {};
+ 
+   // Implementation for TaskRunner::PostTaskAndReply and
+   // WorkerPool::PostTaskAndReply.
+--- base/trace_event/trace_log.h.orig
++++ base/trace_event/trace_log.h
+@@ -108,7 +108,7 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
+   // on-demand.
+   class BASE_EXPORT EnabledStateObserver {
+    public:
+-    virtual ~EnabledStateObserver() = default;
++    virtual ~EnabledStateObserver() {};
+ 
+     // Called just after the tracing system becomes enabled, outside of the
+     // |lock_|. TraceLog::IsEnabled() is true at this point.
+--- net/proxy/multi_threaded_proxy_resolver.cc.orig
++++ net/proxy/multi_threaded_proxy_resolver.cc
+@@ -38,7 +38,7 @@   class Coordinator {
+     virtual void OnExecutorReady(Executor* executor) = 0;
+ 
+    protected:
+-    virtual ~Coordinator() = default;
++    virtual ~Coordinator() {};
+   };
+ 
+   // |coordinator| must remain valid throughout our lifetime. It is used to
+--- third_party/webrtc/base/network.h.orig
++++ third_party/webrtc/base/network.h
+@@ -57,7 +57,7 @@ std::string MakeNetworkKey(const std::string& name, const IPAddress& prefix,
+ 
+ class DefaultLocalAddressProvider {
+  public:
+-  virtual ~DefaultLocalAddressProvider() = default;
++  virtual ~DefaultLocalAddressProvider() {};
+   // The default local address is the local address used in multi-homed endpoint
+   // when the any address (0.0.0.0 or ::) is used as the local address. It's
+   // important to check the return value as a IP family may not be enabled.
+--- third_party/webrtc/common_audio/vad/include/vad.h
++++ third_party/webrtc/common_audio/vad/include/vad.h
+@@ -29,7 +29,7 @@ class Vad {
+ 
+   enum Activity { kPassive = 0, kActive = 1, kError = -1 };
+ 
+-  virtual ~Vad() = default;
++  virtual ~Vad() {};
+ 
+   // Calculates a VAD decision for the given audio frame. Valid sample rates
+   // are 8000, 16000, and 32000 Hz; the number of samples must be such that the
+--- third_party/webrtc/modules/audio_coding/codecs/audio_decoder.h.orig
++++ third_party/webrtc/modules/audio_coding/codecs/audio_decoder.h
+@@ -31,8 +31,8 @@ class AudioDecoder {
+   // Used by PacketDuration below. Save the value -1 for errors.
+   enum { kNotImplemented = -2 };
+ 
+-  AudioDecoder() = default;
+-  virtual ~AudioDecoder() = default;
++  AudioDecoder() {};
++  virtual ~AudioDecoder() {};
+ 
+   // Decodes |encode_len| bytes from |encoded| and writes the result in
+   // |decoded|. The maximum bytes allowed to be written into |decoded| is
+--- third_party/webrtc/modules/audio_coding/codecs/audio_encoder.h.orig	2016-01-08 08:44:28.123092344 -0300
++++ third_party/webrtc/modules/audio_coding/codecs/audio_encoder.h	2016-01-08 08:44:36.103070544 -0300
+@@ -48,7 +48,7 @@
+     std::vector<EncodedInfoLeaf> redundant;
+   };
+ 
+-  virtual ~AudioEncoder() = default;
++  virtual ~AudioEncoder() {};
+ 
+   // Returns the maximum number of bytes that can be produced by the encoder
+   // at each Encode() call. The caller can use the return value to determine
+--- third_party/webrtc/modules/audio_coding/include/audio_coding_module.h.orig
++++ third_party/webrtc/modules/audio_coding/include/audio_coding_module.h
+@@ -82,7 +82,7 @@ class AudioCodingModule {
+   static AudioCodingModule* Create(int id);
+   static AudioCodingModule* Create(int id, Clock* clock);
+   static AudioCodingModule* Create(const Config& config);
+-  virtual ~AudioCodingModule() = default;
++  virtual ~AudioCodingModule() {};
+ 
+   ///////////////////////////////////////////////////////////////////////////
+   //   Utility functions
+--- third_party/webrtc/p2p/stunprober/stunprober.h.orig
++++ third_party/webrtc/p2p/stunprober/stunprober.h
+@@ -63,7 +63,7 @@ class StunProber : public sigslot::has_slots<> {
+ 
+   class Observer {
+    public:
+-    virtual ~Observer() = default;
++    virtual ~Observer() {};
+     virtual void OnPrepared(StunProber* prober, StunProber::Status status) = 0;
+     virtual void OnFinished(StunProber* prober, StunProber::Status status) = 0;
+   };
+--- third_party/WebKit/public/platform/modules/presentation/WebPresentationAvailabilityObserver.h
++++ third_party/WebKit/public/platform/modules/presentation/WebPresentationAvailabilityObserver.h
+@@ -15,7 +15,7 @@ namespace blink {
+ // availability change for a given URL.
+ class BLINK_PLATFORM_EXPORT WebPresentationAvailabilityObserver {
+ public:
+-    virtual ~WebPresentationAvailabilityObserver() = default;
++    virtual ~WebPresentationAvailabilityObserver() {};
+ 
+     virtual void availabilityChanged(bool) = 0;
+ 
+--- third_party/WebKit/public/platform/modules/wake_lock/WebWakeLockClient.h.orig
++++ third_party/WebKit/public/platform/modules/wake_lock/WebWakeLockClient.h
+@@ -9,7 +9,7 @@ namespace blink {
+ 
+ class WebWakeLockClient {
+ public:
+-    virtual ~WebWakeLockClient() = default;
++    virtual ~WebWakeLockClient() {};
+ 
+     virtual void requestKeepScreenAwake(bool) = 0;
+ };
+--- third_party/WebKit/public/platform/WebCanvasCaptureHandler.h.orig
++++ third_party/WebKit/public/platform/WebCanvasCaptureHandler.h
+@@ -14,7 +14,7 @@ namespace blink {
+ // Platform interface of a CanvasCaptureHandler.
+ class BLINK_PLATFORM_EXPORT WebCanvasCaptureHandler {
+ public:
+-    virtual ~WebCanvasCaptureHandler() = default;
++    virtual ~WebCanvasCaptureHandler() {};
+     virtual void sendNewFrame(const SkImage*) {}
+     virtual bool needsNewFrame() const { return false; }
+ };
+--- third_party/WebKit/public/platform/WebMediaRecorderHandler.h
++++ third_party/WebKit/public/platform/WebMediaRecorderHandler.h
+@@ -16,7 +16,7 @@ class WebString;
+ // Platform interface of a MediaRecorder.
+ class BLINK_PLATFORM_EXPORT WebMediaRecorderHandler {
+ public:
+-    virtual ~WebMediaRecorderHandler() = default;
++    virtual ~WebMediaRecorderHandler() {};
+     virtual bool initialize(WebMediaRecorderHandlerClient* client, const WebMediaStream& stream, const WebString& type, const WebString& codecs) { return false; }
+     virtual bool start() { return false; }
+     virtual bool start(int timeslice) { return false; }
+--- third_party/WebKit/public/platform/WebRTCCertificate.h.orig
++++ third_party/WebKit/public/platform/WebRTCCertificate.h
+@@ -17,7 +17,7 @@ namespace blink {
+ class WebRTCCertificate {
+ public:
+     WebRTCCertificate() = default;
+-    virtual ~WebRTCCertificate() = default;
++    virtual ~WebRTCCertificate() {};
+ 
+     // Copies the WebRTCCertificate object without copying the underlying implementation
+     // specific (WebRTC layer) certificate. When all copies are destroyed the underlying
+--- base/files/file_tracing.h
++++ base/files/file_tracing.h
+@@ -31,7 +31,7 @@ class BASE_EXPORT FileTracing {
+ 
+   class Provider {
+    public:
+-    virtual ~Provider() = default;
++    virtual ~Provider() {};
+ 
+     // Whether the file tracing category is currently enabled.
+     virtual bool FileTracingCategoryIsEnabled() const = 0;

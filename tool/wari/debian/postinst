@@ -1,0 +1,14 @@
+#!/bin/sh
+
+NAME=wari
+GROUP=users
+
+# Install fonts
+mkdir /usr/share/fonts/truetype/${NAME}
+ln -s /usr/share/${NAME}/fonts/ /usr/share/fonts/truetype/${NAME}
+fc-cache -fr
+
+# Create var directory
+mkdir /var/lib/${NAME}
+chown :${GROUP} /var/lib/${NAME}
+chmod 775 /var/lib/${NAME}

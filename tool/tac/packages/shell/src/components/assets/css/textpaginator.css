@@ -1,0 +1,31 @@
+.text-paginator {
+	display: flex;
+	font-family: 'Oswald-Regular';
+	font-size: 22pt;
+	width: 560px;
+}
+
+.text-paginator .wrapper {
+	display: flex;
+}
+
+.text-paginator .container {
+	overflow: hidden;
+	width: 80%;
+}
+
+.text-paginator .wrapper > * {
+	min-width: 100%;
+}
+
+.text-paginator .arrow-bar {
+	min-height: 100%;
+	width: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.text-paginator .arrow-bar.end {
+	justify-content: flex-start;
+}

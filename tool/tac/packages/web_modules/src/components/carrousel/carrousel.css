@@ -1,0 +1,36 @@
+.carrousel {
+	display: inline-flex;
+	flex-direction: column;
+	opacity: 1;
+	align-items: flex-start;
+}
+
+.carrousel.animated {
+	transition: opacity 250ms ease-in;
+}
+
+.carrousel.hidden {
+	opacity: 0;
+}
+
+.carrousel_view {
+	display: inline-flex;
+	outline: none;
+}
+
+.carrousel_view.margin {
+	margin-top: 4.1vh;
+	margin-bottom: 6.1vh;
+}
+
+.carrousel_view.animated {
+	transition: transform 500ms ease-out;
+}
+
+.carrousel {
+	opacity: 0.5;
+}
+
+.carrousel:focus {
+	opacity: 1;
+}

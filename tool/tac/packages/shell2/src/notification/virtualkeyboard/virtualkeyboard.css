@@ -1,0 +1,47 @@
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.title {
+	color: white;
+	font-family: 'Oswald-Regular';
+	font-size: 1.416rem;
+	margin-bottom: 0.8%;
+}
+
+.keyboard {
+	width: 100%;
+	height: 68%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input {
+	border: 2px solid white;
+	height: 11.645%;
+	width: 46.094%;
+	margin-top: 1.85%;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.input input {
+	width: 100%;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	margin: auto;
+	font-family: 'Oswald-Light';
+	font-size: 1.416rem;
+	text-align: center;
+	color: white;
+}

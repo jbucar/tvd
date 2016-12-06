@@ -1,0 +1,15 @@
+#SplashContainer {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.SplashLoadingPoint {
+	width: 1.563vw;
+	height: 2.778vh;
+	margin-top: 40%;
+	margin-right: 0.274%;
+	border-radius: 100%;
+	background-color: white;
+}

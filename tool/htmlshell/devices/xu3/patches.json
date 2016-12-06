@@ -1,0 +1,7 @@
+[
+	"00-build-02-common.gypi.patch",
+	"00-build-07-breakpad.patch",
+	"02-ffmpeg-00-ffmpeg-ts-support.patch",
+	"02-ffmpeg-01-build_ffmpeg.py.patch",
+	"15-remove_v4l2_slice_video_decode.patch"
+]

@@ -1,0 +1,34 @@
+ADD_HEADERS(
+	src/connector.h
+	src/gingaversion.h
+	src/handler/videoresizehandler.h
+	src/handler/playvideohandler.h
+	src/handler/stopvideohandler.h
+	src/handler/exitcommandhandler.h
+	src/handler/messagehandler.h
+	src/handler/keyeventhandler.h
+	src/handler/keyregisterhandler.h
+	src/handler/types.h
+	src/handler/keepalivehandler.h
+	src/handler/editingcommandhandler.h
+	src/handler/startcommandhandler.h
+	src/handler/canvashandler.h
+	src/handler/buttoneventhandler.h
+)
+
+ADD_SOURCES(
+	src/connector.cpp
+	src/gingaversion.cpp
+	src/handler/messagehandler.cpp
+	src/handler/playvideohandler.cpp
+	src/handler/stopvideohandler.cpp
+	src/handler/keyeventhandler.cpp
+	src/handler/keyregisterhandler.cpp
+	src/handler/keepalivehandler.cpp
+	src/handler/exitcommandhandler.cpp
+	src/handler/editingcommandhandler.cpp
+	src/handler/startcommandhandler.cpp
+	src/handler/canvashandler.cpp
+	src/handler/buttoneventhandler.cpp
+)
+

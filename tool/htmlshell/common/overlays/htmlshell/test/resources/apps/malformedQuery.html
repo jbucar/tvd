@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+<title>Test Error</title>
+
+<script type="text/javascript">
+
+// Keep synch with htmlshell/src/errors.h
+var JAVASCRIPT_SYNTAX_ERROR = 9
+
+window.onload = function() {
+	console.log("Testing bad extQuery call");
+	var result = HtmlShellCall();
+	if (result != JAVASCRIPT_SYNTAX_ERROR) {
+		HtmlShellCall("JsApiTestStop", [result]);
+	} else {
+		result = HtmlShellCall("JsApiTestError");
+		if (result != JAVASCRIPT_SYNTAX_ERROR) {
+			HtmlShellCall("JsApiTestStop", [result]);
+		} else {
+			result = HtmlShellCall("JsApiTestError", [], function(){}, 1);
+			if (result != JAVASCRIPT_SYNTAX_ERROR) {
+				HtmlShellCall("JsApiTestStop", [result]);
+			} else {
+				result = HtmlShellCall("JsApiTestError", [], "badType");
+				HtmlShellCall("JsApiTestStop", [result]);
+			}
+		}
+	}
+}
+</script>
+
+</head>
+
+<body>
+<h1>Api error test</h1>
+<p>Testea la terminacion del shell con un codigo de error</p>
+</body>
+
+</html>

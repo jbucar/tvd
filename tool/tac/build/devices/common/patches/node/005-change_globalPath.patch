@@ -1,0 +1,11 @@
+--- a/lib/module.js.ori	2016-05-24 13:29:50.340527727 -0300
++++ b/lib/module.js	2016-05-24 13:30:32.317194736 -0300
+@@ -458,7 +458,7 @@
+     var homeDir = process.env.HOME;
+   }
+ 
+-  var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node')];
++  var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node_modules')];
+ 
+   if (homeDir) {
+     paths.unshift(path.resolve(homeDir, '.node_libraries'));

@@ -1,0 +1,26 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.cec",
+	"manifest-version": "1",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"system": true,
+	"user": true,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.cec",
+			"name": "HDMI-CEC",
+			"description": "Consumer Electronics Control (CEC) es una característica de HDMI diseñada para permitir al usuario controlar hasta 15 dispositivos con soporte para CEC conectados a traves de HDMI. Nombres alternativos para CEC son Anynet (Samsung); Aquos Link (Sharp); BRAVIA Sync o BRAVIA Link (Sony); Kuro Link (Pioneer); CE-Link y Regza Link (Toshiba); RIHD (Remote Interactive over HDMI) (Onkyo); Simplink (LG); HDAVI Control, EZ-Sync, VIERA Link (Panasonic); EasyLink (Philips); y NetCommand for HDMI (Mitsubishi)",
+			"type": "service",
+			"icon": "cec.png",
+			"version": "1.0.0",
+			"main": "main.js",
+			"runs": "onDemand",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.screen",
+				"ar.edu.unlp.info.lifia.tvd.input"
+			]
+		}
+	]
+}

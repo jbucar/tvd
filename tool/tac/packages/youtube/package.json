@@ -1,0 +1,25 @@
+{
+	"name": "youtube",
+	"version": "1.0.0",
+	"description": "TAC youtube",
+	"main": "src/downloader.js",
+	"dependencies": {
+		"bluebird": "^3.1.4",
+		"mktemp": "^0.4.0",
+		"fs-extra": "^0.30.0",
+		"ytdl-core": "latest",
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"chai": "^3.4.1",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

@@ -1,0 +1,15 @@
+Find_Package( FreeImage REQUIRED )
+Find_Package( Freetype REQUIRED )
+
+setifempty( USE_GLES2 0 )
+
+IF (USE_GLES2)
+	Find_Package( OpenGLES REQUIRED )
+	ADD_DEPENDENTS( OPENGLES FREEIMAGE FREETYPE )
+ELSE()
+	Find_Package( GL REQUIRED )
+	Find_Package( GLEW REQUIRED )
+	ADD_DEPENDENTS( GL GLEW FREEIMAGE FREETYPE )
+ENDIF (USE_GLES2)
+
+

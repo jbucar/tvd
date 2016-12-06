@@ -1,0 +1,136 @@
+
+.vkeyboard {
+	width: 600px;
+	height: 450px;
+	opacity: 1;
+}
+
+.vkeyboard-rows {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.vkeyboard-rows-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: baseline;
+}
+
+.vkeyboard-button {
+	margin: 10px 0px 0px 0px;
+	background: transparent;
+	border-color: white;
+	border-width: 2px;
+	border-style: solid;
+	width: 46px;
+	height: 46px;
+	font-size: 20pt;
+	font-family: 'Oswald-Regular';
+	line-height: 46px;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+
+.vkeyboard-button.spotlight {
+	background: white;
+}
+
+.vkeyboard-special {
+	width: 81px;
+	height: 46px;
+	font-size: 20pt;
+	font-family: 'Oswald-Regular';
+	line-height: 46px;
+}
+
+.vkeyboard-special.delete {
+	width: 110px;
+}
+
+.vkeyboard-special.space {
+	width: 270px;
+	height: 46px;
+	line-height: 46px;
+}
+
+.vkeyboard-action-btn {
+	margin-top: 20px;
+	margin-left: 16px;
+	background: rgba(45, 41, 41, 0.5);
+	width: 130px;
+	height: 38px;
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+	border-width: 0px;
+	line-height: 38px;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+
+.vkeyboard-action-btn.spotlight {
+	font-size: 16pt;
+}
+
+.vkeyboard-input {
+	background: transparent;
+	margin: 10px 0px 0px 3px;
+	padding: 0px 10px 0px 10px;
+	color: white;
+	text-color: white;
+	width: 569px;
+	height: 60px;
+	font-size: 24pt;
+	font-family: 'Oswald-Light';
+	border-color: white;
+	border-width: 2px;
+	border-style: solid;
+	line-height: 60px;
+	text-align: center;
+}
+/* change the placeholder color hack */
+*::-webkit-input-placeholder {
+	color: white;
+}
+
+.vkeyboard-action-btn > .bar {
+	width: 100%;
+	height: 3px;
+	border-bottom: 3px solid;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.vkeyboard-action-btn.spotlight > .bar {
+	visibility: visible;
+}
+
+.virtual-keyboard-popup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, .7);
+}
+
+.virtual-keyboard-popup > .wrapper {
+	width: 650px;
+	height: 520px;
+	background: black;
+	border: 1px solid white;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.virtual-keyboard-popup .description {
+	padding-top: 20px;
+	height: 50px;
+}

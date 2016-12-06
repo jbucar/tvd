@@ -1,0 +1,8 @@
+{
+	"htmlshell": {
+		"cmd": "htmlshell"
+	},
+	"keyboardLayout": {
+		"VK_ENTER": { "virtual": 13, "raw": 28 }
+	}
+}

@@ -1,0 +1,16 @@
+ADD_SOURCES(
+	src/impl/ffmpeg/player.h
+	src/impl/ffmpeg/player.cpp
+	src/impl/ffmpeg/mediaplayer.h
+	src/impl/ffmpeg/mediaplayer.cpp
+	src/impl/ffmpeg/streaminfo.h
+	src/impl/ffmpeg/streaminfo.cpp
+	src/impl/ffmpeg/stream.h
+	src/impl/ffmpeg/stream.cpp
+	src/impl/ffmpeg/videostream.h
+	src/impl/ffmpeg/videostream.cpp
+	src/impl/ffmpeg/audiostream.h
+	src/impl/ffmpeg/audiostream.cpp
+	src/impl/ffmpeg/packetqueue.h
+	src/impl/ffmpeg/packetqueue.cpp
+)

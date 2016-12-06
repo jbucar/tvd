@@ -1,0 +1,71 @@
+
+.InfoBoxContainer {
+	position: absolute;
+	z-index: 5;
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	top: 12%;
+	left: 15vw;
+	width: 70vw;
+    height: 20vh;
+}
+
+.InfoBoxContainer > section:first-child {
+	align-self: center;
+	margin: 0% 1.2% 0% 1.2%;
+	width: 10vw;
+	background-color: white;
+}
+
+.InfoBoxContainer > section > img {
+	width: 100%;
+	heigth: 100%;
+}
+
+.InfoBoxContent {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 1.3rem;
+	width: 71vw;
+    white-space: nowrap;
+}
+
+.InfoBoxContent > label {
+	font-size: 2rem;
+	margin: 1.5% 1% 0.4% 0%;
+}
+
+.InfoBoxContent > section {
+	display: flex;
+	flex-direction: row;
+}
+
+.InfoBoxContent > section > section:first-child {
+    width: 44%;
+}
+
+.InfoBoxContent > section > section:first-child > label {
+	align-self: auto;
+}
+
+.InfoBoxContent > section > section {
+	display: flex;
+	flex-direction: column;
+	width: 14%;
+}
+
+.InfoBoxContent > section > section > label:first-child {
+	color: darkorange;
+    font-weight: bold;
+}
+
+.InfoBoxContent > section > section > label {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    align-self: center;
+}
+

@@ -1,0 +1,609 @@
+{
+    "buildroot_aml": {
+        "name": "BUILDROOT_AML",
+        "tags": ["buildroot", "aml"],
+        "factory": {
+            "type": "buildroot",
+            "arch": "AML",
+            "sources_dir": "%(HOME)s/download",
+            "config_cmds": ["make", "tvd_tac_full_defconfig" ],
+            "commit_cmd": ["git", "log", "-1", "--format=%%H"],
+            "src_filename": "sdk-aml_isdbt_1-%(prop:commit)s.tgz",
+            "src_path": "%s/amlogic/buildroot/output/%s",
+            "workdir": "%(prop:workdir)s/build/amlogic/buildroot",
+            "env": {
+                "CROSS_COMPILE": "%(prop:workdir)s/build/amlogic/coradir/kernel/crosstool/bin/arm-none-linux-gnueabi-",
+                "AMLVENDOR": "AML_ISDBT_1"
+            },
+            "kernel": {
+                "config": "meson6_g18_buildroot_defconfig",
+                "workdir": "%(prop:workdir)s/build/amlogic/microtrol/kernel"
+            },
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "EmptyStringParameter", "parameters": { "name": "dst_path" , "label": "Destination path", "size": 80, "default": "toolchains/linux/AML/tac/microtrol" } }
+            ],
+            "name": "Force build for BUILDROOT_AML"
+        }]
+    },
+    "buildroot_xu3": {
+        "name": "BUILDROOT_XU3",
+        "tags": ["buildroot", "xu3"],
+        "factory": {
+            "type": "buildroot",
+            "arch": "XU3",
+            "sources_dir": "%(HOME)s/download",
+            "config_cmds": ["../setup.py", "-s", "xu3" ],
+            "commit_cmd": ["/bin/sh", "-c", "git --git-dir=%(prop:workdir)s/build/.git describe --tags | cut -f 2- -d \"-\""],
+            "src_filename": "sdk-XU3-%(prop:commit)s.tgz",
+            "src_path": "%s/tac/out/output/images/%s",
+            "workdir": "%(prop:workdir)s/build/tac/out",
+            "env": {
+                "LD_LIBRARY_PATH": ""
+            },
+            "kernel": {},
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "EmptyStringParameter", "parameters": { "name": "dst_path" , "label": "Destination path", "size": 80, "default": "toolchains/linux/XU3" } }
+            ],
+            "name": "Force build for BUILDROOT_XU3"
+        }]
+    },
+    "buildroot_rpi2": {
+        "name": "BUILDROOT_RPI2",
+        "tags": ["buildroot", "rpi2"],
+        "factory": {
+            "type": "buildroot",
+            "arch": "RPI2",
+            "sources_dir": "%(HOME)s/download",
+            "config_cmds": ["../setup.py", "-s", "rpi2" ],
+            "commit_cmd": ["/bin/sh", "-c", "git --git-dir=%(prop:workdir)s/build/.git describe --tags | cut -f 2- -d \"-\""],
+            "src_filename": "sdk-RPI2-%(prop:commit)s.tgz",
+            "src_path": "%s/tac/out/output/images/%s",
+            "workdir": "%(prop:workdir)s/build/tac/out",
+            "env": {
+                "LD_LIBRARY_PATH": ""
+            },
+            "kernel": {},
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "EmptyStringParameter", "parameters": { "name": "dst_path" , "label": "Destination path", "size": 80, "default": "toolchains/linux/RPI2" } }
+            ],
+            "name": "Force build for BUILDROOT_RPI2"
+        }]
+    },
+    "buildroot_x64": {
+        "name": "BUILDROOT_X64",
+        "tags": ["buildroot", "x64"],
+        "factory": {
+            "type": "buildroot",
+            "arch": "X64",
+            "sources_dir": "%(HOME)s/download",
+            "config_cmds": ["../setup.py", "-s", "x64" ],
+            "commit_cmd": ["/bin/sh", "-c", "git --git-dir=%(prop:workdir)s/build/.git describe --tags | cut -f 2- -d \"-\""],
+            "src_filename": "sdk-X64-%(prop:commit)s.tgz",
+            "src_path": "%s/tac/out/output/images/%s",
+            "workdir": "%(prop:workdir)s/build/tac/out",
+            "env": {
+                "LD_LIBRARY_PATH": ""
+            },
+            "kernel": {},
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "EmptyStringParameter", "parameters": { "name": "dst_path" , "label": "Destination path", "size": 80, "default": "toolchains/linux/X64" } }
+            ],
+            "name": "Force build for BUILDROOT_X64"
+        }]
+    },
+    "tac_aml": {
+        "name": "TAC_AML",
+        "tags": ["tac", "aml"],
+        "factory": {
+            "type": "tac",
+            "platform": "aml",
+            "repo": "AML_MICROTROL",
+            "model_id": "5",
+            "run_tests": false,
+            "patches": [],
+            "codename": "aml_isdbt_1l",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "FixedParameter",          "parameters": {"name": "backup_files", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "build_deps", "label": "Build dependencies?", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "mandatory", "label": "Mandatory update?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "export", "label": "Export to 'sol' ?", "default": false } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_cfg", "label": "Build config", "choices": ["dev", "beta", "stable"], "default": "dev" } },
+                { "class": "DownloadedJSONParameter", "parameters": {"name": "patches", "label": "List of patches to apply.", "multiple": true, "default": [] } },
+                { "class": "EmptyStringParameter",    "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML_MICROTROL/tac" } }
+            ],
+            "name": "Force build for TAC_AML"
+        },{
+            "type": "force_schedule",
+            "hide_branch": true,
+            "properties": [
+                { "class": "FixedParameter", "parameters": {"name": "backup_files", "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "ccache",       "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "build_deps",   "default": true } },
+                { "class": "FixedParameter", "parameters": {"name": "mandatory",    "default": true } },
+                { "class": "FixedParameter", "parameters": {"name": "export",       "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "build_type",   "default": "release" } },
+                { "class": "FixedParameter", "parameters": {"name": "build_cfg",    "default": "stable" } },
+                { "class": "FixedParameter", "parameters": {"name": "patches",      "default": [] } },
+                { "class": "FixedParameter", "parameters": {"name": "dst_path",     "default": "builds/AML_MICROTROL/tac" } }
+            ],
+            "name": "Publish Release TAC_AML"
+        },{
+            "type": "force_schedule",
+            "hide_branch": true,
+            "properties": [
+                { "class": "FixedParameter", "parameters": {"name": "backup_files", "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "ccache",       "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "build_deps",   "default": true } },
+                { "class": "FixedParameter", "parameters": {"name": "mandatory",    "default": true } },
+                { "class": "FixedParameter", "parameters": {"name": "export",       "default": false } },
+                { "class": "FixedParameter", "parameters": {"name": "build_type",   "default": "release" } },
+                { "class": "FixedParameter", "parameters": {"name": "build_cfg",    "default": "beta" } },
+                { "class": "FixedParameter", "parameters": {"name": "patches",      "default": [] } },
+                { "class": "FixedParameter", "parameters": {"name": "dst_path",     "default": "builds/AML_MICROTROL/tac" } }
+            ],
+            "name": "Publish Testing TAC_AML"
+        }]
+    },
+    "tac_genx64": {
+        "name": "TAC_GENX64",
+        "tags": ["tac", "genx64"],
+        "factory": {
+            "type": "tac",
+            "platform": "genx64",
+            "repo": "GENX64",
+            "model_id": "0",
+            "run_tests": false,
+            "patches": [],
+            "codename": "",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "FixedParameter",          "parameters": {"name": "backup_files", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "build_deps", "label": "Build dependencies?", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "mandatory", "label": "Mandatory update?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "export", "label": "Export to 'sol' ?", "default": false } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_cfg", "label": "Build config", "choices": ["dev", "beta", "stable"], "default": "dev" } },
+                { "class": "DownloadedJSONParameter", "parameters": {"name": "patches", "label": "List of patches to apply.", "multiple": true, "default": [] } },
+                { "class": "EmptyStringParameter",    "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/GENX64/tac" } }
+            ],
+            "name": "Force build for TAC_GENX64"
+        }]
+    },
+    "tac_xu3": {
+        "name": "TAC_XU3",
+        "tags": ["tac", "xu3"],
+        "factory": {
+            "type": "tac",
+            "platform": "xu3",
+            "repo": "XU3",
+            "model_id": "0",
+            "run_tests": false,
+            "patches": [],
+            "codename": "",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "FixedParameter",          "parameters": {"name": "backup_files", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "build_deps", "label": "Build dependencies?", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "mandatory", "label": "Mandatory update?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "export", "label": "Export to 'sol' ?", "default": false } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_cfg", "label": "Build config", "choices": ["dev", "beta", "stable"], "default": "dev" } },
+                { "class": "DownloadedJSONParameter", "parameters": {"name": "patches", "label": "List of patches to apply.", "multiple": true, "default": [] } },
+                { "class": "EmptyStringParameter",    "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/XU3/tac" } }
+            ],
+            "name": "Force build for TAC_XU3"
+        }]
+    },
+    "tac_rpi2": {
+        "name": "TAC_RPI2",
+        "tags": ["tac", "rpi2"],
+        "factory": {
+            "type": "tac",
+            "platform": "rpi2",
+            "repo": "RPI2",
+            "model_id": "0",
+            "run_tests": false,
+            "patches": [],
+            "codename": "",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "FixedParameter",          "parameters": {"name": "backup_files", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "build_deps", "label": "Build dependencies?", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "mandatory", "label": "Mandatory update?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "export", "label": "Export to 'sol' ?", "default": false } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_cfg", "label": "Build config", "choices": ["dev", "beta", "stable"], "default": "dev" } },
+                { "class": "DownloadedJSONParameter", "parameters": {"name": "patches", "label": "List of patches to apply.", "multiple": true, "default": [] } },
+                { "class": "EmptyStringParameter",    "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/RPI2/tac" } }
+            ],
+            "name": "Force build for TAC_RPI2"
+        }]
+    },
+    "tac_x64": {
+        "name": "TAC_X64",
+        "tags": ["tac", "x64"],
+        "factory": {
+            "type": "tac",
+            "platform": "linux",
+            "repo": "CLANG_64",
+            "model_id": "0",
+            "run_tests": true,
+            "patches": [],
+            "codename": "",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "FixedParameter",          "parameters": {"name": "backup_files", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "build_deps", "label": "Build dependencies?", "default": false } },
+                { "class": "BooleanParameter",        "parameters": {"name": "mandatory", "label": "Mandatory update?", "default": true } },
+                { "class": "BooleanParameter",        "parameters": {"name": "export", "label": "Export to 'sol' ?", "default": false } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter",   "parameters": {"name": "build_cfg", "label": "Build config", "choices": ["dev", "beta", "stable"], "default": "dev" } },
+                { "class": "DownloadedJSONParameter", "parameters": {"name": "patches", "label": "List of patches to apply.", "multiple": true, "default": [] } },
+                { "class": "EmptyStringParameter",    "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/tac" } }
+            ],
+            "name": "Force build for TAC_X64"
+        }]
+    },
+   "check_backed_branches": {
+        "name": "CHECK_BACKED_BRANCHES",
+        "tags": ["generic_shell" ],
+        "factory": {
+            "type": "generic_shell",
+            "slave": "ArchI7",
+            "commands": [
+                {
+                    "name": "Checking backed branches",
+                    "command": "./check_backed_branch.py",
+                    "workdir": "build/build"
+                }
+            ]
+        },
+        "schedulers": [
+            { "type": "force_schedule", "properties": [], "name": "Force build for CHECK_BACKED_BRANCHES" }
+        ]
+    },
+    "htmlshell_aml": {
+        "name": "HTMLSHELL_AML",
+        "tags": ["htmlshell", "aml"],
+        "factory": {
+            "type": "htmlshell",
+            "name": "aml",
+            "repo": "AML",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "BooleanParameter",     "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",     "parameters": {"name": "enable_dcheck", "label": "Enable DCHECK macros?", "default": false } },
+                { "class": "EmptyStringParameter", "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/htmlshell" } }
+            ],
+            "name": "Force build for HTMLSHELL_AML"
+        }]
+    },
+    "htmlshell_genx64": {
+        "name": "HTMLSHELL_GENX64",
+        "tags": ["htmlshell", "genx64"],
+        "factory": {
+            "type": "htmlshell",
+            "name": "genx64",
+            "repo": "GENX64",
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "BooleanParameter",     "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",     "parameters": {"name": "enable_dcheck", "label": "Enable DCHECK macros?", "default": false } },
+                { "class": "EmptyStringParameter", "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/GENX64/htmlshell" } }
+            ],
+            "name": "Force build for HTMLSHELL_GENX64"
+        }]
+    },
+    "htmlshell_x64_test": {
+        "name": "HTMLSHELL_X64_TEST",
+        "tags": ["htmlshell", "x64"],
+        "factory": {
+            "type": "htmlshell",
+            "name": "linux",
+            "repo": "CLANG_64",
+            "extra": {
+                "name": "test",
+                "command": "./test.sh",
+                "option": "-t"
+            },
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "BooleanParameter",     "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",     "parameters": {"name": "enable_dcheck", "label": "Enable DCHECK macros?", "default": false } },
+                { "class": "EmptyStringParameter", "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/htmlshell" } }
+            ],
+            "name": "Force build for HTMLSHELL_X64_TEST"
+        }]
+    },
+   "htmlshell_x64_memcheck": {
+        "name": "HTMLSHELL_X64_MEMCHECK",
+        "tags": ["htmlshell", "x64"],
+        "factory": {
+            "type": "htmlshell",
+            "name": "linux",
+            "repo": "CLANG_64",
+            "extra": {
+                "name": "memcheck",
+                "command": "./memcheck.sh",
+                "option": "-t -m"
+            },
+            "slave": "ArchI7"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "BooleanParameter",     "parameters": {"name": "ccache", "label": "Use ccache?", "default": true } },
+                { "class": "BooleanParameter",     "parameters": {"name": "enable_dcheck", "label": "Enable DCHECK macros?", "default": false } },
+                { "class": "EmptyStringParameter", "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/htmlshell_memcheck" } }
+            ],
+            "name": "Force build for HTMLSHELL_X64_MEMCHECK"
+        }]
+    },
+   "ginga_aml": {
+        "name": "GINGA_AML",
+        "tags": ["depot_build", "ginga", "aml" ],
+        "factory": {
+            "product": "ginga",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "aml",
+            "toolchain": "AML_STATIC",
+            "config": "tool/tac/build/devices/common/deps/GINGA.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/ginga/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for GINGA_AML"
+        }]
+    },
+   "ginga_x64": {
+        "name": "GINGA_X64",
+        "tags": ["depot_build", "ginga", "x64" ],
+        "factory": {
+            "product": "ginga",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "x64",
+            "toolchain": "CLANG_STATIC64",
+            "config": "tool/tac/build/devices/common/deps/GINGA.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/ginga/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for GINGA_X64"
+        }]
+    },
+   "htmlshellremote_aml": {
+        "name": "HTMLSHELLREMOTE_AML",
+        "tags": ["depot_build", "htmlshellremote", "aml" ],
+        "factory": {
+            "product": "htmlshellremote",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "aml",
+            "toolchain": "AML_STATIC",
+            "config": "tool/tac/build/devices/common/deps/HTMLSHELLREMOTE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/htmlshellremote/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for HTMLSHELLREMOTE_AML"
+        }]
+    },
+   "htmlshellremote_x64": {
+        "name": "HTMLSHELLREMOTE_X64",
+        "tags": ["depot_build", "htmlshellremote", "x64" ],
+        "factory": {
+            "product": "htmlshellremote",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "x64",
+            "toolchain": "CLANG_STATIC64",
+            "config": "tool/tac/build/devices/common/deps/HTMLSHELLREMOTE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/htmlshellremote/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for HTMLSHELLREMOTE_X64"
+        }]
+    },
+   "ioctlmodule_aml": {
+        "name": "IOCTLMODULE_AML",
+        "tags": ["depot_build", "ioctlmodule", "aml" ],
+        "factory": {
+            "product": "ioctlmodule",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "aml",
+            "toolchain": "AML_STATIC",
+            "config": "tool/tac/build/devices/common/deps/IOCTLMODULE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/ioctlmodule/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for IOCTLMODULE_AML"
+        }]
+    },
+   "ioctlmodule_x64": {
+        "name": "IOCTLMODULE_X64",
+        "tags": ["depot_build", "ioctlmodule", "x64" ],
+        "factory": {
+            "product": "ioctlmodule",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "x64",
+            "toolchain": "CLANG_STATIC64",
+            "config": "tool/tac/build/devices/common/deps/IOCTLMODULE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/ioctlmodule/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for IOCTLMODULE_X64"
+        }]
+    },
+   "libcecnode_aml": {
+        "name": "LIBCECNODE_AML",
+        "tags": ["depot_build", "libcecnode", "aml" ],
+        "factory": {
+            "product": "libcecnode",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "aml",
+            "toolchain": "AML_STATIC",
+            "config": "tool/tac/build/devices/common/deps/LIBCECNODE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/libcecnode/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for LIBCECNODE_AML"
+        }]
+    },
+   "libcecnode_x64": {
+        "name": "LIBCECNODE_X64",
+        "tags": ["depot_build", "libcecnode", "x64" ],
+        "factory": {
+            "product": "libcecnode",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "x64",
+            "toolchain": "CLANG_STATIC64",
+            "config": "tool/tac/build/devices/common/deps/LIBCECNODE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/libcecnode/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for LIBCECNODE_X64"
+        }]
+    },
+   "tvdmodule_aml": {
+        "name": "TVDMODULE_AML",
+        "tags": ["depot_build", "tvdmodule", "aml" ],
+        "factory": {
+            "product": "tvdmodule",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "aml",
+            "toolchain": "AML_STATIC",
+            "config": "tool/tac/build/devices/aml/deps/TVDMODULE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/AML/tvdmodule/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for TVDMODULE_AML"
+        }]
+    },
+   "tvdmodule_x64": {
+        "name": "TVDMODULE_X64",
+        "tags": ["depot_build", "tvdmodule", "x64" ],
+        "factory": {
+            "product": "tvdmodule",
+            "is_tool": true,
+            "type": "depot_build",
+            "slave": "ArchI7",
+            "platform": "x64",
+            "toolchain": "CLANG_STATIC64",
+            "config": "tool/tac/build/devices/common/deps/TVDMODULE.cmake"
+        },
+        "schedulers": [{
+            "type": "force_schedule",
+            "properties": [
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_type", "label": "Build type", "choices": ["release","debug"], "default": "debug" } },
+                { "class": "ChoiceStringParameter", "parameters": {"name": "build_method", "label": "Build mode", "choices": ["shared","static"], "default": "static" } },
+                { "class": "EmptyStringParameter",  "parameters": {"name": "dst_path" , "label": "Destination path", "size": 80, "default": "builds/CLANG_64/tvdmodule/%(prop:build_type)s/%(prop:build_method)s" } }
+            ],
+            "name": "Force build for TVDMODULE_X64"
+        }]
+    }
+}

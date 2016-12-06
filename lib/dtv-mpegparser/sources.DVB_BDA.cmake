@@ -1,0 +1,10 @@
+ADD_SOURCES(
+  src/provider/broadcast/bda/provider.h
+  src/provider/broadcast/bda/provider.cpp
+  src/provider/broadcast/bda/filter.h
+  src/provider/broadcast/bda/filter.cpp
+  src/provider/broadcast/bda/frontend.h
+  src/provider/broadcast/bda/frontend.cpp
+  src/provider/broadcast/bda/bdagraph.h
+  src/provider/broadcast/bda/bdagraph.cpp
+)

@@ -1,0 +1,67 @@
+{
+    "general": {
+        "http_port": 8009,
+        "slave_port": 9988,
+        "nightly_scheduler_start": {"hour": 22, "minute": 30},
+        "compilation_timeout": 300,
+        "max_parallel_builds": 1,
+        "build_max_history": 10,
+        "buildbot_global_branch": "BUILDBOT_GLOBAL_BRANCH",
+        "default_branch": "master",
+        "repository_url": "http://172.16.0.206/buildbot/",
+        "repository": "/mnt/repositorio/",
+        "build_configuration_location": "build/build/buildbot/config/",
+        "patches_url": "http://172.16.0.206:8888/api/v3/projects/2/repository/tree?private_token=nG75TVhkYmBZLz7XD9pt&path=patches"
+    },
+    "mail":  {
+        "fromaddr": "denethor.tvdlifia@gmail.com",
+        "sendToInterestedUsers": false,
+        "extraRecipients": ["tvd-lifia-pieza3@googlegroups.com"],
+        "useTls": true,
+        "relayhost": "smtp.gmail.com",
+        "smtpPort": 587,
+        "smtpUser": "denethor.tvdlifia",
+        "smtpPassword": "Tvd03034567"
+    },
+    "slaves": {
+        "defaults": {
+                "accesskey": "z3n0n1",
+                "admin": "tvd-lifia-pieza3@googlegroups.com"
+        },
+        "slaves": {
+            "ArchI7": {
+                    "env": {
+                            "DISPLAY" : ":1"
+                    }
+            }
+        },
+        "slaveToSlavegroup": {
+                    "Linux32": "Linux32",
+                    "WinSeven32": "WinSeven32",
+                    "ArchI7": "ArchI7"
+            }
+    },
+    "toolchains": {
+        "CLANG_STATIC64": {
+                "name": "CLANG_STATIC64",
+                "platform_name": "CLANG_64",
+                "env": {
+                        "CC": "/usr/bin/clang",
+                        "CXX": "/usr/bin/clang++"
+                },
+                "flunk_on_warnings": false,
+                "set_platform_flag": false,
+                "pack_extension": "tar.bz2",
+                "test": true,
+        },
+        "AML_STATIC": {
+                "name": "AML_STATIC",
+                "platform_name": "AML",
+                "env": {},
+                "flunk_on_warnings": false,
+                "set_platform_flag": true,
+                "pack_extension": "tar.bz2",
+                "test": false,
+        }
+    }
+}

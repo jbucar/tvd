@@ -1,0 +1,151 @@
+
+.apps-menu {
+	background: rgb(0, 145, 120);
+}
+
+.view-wrap-view .inactive.apps-menu {
+	background: rgb(0, 81, 67);
+}
+
+.apps-button.spotlight {
+	border-color: rgb(68, 227, 199);
+}
+
+.freezed.apps-button {
+	background: rgb(0, 145, 120);
+}
+
+.apps-submenu {
+	background: rgb(0, 145, 120);
+}
+
+/* AppView */
+
+.appview {
+	width: 240px;
+	height: 240px;
+	min-width: 240px;
+	min-height: 240px;
+	display: flex;
+	justify-content: center;
+	margin-right: 25px;
+}
+
+.appview-wrapper {
+	width: 190px;
+	height: 190px;
+	min-width: 190px;
+	min-height: 190px;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	position: relative;
+}
+
+.carousel.selected .appview-wrapper {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.inactive .icons-wrapper > .fav-icon {
+	display: none;
+}
+
+.appview.spotlight .icons-wrapper > .fav-icon {
+	display: block;
+}
+
+.apps-appview-img {
+	margin: auto;
+	width: 100px;
+	height: 100px;
+	align-self: center;
+}
+
+/* end AppView */
+
+.apps-main-wrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.apps-main-wrapper > * {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+/* Market detail */
+.market-detail {
+	margin-top: 40px;
+}
+
+.tooltip.menu.apps {
+	background-color: rgb(0, 145, 120);
+}
+
+.tooltip.menu.apps:before {
+	border-bottom-color: rgb(0, 145, 120);
+}
+
+/* apps simple button */
+.simple-button.apps.spotlight {
+	background: rgb(0, 145, 120);
+	border-bottom-color: rgb(68, 227, 199);
+}
+
+/* Dialog */
+.dialog .actions.apps > *.spotlight {
+	background: rgb(0, 145, 120);
+}
+
+.dialog .icon.apps {
+	background: rgb(0, 145, 120);
+}
+
+.dialog .title.apps {
+	color: rgb(0, 145, 120);
+}
+
+/* Keyboard */
+.apps-keyboard-action.spotlight {
+	background: rgb(0, 145, 120);
+}
+
+.apps-keyboard-btn.spotlight {
+	color: rgb(0, 145, 120);
+}
+
+.carousel-item-txt.appsname.selected.apps {
+	background: rgb(0, 145, 120);
+	color: rgba(255, 255, 255, .8);
+}
+
+.carousel-item-txt.appsname {
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	justify-content: center;
+	color: rgba(0, 0, 0, .5);
+	font-size: 22px;
+	height: 40px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.inactive .carousel-item-txt.appsname {
+	color: rgba(255, 255, 255, .8);
+}
+
+.spotlight .carousel-item-txt.appsname.selected.apps {
+	border-bottom-color: rgb(68, 227, 199);
+	font-size: 20pt;
+}
+
+.carousel-iconbar.app-iconbar {
+	top: 0;
+	position: absolute;
+}

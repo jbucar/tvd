@@ -1,0 +1,24 @@
+--- third_party/WebKit/Source/modules/fetch/BodyStreamBuffer.h.orig
++++ third_party/WebKit/Source/modules/fetch/BodyStreamBuffer.h
+@@ -26,8 +26,9 @@ class MODULES_EXPORT BodyStreamBuffer final : public GarbageCollectedFinalized<B
+     WTF_MAKE_NONCOPYABLE(BodyStreamBuffer);
+     USING_GARBAGE_COLLECTED_MIXIN(BodyStreamBuffer);
+     // Needed because we have to release |m_reader| promptly.
+-    EAGERLY_FINALIZE();
+ public:
++    EAGERLY_FINALIZE();
++
+     // |handle| cannot be null and cannot be locked.
+     explicit BodyStreamBuffer(PassOwnPtr<FetchDataConsumerHandle> /* handle */);
+ 
+--- third_party/WebKit/Source/modules/presentation/PresentationReceiver.h.orig
++++ third_party/WebKit/Source/modules/presentation/PresentationReceiver.h
+@@ -17,7 +17,7 @@ namespace blink {
+ // which websites can implement the receiving side of a presentation session.
+ class PresentationReceiver final
+     : public RefCountedGarbageCollectedEventTargetWithInlineData<PresentationReceiver>
+-    , DOMWindowProperty {
++    , public DOMWindowProperty {
+     REFCOUNTED_GARBAGE_COLLECTED_EVENT_TARGET(PresentationReceiver);
+     WILL_BE_USING_GARBAGE_COLLECTED_MIXIN(PresentationReceiver);
+     DEFINE_WRAPPERTYPEINFO();

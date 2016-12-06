@@ -1,0 +1,24 @@
+--- third_party/ffmpeg/chromium/scripts/build_ffmpeg.py.orig	2015-11-06 15:59:43.873055995 -0300
++++ third_party/ffmpeg/chromium/scripts/build_ffmpeg.py	2015-11-06 15:59:51.209722340 -0300
+@@ -355,6 +355,12 @@
+         # TODO(krasin): move this to Common, when https://crbug.com/537368
+         # is fixed and CFI is unblocked from launching on ChromeOS.
+         configure_flags['EnableLTO'].extend(['--enable-lto'])
++        configure_flags['Common'].extend([
++            '--enable-cross-compile',
++            '--arch=x86_64',
++            '--target-os=linux',
++            '--cross-prefix=' + os.environ['BUILDROOT_TOOLCHAIN_PREFIX']
++        ])
+       pass
+     elif target_arch == 'ia32':
+       configure_flags['Common'].extend([
+@@ -415,7 +415,7 @@
+             # and copy ffmpeg to a location that is reachable.
+             '--enable-cross-compile',
+             '--target-os=linux',
+-            '--cross-prefix=armv7a-cros-linux-gnueabi-',
++            '--cross-prefix=' + os.environ['BUILDROOT_TOOLCHAIN_PREFIX'],
+             '--extra-cflags=-mtune=cortex-a8',
+             # NOTE: softfp/hardfp selected at gyp time.
+             '--extra-cflags=-mfloat-abi=hard',

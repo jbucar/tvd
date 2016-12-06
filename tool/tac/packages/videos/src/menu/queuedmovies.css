@@ -1,0 +1,58 @@
+
+#QueuedMovies {
+	width: 70vw;
+	height: 50vh;
+	margin: auto;
+    display: flex;
+	z-index: 100;
+    flex-direction: row;
+    background-color: rgb(44,44,44);
+    display: flex;
+}
+
+#QueuedMovies label {
+	color: white;
+	line-height: 1.62rem;
+    margin-right: 5%;
+	text-align: left;
+}
+
+#QMLogoContainer {
+	margin-top: 2%;
+	margin-left: 2%;
+    width: 25%;
+}
+
+#QMDetails {
+	margin-top: 2%;
+	margin-left: 2%;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Oswald-Light';
+	line-height: 1.62rem;
+}
+
+.QMDetailsLabel {
+	font-size: 1.28rem;
+}
+
+#QMDetailsTitle {
+	display: flex;
+	align-items: center;
+    margin-top: 1.5%;
+    margin-bottom: 3.5%;
+	font-family: 'Oswald-Regular';
+	font-size: 1.9rem;
+	flex-shrink: 0;
+}
+
+#QMDetailsRanking {
+	margin-left: 2%;
+	margin-right: 0.5%;
+}
+
+#QMSummary {
+	margin-top: 2%;
+	font-size: 1.4rem;
+	overflow: hidden;
+}

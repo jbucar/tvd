@@ -1,0 +1,29 @@
+html, body {
+	height: 100vh;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: 1.25vw;
+}
+
+.full_background {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.default_paragraph {
+	font-family: 'Oswald-Light';
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+.oneline_text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+section {
+	outline: none;
+}

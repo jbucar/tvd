@@ -1,0 +1,6 @@
+{
+	"name" : "Test Launcher",
+	"version": "1.0",
+	"sdk_version": "1.0",
+	"main": "src/index.html"
+}

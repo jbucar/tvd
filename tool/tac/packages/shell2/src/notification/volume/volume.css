@@ -1,0 +1,47 @@
+.volume-background {
+	z-index: 10;
+	background-color: rgba(33, 33, 33, 1);
+	width: 4.55%;
+	height: 37.50%;
+	position: fixed;
+	top: 58.05%;
+	left: 4.55%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.volume-background label {
+	font-family: "Oswald-Regular";
+	font-size: 1.2rem;
+	color: rgb(255, 255, 255);
+	margin-top: 5%;
+}
+
+.volume-container {
+	background-color: rgb(255, 108, 0);
+	width: 45%;
+	height: 72%;
+}
+
+.volume-container.muted {
+	background-color: rgb(117,117,117);
+}
+
+.volume-level {
+	background-color: rgb(76,76,76);
+	width: 100%;
+	transition: height 200ms ease-out;
+}
+
+.volume-image {
+	height: 12%;
+	width: 52%;
+	display: flex;
+}
+
+.volume-image img{
+	margin: auto;
+	width: 100%;
+}

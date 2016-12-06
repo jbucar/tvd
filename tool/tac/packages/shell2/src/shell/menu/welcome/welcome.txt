@@ -1,0 +1,5 @@
+{
+	"welcome": "BIENVENIDO",
+	"welcome_desc": "La TAC TV te permitira disfrutar de todo tu contenido multimedia en un solo dispositivo.",
+	"start": "COMENZAR"
+}

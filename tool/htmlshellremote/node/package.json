@@ -1,0 +1,10 @@
+{
+	"name": "htmlshellremote",
+	"version": "0.0.1",
+	"description": "A htmlshell extension that exports web apis to NodeJS",
+	"author": "Lifia",
+	"main": "./htmlshellremote.js",
+	"engines": {
+		"node": ">= 0.10.35 < 0.11"
+	}
+}

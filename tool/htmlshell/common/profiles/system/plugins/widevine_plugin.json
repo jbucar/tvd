@@ -1,0 +1,16 @@
+[{
+	"name": "Widevine Content Decryption Module",
+	"description": "Enables Widevine licenses for playback of HTML audio/video content. (version: 1.4.8.824)",
+	"out_of_process": true,
+	"sandboxed": false,
+	"path": "libwidevinecdmadapter.so",
+	"version": "1.4.8.824",
+	"mime_types": [{
+		"type": "application/x-ppapi-widevine-cdm",
+		"extensions": "",
+		"description": "Widevine Content Decryption Module",
+		"aditional_params": {
+			"codecs": "vorbis,vp8,vp9.0,aac,avc1"
+		}
+	}]
+}]

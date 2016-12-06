@@ -1,0 +1,36 @@
+--- third_party/libyuv/source/row_common.cc.orig
++++ third_party/libyuv/source/row_common.cc
+@@ -1288,14 +1288,25 @@ static __inline void YuvPixel(uint8 y, uint8 u, uint8 v,
+   int br = yuvconstants->kUVBiasBGR[2];
+   int yg = yuvconstants->kYToRgb[0] / 0x0101;
+ #elif defined(__arm__)
+-  int ub = -yuvconstants->kUVToRB[0];
+-  int ug = yuvconstants->kUVToG[0];
+-  int vg = yuvconstants->kUVToG[4];
+-  int vr = -yuvconstants->kUVToRB[4];
+-  int bb = yuvconstants->kUVBiasBGR[0];
+-  int bg = yuvconstants->kUVBiasBGR[1];
+-  int br = yuvconstants->kUVBiasBGR[2];
+-  int yg = yuvconstants->kYToRgb[0] / 0x0101;
++  union YuvConstantsU {
++    const struct YuvConstants *s1;
++    const struct {
++      uint8 kUVToRB[16];
++      uint8 kUVToG[16];
++      int16 kUVBiasBGR[8];
++      int32 kYToRgb[4];
++       } *s2;
++  } yuv;
++
++  yuv.s1 = yuvconstants;
++  int ub = -yuv.s2->kUVToRB[0];
++  int ug = yuv.s2->kUVToG[0];
++  int vg = yuv.s2->kUVToG[4];
++  int vr = -yuv.s2->kUVToRB[4];
++  int bb = yuv.s2->kUVBiasBGR[0];
++  int bg = yuv.s2->kUVBiasBGR[1];
++  int br = yuv.s2->kUVBiasBGR[2];
++  int yg = yuv.s2->kYToRgb[0] / 0x0101;
+ #else
+   int ub = yuvconstants->kUVToB[0];
+   int ug = yuvconstants->kUVToG[0];

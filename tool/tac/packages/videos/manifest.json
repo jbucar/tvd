@@ -1,0 +1,24 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.videos",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"system": true,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.videos",
+			"name": "Videos",
+			"type": "app",
+			"version": "1.0.0",
+			"main": "index.html",
+			"icon": "videos.png",
+			"user": true,
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.appmgr",
+				"ar.edu.unlp.info.lifia.tvd.media.main"
+			]
+		}
+	]
+}

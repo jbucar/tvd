@@ -1,0 +1,8 @@
+--- a/lib/node_modules/npm/bin/npm-cli.js
++++ a/lib/node_modules/npm/bin/npm-cli.js
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/node
++#!/usr/bin/env node
+ ;(function () { // wrapper in case we're in module_context mode
+ 
+ // windows: running "npm blah" in this folder will invoke WSH, not node.

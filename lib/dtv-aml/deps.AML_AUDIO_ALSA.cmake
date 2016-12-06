@@ -1,0 +1,3 @@
+find_package( ALSA REQUIRED )
+ADD_DEPENDENTS( ALSA )
+

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>108</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PresentationEngineManager
+--
+run()
+startDocument()
+stopDocument()
+onKeyPressed()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>297</x>
+      <y>108</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>FormatterMediator
+--
+parseDocument()
+play()
+stop()
+pause()
+resume()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>630</x>
+      <y>108</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>FormatterScheduler
+--
+startEvent()
+stopEvent()
+pauseEvent()
+resumeEvent()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>288</x>
+      <y>234</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>FormatterEvent
+--
+addEventListener()
+delEventListener()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>738</x>
+      <y>513</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>FormatterConverter
+--
+stopListening()
+addSameInstance()
+compileExecutionObjectLinks()
+processExecutionObjectSwitch()
+insertContext()
+removeExecutionObject()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>864</x>
+      <y>666</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>FormatterLinkConverter
+--
+createCausalLink()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>225</x>
+      <y>342</y>
+      <w>189</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>AnchorEvent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>414</x>
+      <y>540</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>FormatterPlayerAdapter
+--
+setPlayer()
+stopPlayer()
+startAnimation()
+stopAnimation()
+processTransitions()
+onKeyPress()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>531</x>
+      <y>342</y>
+      <w>189</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>ExecutionObject
+--
+addPresentationEvent()
+getEvent()
+getNodes()
+getNodePerspective()
+getMainEvent()
+setProperty()
+updateEventDurations()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>234</x>
+      <y>405</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>PresentationEvent
+--
+stop()
+getDuration()
+getRepetitions()
+getBegin()
+getEnd()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>909</x>
+      <y>243</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>PlayerAdapterManager
+--
+start()
+stop()
+pause()
+resume()
+abort()
+setProperty()
+setKeyHandler()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>972</x>
+      <y>450</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>FormatterFocusManager
+--
+setKeyMaster()
+showObject()
+hideObject()
+registerNavigationKeys()
+onKeyPress()
+userEventReceived()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>405</x>
+      <y>684</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>ApplicationPlayerAdapter
+--
+setNclEditListener()
+prepare()
+start()
+stop()
+onEvent()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>162</x>
+      <y>72</y>
+      <w>152</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+_formatter</panel_attributes>
+    <additional_attributes>135;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>459</x>
+      <y>72</y>
+      <w>188</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+scheduler</panel_attributes>
+    <additional_attributes>171;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>450</x>
+      <y>171</y>
+      <w>278</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+documentEvents</panel_attributes>
+    <additional_attributes>27;72;207;72;207;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>306</x>
+      <y>261</y>
+      <w>44</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;27;54;27;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>306</x>
+      <y>342</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;27;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>747</x>
+      <y>171</y>
+      <w>242</w>
+      <h>314</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=focusManager</panel_attributes>
+    <additional_attributes>225;297;27;297;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>774</x>
+      <y>171</y>
+      <w>233</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+playerManager</panel_attributes>
+    <additional_attributes>216;72;216;45;27;45;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>990</x>
+      <y>342</y>
+      <w>142</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+playerManager</panel_attributes>
+    <additional_attributes>72;27;72;108</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>621</x>
+      <y>450</y>
+      <w>138</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+settingObjects</panel_attributes>
+    <additional_attributes>72;27;72;81;117;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>837</x>
+      <y>585</y>
+      <w>104</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+compiler</panel_attributes>
+    <additional_attributes>54;27;54;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>477</x>
+      <y>621</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;27;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>333</x>
+      <y>261</y>
+      <w>224</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+formatterEvents</panel_attributes>
+    <additional_attributes>81;27;81;27;81;63;207;63;207;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>450</x>
+      <y>243</y>
+      <w>178</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+otherEvents</panel_attributes>
+    <additional_attributes>27;27;117;27;117;63;117;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>450</y>
+      <w>179</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+executionObjects</panel_attributes>
+    <additional_attributes>81;27;81;99;162;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>252</y>
+      <w>395</w>
+      <h>215</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+focusTable</panel_attributes>
+    <additional_attributes>27;90;27;27;162;27;162;171;378;171;378;198</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>612</x>
+      <y>234</y>
+      <w>431</w>
+      <h>233</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+selectedObject</panel_attributes>
+    <additional_attributes>27;108;27;27;225;27;225;180;414;180;414;216</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>513</x>
+      <y>450</y>
+      <w>81</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+object</panel_attributes>
+    <additional_attributes>45;27;45;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>396</x>
+      <y>405</y>
+      <w>152</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+selectionEvents</panel_attributes>
+    <additional_attributes>27;45;135;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>396</x>
+      <y>369</y>
+      <w>152</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+presEvents</panel_attributes>
+    <additional_attributes>27;45;135;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>684</x>
+      <y>171</y>
+      <w>112</w>
+      <h>359</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+scheduler</panel_attributes>
+    <additional_attributes>63;27;63;279;63;342</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>306</y>
+      <w>665</w>
+      <h>494</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+manager</panel_attributes>
+    <additional_attributes>522;27;648;27;648;468;153;477;153;333;27;333</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>459</x>
+      <y>117</y>
+      <w>188</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+_formatterMediator</panel_attributes>
+    <additional_attributes>27;45;171;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>324</y>
+      <w>638</w>
+      <h>441</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+_players</panel_attributes>
+    <additional_attributes>27;297;189;297;189;423;621;423;621;27;522;27</additional_attributes>
+  </element>
+</diagram>

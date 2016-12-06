@@ -1,0 +1,136 @@
+--- content/browser/ppapi_plugin_process_host.cc.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/browser/ppapi_plugin_process_host.cc 	2015-03-12 11:21:19.989183095 -0300
+@@ -53,9 +53,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+                                               const PepperPluginInfo& info,
+                                               ChildProcessHost* host)
+       :
+-#if defined(OS_WIN)
+         info_(info),
+-#endif // OS_WIN
+ #if defined(OS_POSIX)
+         ipc_fd_(host->TakeClientFileDescriptor()),
+ #endif  // OS_POSIX
+@@ -110,7 +108,7 @@
+         *base::CommandLine::ForCurrentProcess();
+     base::CommandLine::StringType plugin_launcher = browser_command_line
+         .GetSwitchValueNative(switches::kPpapiPluginLauncher);
+-    return !is_broker_ && plugin_launcher.empty();
++    return !is_broker_ && plugin_launcher.empty() && info_.is_sandboxed;
+   }
+   base::ScopedFD TakeIpcFd() override { return std::move(ipc_fd_); }
+ #endif  // OS_WIN
+@@ -120,9 +118,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+   }
+ 
+  private:
+-#if defined(OS_WIN)
+   const PepperPluginInfo& info_;
+-#endif // OS_WIN
+ #if defined(OS_POSIX)
+   base::ScopedFD ipc_fd_;
+ #endif  // OS_POSIX
+@@ -424,6 +420,10 @@
+   // On posix, never use the zygote for the broker. Also, only use the zygote if
+   // we are not using a plugin launcher - having a plugin launcher means we need
+   // to use another process instead of just forking the zygote.
++#if defined(OS_POSIX)
++  if (!info.is_sandboxed)
++    cmd_line->AppendSwitchASCII(switches::kNoSandbox, std::string());
++#endif  // OS_POSIX
+   process_->Launch(
+       new PpapiPluginSandboxedProcessLauncherDelegate(is_broker_,
+                                                       info,
+--- content/common/pepper_plugin_list.cc.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/common/pepper_plugin_list.cc 	2015-03-12 11:21:19.989183095 -0300
+@@ -132,7 +132,10 @@
+     return false;
+ 
+   pepper_info->is_out_of_process =
+-      webplugin_info.type == WebPluginInfo::PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS;
++      webplugin_info.type == WebPluginInfo::PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS ||
++      webplugin_info.type == WebPluginInfo::PLUGIN_TYPE_PEPPER_UNSANDBOXED;
++  pepper_info->is_sandboxed = webplugin_info.type !=
++      WebPluginInfo::PLUGIN_TYPE_PEPPER_UNSANDBOXED;
+ 
+   pepper_info->path = base::FilePath(webplugin_info.path);
+   pepper_info->name = base::UTF16ToASCII(webplugin_info.name);
+--- content/public/common/pepper_plugin_info.cc.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/public/common/pepper_plugin_info.cc 	2015-03-12 11:21:19.989183095 -0300
+@@ -17,6 +17,7 @@
+ PepperPluginInfo::PepperPluginInfo()
+     : is_internal(false),
+       is_out_of_process(false),
++      is_sandboxed(true),
+       is_debug(false),
+       permissions(0) {
+ }
+@@ -28,7 +28,9 @@
+   WebPluginInfo info;
+ 
+   info.type = is_out_of_process ?
+-      WebPluginInfo::PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS :
++      (is_sandboxed ?
++        WebPluginInfo::PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS :
++        WebPluginInfo::PLUGIN_TYPE_PEPPER_UNSANDBOXED) :
+       WebPluginInfo::PLUGIN_TYPE_PEPPER_IN_PROCESS;
+ 
+   info.name = name.empty() ?
+--- content/public/common/pepper_plugin_info.h.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/public/common/pepper_plugin_info.h 	2015-03-12 11:21:19.989183095 -0300
+@@ -50,6 +50,10 @@
+   // True when this plugin should be run out of process. Defaults to false.
+   bool is_out_of_process;
+ 
++  // True when an out-of-process plugin should also be run within sandbox.
++  // Defaults to true.
++  bool is_sandboxed;
++
+   base::FilePath path;  // Internal plugins have "internal-[name]" as path.
+   std::string name;
+   std::string description;
+diff --git a/content/public/common/webplugininfo.h b/content/public/common/webplugininfo.h
+index c84b924..b21b9ea9 100644
+--- content/public/common/webplugininfo.h.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/public/common/webplugininfo.h 	2015-03-12 11:21:19.989183095 -0300
+@@ -48,6 +48,7 @@
+     PLUGIN_TYPE_NPAPI,
+     PLUGIN_TYPE_PEPPER_IN_PROCESS,
+     PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS,
++    PLUGIN_TYPE_PEPPER_UNSANDBOXED,
+     PLUGIN_TYPE_BROWSER_PLUGIN
+   };
+ 
+@@ -64,7 +65,8 @@
+ 
+   bool is_pepper_plugin() const {
+     return ((type == PLUGIN_TYPE_PEPPER_IN_PROCESS ) ||
+-          (type == PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS));
++          (type == PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS) ||
++          (type == PLUGIN_TYPE_PEPPER_UNSANDBOXED));
+   }
+ 
+   // Parse a version string as used by a plugin. This method is more lenient
+diff --git a/content/zygote/zygote_main_linux.cc b/content/zygote/zygote_main_linux.cc
+index 96fac21..8a03e4e 100644
+--- content/zygote/zygote_main_linux.cc.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/zygote/zygote_main_linux.cc 	2015-03-12 11:21:19.989183095 -0300
+@@ -304,7 +304,7 @@
+   std::vector<PepperPluginInfo> plugins;
+   ComputePepperPluginList(&plugins);
+   for (size_t i = 0; i < plugins.size(); ++i) {
+-    if (!plugins[i].is_internal) {
++    if (!plugins[i].is_internal && plugins[i].is_sandboxed) {
+       base::NativeLibraryLoadError error;
+       base::NativeLibrary library = base::LoadNativeLibrary(plugins[i].path,
+                                                             &error);
+--- content/browser/plugin_service_impl.cc.orig 	2015-03-12 11:21:19.989183095 -0300
++++ content/browser/plugin_service_impl.cc 	2015-03-12 11:21:19.989183095 -0300
+@@ -485,7 +485,7 @@
+                  plugin_path,
+                  client));
+   if (filter_) {
+-    DCHECK_EQ(WebPluginInfo::PLUGIN_TYPE_NPAPI, info.type);
++    DCHECK(WebPluginInfo::PLUGIN_TYPE_NPAPI == info.type || WebPluginInfo::PLUGIN_TYPE_PEPPER_UNSANDBOXED == info.type);
+     filter_->NPAPIPluginLoaded(render_process_id, render_frame_id, mime_type,
+                                info);
+   }

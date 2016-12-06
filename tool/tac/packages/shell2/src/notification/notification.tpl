@@ -1,0 +1,4 @@
+<NotifyBox/>
+<Volume/>
+<VirtualKeyboard/>
+<Splash/>

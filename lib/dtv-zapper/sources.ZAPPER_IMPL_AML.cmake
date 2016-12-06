@@ -1,0 +1,15 @@
+ADD_SOURCES(
+	src/impl/aml/impl.cpp
+	src/impl/aml/provider.h
+	src/impl/aml/provider.cpp
+	src/impl/aml/screen.h
+	src/impl/aml/screen.cpp
+	src/impl/aml/window.cpp
+	src/impl/aml/window.h
+	src/impl/aml/player.h
+	src/impl/aml/player.cpp
+	src/impl/aml/mediaplayer.h
+	src/impl/aml/mediaplayer.cpp
+	src/impl/aml/streaminfo.h
+	src/impl/aml/streaminfo.cpp
+)

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Ginga</title>
+
+	<style type="text/css">
+		#GingaPlugin {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0);
+		}
+	</style>
+
+	<script type="text/javascript">
+		function getURIParameter(param) {
+			return document.location.search.substring(1).split('&').reduce( function(p,c) {
+				var parts = c.split('=', 2).map( function(param) {
+					return decodeURIComponent(param);
+				});
+				if (parts.length === 0 || parts[0] != param) {
+					return (p instanceof Array) ? null : p;
+				}
+				return parts.concat(true)[1];
+			}, []);
+		}
+
+		window.onload = function() {
+			plugin = document.createElement('embed');
+			plugin.setAttribute('id', 'GingaPlugin');
+			plugin.setAttribute('type', 'application/ginga');
+			plugin.setAttribute('ppapi_args', 'ncl,base_id,connector');
+			plugin.setAttribute('ncl', getURIParameter('ncl'));
+			plugin.setAttribute('base_id', getURIParameter('base_id'));
+			plugin.setAttribute('connector', getURIParameter('connector'));
+			document.body.appendChild(plugin);
+			plugin.focus();
+		};
+	</script>
+</head>
+
+<body></body>
+
+</html>

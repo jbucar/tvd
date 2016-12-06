@@ -1,0 +1,1 @@
+-- Testea que un script de lua que no hace nada produzca un fondo completamente transparente

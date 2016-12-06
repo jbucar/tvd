@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+<title>Test Singals</title>
+
+<script type="text/javascript">
+var eventCount = 0;
+
+function quit( err, result ) {
+	console.log("checkParamsType callback called: result=" + result);
+	HtmlShellCall("JsApiTestStop", [result]);
+}
+
+function onSignal( name, exitCode ) {
+	eventCount = eventCount + 1;
+	console.log("Signal arrived! count=" + eventCount + ",  event: " + name);
+	if (eventCount === 3) {
+		quit(undefined, exitCode);
+	}
+}
+
+function main() {
+	console.log("Testing signals");
+	HtmlShellCall("JsApiTestSignals", [], onSignal);
+}
+window.onload = main;
+</script>
+
+</head>
+
+<body>
+<h1>Comunication test</h1>
+<p>Testea la comunicacion entre los procesos render y browser</p>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+<title>Test api modification</title>
+
+<script type="text/javascript">
+
+var originalApi;
+
+function quit( err, result ) {
+	originalApi( "JsApiTestStop", [result] );
+}
+
+window.onload = function() {
+	console.log("Testing api modification");
+
+	// Save original function
+	originalApi = HtmlShellCall;
+
+	// Try to modify api function
+	HtmlShellCall = function() {
+		return 1;
+	};
+	var result = HtmlShellCall("JsApiTestStop", [0]);
+	if (result !== 0) {
+		// The api was modified! Signal error!
+		HtmlShellCall("JsApiTestError", [], quit);
+	}
+};
+</script>
+
+</head>
+
+<body>
+<h1>Api modification test</h1>
+<p>Testea que no se puedan modificar las apis</p>
+</body>
+
+</html>

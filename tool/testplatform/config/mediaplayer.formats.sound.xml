@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<root>
+  <Items>
+    <item>mp3</item>
+    <item>aac</item>
+    <item>wav</item>
+    <item>flac</item>
+    <item>ogg</item>
+    <item>wma</item>
+  </Items>
+</root>

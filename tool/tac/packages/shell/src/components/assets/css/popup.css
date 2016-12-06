@@ -1,0 +1,83 @@
+.dialog {
+	width: 1280px;
+	height: 720px;
+	background: rgba(0, 0, 0, .8);
+	display: flex;
+	justify-content: center;
+}
+
+.dialog .title {
+	order: 2;
+	height: 35px;
+	font-family: 'Oswald-Regular';
+	font-size: 20pt;
+	line-height: 35px;
+	margin-bottom: 5px;
+	margin-top: 14px;
+	text-transform: uppercase;
+}
+
+.dialog .actions {
+	display: flex;
+	justify-content: center;
+	color: white;
+}
+
+.dialog .actions .action {
+	height: 35px;
+	color: white;
+	background: #717171;
+	font-family: 'Oswald-Light';
+	font-size: 15pt;
+	line-height: 35px;
+	vertical-align: middle;
+	width: 130px;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+
+.dialog .description-container {
+	order: 3;
+	display: flex;
+	justify-content: center;
+	height: 70px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.help-dialog .description {
+	text-align: left;
+}
+
+.dialog .description-container .description {
+	font-size: 20pt;
+	line-height: 32px;
+	font-family: 'Oswald-Light';
+	vertical-align: center;
+}
+
+.dialog .wrapper {
+	/* the size in screen must be 470x245 */
+	align-self: center;
+	width: 460px;
+	height: 206px;
+	background: #efefef;
+	color: black;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* TODO [nbaglivo]: Check if must be center or use space-around */
+	padding-left: 5px;
+	padding-top: 19px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+}
+
+.dialog .icon {
+	order: 1;
+	width: 40px;
+	height: 40px;
+	min-width: 40px;
+	min-height: 40px;
+	align-self: center;
+}

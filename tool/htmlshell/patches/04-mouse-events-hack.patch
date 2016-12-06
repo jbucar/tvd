@@ -1,0 +1,51 @@
+--- ui/aura/client/event_client.h.orig
++++ ui/aura/client/event_client.h
+@@ -24,6 +24,9 @@ class AURA_EXPORT EventClient {
+   // Returns the top level EventTarget for the current environment.
+   virtual ui::EventTarget* GetToplevelEventTarget() = 0;
+ 
++  // Return true if mouse events can be processed by |window| or any of its children.
++  virtual bool CanProcessMouseEventsWithinSubtree(const Window* window) const = 0;
++
+  protected:
+   virtual ~EventClient() {}
+ };
+--- ui/aura/window.cc.orig
++++ ui/aura/window.cc
+@@ -1059,6 +1059,10 @@ bool Window::CanAcceptEvent(const ui::Event& event) {
+   if (client && !client->CanProcessEventsWithinSubtree(this))
+     return false;
+ 
++  if (client && event.IsMouseEvent() && !client->CanProcessMouseEventsWithinSubtree(this)) {
++    return false;
++  }
++
+   // We need to make sure that a touch cancel event and any gesture events it
+   // creates can always reach the window. This ensures that we receive a valid
+   // touch / gesture stream.
+--- ui/aura/window_targeter.cc.orig
++++ ui/aura/window_targeter.cc
+@@ -42,6 +42,10 @@ bool WindowTargeter::SubtreeCanAcceptEvent(
+   if (client && !client->CanProcessEventsWithinSubtree(window))
+     return false;
+ 
++  if (client && event.IsMouseEvent() && !client->CanProcessMouseEventsWithinSubtree(window)) {
++    return false;
++  }
++
+   Window* parent = window->parent();
+   if (parent && parent->delegate_ && !parent->delegate_->
+       ShouldDescendIntoChildForEventHandling(window, event.location())) {
+--- ui/base/cursor/ozone/bitmap_cursor_factory_ozone.cc.orig
++++ ui/base/cursor/ozone/bitmap_cursor_factory_ozone.cc
+@@ -23,7 +23,9 @@ PlatformCursor ToPlatformCursor(BitmapCursorOzone* cursor) {
+ scoped_refptr<BitmapCursorOzone> CreateDefaultBitmapCursor(int type) {
+   SkBitmap bitmap;
+   gfx::Point hotspot;
+-  if (GetCursorBitmap(type, &bitmap, &hotspot))
++  Cursor c(type);
++  c.set_device_scale_factor(1.0f);
++  if (GetCursorBitmap(c, &bitmap, &hotspot))
+     return new BitmapCursorOzone(bitmap, hotspot);
+   return NULL;
+ }

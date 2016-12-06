@@ -1,0 +1,8 @@
+\makeatletter
+\newcommand{\logo}[2] {%
+	\def\input@path{{#1}}
+	\def\logoimg{#2}
+}
+\newcommand\version[1]{\renewcommand\@version{#1}}
+\newcommand\@version{\@latex@error{No \noexpand\version given}\@ehc}
+\makeatother

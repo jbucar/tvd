@@ -1,0 +1,22 @@
+{
+	"id": "net.argenteam",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://argenteam.net/",
+	"api-level": "1.0",
+	"platform": "all",
+	"user": false,
+	"components": [
+		{
+			"id": "net.argenteam",
+			"name": "argenteam",
+			"type": "service",
+			"version": "1.0.0",
+			"main": "main.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.media.main",
+				"ar.edu.unlp.info.lifia.tvd.remoteapi"				
+			]
+		}
+	]
+}

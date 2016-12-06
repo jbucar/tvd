@@ -1,0 +1,46 @@
+.detail-panels {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.detail-panels .panels {
+	height: 100%;
+	width: 1280px;
+}
+
+.detail-panel {
+	display: flex;
+	min-width: 100%;
+	height: 100%;
+}
+
+.detail-panel .arrow-bar {
+	height: 100%;
+	width: 8%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.detail-panel .detail-container {
+	width: 84%;
+	height: 100%;
+}
+
+/* Contents */
+
+.detail-container .view-content .upper-side .back-arrow-container {
+	width: 23%;
+}
+
+.details-actions {
+	min-width: 27%;
+	max-width: 27%;
+}
+
+.details-desc {
+	min-width: 63%;
+	max-width: 73%;
+	margin-left: 1px;
+}

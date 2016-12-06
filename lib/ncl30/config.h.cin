@@ -1,0 +1,3 @@
+/* Prefix of the configuration path*/
+#define CONFIG_PREFIX_PATH "${CMAKE_CONFIG_INSTALL_PREFIX}"
+

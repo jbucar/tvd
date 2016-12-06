@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ncl id="clima" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+	<head>
+
+		<regionBase>
+			<region id="applicationReg"  top="0" left="0" width="720" height="576" zIndex="2"/>
+			<region id="videoReg" top="0" left="0"  width="720" height="576"   zIndex="1"/>
+		</regionBase>
+
+		<descriptorBase>
+			<descriptor id="applicationDesc" region="applicationReg" focusIndex="app"/>
+			<descriptor id="videoDesc" region="videoReg" />
+		</descriptorBase>
+
+		<connectorBase>
+			<importBase documentURI="lib/ncl/connectorBase.ncl"  alias="conectores"/>
+		</connectorBase>
+	</head>
+
+	<body>
+
+		<port id="p0" component="video"/>
+		<port id="p1" component="application"/>
+
+		<media id="settings" type="application/x-ncl-settings" descriptor="applicationDesc">
+			<property name="service.currentKeyMaster" value="app"/>
+		</media>
+
+		<media id="application" src="mainClima.lua" descriptor="applicationDesc"/>
+
+		<media  id="video"  src="sbtvd-ts://0" descriptor="videoDesc">
+			<property name="bounds" value="0, 0, 720, 576"/>
+		</media>
+	</body>
+</ncl>

@@ -1,0 +1,25 @@
+--- media/filters/gpu_video_decoder.cc.orig
++++ media/filters/gpu_video_decoder.cc
+@@ -445,6 +445,22 @@ void GpuVideoDecoder::PictureReady(const media::Picture& picture) {
+   DVLOG(3) << "PictureReady()";
+   DCheckGpuVideoAcceleratorFactoriesTaskRunnerIsCurrent();
+ 
++  if (picture.picture_buffer_id() == -1) {
++	  // Update frame's timestamp.
++	  base::TimeDelta timestamp;
++	  // Some of the VDAs don't support and thus don't provide us with visible
++	  // size in picture.size, passing coded size instead, so always drop it and
++	  // use config information instead.
++	  gfx::Rect visible_rect;
++	  gfx::Size natural_size;
++	  GetBufferData(picture.bitstream_buffer_id(), &timestamp, &visible_rect, &natural_size);
++
++	  scoped_refptr<VideoFrame> frame(VideoFrame::CreateHoleFrame(natural_size));
++	  frame->set_timestamp(timestamp);
++	  DeliverFrame(frame);
++	  return;
++  }
++
+   PictureBufferMap::iterator it =
+       assigned_picture_buffers_.find(picture.picture_buffer_id());
+   if (it == assigned_picture_buffers_.end()) {

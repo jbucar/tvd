@@ -1,0 +1,8 @@
+{
+	"config": "CONFIGURACIÓN",
+	"recomended": "RECOMENDADOS",
+	"favorites": "FAVORITOS",
+	"applications": "APLICACIONES",
+	"setting_config": "Configuración",
+	"setting_wifi": "WiFi"
+}

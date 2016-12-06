@@ -1,0 +1,12 @@
+*~
+.kdev4
+*.kdev4
+config/SetupUser.cmake
+.*.swp
+.project
+.cproject
+install/
+install.*/
+*nbproject/
+lib/dtv-luaz/doc/lua/lua_api.pdf
+lib/dtv-luaz/doc/lua/out/

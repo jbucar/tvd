@@ -1,0 +1,65 @@
+.progressbar {
+	height: 40px;
+}
+
+.progressbar-line {
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.progressbar-progress {
+	height: 5px;
+	width: 0px;
+	margin-top: -5px;
+}
+
+.progressbar-knob {
+	width: 10px;
+	height: 10px;
+	margin-top: -8px;
+	position: relative;
+	border-radius: 25px;
+	background: rgb(255, 227, 190);
+}
+
+.progressbar-labels {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.progressbar-label {
+	font-size: 10pt;
+	color: white;
+}
+
+/* ProgressLabel css */
+
+.progress-label {
+	width: 100%;
+	height: 100%
+}
+
+.progress-label > .bar-wrapper > .bar {
+	height: 80%;
+	width: 96%;
+	background-color: transparent;
+	margin: 0;
+}
+
+.progress-label > .bar-wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.progress-label > .label-wrapper {
+	position: relative;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

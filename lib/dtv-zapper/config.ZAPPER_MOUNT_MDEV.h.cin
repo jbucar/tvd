@@ -1,0 +1,3 @@
+//	Mount mdev
+#define MDEV_FIFO ${ZAPPER_MOUNT_MDEV_FIFO}
+#define MDEV_PATH ${ZAPPER_MOUNT_MDEV_PATH}

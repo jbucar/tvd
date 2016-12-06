@@ -1,0 +1,18 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.aml_power",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.aml_power",
+			"name": "System",
+			"type": "service",
+			"version": "1.0.0",
+			"main": "service.js",
+			"dependencies": ["ar.edu.unlp.info.lifia.tvd.system"]
+		}
+	]
+}
+

@@ -1,0 +1,219 @@
+.channels-menu {
+	background: rgb(241, 116, 0);
+}
+
+.view-wrap-view .inactive.channels-menu {
+	background: rgb(185, 86, 0);
+}
+
+.ch-button.spotlight {
+	border-color: rgb(255, 227, 190);
+}
+
+.freezed.ch-button {
+	background-color: rgb(241, 116, 0);
+}
+
+.ch-submenu {
+	background: rgb(241, 116, 0);
+}
+
+.ch-button-submenu.spotlight {
+	border-color: rgb(255, 227, 190);
+}
+
+.ch-info {
+	display: flex;
+	flex-direction: row;
+	margin-left: 5%;
+	margin-right: 5%;
+	justify-content: space-between;
+	height: 35px;
+}
+
+.ch-container {
+	transition: all .5s linear;
+	height: 100%;
+	width: 100%;
+}
+
+.active > .ch-container .appview-wrapper {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.ch-main-wrapper .scan-progress {
+	background: rgb(241, 116, 0);
+	height: 100%;
+	font-size: 25px;
+}
+
+.up-animation {
+	transform: translateY(-100%);
+}
+
+.ch-content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.ch-main-wrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.ch-main-wrapper > * {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+.ch-marquee-text {
+	text-align: inherit;
+	width: 100%;
+}
+
+.ch-scan-btn.spotlight {
+	background: rgb(241, 116, 0);
+}
+
+.ch-keyboard-action.spotlight {
+	background: rgb(241, 116, 0);
+}
+
+
+.ch-keyboard-btn.spotlight {
+	color: rgb(241, 116, 0);
+}
+
+.vkeyboard-action-btn.spotlight > .ch-btn-bar-color {
+	border-color: rgb(255, 227, 190);
+}
+
+/* Inactive carousel */
+.inactive > .ch-container .appview-wrapper {
+	display: none;
+}
+
+.inactive > .ch-container .appview-wrapper {
+	color: rgb(255, 255, 255);
+}
+
+.inactive > .ch-container .appview-wrapper .moon-marquee {
+	text-align: center;
+}
+
+.ch-container .appview-wrapper .ch-info .moon-marquee {
+	width: 100px;
+	text-align: right;
+}
+
+.ch-main-wrapper .content.spotlight {
+	border-color: rgb(255, 227, 190);
+}
+
+.download > .bar .bgbar-ch {
+	background: rgba(180, 180, 180, .5);
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+/* ch-simple-buttton */
+.simple-button.ch.spotlight {
+	border-color: rgb(255, 227, 190);
+	background: rgb(241, 116, 0);
+}
+
+.tooltip.menu.ch {
+	background-color: rgb(241, 116, 0);
+}
+
+.tooltip.menu.ch:before {
+	border-bottom-color: rgb(241, 116, 0);
+}
+
+/* Dialog */
+.dialog .actions.ch > *.spotlight {
+	background: rgb(241, 116, 0);
+}
+
+.dialog .title.ch {
+	color: rgb(241, 116, 0);
+}
+
+.dialog .icon.ch {
+	background: rgb(241, 116, 0);
+}
+
+.video-placeholder {
+	background: black;
+}
+
+/* progressbar */
+.ch-progressbar-progress, .tvlayer-progressbar-progress, .ch-progressbar-knob, .tvlayer-progressbar-knob {
+	background: rgb(255, 227, 190);
+}
+
+/* NEW  */
+.carousel-item-txt.selected.ch {
+	background: rgb(241, 116, 0);
+}
+
+.spotlight .carousel-item-txt.selected.ch {
+	border-bottom-color: rgb(255, 227, 190);
+}
+
+.carousel-item-txt.chname {
+	font-size: 12pt;
+	text-align: right;
+	color: rgb(100, 101, 102);
+	width: 100%;
+	max-width: 105px;
+}
+
+.carousel-item-txt.chnumber {
+	font-size: 12pt;
+	text-align: left;
+	color: rgb(100, 101, 102);
+	min-width: 45px;
+	max-width: 45px;
+}
+
+.spotlight .carousel-item-txt.chnumber {
+	color: rgb(88,88,88);
+}
+
+.spotlight .carousel-item-txt.chname {
+	color: rgb(88,88,88);
+}
+
+.inactive .carousel-item-txt.chnumber {
+	display: none;
+}
+
+.inactive .carousel-item-txt.chname {
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+.carousel-iconbar-ch .blockedIcon {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.icons-wrapper.carousel-iconbar-ch {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	width: auto;
+	justify-content: space-around;
+}
+
+.selected .icons-wrapper.carousel-iconbar-ch {
+	justify-content: flex-start;
+}

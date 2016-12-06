@@ -1,0 +1,45 @@
+.shell-scroller .moon-scroller-v-column.v-scroll-enabled {
+	opacity: 1;
+	width: 10px;
+}
+
+.shell-scroller .moon-scroller-client-wrapper.v-scroll-enabled {
+	padding-right: 30px;
+}
+
+.shell-scroller .moon-icon-button.small > .small-icon-tap-area {
+	line-height: 62px;
+}
+
+.shell-scrollbar .moon-icon.small, .moon-icon-toggle.small {
+	font-size: 45px;
+}
+
+.shell-scroller .moon-scroller-vthumb {
+	width: 10px;
+	right: 0;
+}
+
+.shell-scroller .moon-scroller-v-column {
+	right: 7px;
+}
+
+.shell-scroller .moon-scroller-vthumb.hidden {
+	opacity: 1;
+}
+
+.shell-scroller .moon-scroller-vthumb-container {
+	width: 10px;
+	height: 101%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.shell-scroller .moon-icon-button.moon-paging-button.top {
+	display: none;
+}
+
+.shell-scroller .moon-icon-button.moon-paging-button.bottom {
+	display: none;
+}

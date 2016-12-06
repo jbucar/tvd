@@ -1,0 +1,11 @@
+--- a/buildbot/status/web/builder.py	2015-11-17 11:41:34.122627187 -0300
++++ b/buildbot/status/web/builder.py	2015-11-17 11:42:06.362531694 -0300
+@@ -179,8 +179,6 @@
+ 
+     if "list" in field.type:
+         choices = field.getChoices(master, sch, buildername)
+-        if choices:
+-            default = choices[0]
+         default_props[pname+".choices"] = choices
+             
+     default = req.args.get(pname, [default])[0]

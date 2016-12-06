@@ -1,0 +1,45 @@
+ADD_HEADERS(
+  src/ui.h
+  src/lua.h
+  src/modules/module.h
+)
+
+ADD_SOURCES(
+  src/ui.cpp
+  src/lua.cpp
+  src/modules/mainwindow.h
+  src/modules/mainwindow.cpp
+  src/modules/module.h
+  src/modules/module.cpp
+  src/modules/log.h
+  src/modules/log.cpp
+  src/modules/tuner.h
+  src/modules/tuner.cpp
+  src/modules/channels.h
+  src/modules/channels.cpp
+  src/modules/channel.h
+  src/modules/channel.cpp
+  src/modules/player.h
+  src/modules/player.cpp
+  src/modules/mixer.h
+  src/modules/mixer.cpp
+  src/modules/display.h
+  src/modules/display.cpp
+  src/modules/middleware.h
+  src/modules/middleware.cpp
+  src/modules/update.h
+  src/modules/update.cpp
+  src/modules/control.h
+  src/modules/control.cpp
+  src/modules/storage.cpp
+  src/modules/storage.h
+  src/modules/net.cpp
+  src/modules/net.h
+  src/modules/network.cpp
+  src/modules/network.h
+  src/modules/canvas/canvas.h
+  src/modules/canvas/canvas.cpp
+  src/modules/canvas/surface.h
+  src/modules/canvas/surface.cpp
+  )
+

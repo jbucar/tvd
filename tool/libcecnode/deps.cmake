@@ -1,0 +1,5 @@
+Find_Package( LibCEC )
+ADD_DEPENDENTS( CEC )
+
+ADD_BOOST_COMPONENTS( thread )
+ADD_INTERNAL_COMPONENTS( util node )

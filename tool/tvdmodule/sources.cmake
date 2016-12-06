@@ -1,0 +1,31 @@
+
+ADD_SOURCES(
+  src/tvd.h
+  src/tvd.cpp
+  src/channels.h
+  src/channels.cpp
+  src/session.h
+  src/session.cpp
+  src/channel.h
+  src/channel.cpp
+  src/show.h
+  src/show.cpp
+  src/player.h
+  src/player.cpp
+  src/closedcaptionplayer.h
+  src/closedcaptionplayer.cpp
+  src/logoprovider.h
+  src/logoprovider.cpp
+  src/delegate.h
+  src/delegate.cpp
+  src/mediaplayer.h
+  src/mediaplayer.cpp
+  src/tunerdelegate.h
+  src/tunerdelegate.cpp
+  src/io.h
+  src/io.cpp
+  src/ginga/controller.h
+  src/ginga/controller.cpp
+  src/ginga/mainplayeradapter.h
+  src/ginga/mainplayeradapter.cpp
+)

@@ -1,0 +1,8 @@
+.carrousel_list {
+	display: flex;
+	flex-direction: column;
+}
+
+.carrousel_list.animated {
+	transition: transform 1s;
+}

@@ -1,0 +1,26 @@
+set( win32rfs "${PLATFORM_ROOTFS}/win32" )
+
+INSTALL( 
+	DIRECTORY "${win32rfs}/bin/"
+	DESTINATION bin
+	FILES_MATCHING PATTERN "*.*"
+)
+
+INSTALL( 
+	DIRECTORY "${win32rfs}/etc/"
+	DESTINATION etc
+	FILES_MATCHING PATTERN "*.*"
+)
+
+INSTALL( 
+	DIRECTORY "${win32rfs}/lib/"
+	DESTINATION lib
+	FILES_MATCHING PATTERN "*.*"
+)
+
+INSTALL( 
+	DIRECTORY "${win32rfs}/share/"
+	DESTINATION share
+	FILES_MATCHING PATTERN "*.*"
+)
+

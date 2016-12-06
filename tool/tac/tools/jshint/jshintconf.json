@@ -1,0 +1,31 @@
+// Documentation: http://www.jshint.com/docs/options/
+{
+	"browser": true,
+	"node": true,
+	"mocha": true,
+	"esversion": 6,
+	"globals": {
+		"enyo": true,
+		"assets": true,
+
+		// system globals
+		"RecoveryError": true,
+		"log": true,
+		"shutdown": true,
+
+		// TAC apis
+		"tac": true,
+		"pkgmgr": true,
+		"appmgr": true,
+		"system": true
+	},
+	"newcap": false,
+	"globalstrict": true,
+	"quotmark": false,
+	"undef": true,
+	"unused": true,
+
+	// For enyo
+	"noarg": false,
+	"strict": false
+}

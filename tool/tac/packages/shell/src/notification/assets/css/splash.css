@@ -1,0 +1,36 @@
+.splash {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.splash .wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.splash .wrapper .txt {
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 400;
+	margin-bottom: 40px;
+	font-family: "Asap", sans-serif;
+}
+
+.splash .wrapper .img {
+	margin-top: 45px;
+	margin-bottom: 50px;
+}
+
+.splash .preloader {
+	width: 340px;
+}
+
+/* TODO: move this to preloader */
+.splash .preloader .animate {
+	background: -webkit-linear-gradient(-45deg, rgba(1, 1, 1, 0.4) 25%, transparent 25%, transparent 50%, rgba(1, 1, 1, 0.4) 50%, rgba(1, 1, 1, 0.4) 75%, transparent 75%, transparent);
+	-webkit-background-size: 20px 20px;
+}

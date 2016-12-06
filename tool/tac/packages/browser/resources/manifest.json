@@ -1,0 +1,9 @@
+{
+	"name" : "TAC",
+	"version": "1.0",
+	"sdk_version": "1.0",
+	"main": "",
+	"libs": [
+		"../lib/libdtvhtmlshellremote.so"
+	]
+}

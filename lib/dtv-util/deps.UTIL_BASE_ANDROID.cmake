@@ -1,0 +1,3 @@
+set( ANDROID_LIBRARIES "android;log" )
+set( ANDROID_FOUND 1 )
+ADD_DEPENDENTS( ANDROID )

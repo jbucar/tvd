@@ -1,0 +1,25 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.audiencia",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.audiencia",
+			"name": "Medidor de audiencia",
+			"description": "Medidor de audiencia",
+			"type": "service",
+			"runs": "onDemand",
+			"user": true,
+			"version": "1.0.0",
+			"main": "main.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.tvd",
+				"ar.edu.unlp.info.lifia.tvd.screen",
+				"ar.edu.unlp.info.lifia.tvd.cec"
+			]
+		}
+	]
+}

@@ -1,0 +1,5 @@
+{
+	"shell": "ar.edu.unlp.info.lifia.tvd.shell2",
+	"store": "ar.edu.unq.utics.tac.tienda",
+    "backendURL": "http://172.16.0.206:3044"
+}

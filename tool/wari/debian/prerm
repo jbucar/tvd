@@ -1,0 +1,7 @@
+#!/bin/sh
+
+NAME=wari
+rm -rf /usr/share/fonts/truetype/${NAME}
+rm -rf /var/lib/${NAME}
+fc-cache -rfv
+

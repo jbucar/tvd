@@ -1,0 +1,25 @@
+{
+	"name": "appmgr",
+	"version": "1.0.0",
+	"description": "TAC appmgr service",
+	"main": "src/main.js",
+	"dependencies": {
+		"lodash": "^4.0.0",
+		"bluebird": "^3.1.4",
+		"component": "file:../node_modules/component",
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"mock-fs": "^3.6.0",
+		"chai": "^3.4.1",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

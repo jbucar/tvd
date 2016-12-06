@@ -1,0 +1,5 @@
+canvas:attrColor('navy')
+canvas:clear()
+canvas:attrColor('white')
+canvas:drawRect('fill', 10, 10, 100, 100)
+canvas:flush()

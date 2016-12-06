@@ -1,0 +1,43 @@
+--- media/filters/decoder_stream.cc.orig
++++ media/filters/decoder_stream.cc
+@@ -20,6 +20,7 @@
+ #include "media/base/video_decoder.h"
+ #include "media/base/video_frame.h"
+ #include "media/filters/decrypting_demuxer_stream.h"
++#include "htmlshell/src/media/video_proxy.h"
+ 
+ namespace media {
+ 
+@@ -621,6 +622,21 @@ void DecoderStream<StreamType>::OnDecoderReset() {
+   ReinitializeDecoder();
+ }
+ 
++template <>
++void DecoderStream<DemuxerStream::VIDEO>::drawFrame( const scoped_refptr<VideoFrame> &frame ) {
++	if (!decoder_) {
++		return;
++	}
++
++	if (decoder_->GetDisplayName() == "GpuVideoDecoder") {
++		tvd::video::showFrame( frame->timestamp().InMicroseconds() );
++	}
++}
++
++template <>
++void DecoderStream<DemuxerStream::AUDIO>::drawFrame( const scoped_refptr<VideoFrame> &frame ) {
++}
++
+ template class DecoderStream<DemuxerStream::VIDEO>;
+ template class DecoderStream<DemuxerStream::AUDIO>;
+ 
+--- media/filters/decoder_stream.h.orig
++++ media/filters/decoder_stream.h
+@@ -60,6 +60,8 @@ class MEDIA_EXPORT DecoderStream {
+       const scoped_refptr<MediaLog>& media_log);
+   virtual ~DecoderStream();
+ 
++  void drawFrame( const scoped_refptr<VideoFrame> &frame );
++
+   // Returns the string representation of the StreamType for logging purpose.
+   std::string GetStreamTypeString();
+ 

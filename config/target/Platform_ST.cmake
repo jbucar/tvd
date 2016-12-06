@@ -1,0 +1,27 @@
+set(PLATFORM ST)
+
+#Include buildroot
+IF(NOT TVD_DEPOT_TOOLCHAIN_PATH)
+	file(TO_CMAKE_PATH $ENV{DEPOT} DEPOT)
+	include( ${DEPOT}/config/target/Platform_DEPOT.cmake )
+ENDIF()
+
+#Set optimization level for release build
+set(CMAKE_CXX_FLAGS_RELEASE "-Os")
+#Set optimization level and debug info for developer build
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+
+# Options
+SET(TVD_CONFIG_INSTALL_PREFIX /firmware)
+SET(PLATFORM_VERSION_FILE \"/etc/platform.version\")
+SET(BACKTRACE_USE_GNU 1)
+SET(UTF8_CONVERTER_USE_EMBED 1)
+SET(UTF8_CONVERTER_USE_ICONV 0)
+SET(CANVAS_SYSTEM_USE_GTK 0)
+SET(CANVAS_2D_USE_CAIRO 0)
+set(CANVAS_PLAYER_USE_VLC 0)
+set(CANVAS_AUDIO_USE_PULSE 0)
+SET(DVB_USE_DVB 0)
+SET(ZAPPER_IMPL_USE_PC 0)
+SET(ZAPPER_IMPL_USE_ST 1)
+

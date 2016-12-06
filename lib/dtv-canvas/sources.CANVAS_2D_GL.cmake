@@ -1,0 +1,13 @@
+ADD_SOURCES(
+	src/impl/gl/error.h
+	src/impl/gl/canvas.h
+	src/impl/gl/canvas.cpp
+	src/impl/gl/surface.h
+	src/impl/gl/surface.cpp
+	src/impl/gl/atlas.h
+	src/impl/gl/atlas.cpp
+	src/impl/gl/font.h
+	src/impl/gl/font.cpp
+	src/impl/gl/glyphrun.h
+	src/impl/gl/glyphrun.cpp
+)

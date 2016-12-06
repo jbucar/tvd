@@ -1,0 +1,13 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+INCLUDE($ENV{DEPOT}/config/Tvd.cmake)
+
+# Ginga process
+SetIfEmpty(MPEGPARSER_DEMUXER_PSI_TIMEOUT 4)
+SetIfEmpty(MPEGPARSER_GINGA_DEFAULT_PROCESS \"${CMAKE_CONFIG_INSTALL_PREFIX}/bin/ginga\" )
+
+Add_Lib (
+	PROJECT_NAME "mpegparser"
+	PROJECT_DESCRIPTION "This library get/parse/process the MPEG TS." 
+	PROJECT_TESTS "test"
+)
+

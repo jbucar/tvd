@@ -1,0 +1,12 @@
+ADD_SOURCES(
+    src/impl/sdl/system.cpp
+    src/impl/sdl/timer.cpp
+    src/impl/sdl/canvas.cpp
+    src/impl/sdl/surface.cpp
+    src/impl/sdl/pngfuncs.cpp
+    src/impl/sdl/gfx/SDL_framerate.c
+    src/impl/sdl/gfx/SDL_gfxBlitFunc.c
+    src/impl/sdl/gfx/SDL_gfxPrimitives.c
+    src/impl/sdl/gfx/SDL_imageFilter.c
+    src/impl/sdl/gfx/SDL_rotozoom.cpp
+)

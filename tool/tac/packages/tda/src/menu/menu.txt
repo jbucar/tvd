@@ -1,0 +1,14 @@
+{
+	"settings": "CONFIGURACIÓN",
+	"favorites": "FAVORITOS",
+	"channels": "CANALES",
+	"setting_config": "Configuración",
+	"epg": "GUÍA DE PROGRAMACIÓN",
+	"blocked": "BLOQUEADOS",
+	"all": "TODOS",
+	"channel": "CANALES",
+	"notifyBlocked": "Canal bloqueado",
+	"notifyNotBlocked": "Canal desbloqueado",
+	"notifyFavorite": "Agregado a favoritos",
+	"notifyNotFavorite": "Quitado de favoritos"
+}

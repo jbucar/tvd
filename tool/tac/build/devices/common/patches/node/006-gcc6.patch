@@ -1,0 +1,16 @@
+--- a/common.gypi	2016-06-07 15:45:36.298467044 -0300
++++ b/common.gypi	2016-06-07 15:46:38.448465922 -0300
+@@ -226,7 +226,12 @@
+       }],
+       [ 'OS in "linux freebsd openbsd solaris android aix"', {
+         'cflags': [ '-Wall', '-Wextra', '-Wno-unused-parameter', ],
+-        'cflags_cc': [ '-fno-rtti', '-fno-exceptions', '-std=gnu++0x' ],
++        'cflags_cc': [
++          '-fno-delete-null-pointer-checks',
++          '-fno-exceptions',
++	  '-std=gnu++0x',
++          '-fno-rtti',
++        ],
+         'ldflags': [ '-rdynamic' ],
+         'target_conditions': [
+           ['_type=="static_library"', {

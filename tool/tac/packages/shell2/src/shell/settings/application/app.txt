@@ -1,0 +1,10 @@
+{
+	"carrouselName": "Geolocalización",
+	"btnRun": "Iniciar",
+	"btnFav": "Favorita",
+	"btnUninstall": "Desinstalar",
+	"uninstall_app_title": "DESINSTALAR APLICACIÓN",
+	"uninstall_app_text": "Esta acción desinstalará la aplicación junto con su configuracion actual.",
+	"vendor": "Autor",
+	"version": "Version"
+}

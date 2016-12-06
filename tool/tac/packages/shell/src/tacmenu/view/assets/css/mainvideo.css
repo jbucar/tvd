@@ -1,0 +1,9 @@
+
+.shell-video {
+	background-color: black;
+	object-fit: fill;
+}
+
+::cue {
+	font-size: 24px;
+}

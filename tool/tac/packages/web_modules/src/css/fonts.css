@@ -1,0 +1,31 @@
+/* latin */
+@font-face {
+	font-family: 'Oswald-Regular';
+	src: local('Oswald-Regular'), url(../fonts/Oswald-Regular.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+	font-family: 'Oswald-Light';
+	src: local('Oswald-Light'), url(../fonts/Oswald-Light.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+	font-family: 'Oswald-Bold';
+	src: local('Oswald-Bold'), url(../fonts/Oswald-Bold.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+	font-family: 'Asap';
+	src: local('Asap'), url(../fonts/Asap.woff2) format('woff2');
+}
+
+/* HACK: CKJ SUPPORT */
+@font-face {
+	font-family: 'CKJFont';
+	src: local('CKJFont'), url(../fonts/TITUSCBZ.TTF) format('truetype');
+}

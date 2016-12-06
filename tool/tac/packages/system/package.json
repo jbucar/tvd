@@ -1,0 +1,32 @@
+{
+	"name": "system",
+	"version": "1.0.0",
+	"description": "TAC system service",
+	"main": "src/main.js",
+	"dependencies": {
+		"bluebird": "^3.1.4",
+		"tv4": "^1.2.7",
+		"mktemp": "^0.4.0",
+		"lodash": "^4.0.0",
+		"fs-extra": "^0.30.0",
+		"busboy": "^0.2.13",
+		"sqlite3": "file:../node_modules/sqlite3",
+		"registry": "file:../node_modules/registry",
+		"component": "file:../node_modules/component",
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"mock-fs": "^3.6.0",
+		"chai": "^3.4.1",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"nock": "latest",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

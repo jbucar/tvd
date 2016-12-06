@@ -1,0 +1,54 @@
+--- media/blink/video_frame_compositor.cc.orig
++++ media/blink/video_frame_compositor.cc
+@@ -4,6 +4,7 @@
+ 
+ #include "media/blink/video_frame_compositor.h"
+ 
++#include "htmlshell/src/media/video_proxy.h"
+ #include "base/bind.h"
+ #include "base/message_loop/message_loop.h"
+ #include "base/time/default_tick_clock.h"
+@@ -19,11 +20,13 @@ static bool IsOpaque(const scoped_refptr<VideoFrame>& frame) {
+ VideoFrameCompositor::VideoFrameCompositor(
+     const scoped_refptr<base::SingleThreadTaskRunner>& compositor_task_runner,
+     const base::Callback<void(gfx::Size)>& natural_size_changed_cb,
+-    const base::Callback<void(bool)>& opacity_changed_cb)
++    const base::Callback<void(bool)>& opacity_changed_cb,
++    const base::Callback<gfx::Rect()>& video_bounds_cb)
+     : compositor_task_runner_(compositor_task_runner),
+       tick_clock_(new base::DefaultTickClock()),
+       natural_size_changed_cb_(natural_size_changed_cb),
+       opacity_changed_cb_(opacity_changed_cb),
++      video_bounds_cb_(video_bounds_cb),
+       background_rendering_enabled_(true),
+       background_rendering_timer_(
+           FROM_HERE,
+@@ -95,6 +98,8 @@ scoped_refptr<VideoFrame> VideoFrameCompositor::GetCurrentFrame() {
+ void VideoFrameCompositor::PutCurrentFrame() {
+   DCHECK(compositor_task_runner_->BelongsToCurrentThread());
+   rendered_last_frame_ = true;
++  gfx::Rect bounds = video_bounds_cb_.Run();
++  tvd::video::setAxis( bounds.x(), bounds.y(), bounds.width(), bounds.height() );
+ }
+ 
+ bool VideoFrameCompositor::UpdateCurrentFrame(base::TimeTicks deadline_min,
+--- media/blink/video_frame_compositor.h.orig
++++ media/blink/video_frame_compositor.h
+@@ -69,7 +69,8 @@ class MEDIA_EXPORT VideoFrameCompositor
+   VideoFrameCompositor(
+       const scoped_refptr<base::SingleThreadTaskRunner>& compositor_task_runner,
+       const base::Callback<void(gfx::Size)>& natural_size_changed_cb,
+-      const base::Callback<void(bool)>& opacity_changed_cb);
++      const base::Callback<void(bool)>& opacity_changed_cb,
++      const base::Callback<gfx::Rect()>& video_bounds_cb);
+ 
+   // Destruction must happen on the compositor thread; Stop() must have been
+   // called before destruction starts.
+@@ -153,6 +154,7 @@ class MEDIA_EXPORT VideoFrameCompositor
+   // These callbacks are executed on the compositor thread.
+   const base::Callback<void(gfx::Size)> natural_size_changed_cb_;
+   const base::Callback<void(bool)> opacity_changed_cb_;
++  const base::Callback<gfx::Rect()> video_bounds_cb_;
+ 
+   // Allows tests to disable the background rendering task.
+   bool background_rendering_enabled_;

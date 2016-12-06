@@ -1,0 +1,23 @@
++++ content/renderer/render_frame_impl.cc
+@@ -141,6 +141,7 @@
+ #include "media/blink/webmediaplayer_impl.h"
+ #include "media/renderers/gpu_video_accelerator_factories.h"
+ #include "mojo/common/url_type_converters.h"
++#include "htmlshell/src/media/webmediaplayer_proxy.h"
+ #include "net/base/data_url.h"
+ #include "net/base/net_errors.h"
+ #include "net/base/registry_controlled_domains/registry_controlled_domain.h"
+@@ -2453,7 +2454,12 @@ blink::WebMediaPlayer* RenderFrameImpl::createMediaPlayer(
+   if (!url_index_.get() || url_index_->frame() != frame)
+     url_index_.reset(new media::UrlIndex(frame));
+ 
++  blink::WebMediaPlayer* media_player = nullptr;
++  GURL gurl(url);
++  if (gurl.SchemeIs("srvdtv"))
++    media_player = new tvd::WebMediaPlayerProxy(client, GetWebMediaPlayerDelegate()->AsWeakPtr(), params);
++  else
+-  media::WebMediaPlayerImpl* media_player = new media::WebMediaPlayerImpl(
++    media_player = new media::WebMediaPlayerImpl(
+       frame, client, encrypted_client, GetWebMediaPlayerDelegate()->AsWeakPtr(),
+       std::move(media_renderer_factory), GetCdmFactory(), url_index_, params);
+ 

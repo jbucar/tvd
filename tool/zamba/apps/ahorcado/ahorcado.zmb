@@ -1,0 +1,108 @@
+
+
+local game
+local storageID = "resident_app_Ahorcado"
+local showingSetupScreen = false
+local mainCanvas
+
+function resetMaxScore()
+  mainCanvas:setColor(251,252,255,255)
+  mainCanvas:setFont("Tiresias",40)
+  local w,h = mainCanvas:measureText(tostring(storage.loadInt(storageID,0)))
+  local ascent = mainCanvas:fontAscent()
+  mainCanvas:fillRect(390,225-ascent,w,h)
+  mainCanvas:setColor(0,0,0,255)
+  mainCanvas:drawText(390,225,"0")
+  mainCanvas:flush()
+
+  -- Save data
+  storage.saveInt(storageID,0)
+  storage.commit()
+end
+
+appName = ' [ Ahorcado ] '
+-- ############################################################### --
+
+function start( mainSurface )
+  require "data/LOS"
+  require "data/game"
+  
+  showingSetupScreen = false
+  game = Game:new(mainSurface,storageID) --global
+  game:start()
+  
+  return true
+end
+
+function stop()
+  return true
+end
+
+function setup( mainSurface )
+  showingSetupScreen = true
+  mainCanvas = mainSurface
+  local bg = canvas.createSurfaceFromPath('imgs/Ahorcado_config.jpg')
+  mainSurface:blit(96,39,bg)
+  mainSurface:setColor(0,0,0,255)
+  mainSurface:setFont("Tiresias",40)
+  mainSurface:drawText(390,225,tostring(storage.loadInt(storageID,0)))
+  mainSurface:flush()
+  return true
+end
+
+function handleEvent( evt )
+
+   if (evt.type == 'key') and (evt.isUp == 0) and (showingSetupScreen == false) then
+
+     if (evt.value == KEY_OK or evt.value == KEY_ENTER) then
+      game:enterPressed() 
+     elseif evt.value == KEY_CURSOR_UP then
+      game:upPressed()
+     elseif evt.value == KEY_CURSOR_DOWN then
+      game:downPressed()
+     elseif evt.value == KEY_CURSOR_LEFT then
+      game:leftPressed()
+     elseif evt.value == KEY_CURSOR_RIGHT then
+      game:rightPressed()
+     elseif (evt.value == KEY_RED) or (evt.value == KEY_F1) then
+        game:redPressed()
+     elseif (evt.value == KEY_GREEN) or (evt.value == KEY_F2) then
+      game:greenPressed()
+     elseif (evt.value == KEY_YELLOW) or (evt.value == KEY_F3) then
+      game:bluePressed()
+     elseif (evt.value == KEY_BLUE) or (evt.value == KEY_F4) then
+      game:yellowPressed()
+     elseif (evt.value == KEY_ESCAPE) or (evt.value == KEY_EXIT) then
+      showingSetupScreen = false
+     end
+
+  elseif (showingSetupScreen == true) and ((evt.value == KEY_RED) or (evt.value == KEY_F1)) then
+    resetMaxScore()
+  end
+
+  if evt.type == "timeOut" then
+    game:timeOut(evt.value)
+  end
+
+  return true
+end
+
+function describe()
+  local app = {}
+
+  app.name = "Ahorcado"
+  app.desc = "El clásico juego de adivinar palabras"
+  app.icon = "imgs/ahorcadoBlanco.png"
+  app.selectedIcon = "imgs/ahorcadoNaranja.png"
+  app.version = "0.1"
+  app.interactive = true
+
+  app.methods = {
+    ['start'] = start,
+    ['stop'] = stop,
+    ['startSetup'] = setup,
+    ['handleEvent'] = handleEvent
+  }
+
+  return app
+end

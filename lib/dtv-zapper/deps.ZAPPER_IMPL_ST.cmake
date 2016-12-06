@@ -1,0 +1,9 @@
+# Set API SDK path
+SET( ST_API_SDK ${TVD_DEPOT_SYSROOT}/opt/stapisdk )
+
+# Include specific platform dependencies
+STRING( TOLOWER ${TVD_DEPOT_NAME} ST_GENERIC_PLATFORM_LOWER )
+INCLUDE( "${CONFIG_PATH}/target/st_${ST_GENERIC_PLATFORM_LOWER}.cmake" )
+
+ADD_DEPENDENTS( ST_BUILD )
+

@@ -1,0 +1,31 @@
+{
+	"name": "network",
+	"version": "1.0.0",
+	"description": "TAC network service",
+	"main": "src/main.js",
+	"devDependencies": {
+		"bluebird": "^3.1.4",
+		"dbus": "file:../node_modules/dbus",
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"dbus-native": "*",
+		"chai": "^3.4.1",
+		"lodash": "^4.0.0",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC",
+        "cov_tresholds": [
+                "--statements", "99.53",
+                "--branches",   "92.98",
+                "--functions",  "99.28",
+                "--lines",      "99.53"
+        ]
+}

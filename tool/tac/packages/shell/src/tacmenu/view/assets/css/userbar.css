@@ -1,0 +1,58 @@
+.userbar-mainview {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 25px;
+}
+
+.userbar-mainview .logo {
+	margin-left: 36px;
+}
+
+.userbar-mainview .icon-bar {
+	margin-right: 36px;
+}
+
+.userbar-mainview .icons-wrapper {
+	align-items: center;
+}
+
+.userbar-mainview .status-icon {
+	font-family: 'Oswald-Light';
+	letter-spacing: 0.030em;
+	font-size: 20px;
+	height: 32px;
+	line-height: 32px;
+	margin-left: 10px;
+	display: flex;
+}
+
+.userbar-mainview .status-icon.date {
+	min-width: 125px;
+	max-width: 125px;
+}
+
+.userbar-mainview .status-icon.time {
+	min-width: 77px;
+	max-width: 77px;
+}
+
+.userbar-mainview .status-icon > .icon-wrapper {
+	margin-right: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	width: 32px;
+	height: 32px;
+}
+
+.userbar-mainview .status-icon > .icon-wrapper .icon {
+	min-width: 24px;
+	min-height: 24px;
+	max-width: 24px;
+	max-height: 24px;
+}

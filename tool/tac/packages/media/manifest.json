@@ -1,0 +1,49 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.media",
+	"version": "1.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"update": false,
+	"system": true,
+	"user": false,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.media.image",
+			"name": "Image galery",
+			"type": "service",
+			"version": "1.0",
+			"main": "image.js"
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.media.video",
+			"name": "Video galery",
+			"type": "service",
+			"version": "1.0",
+			"main": "video.js"
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.media.diskprovider",
+			"name": "Image && video disk providers",
+			"type": "service",
+			"version": "1.0",
+			"main": "diskprovider.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.diskmgr",
+				"ar.edu.unlp.info.lifia.tvd.media.image",
+				"ar.edu.unlp.info.lifia.tvd.media.video"
+			]
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.media.main",
+			"name": "Media repository",
+			"type": "service",
+			"version": "1.0",
+			"main": "main.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.downloader"
+			]
+		}
+	]
+}

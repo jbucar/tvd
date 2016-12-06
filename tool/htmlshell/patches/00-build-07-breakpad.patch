@@ -1,0 +1,40 @@
+--- breakpad/breakpad.gyp.orig
++++ breakpad/breakpad.gyp
+@@ -19,6 +19,14 @@
+           'type': 'static_library',
+           'includes': ['breakpad_tools.gypi'],
+           'defines': ['BPLOG_MINIMUM_SEVERITY=SEVERITY_ERROR'],
++          'variables': {
++            'host_arch': '<!(uname -m)',
++          },
++          'conditions': [
++            ['host_arch=="x86_64"', {
++              'cflags': ['-m64']
++            }]
++          ],
+           'sources': [
+             'src/processor/basic_code_module.h',
+             'src/processor/basic_code_modules.cc',
+@@ -118,6 +126,11 @@
+           # GN version: //breakpad:minidump_stackwalk
+           'target_name': 'minidump_stackwalk',
+           'type': 'executable',
++          'conditions': [
++            ['OS=="android" or OS=="linux"', {
++              'toolsets': [ 'host' ],
++            }],
++          ],
+           'dependencies': ['stackwalk_common'],
+           'includes': ['breakpad_tools.gypi'],
+           'defines': ['BPLOG_MINIMUM_SEVERITY=SEVERITY_ERROR'],
+--- breakpad/breakpad_tools.gypi.orig
++++ breakpad/breakpad_tools.gypi
+@@ -4,7 +4,7 @@
+ 
+ {
+   'conditions': [
+-    ['OS=="android"', {
++    ['OS=="android" or OS=="linux"', {
+       'toolsets': ['host'],
+     }],
+   ],

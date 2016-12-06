@@ -1,0 +1,5 @@
+ADD_INTERNAL_COMPONENTS( aml )
+
+# find_package( GStreamer-0.10 REQUIRED )
+# ADD_DEPENDENTS( GSTREAMER_0_10  )
+

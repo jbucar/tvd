@@ -1,0 +1,62 @@
+ADD_HEADERS(
+	src/PrivateBaseContext.h
+	include/IDocumentConverter.h
+	include/ncl/NclInterfacesConverter.h
+	include/ncl/NclLinkingConverter.h
+	include/ncl/NclComponentsConverter.h
+	include/ncl/NclPresentationSpecConverter.h
+	include/ncl/NclTransitionConverter.h
+	include/ncl/NclConnectorsConverter.h
+	include/ncl/NclMetainformationConverter.h
+	include/ncl/NclLayoutConverter.h
+	include/ncl/NclImportConverter.h
+	include/ncl/NclStructureConverter.h
+	include/ncl/NclDocumentConverter.h
+	include/ncl/NclPresentationControlConverter.h
+	include/smil/SMILNCMDocumentConverter.h
+	include/framework/DocumentParser.h
+	include/framework/ncl/NclComponentsParser.h
+	include/framework/ncl/NclPresentationControlParser.h
+	include/framework/ncl/NclDocumentParser.h
+	include/framework/ncl/NclImportParser.h
+	include/framework/ncl/NclInterfacesParser.h
+	include/framework/ncl/NclConnectorsParser.h
+	include/framework/ncl/NclMetainformationParser.h
+	include/framework/ncl/NclStructureParser.h
+	include/framework/ncl/NclLinkingParser.h
+	include/framework/ncl/NclPresentationSpecificationParser.h
+	include/framework/ncl/NclTransitionParser.h
+	include/framework/ncl/NclLayoutParser.h
+	include/framework/ModuleParser.h
+)
+
+ADD_SOURCES(
+	src/PrivateBaseContext.cpp
+	src/converter/ncl/NclLayoutConverter.cpp
+	src/converter/ncl/NclConnectorsConverter.cpp
+	src/converter/ncl/NclPresentationSpecConverter.cpp
+	src/converter/ncl/NclPresentationControlConverter.cpp
+	src/converter/ncl/NclLinkingConverter.cpp
+	src/converter/ncl/NclInterfacesConverter.cpp
+	src/converter/ncl/NclStructureConverter.cpp
+	src/converter/ncl/NclImportConverter.cpp
+	src/converter/ncl/NclMetainformationConverter.cpp
+	src/converter/ncl/NclDocumentConverter.cpp
+	src/converter/ncl/NclComponentsConverter.cpp
+	src/converter/ncl/NclTransitionConverter.cpp
+	src/converter/smil/SMILNCMDocumentConverter.cpp
+	src/converter/framework/ncl/NclMetainformationParser.cpp
+	src/converter/framework/ncl/NclPresentationControlParser.cpp
+	src/converter/framework/ncl/NclInterfacesParser.cpp
+	src/converter/framework/ncl/NclComponentsParser.cpp
+	src/converter/framework/ncl/NclLayoutParser.cpp
+	src/converter/framework/ncl/NclPresentationSpecificationParser.cpp
+	src/converter/framework/ncl/NclConnectorsParser.cpp
+	src/converter/framework/ncl/NclImportParser.cpp
+	src/converter/framework/ncl/NclTransitionParser.cpp
+	src/converter/framework/ncl/NclStructureParser.cpp
+	src/converter/framework/ncl/NclLinkingParser.cpp
+	src/converter/framework/ncl/NclDocumentParser.cpp
+	src/converter/framework/DocumentParser.cpp
+	src/converter/framework/ModuleParser.cpp
+)

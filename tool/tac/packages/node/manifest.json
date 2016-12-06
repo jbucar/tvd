@@ -1,0 +1,17 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.node",
+	"version": "1.0.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"system": true,
+	"update": false,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.node",
+			"name": "Node",
+			"type": "binary",
+			"version": "1.0.0"
+		}
+	]
+}

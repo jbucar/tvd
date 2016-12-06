@@ -1,0 +1,32 @@
+// Documentation: http://www.jshint.com/docs/options/
+{
+	"extends": "../../tools/jshint/jshintconf.json",
+	"strict": false,
+	"browser": true,
+	"validthis": true,
+	"globals": {
+		"$": true,
+		"currentDateTime": true,
+		"formatDateTime": true,
+		"forwardEventEmitter": true,
+		"getURIParameter": true,
+		"registerNotification": true,
+		"apiCallAsync": true,
+		"apiCall": true,
+		"assert": true,
+		"log": true,
+		"ui": true,
+		"model": true,
+		"notification": true,
+        "tvd": true,
+        "media": true,
+		"updatemgr": true,
+		"srvmgr": true,
+		"network": true,
+		"tacKeyboardLayout": true,
+		"TacOnExit": true,
+		"Ractive": true,
+		"vsprintf": true,
+		"sprintf": true
+	}
+}

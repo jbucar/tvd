@@ -1,0 +1,12 @@
+--- tools/gritsettings/resource_ids.orig 	2015-03-12 11:21:19.989183095 -0300
++++ tools/gritsettings/resource_ids 	2015-03-12 11:21:19.989183095 -0300
+@@ -182,6 +182,9 @@
+   "content/shell/shell_resources.grd": {
+     "includes": [24650],
+   },
++  "htmlshell/htmlshell_resources.grd": {
++    "includes": [24775],
++  },
+   # This file is generated during the build.
+   "<(SHARED_INTERMEDIATE_DIR)/content/browser/tracing/tracing_resources.grd": {
+     "includes": [24900],

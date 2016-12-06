@@ -1,0 +1,49 @@
+{
+	"id": "ar.edu.unlp.info.lifia.tvd.backend",
+	"version": "1.0",
+	"vendor": "LIFIA",
+	"vendor-url": "http://lifia.info.unlp.edu.ar/",
+	"api-level": "1.0",
+	"platform": "all",
+	"update": false,
+	"system": true,
+	"user": false,
+	"components": [
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.backend",
+			"name": "Backend configuration",
+			"type": "service",
+			"version": "1.0",
+			"main": "backend.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.platform",
+				"ar.edu.unlp.info.lifia.tvd.system",
+				"ar.edu.unlp.info.lifia.tvd.appmgr"
+			]
+		},
+		{
+			"id": "ar.edu.unlp.info.lifia.tvd.update",
+			"name": "Update Manager",
+			"type": "service",
+			"version": "1.0",
+			"main": "updatemanager.js",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.system",
+				"ar.edu.unlp.info.lifia.tvd.backend"
+			]
+		},
+		{
+			"id": "ar.edu.unq.utics.tac.tienda",
+			"name": "Tienda Tac",
+			"type": "app",
+			"icon": "resources/icon.png",
+			"version": "1.0.0",
+			"user": false,
+			"main": "http://tiendatac_dev.minplan.gob.ar/tienda",
+			"dependencies": [
+				"ar.edu.unlp.info.lifia.tvd.pkgmgr",
+				"ar.edu.unlp.info.lifia.tvd.appmgr"
+			]
+		}
+	]
+}

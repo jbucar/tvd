@@ -1,0 +1,15 @@
+{
+	"series": "SERIES",
+	"resume": "Continuar viendo",
+	"play": "Reproducir",
+	"nfound": "Sin episodios",
+	"remove": "Eliminar serie",
+	"remove_confirm_title": "ELIMINAR SERIE",
+	"remove_confirm_text": "Esta seguro que desea eliminar la serie completa?",
+	"runtime": "Duración",
+	"min": "min.",
+	"title": "Título",
+	"episode": "Episodio",
+	"season": "Temporada",
+	"seasons": "Temporadas"
+}

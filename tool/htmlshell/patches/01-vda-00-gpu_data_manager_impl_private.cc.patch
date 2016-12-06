@@ -1,0 +1,13 @@
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig
++++ content/browser/gpu/gpu_data_manager_impl_private.cc
+@@ -274,6 +274,10 @@ void GpuDataManagerImplPrivate::InitializeForTesting(
+ }
+ 
+ bool GpuDataManagerImplPrivate::IsFeatureBlacklisted(int feature) const {
++  if (feature == gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE) {
++    return false;
++  }
++
+ #if defined(OS_CHROMEOS)
+   if (feature == gpu::GPU_FEATURE_TYPE_PANEL_FITTING &&
+       base::CommandLine::ForCurrentProcess()->HasSwitch(

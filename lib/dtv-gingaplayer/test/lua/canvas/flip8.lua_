@@ -1,0 +1,12 @@
+-- Testea que si #attrFlip no recibe parámetros retorne los valores actuales del flip del canvas ( horizontal y vertical )
+local image = canvas:new("resources/lifia.png")
+image:attrFlip(true,false)
+local horizontal, vertical = image:attrFlip()
+canvas:compose(0,0,image)
+if ((not horizontal) and (not vertical)) then
+  canvas:attrColor("green")
+else
+  canvas:attrColor("red")
+end
+canvas:drawRect("fill",0,0,720,560)
+canvas:flush()

@@ -1,0 +1,10 @@
+--- gpu/command_buffer/service/context_state_impl_autogen.h.orig
++++ gpu/command_buffer/service/context_state_impl_autogen.h
+@@ -419,7 +419,6 @@ void ContextState::InitState(const ContextState* prev_state) const {
+                         stencil_front_z_fail_op, stencil_front_z_pass_op);
+     glStencilOpSeparate(GL_BACK, stencil_back_fail_op, stencil_back_z_fail_op,
+                         stencil_back_z_pass_op);
+-    glViewport(viewport_x, viewport_y, viewport_width, viewport_height);
+   }
+   InitStateManual(prev_state);
+ }

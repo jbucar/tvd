@@ -1,0 +1,49 @@
+{
+	"id": 79249,
+	"tvdb": "4975825",
+	"season": 5,
+	"number": "01",
+	"title": "Episode 1",
+	"summary": "The story moves on to 1924, when the first ever Labour government heralds a sea change that is felt throughout the nation - nowhere more so than at Downton. A suggested plan for a war memorial unexpectedly pits Carson against Robert and Mrs Hughes, Young Jimmy the footman is the object of some unwanted female attention and Thomas gives Baxter an ultimatum. Branson's growing friendship with someone Robert considers quite unsuitable causes concern. After the tragedy she has been through, Lady Mary now seems ready to find love once more. Cracks appear in Edith and Tim Drewe's special arrangement as she struggles to keep her emotions in check - something which may have disastrous consequences for the entire household.",
+	"releases": [{
+		"source": "BDRip",
+		"codec": "x264",
+		"team": "HAGGiS",
+		"tags": "",
+		"size": "375 MB",
+		"torrents": [],
+		"elinks": [{
+			"uri": "ed2k://|file|Downton.Abbey.S05E01.BDRip.x264-HAGGiS.mkv|386018829|3A7DCFDB901FF0D06C0CF7BCF28EC9E2|h=USCYYVT4W3LI3UOGZEM5Z5V7VUG4BKRS|/"
+		}],
+		"subtitles": [{
+			"uri": "http://www.argenteam.net/subtitles/60598/Downton.Abbey.%282010%29.S05E01-Episode.1.BDRip.x264-HAGGiS",
+			"count": 60343
+		}]
+	}, {
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "TLA",
+		"tags": "",
+		"size": "375 MB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:6PK4BETFDLJPMAD54ZLWGOROMJJD4DKD&dn=Downton.Abbey.S05E01.HDTV.x264-TLA&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.publicbt.com:80&tr=udp://tracker.istole.it:80&tr=udp://open.demonii.com:80&tr=udp://tracker.coppersurfer.tk:80"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Downton.Abbey.S05E01.HDTV.x264-TLA.mp4|386141142|56154E3E1D933A6EA3E491EAEECED259|h=NAOWHXBR4NNKI6W5Z6LIS2MCFK4FLPFB|/"
+		}],
+		"subtitles": []
+	}, {
+		"source": "HDTV",
+		"codec": "x264",
+		"team": "FoV",
+		"tags": "720p",
+		"size": "1.2 GB",
+		"torrents": [{
+			"uri": "magnet:?xt=urn:btih:BAOE6PGLCW337D2PPNTY7HURUHK7BMLL&dn=Downton.Abbey.5x01.720p.HDTV.x264-FoV&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.publicbt.com:80&tr=udp://tracker.istole.it:80&tr=udp://open.demonii.com:80&tr=udp://tracker.coppersurfer.tk:80"
+		}],
+		"elinks": [{
+			"uri": "ed2k://|file|Downton.Abbey.S05E01.720p.HDTV.x264-FoV.mkv|1237384452|3BE5610A15F10A187149C18004345715|h=KESYHRNGCLHZRTYUR43BXOGOQOLCAMCW|/"
+		}],
+		"subtitles": []
+	}]
+}

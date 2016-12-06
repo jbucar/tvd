@@ -1,0 +1,10 @@
+-- Testea #attrCrop  devuelva los valores de x,y, width y height seteados en el canvas 
+local subCanvas = canvas:new("resources/lifia.png")
+subCanvas:attrCrop(0,0,100,100)
+local x,y,anchura,altura = subCanvas:attrCrop()
+canvas:attrColor("red")
+canvas:drawText(0,0,"Coordenada x de la región de crop: "..x.." (deberia ser 0)")
+canvas:drawText(0,10,"Coordenada y de la región de crop: "..y.." (deberia ser 0)")
+canvas:drawText(0,20,"Anchura de la región de crop: "..anchura.." (deberia ser 100)")
+canvas:drawText(0,30,"Altura de la región de crop: "..altura.." (deberia ser 100)")
+canvas:flush()

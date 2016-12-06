@@ -1,0 +1,15 @@
+{
+	"carrouselName": "SERVICIOS",
+	"btnReset": "Elimintar datos",
+	"resetText": "Esta acción borrará la configuracion actual del servicio.",
+	"btnConfig": "Configurar",
+	"btnUninstall": "Desintalar",
+	"uninstallText": "Esta acción desinstalará el servicio junto con su configuracion actual.",
+	"vendor": "Author",
+	"version": "Version",
+	"status": "Estado",
+	"enabled": "Habilitado",
+	"disabled": "Deshabilitado",
+	"active": "En ejecución",
+	"inactive": "Detenido"
+}

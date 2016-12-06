@@ -1,0 +1,44 @@
+#Dialog.DialogBackground {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 100;
+}
+
+#Dialog > .DialogBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: auto;
+	color: white;
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+#Dialog .DialogTitle {
+	font-family: 'Oswald-Regular';
+	margin-top: 4%;
+}
+
+#Dialog .DialogButtons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2%;
+}
+
+#Dialog .DialogButtons button {
+	border: none;
+	outline: none;
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 1.5rem;
+	width: 10.313vw;
+	height: 5.278vh;
+	margin: 2%;
+}

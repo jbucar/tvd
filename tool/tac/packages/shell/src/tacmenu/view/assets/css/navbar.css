@@ -1,0 +1,28 @@
+.navBar {
+	background-color: rgba(0,0,0,1);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	z-index: 4;
+}
+
+.spotlight.home-color {
+	color: rgb(0, 92, 168);
+}
+
+.spotlight.tv-color {
+	color: rgb(241, 116, 0);
+}
+
+.spotlight.img-color {
+	color: rgb(0, 169, 227);
+}
+
+.spotlight.apps-color {
+	color: rgb(0, 145, 120);
+}
+
+.spotlight.config-color {
+	color: rgb(144, 38, 30);
+}

@@ -1,0 +1,51 @@
+--- ui/aura/window_tree_host.cc.orig
++++ ui/aura/window_tree_host.cc
+@@ -195,7 +195,18 @@ void WindowTreeHost::SetSharedInputMethod(ui::InputMethod* input_method) {
+ 
+ ui::EventDispatchDetails WindowTreeHost::DispatchKeyEventPostIME(
+     ui::KeyEvent* event) {
+-  return SendEventToProcessor(event);
++  return ui::EventSource::DeliverEventToProcessor(event);
++}
++
++ui::EventDispatchDetails WindowTreeHost::DeliverEventToProcessor(ui::Event* event) {
++  if (event->IsKeyEvent()) {
++    GetInputMethod()->DispatchKeyEvent(static_cast<ui::KeyEvent*>(event));
++    event->StopPropagation();
++    // TODO(shuchen): pass around the EventDispatchDetails from
++    // DispatchKeyEventPostIME instead of creating new from here.
++    return ui::EventDispatchDetails();
++  }
++  return ui::EventSource::DeliverEventToProcessor(event);
+ }
+ 
+ void WindowTreeHost::Show() {
+diff --git a/ui/aura/window_tree_host.h b/ui/aura/window_tree_host.h
+index 908d924..0c5d020 100644
+--- ui/aura/window_tree_host.h.orig
++++ ui/aura/window_tree_host.h
+@@ -216,6 +216,7 @@ class AURA_EXPORT WindowTreeHost : public ui::internal::InputMethodDelegate,
+   // Overridden from ui::EventSource:
+   ui::EventProcessor* GetEventProcessor() override;
+ 
++  ui::EventDispatchDetails DeliverEventToProcessor(ui::Event* event) override;
+  private:
+   friend class test::WindowTreeHostTestApi;
+ 
+diff --git a/ui/events/event_source.h b/ui/events/event_source.h
+index d369c34..51fcb3d 100644
+--- ui/events/event_source.h.orig
++++ ui/events/event_source.h
+@@ -35,11 +35,11 @@ class EVENTS_EXPORT EventSource {
+ 
+  protected:
+   EventDispatchDetails SendEventToProcessor(Event* event);
++  virtual EventDispatchDetails DeliverEventToProcessor(Event* event);
+ 
+  private:
+   friend class EventSourceTestApi;
+ 
+-  EventDispatchDetails DeliverEventToProcessor(Event* event);
+ 
+   typedef std::vector<EventRewriter*> EventRewriterList;
+   EventRewriterList rewriter_list_;

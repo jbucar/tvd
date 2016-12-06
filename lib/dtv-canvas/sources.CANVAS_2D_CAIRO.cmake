@@ -1,0 +1,10 @@
+ADD_SOURCES(
+	src/impl/cairo/canvas.h
+	src/impl/cairo/canvas.cpp
+	src/impl/cairo/surface.h
+	src/impl/cairo/surface.cpp
+	src/impl/cairo/font.h
+	src/impl/cairo/font.cpp
+	src/impl/cairo/glyphrun.h
+	src/impl/cairo/glyphrun.cpp
+)

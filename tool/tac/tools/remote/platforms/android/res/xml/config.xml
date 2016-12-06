@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ar.edu.unlp.info.lifia.tvd.remote" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="DiscoveryPlugin">
+        <param name="android-package" value="be.fullcircle.discovery.DiscoveryPlugin" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/android/icon-36x36.png" />
+    <icon density="mdpi" src="res/android/icon-48x48.png" />
+    <icon density="hdpi" src="res/android/icon-72x72.png" />
+    <icon density="xhdpi" src="res/android/icon-96x96.png" />
+    <splash density="land-ldpi" src="res/android/splash-320x200.png" />
+    <splash density="land-mdpi" src="res/android/splash-480x320.png" />
+    <splash density="land-hdpi" src="res/android/splash-800x480.png" />
+    <splash density="land-xhdpi" src="res/android/splash-1280x720.png" />
+    <splash density="port-ldpi" src="res/android/splash-200x320.png" />
+    <splash density="port-mdpi" src="res/android/splash-320x480.png" />
+    <splash density="port-hdpi" src="res/android/splash-480x800.png" />
+    <splash density="port-xhdpi" src="res/android/splash-720x1280.png" />
+    <name>TAC Remote Control</name>
+    <description>
+        App to remote controll TAC set top boxes.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Lifia
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="SplashScreenDelay" value="3000" />
+</widget>

@@ -1,0 +1,11 @@
+--- cc/raster/task_graph_work_queue.h.orig
++++ cc/raster/task_graph_work_queue.h
+@@ -135,7 +135,7 @@ class CC_EXPORT TaskGraphWorkQueue {
+   bool HasFinishedRunningTasksInAllNamespaces() {
+     return std::find_if(
+                namespaces_.begin(), namespaces_.end(),
+-               [](const TaskNamespaceMap::value_type& entry) {
++               [&](const TaskNamespaceMap::value_type& entry) {
+                  return !HasFinishedRunningTasksInNamespace(&entry.second);
+                }) == namespaces_.end();
+   }

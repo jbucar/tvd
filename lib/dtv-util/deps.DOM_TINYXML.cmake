@@ -1,0 +1,2 @@
+find_package( TinyXML REQUIRED )
+ADD_DEPENDENTS( TINYXML )

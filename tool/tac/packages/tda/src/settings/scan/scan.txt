@@ -1,0 +1,9 @@
+{
+    "carrouselName": "Buscar canales",
+    "btnScan": "Iniciar búsqueda",
+    "scan_confirm_title": "Esta seguro",
+    "scan_confirm_text": "Los canales y sus respectivas configuraciones se perderán. ¿Desea continuar?",
+    "btnCancel": "Cancelar búsqueda",
+    "description": "Si desea encontrar nuevos canales presione el botón INICIAR BÚSQUEDA.",
+    "scan_title": "BUSCANDO CANALES..."
+}

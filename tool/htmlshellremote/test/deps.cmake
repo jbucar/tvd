@@ -1,0 +1,4 @@
+find_package(GTest REQUIRED)
+ADD_DEPENDENTS( GTEST )
+
+ADD_INTERNAL_COMPONENTS( htmlshellsdk )

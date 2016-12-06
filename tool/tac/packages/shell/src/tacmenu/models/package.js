@@ -1,0 +1,16 @@
+enyo.depends(
+	'apisource.js',
+	'devel.js',
+	'tvdadapter.js',
+	'channelmodel.js',
+	'sessionmodel.js',
+	'images.js',
+	'appsmodel.js',
+	'scanmodel.js',
+	'network.js',
+	'updatemodel.js',
+	'servicesmodel.js',
+	'geolocalmodel.js',
+	'gingamodel.js',
+	'initmodels.js'
+);

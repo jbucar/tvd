@@ -1,0 +1,6 @@
+{
+	"config": "CONFIGURACIÓN",
+	"system": "SISTEMA",
+	"applications": "APLICACIONES",
+	"services": "SERVICIOS"
+}

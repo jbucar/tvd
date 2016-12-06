@@ -1,0 +1,5 @@
+{
+	"shell": "ar.edu.unlp.info.lifia.tvd.shell2",
+	"store": "ar.edu.unq.utics.tac.tienda",
+    "backendURL": "http://tiendatac_dev.minplan.gob.ar/api/v1"
+}

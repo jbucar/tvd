@@ -1,0 +1,36 @@
+.notification-box {
+	width: 100%;
+	border: 2px solid white;
+	background: black;
+	color: white;
+	font-family: 'Oswald-Light';
+	font-size: 22px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 10px;
+	transform: translateX(100%);
+}
+
+.notification-box.size-fixed {
+	height: 46px;
+}
+
+.notification-box-image {
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 24px;
+	height: 24px;
+	min-width: 24px;
+	min-height: 24px;
+}
+
+.notification-stack {
+	position: absolute;
+	width: 380px;
+	top: 90px;
+	right: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}

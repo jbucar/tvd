@@ -1,0 +1,150 @@
+.common-area.services {
+	padding-left: 5%;
+}
+
+.services .wrapper {
+	width: 300px;
+	height: 260px;
+	font-family: 'Oswald-Light';
+	vertical-align: middle;
+	text-align: center;
+}
+
+.services .icon {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.services .grouping {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	height: 100%;
+	margin: auto;
+}
+
+.services .title-wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	align-self: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Oswald-Regular';
+	font-size: 26px;
+}
+
+.services-checkbox {
+	height: 40px;
+	width: 230px;
+	display: flex;
+	flex-direction: row;
+	font-size: 24px;
+	align-items: center;
+}
+
+.services-checkbox.spotlight {
+	color: white;
+	background: rgb(144, 38, 30);
+}
+
+.services .actions > *.spotlight {
+	background: rgb(144, 38, 30);
+}
+
+.inactive .carousel-service-item {
+	background: rgba(255, 255, 255, .25);
+}
+
+.carousel-item-txt.service-txt {
+	text-align: center !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	justify-content: center;
+	color: rgba(255, 255, 255, .5);
+	font-size: 22px;
+	height: 40px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.inactive .carousel-item-txt.service-txt {
+	color: rgba(255, 255, 255, .8);
+}
+
+.carousel-item-txt.service-txt.selected.config {
+	background: rgb(144, 38, 30);
+	color: rgba(255, 255, 255, .8);
+}
+
+.spotlight .carousel-item-txt.service-txt.selected.config {
+	border-color: rgb(246, 134, 125);
+	font-size: 20pt;
+}
+
+.services-actions-img {
+	margin: auto;
+}
+
+.services-actions-wrapper {
+	min-width: 157px;
+	min-height: 157px;
+	background-color: rgba(255, 255, 255, 0.15);
+	display: flex;
+	flex-direction: row;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.services-actions-status-icon {
+	border-radius: 50%;
+	position: absolute;
+	margin-left: 210px;
+	margin-top: 12px;
+	width: 15px;
+	height: 15px;
+}
+
+.services-actions-status-icon.running {
+	background: green;
+}
+
+.services-actions-status-icon.stoped {
+	background: red;
+}
+
+.services-status-icon {
+	border-radius: 50%;
+	margin-top: 12px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-right: 12px;
+	width: 15px;
+	height: 15px;
+}
+
+.inactive .services-status-icon {
+	background: transparent;
+}
+
+.inactive .services-status-icon.running {
+	background: transparent;
+}
+
+.inactive .services-status-icon.stoped {
+	background: transparent;
+}
+
+.services-status-icon.running {
+	background: green;
+}
+
+.services-status-icon.stoped {
+	background: red;
+}
+
+.serviceDetails .info-details-description {
+	height: 320px;
+}

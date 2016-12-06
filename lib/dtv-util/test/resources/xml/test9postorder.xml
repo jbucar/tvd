@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+  <empty></empty>
+  <text>text</text>
+  <number>text</number>
+    <nested1 attr1="1" >n1</nested1>
+    <nested2 attr2="2" attr3="2" >n2</nested2>
+  <nested>
+  </nested>
+<root id="0" >
+</root>

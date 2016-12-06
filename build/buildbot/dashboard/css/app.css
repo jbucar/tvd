@@ -1,0 +1,82 @@
+.failed {
+	color: red;
+}
+
+.build {
+	color: green;
+}
+
+.exception {
+	color: purple;
+}
+
+.in_progress {
+	color: rgb(244,185,35);
+}
+
+.inline {
+	display: inline;
+}
+
+.title {
+	display:inline;
+}
+
+.silent {
+	color: gray;
+	font-size: 1.3em;
+}
+
+.disabledlink{
+	text-decoration:line-through;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.enablelink{
+	text-decoration:none;
+	pointer-events: auto;
+	cursor: default;
+}
+
+a {
+	text-decoration: none;
+}
+
+.link {
+}
+
+
+.label-base {
+	font-weight: normal;
+	font-size:1em;
+	border-radius: .0em;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {}
+
+li:nth-child(odd) {
+    background-color: rgb(229, 226, 217);
+}
+
+li:nth-child(even) {}
+
+#results li:nth-child(1) {
+	border: 1px solid rgb(180, 226, 250) !important;
+}
+
+.container { width: auto; }
+
+#failedtable a {
+	color: red;
+}

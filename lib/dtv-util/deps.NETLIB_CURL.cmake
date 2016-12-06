@@ -1,0 +1,2 @@
+find_package( CURL REQUIRED )
+ADD_DEPENDENTS( CURL )

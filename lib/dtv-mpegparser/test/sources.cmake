@@ -1,0 +1,41 @@
+ADD_SOURCES(
+	test/src/main.cpp
+	test/src/service/extension/extension.cpp
+	test/src/service/extension/ewbs/extension.cpp
+	test/src/service/extension/ewbs/extension.h
+	test/src/service/extension/download/downloaderextension.cpp
+	#	test/src/service/extension/time/timeextension.cpp
+	test/src/service/extension/player/streaminfo.cpp
+	test/src/service/extension/player/player.cpp
+	test/src/service/extension/player/esplayer.cpp
+	test/src/service/extension/application/ncl.cpp
+	test/src/service/extension/application/applicationid.cpp
+	test/src/service/extension/application/application.cpp
+	test/src/service/extension/application/applicationextension.cpp
+	test/src/service/ca/conditional.cpp
+	test/src/service/service.cpp
+	test/src/service/serviceprovider.cpp
+	test/src/demuxer/ts/tsdemuxer.cpp
+	test/src/demuxer/descriptors/descriptor.cpp
+	test/src/demuxer/descriptors/descriptor.h
+	test/src/demuxer/nit.cpp
+	test/src/demuxer/eit.cpp
+	test/src/demuxer/tot.cpp
+	test/src/demuxer/pmt.cpp
+	test/src/demuxer/download/sdtt.cpp
+	test/src/demuxer/sdt.cpp
+	test/src/demuxer/cdt.cpp
+	test/src/demuxer/pat.cpp
+	test/src/demuxer/cat.cpp
+	test/src/demuxer/psi.cpp
+	test/src/demuxer/ait.cpp
+	test/src/demuxer/pes.cpp
+	test/src/demuxer/dsmcc/dsi.cpp
+	test/src/demuxer/dsmcc/datacarouselhelper.cpp
+	test/src/demuxer/dsmcc/streamevent.cpp
+	test/src/provider/provider.cpp
+	test/src/provider/frontend.cpp
+	test/src/util.cpp
+)
+
+

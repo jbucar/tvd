@@ -1,0 +1,42 @@
+.scan_progress {
+    width: 75%;
+    height: 70%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 5%;
+	margin-left: 15%;
+	margin-right: 10%;
+}
+
+.scan_progress_label {
+	font-family: 'Oswald-Light';
+	font-size: 1.4rem;
+	color: #E0E0E0
+}
+
+.scan_progress_channels {
+	display: flex;
+	flex-direction: column-reverse;
+	flex-shrink: 0;
+}
+
+.scan_progress_channel {
+	margin-top: 2%;
+	margin-left: 1%;
+    border-bottom-color: white;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+}
+
+.scan_progress_bar {
+	height: 1%;
+	width: 100%;
+	background-color: #6F6F6F;
+	margin-top: 1.8%;
+}
+
+.scan_progress_bar div {
+	transition: width 1s;
+	background-color: white;
+	height: 100%;
+}

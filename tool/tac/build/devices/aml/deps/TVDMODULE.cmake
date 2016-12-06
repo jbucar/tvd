@@ -1,0 +1,25 @@
+# NodeJs config
+set(PLATFORM_BINARY_TYPE "lib")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+set(TVD_CONFIG_INSTALL_PREFIX /)
+
+# Skip documentation steps
+set(MAKE_DOCUMENTATION 0)
+set(MAKE_DOXYGEN 0)
+
+# util
+#set(CMAKE_BUILD_TYPE "Debug")
+set(BACKTRACE_USE_GNU 1)
+set(GNU_BACKTRACE_OUTPUT \"/tmp/tvdmodule.trace\")
+set(BACKTRACE_USE_DUMMY 0)
+set(IO_USE_EV 0)
+set(IO_USE_EVENT 1)
+set(NETLIB_USE_CURL 0)
+set(DOM_USE_TINYXML 1)
+set(DOM_USE_XERCES 0)
+
+# pvr
+set(PVR_FILTER_MOBILE_CHANNELS 1)
+set(TUNER_IMPL_USE_AML 1)
+set(TUNER_IMPL_USE_PC 0)

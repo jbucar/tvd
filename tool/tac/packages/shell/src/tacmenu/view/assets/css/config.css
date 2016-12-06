@@ -1,0 +1,689 @@
+/* Start Menu */
+
+.config-menu {
+	background: rgb(144, 38, 30);
+}
+
+.view-wrap-view .inactive.config-menu {
+	background: rgb(106, 28, 22);
+}
+
+.config-button.spotlight {
+	border-color: rgb(246, 134, 125);
+}
+
+.freezed.config-button {
+	background-color: rgb(144, 38, 30);
+}
+
+.config-submenu {
+	background: rgb(144, 38, 30);
+}
+
+/* End Menu */
+
+.config-wrapper {
+	height: 100%;
+}
+
+.inactive > .config-wrapper {
+	opacity: 0;
+}
+
+.config-update-title {
+	color: white;
+	margin: 20px 0px 20px 10px;
+}
+
+.config-update-desc {
+	border-radius: 10px;
+	color: white;
+	border: 5px solid rgba(144, 38, 30, 0.3);
+	background: rgba(144, 38, 30, 0.5);
+	box-shadow: 10px 10px 5px rgba(144, 38, 30, 0.3);
+	text-align: center;
+}
+
+.config-info-paragraph {
+	font-family: "Oswald-Light";
+	font-size: 20px;
+	margin-top: 20px;
+	color: #b6b6b6;
+}
+
+/*TODO hay que unificar estilos!*/
+.menu-option {
+	margin-top: 10px;
+	width: 300px;
+	height: 36px;
+	margin: auto;
+}
+
+.menu-option.spotlight {
+	margin-top: 0px;
+	max-width: 340px;
+	height: 46px;
+	margin: 15px auto 15px auto;
+	background: rgb(106, 28, 22);
+}
+
+/* Shell.SimpleButton override */
+.simple-button.config.spotlight {
+	border-color: rgb(246, 134, 125);
+	background: rgb(144, 38, 30);
+}
+
+.config-wrapper .scan-progress {
+	background: rgb(144, 38, 30);
+	height: 100%;
+	font-size: 25px;
+}
+
+/* NETWORK VIEW */
+.scroller-class {
+	height: 100%;
+}
+
+.scroller-class .moon-scroller-v-column {
+	width: 70px;
+}
+
+.scroller-class .moon-scroller-vthumb-container {
+	top: 0px;
+	bottom: 0px;
+}
+
+.scroller-class .moon-icon-button.moon-paging-button.top {
+	display: none;
+}
+
+.scroller-class .moon-icon-button.moon-paging-button.bottom {
+	display: none;
+}
+
+.networklist {
+	margin-top: 1px;
+	align-self: flex-end;
+	min-width: 460px;
+	width: 460px;
+	min-height: 240px;
+	height: 240px;
+	display: flex;
+	flex-direction: column;
+}
+
+.networklist:after {
+	content:'';
+	width: 390px;
+	height: 1px;
+	background: white;
+}
+
+.networklist:before {
+	content:'';
+	width: 390px;
+	height: 1px;
+	background: white;
+}
+
+.networklist .info {
+	width: 390px;
+	height: 100%;
+	font-size: 20pt;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.networkitem {
+	display: flex;
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, .7);
+	height: 39px;
+	line-height: 39px;
+	color: white;
+	font-size: 22pt;
+}
+
+.networkitem.spotlight, .networkitem.selected {
+	background: rgba(255, 255, 255, .2);
+	border-bottom: 3px solid rgb(246, 134, 125);
+	height: 37px;
+	line-height: 40px;
+}
+
+.networkitem-protect, .networkitem-level, {
+	align-self: flex-end;
+	margin: 0px 20px 0px 0px;
+	width: 20px;
+	height: 20px;
+}
+
+.config .networkitem .signal-color {
+	background-color: white;
+	color: white;
+	border-color: rgb(246, 134, 125, 0.8);
+}
+
+.networkitem-protect {
+	align-self: center;
+}
+
+.networkitem.spotlight .networkitem-protect {
+	align-self: center;
+	margin-top: 1px;
+}
+
+.networkitem-name {
+	margin: 0px 10px 0px 10px;
+	width: 100px;
+	flex-grow: 1;
+	align-self: flex-start;
+	text-overflow: ellipsis;
+	font-size: 16pt;
+	font-family: 'Oswald-Light';
+}
+
+.config .signal-bar-container {
+	width: 50px;
+	height: 28px;
+}
+
+.networkitem.spotlight .networkitem-signal-container {
+	width: 50px;
+	height: 30px;
+}
+
+.networkitem-signal-color {
+	background-color: white;
+	color: white;
+	border-color: rgb(246, 134, 125, 0.8);
+}
+
+.moon-icon-button {
+	color: rgb(255, 255, 255);
+	content: "\0F0007";
+}
+
+.moon-icon-button.small {
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 37px;
+	height: 37px;
+	border-radius: 5px;
+	line-height: 34px;
+}
+
+.moon-icon-button.spotlight {
+	color: rgb(70, 51, 96);
+	width: 37px;
+	height: 37px;
+	border-radius: 5px;
+}
+
+.moon-icon-button.no-background.pressed, .moon-icon-button.no-background.pressed.spotlight {
+	border-color: rgb(246, 134, 125);
+	background-color: rgb(70, 51, 96);
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.connect-hiddennet.dialog .wrapper {
+	height: 52.8%;
+	width: 55%;
+	padding: 0; // Remove padding in the dialog wrapper, not needed
+}
+
+.connect-hiddennet.dialog .wrapper .input {
+	width: 90%;
+	color: black;
+	font-family: "Oswald-Light";
+}
+
+.moon-scroller-v-column {
+	right: 0px;
+	width: 50px;
+}
+
+.internet-view-details {
+	width: 800px;
+	margin: 40px 0px 40px 0px;
+}
+
+.internet-view-title {
+	width: 600px;
+	font-size: 40px;
+	margin: 50px 10px 0px 0px;
+}
+
+.internet-area-left {
+	min-width: 45%;
+	width: 45%;
+	max-width: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Oswald-Light";
+}
+
+.internet-area-right {
+	min-width: 55%;
+	width: 55%;
+	max-width: 55%;
+}
+
+.internet-searchview.view-content .upper-side .back-arrow-container {
+	width: 50%;
+}
+
+.internet-subarea-left {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.internet-connection-type {
+	font-family: 'Oswald-Regular';
+	font-size: 19pt;
+	line-height: 19pt;
+	letter-spacing: 0.015em;
+	margin-top: 35px;
+	margin-bottom: 30px;
+}
+
+.internet-details .detail-component {
+	font-size: 16pt;
+	line-height: 26px;
+	letter-spacing: 0.015em;
+	margin-bottom: 20px;
+}
+
+.signal-bar-container {
+	align-self: center;
+	background: transparent;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	margin-right: 10px;
+}
+
+.signal-bar {
+	width: 4px;
+	height: 0px;
+	border-width: 1px;
+	border-style: solid;
+	margin-right: 2px;
+	background-color: #ffffff;
+}
+
+.connected .signal-bar {
+	background-color: #00ffff;
+}
+
+.signal-bar1.empty, .signal-bar2.empty, .signal-bar3.empty, .signal-bar4.empty {
+	background-color: transparent;
+}
+
+.signal-bar1 {
+	order: 1;
+	height: 8px;
+}
+
+.signal-bar2 {
+	order: 2;
+	height: 13px;
+}
+
+.signal-bar3 {
+	order: 3;
+	height: 18px;
+}
+
+.signal-bar4 {
+	order: 4;
+	height: 23px;
+}
+
+.signal-bar1.disable, .signal-bar2.disable, .signal-bar3.disable {
+	background-color: transparent;
+}
+
+.parental {
+	margin: 10px 10px 10px 70px;
+}
+
+.parental-divider {
+	font-size: 35px;
+	color: white;
+	font-family: inherit;
+}
+
+.parental-item {
+	color: white;
+	font-family: inherit;
+}
+
+.parental-header {
+	color: white;
+	font-family: inherit;
+}
+
+.parental-header-wrapper {
+	color: white;
+	font-family: inherit;
+}
+
+.parental-item.spotlight {
+	background-color: rgb(106, 28, 22);
+}
+
+.parental-header.spotlight, .parental-header-wrapper.spotlight {
+	color: white;
+	background-color: rgb(106, 28, 22);
+}
+
+.parental-left {
+	width: 50%;
+}
+
+.parental-right {
+	width: 50%;
+}
+
+/* UpdateChannelsView */
+.update-channels-area-left {
+	width: 400px;
+	padding-top: 30px;
+}
+
+.update-channels-area-right {
+	width: 800px;
+	padding-top: 86px;
+	padding-right: 80px;
+}
+
+/* WatchTVView */
+.watch-tv-view {
+	margin: 0px 0px 0px 0px;
+}
+
+/* update view */
+.updates-area-left {
+	width: 400px;
+	padding-top: 30px;
+}
+
+.updates-area-right {
+	width: 800px;
+	padding-top: 86px;
+	padding-right: 80px;
+}
+
+.updates-detail-options {
+	flex-direction: column;
+	justify-content: center;
+}
+
+.updates-detail-img {
+	width: auto;
+	height: auto;
+	align-self: center;
+}
+
+.download {
+	width: 100%;
+	height: 100%;
+	background: rgba(12, 13, 13, .7);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.download-flipper {
+	height: 40px;
+	width: 100%;
+}
+
+.download-wrapper {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16pt;
+}
+
+.download > .bar {
+	margin: 0 !important;
+	height: 27px !important;
+	width: 230px;
+	background: none;
+}
+
+.download-bgbar {
+	background: rgba(144, 38, 30, .5);
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+.moon-input::selection {
+	background-color: rgba(12, 13, 13, 0.4);
+}
+
+.moon-input-decorator:not(.moon-input-header-input-decorator) {
+	border-radius: 0px;
+	transition: all 0.1s ease-in-out;
+	width: 100%;
+	border-width: 2px;
+	border-color: rgb(211,211,211);
+	background: rgba(0, 0, 0, .3);
+}
+
+.moon-input-decorator:not(.moon-input-header-input-decorator).disabled-url {
+	color: white;
+	opacity: .3;
+}
+
+.config .moon-input-decorator:not(.moon-input-header-input-decorator).spotlight, .moon-textarea-decorator.spotlight {
+	border-color: rgb(144, 38, 30);
+}
+
+.info-subtitle {
+	margin-top: 10px;
+}
+
+.debug-app-install {
+	height: 46px;
+	min-width: 190px;
+	width: 190px;
+	margin-top: 10px;
+	font-size: 20pt;
+	line-height: 43px;
+}
+
+.debug-app-install.spotlight {
+	height: 46px;
+	width: 190px;
+	font-size: 20pt;
+	line-height: 43px;
+	background: rgb(144, 38, 30);
+	border-color: rgb(246, 134, 125);
+}
+
+.debug-url-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 600px;
+}
+
+/* log level */
+.debug-area {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 90%;
+	margin-top: 30px;
+}
+
+.debug-area > * {
+	width: 45%;
+}
+
+.moon-item.moon-checkbox-item {
+	font-family: 'Oswald-Light';
+	font-size: 19pt;
+	padding: 7px;
+}
+.moon-item.moon-marquee.moon-expandable-picker-header-wrapper {
+	font-family: 'Oswald-Light';
+	font-size: 20pt;
+}
+
+.moon-item.moon-marquee.moon-expandable-picker-header-wrapper.allow-wrap.spotlight {
+	background: rgb(106, 28, 22);
+}
+
+.moon-item.moon-marquee.moon-expandable-picker-header-wrapper.allow-wrap {
+	background: rgba(12, 13, 13, 0.7);
+	color: rgb(255, 255, 255);
+}
+
+.moon-item.moon-checkbox-item.left-handed.spotlight {
+	background: rgb(106, 28, 22);
+}
+
+.moon-item.moon-checkbox-item.left-handed {
+	background: rgba(12, 13, 13, 0.7);
+	color: rgb(255, 255, 255);
+}
+
+.moon-expandable-list-item-header.moon-expandable-picker-header .moon-marquee {
+	width: 380px;
+}
+
+/* general */
+.info-details-subtitle {
+	font-family: 'Oswald-Regular';
+	font-size: 18pt;
+	line-height: 18pt;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.group-desc {
+	margin: 25px 0px 0px 0px;
+}
+
+.group-desc .desc {
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+	height: auto;
+	line-height: 26px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	letter-spacing: 0.015em;
+	margin-top: 10px;
+}
+
+.config-keyboard-action {
+	color: white;
+}
+
+.config-keyboard-action.spotlight {
+	background: rgb(144, 38, 30);
+}
+
+.config-keyboard-btn {
+	color: white;
+}
+
+.config-keyboard-btn.spotlight {
+	color: rgb(144, 38, 30);
+}
+
+.internet-action {
+	max-width: 220px;
+	margin-top: 10px;
+	margin-left: 35px; /* Needed it because it seems not be centered since part of the view is no visible all the time */
+	align-items: center;
+}
+
+.system-img.spotlight {
+	border-bottom: 3px solid rgb(246, 134, 125);
+}
+
+.system-last-update {
+	font-size: 15pt;
+	margin-top: 15px;
+}
+
+.vkeyboard-action-btn.spotlight > .config-btn-bar-color {
+	border-color: rgb(246, 134, 125);
+}
+
+.debug-picker {
+	background: transparent;
+}
+
+.config-wrapper .content.spotlight {
+	border-color: rgb(246, 134, 125);
+}
+
+/* Tooltip */
+.tooltip.menu.config {
+	background-color: rgb(144, 38, 30);
+	left: 50px;
+	width: 540px;
+	height: 110px;
+}
+
+.tooltip.menu.config > .msg {
+	width: 446px;
+	height: 93px;
+	margin-left: 47px;
+	margin-right: 47px;
+}
+
+.tooltip.menu.config:before {
+	border-bottom-color: rgb(144, 38, 30);
+	border-top-color: transparent;
+	left: 70px;
+}
+
+.tooltip.menu.tab.config {
+	background-color: rgb(144, 38, 30);
+	width: 388px;
+	height: 82px;
+}
+
+.tooltip.menu.tab.config:before {
+	border-bottom-color: rgb(144, 38, 30);
+	border-top-color: transparent;
+	left: 70px;
+}
+
+.tooltip.menu.tab.config > .msg {
+	width: 388px;
+	height: 62px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/* Dialog */
+.dialog .actions.config > *.spotlight {
+	background: rgb(144, 38, 30);
+}
+
+.dialog .title.config {
+	color: rgb(144, 38, 30);
+}
+
+.dialog .icon.config {
+	background: rgb(144, 38, 30);
+}

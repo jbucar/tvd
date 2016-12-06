@@ -1,0 +1,2 @@
+SetIfEmpty( GNU_BACKTRACE_OUTPUT \"\" )
+

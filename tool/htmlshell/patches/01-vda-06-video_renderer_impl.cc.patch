@@ -1,0 +1,11 @@
+--- media/renderers/video_renderer_impl.cc.orig
++++ media/renderers/video_renderer_impl.cc
+@@ -186,6 +186,8 @@ scoped_refptr<VideoFrame> VideoRendererImpl::Render(
+   // we've had a proper startup sequence.
+   DCHECK(result);
+ 
++  video_frame_stream_->drawFrame( result );
++
+   // Declare HAVE_NOTHING if we reach a state where we can't progress playback
+   // any further.  We don't want to do this if we've already done so, reached
+   // end of stream, or have frames available.  We also don't want to do this in

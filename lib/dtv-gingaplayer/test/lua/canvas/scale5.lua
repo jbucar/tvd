@@ -1,0 +1,13 @@
+-- Testea #attrScale: escalar un canvas manteniendo la proporcion horizontal.
+local subCanvas = canvas:new(100,200)
+subCanvas:attrColor("green")
+subCanvas:drawRect("fill",0,0,50,100)
+subCanvas:attrColor("red")
+subCanvas:drawRect("fill",0,100,50,100)
+subCanvas:attrColor("blue")
+subCanvas:drawRect("fill",50,0,50,100)
+subCanvas:attrColor("yellow")
+subCanvas:drawRect("fill",50,100,50,100)
+subCanvas:attrScale(true,400)
+canvas:compose(0,0,subCanvas)
+canvas:flush()

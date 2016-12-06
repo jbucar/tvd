@@ -1,0 +1,16 @@
+--- sandbox/linux/suid/client/setuid_sandbox_client.cc.orig
++++ sandbox/linux/suid/client/setuid_sandbox_client.cc
+@@ -16,11 +16,12 @@
+ #include "base/logging.h"
+ #include "base/posix/eintr_wrapper.h"
++#include "base/process/process_metrics.h"
+ #include "base/strings/string_number_conversions.h"
+ #include "sandbox/linux/suid/common/sandbox.h"
+ 
+ namespace {
+ 
+ bool IsFileSystemAccessDenied() {
+-  base::ScopedFD root_dir(HANDLE_EINTR(open("/", O_RDONLY)));
++  base::ScopedFD root_dir(HANDLE_EINTR(open(base::kProcSelfExe, O_RDONLY)));
+   return !root_dir.is_valid();
+ }

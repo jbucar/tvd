@@ -1,0 +1,35 @@
+ADD_SOURCES(
+	test/src/main.cpp
+	test/src/util.cpp
+	test/src/url.cpp
+	test/src/fs.cpp
+	test/src/types.cpp
+	test/src/any.cpp
+	test/src/buffer.cpp
+	test/src/tool.cpp
+	test/src/toolextension.cpp
+	test/src/registrator.cpp
+	test/src/functions.cpp
+	test/src/log.cpp
+	test/src/md5.cpp
+	test/src/pool/circularpool.cpp
+	test/src/settings/settings.cpp
+	test/src/serializer.cpp
+	test/src/task/dispatcher.cpp
+	test/src/cfg/propertynode.cpp
+	test/src/cfg/propertyvalue.cpp
+	test/src/cfg/xmlparser.cpp
+	test/src/cfg/cfg.cpp
+	test/src/cfg/cmd/option.cpp
+	test/src/cfg/cmd/commandline.cpp
+	test/src/cfg/configregistrator.cpp
+	test/src/id/ident.cpp
+	test/src/process/process.cpp
+	test/src/net/resolver.cpp
+	test/src/net/config.cpp
+	test/src/net/sockaddr.cpp
+	test/src/netlib/netlib.cpp
+	test/src/xml/documenthandler.cpp
+	test/src/xml/nodehandler.cpp
+)
+

@@ -1,0 +1,24 @@
+** Teclas disponibles
+	INFO
+	MENU            
+	RED
+	GREEN
+	BLUE
+	YELLOW
+	OK
+	CURSOR_UP
+	CURSOR_DOWN
+	CURSOR_LEFT
+	CURSOR_RIGHT
+
+Ejemplo:
+	connector.sendKey(BLUE)
+
+** Editing commands disponibles
+
+	connector.sendPropertyValueEC(appId, mediaId, propertyId, value)
+
+** Tener en cuenta:
+	Ginga.ar debe estar corriendo utilizando el pipe:  "/tmp/gingaconnector.socket" 
+	Ejemplo: ginga --ncl <app> -c /tmp/gingaconnector.socket
+

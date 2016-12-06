@@ -1,0 +1,75 @@
+# -*- cmake -*-
+
+# - Find liveMedia
+# Find the liveMedia includes and library
+# This module defines
+#  LIVEMEDIA_INCLUDE_DIRS, where to find liveMedia.hh, etc.
+#  LIVEMEDIA_LIBRARIES, the libraries needed to use liveMedia.
+# also defined, but not for general use are
+#  LIVEMEDIA_LIBRARY, where to find the liveMedia library.
+
+# Find liveMedia
+FIND_PATH(LIVEMEDIA_INCLUDE_DIR
+	NAMES liveMedia.hh
+	PATH_SUFFIXES liveMedia
+	PATHS $ENV{LIVEMEDIA_DIR}/include
+)
+
+# Find UsageEnvironment
+FIND_PATH(USAGEENVIRONMENT_INCLUDE_DIR
+	NAMES UsageEnvironment.hh
+	PATH_SUFFIXES UsageEnvironment
+	PATHS $ENV{USAGEENVIRONMENT_DIR}/include
+)
+
+# Find BasicUsageEnvironment
+FIND_PATH(BASICUSAGEENVIRONMENT_INCLUDE_DIR
+	NAMES BasicUsageEnvironment.hh
+	PATH_SUFFIXES BasicUsageEnvironment
+	PATHS $ENV{BASICUSAGEENVIRONMENT_DIR}/include
+)
+
+# Find groupsock
+FIND_PATH(GROUPSOCK_INCLUDE_DIR
+	NAMES GroupsockHelper.hh
+	PATH_SUFFIXES groupsock
+	PATHS $ENV{GROUPSOCK_DIR}/include
+)
+
+set ( LIVEMEDIA_INCLUDE_DIRS
+	${LIVEMEDIA_INCLUDE_DIR}
+	${GROUPSOCK_INCLUDE_DIR}
+	${BASICUSAGEENVIRONMENT_INCLUDE_DIR}
+	${USAGEENVIRONMENT_INCLUDE_DIR}
+)
+
+FIND_LIBRARY(LIVEMEDIA_LIBRARY
+  NAMES liveMedia
+  PATHS $ENV{LIVEMEDIA_DIR}/lib
+)
+
+FIND_LIBRARY(USAGEENVIRONMENT_LIBRARY
+  NAMES UsageEnvironment
+  PATHS $ENV{USAGEENVIRONMENT_DIR}/lib
+)
+
+FIND_LIBRARY(BASICUSAGEENVIRONMENT_LIBRARY
+  NAMES BasicUsageEnvironment
+  PATHS $ENV{BASICUSAGEENVIRONMENT_DIR}/lib
+)
+
+FIND_LIBRARY(GROUPSOCK_LIBRARY
+  NAMES groupsock
+  PATHS $ENV{GROUPSOCK_DIR}/lib
+)
+
+set ( LIVEMEDIA_LIBRARIES
+	${LIVEMEDIA_LIBRARY}
+	${GROUPSOCK_LIBRARY}
+	${BASICUSAGEENVIRONMENT_LIBRARY}
+	${USAGEENVIRONMENT_LIBRARY}
+)
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(liveMedia DEFAULT_MSG LIVEMEDIA_LIBRARIES LIVEMEDIA_INCLUDE_DIRS)
+mark_as_advanced( LIVEMEDIA_INCLUDE_DIRS LIVEMEDIA_LIBRARIES )

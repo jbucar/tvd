@@ -1,0 +1,33 @@
+ADD_HEADERS(
+  src/util.h
+  src/uv-errno.h
+  src/uv-linux.h
+  src/uv-threadpool.h
+  src/uv-unix.h
+  src/uv-version.h
+  src/uv.h
+  src/nameser.h
+  src/ares_build.h
+  src/ares.h
+  src/v8.h
+  src/v8-version.h
+  src/v8-util.h
+  src/v8-debug.h
+  src/node_object_wrap.h
+  src/v8-profiler.h
+  src/node_buffer.h
+  src/node.h
+  src/v8config.h
+  src/v8-testing.h
+  src/config.gypi
+  src/node_version.h
+  src/ares_rules.h
+  src/libplatform/libplatform.h
+  src/v8-platform.h
+  src/ares_version.h
+  src/v8-experimental.h
+)
+
+ADD_SOURCES(
+  src/main.cpp
+)

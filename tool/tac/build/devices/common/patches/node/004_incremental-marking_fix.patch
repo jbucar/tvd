@@ -1,0 +1,20 @@
+--- a/deps/v8/src/heap/incremental-marking.cc	2016-05-10 08:56:05.452373573 -0300
++++ b/deps/v8/src/heap/incremental-marking.cc	2016-05-10 08:56:41.332373247 -0300
+@@ -349,7 +349,7 @@
+   DeactivateIncrementalWriteBarrierForSpace(heap_->new_space());
+ 
+   LargePage* lop = heap_->lo_space()->first_page();
+-  while (lop->is_valid()) {
++  while (lop != nullptr) {
+     SetOldSpacePageFlags(lop, false, false);
+     lop = lop->next_page();
+   }
+@@ -381,7 +381,7 @@
+   ActivateIncrementalWriteBarrier(heap_->new_space());
+ 
+   LargePage* lop = heap_->lo_space()->first_page();
+-  while (lop->is_valid()) {
++  while (lop != nullptr) {
+     SetOldSpacePageFlags(lop, true, is_compacting_);
+     lop = lop->next_page();
+   }

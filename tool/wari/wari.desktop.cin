@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=${PROJECT_VERSION}
+Name=Wari
+GenericName=Player
+Comment[es]=Reproductor de TV digital
+Exec=${CMAKE_CONFIG_INSTALL_PREFIX}/bin/wari
+Icon=${CMAKE_CONFIG_INSTALL_PREFIX}/share/wari/imgs/icon.png
+Terminal=false
+TerminalOptions=
+Type=Application
+Categories=AudioVideo;Player;
+MimeType=video/mpeg;
+StartupNotify=true
+Keywords=Player;Audio;Video;

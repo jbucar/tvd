@@ -1,0 +1,75 @@
+{
+    "id": 85993,
+    "tvdb": "5331127",
+    "season": 6,
+    "number": "04",
+    "title": "Here's Not Here",
+    "summary": "A new face appears; trust issues form.",
+    "releases": [
+        {
+            "source": "HDTV",
+            "codec": "x264",
+            "team": "KILLERS",
+            "tags": "",
+            "size": "800 MB",
+            "torrents": [
+                {
+                    "uri": "magnet:?xt=urn:btih:6e17d4974fdeca8b74dd398859ff4a7011f16b14&dn=The.Walking.Dead.S06E04.HDTV.x264-KILLERS%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+                }
+            ],
+            "elinks": [
+                {
+                    "uri": "ed2k://|file|The.Walking.Dead.S06E04.Heres.Not.Here.HDTV.x264-KILLERS.mp4|829612096|8153D2728FEE62D3127AF17390942866|h=AETCCAU56MWIGUZK4WRYDUI6Q3FZK4MB|/"
+                }
+            ],
+            "subtitles": [
+                {
+                    "uri": "http://www.argenteam.net/subtitles/58648/The.Walking.Dead.%282010%29.S06E04-Heres.Not.Here.HDTV.x264-KILLERS",
+                    "count": 58397
+                }
+            ]
+        },
+        {
+            "source": "HDTVX",
+            "codec": "x264",
+            "team": "KILLERS",
+            "tags": "720p PROPER",
+            "size": "3.2 KB",
+            "torrents": [
+                {
+                    "uri": "magnet:?xt=urn:btih:7cb902f3489c68facbfc4308595f3e8eed5f971f&dn=The.Walking.Dead.S06E04.PROPER.720p.HDTV.x264-KILLERS%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710"
+                }
+            ],
+            "elinks": [
+                {
+                    "uri": "ed2k://|file|The.Walking.Dead.S06E04.Heres.Not.Here.PROPER.720p.HDTV.x264-KILLERS.mkv|3457841649|E6217FDE3D5595729C9BF4F394E2182C|h=TIIR2VEU56BPUJTHAR7US6SZUY3VDQPZ|/"
+                }
+            ],
+            "subtitles": [
+                {
+                    "uri": "http://www.argenteam.net/subtitles/58649/The.Walking.Dead.%282010%29.S06E04-Heres.Not.Here.HDTV.x264.720p.PROPER-KILLERS",
+                    "count": 58397
+                }
+            ]
+        },
+        {
+            "source": "WEB-DL",
+            "codec": "H.264",
+            "team": "Cyphanix",
+            "tags": "1080p",
+            "size": "2.6 GB",
+            "torrents": [],
+            "elinks": [
+                {
+                    "uri": "ed2k://|file|The.Walking.Dead.S06E04.Heres.Not.Here.1080p.WEB-DL.DD5.1.H.264-Cyphanix.mkv|2825104041|944A131BE9CAB37E79F9AA3E73D26BBC|h=CYMO4FQORHUZVIEJ7PNMPONUGQM5UF5W|/"
+                }
+            ],
+            "subtitles": [
+                {
+                    "uri": "http://www.argenteam.net/subtitles/58650/The.Walking.Dead.%282010%29.S06E04-Heres.Not.Here.WEB-DL.H.264.1080p-Cyphanix",
+                    "count": 58397
+                }
+            ]
+        }
+    ]
+}

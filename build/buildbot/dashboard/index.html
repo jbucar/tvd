@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="js/microajax.js"></script>
+		<script type="text/javascript" src="js/json3.min.js"></script>
+		<script type="text/javascript" src="js/crel.min.js"></script>
+		<script type="text/javascript" src="js/moment.min.js"></script>
+		<script type="text/javascript" src="js/underscore.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/queueview.css">
+	</head>
+	<body>
+		<h1 class="title">Buildbot Dashboard</h1>
+		<div class="container">
+			<div>
+				<h3>Currently building</h3>
+				<ul id="building">
+				</ul>
+			</div>
+
+			<div id="failedtable">
+				<h3>Failed builds</h3>
+				<ul id="faileds">
+				</ul>
+			</div>
+
+			<div>
+				<h3>Super release's</h3>
+				<ul id="results">
+					<li class="row">
+						<p id="header-build" class="col-md-2 label-base">Build</p>
+						<p id="header-time" class="col-md-2 label-base">Builded at</p>
+						<p id="header-status" class="col-md-2 label-base">Status</p>
+						<p id="header-rev" class="col-md-4 label-base">Git revision</p>
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>Images</h3>
+				<ul id="images">
+					<li class="row">
+						<p id="header-build" class="col-md-2 label-base">Build</p>
+						<p id="header-time" class="col-md-2 label-base">Builded at</p>
+						<p id="header-status" class="col-md-2 label-base">Status</p>
+						<p id="header-rev" class="col-md-4 label-base">Git revision</p>
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>Joins</h3>
+				<ul id="joins">
+					<li class="row">
+						<p id="header-build" class="col-md-2 label-base">Join</p>
+						<p id="header-time" class="col-md-2 label-base">Joined at</p>
+						<p id="header-status" class="col-md-2 label-base">Status</p>
+						<p id="header-gingarev" class="col-md-2 label-base">Ginga version</p>
+						<p id="header-zambarev" class="col-md-2 label-base">Zamba version</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

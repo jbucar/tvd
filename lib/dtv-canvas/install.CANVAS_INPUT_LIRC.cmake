@@ -1,0 +1,3 @@
+INSTALL( FILES ${PROJECT_SOURCE_DIR}/lirc_input.conf
+	DESTINATION etc
+)

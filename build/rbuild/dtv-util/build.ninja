@@ -1,0 +1,83 @@
+cc = gcc
+cxx = g++
+cflags =  -fPIC -I/home/rako/work/middleware/build/rbuild/dtv-util
+ldflags =  -ltinyxml -lcurl  -lev  -ldb  -lboost_system -lboost_filesystem -lboost_thread -shared
+
+rule compile_c
+    command = $cc $cflags -c $in -o $out
+    description = C_COMPILE $out
+rule compile_cxx
+    command = $cxx $cflags -c $in -o $out
+    description = CXX_COMPILE $out
+rule link
+    command = $cxx -o $out $in $ldflags
+    description = LINK $out
+
+build obj/src/linux/networkconfig.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/linux/networkconfig.cpp
+build obj/src/linux/fs.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/linux/fs.cpp
+build obj/src/io/ev/dispatcher.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/io/ev/dispatcher.cpp
+build obj/src/log/api.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log/api.cpp
+build obj/src/log/formatter.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log/formatter.cpp
+build obj/src/log/message.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log/message.cpp
+build obj/src/log/statics.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log/statics.cpp
+build obj/src/log/target.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log/target.cpp
+build obj/src/settings/bdb/settings.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/settings/bdb/settings.cpp
+build obj/src/settings/memory/settings.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/settings/memory/settings.cpp
+build obj/src/settings/xml/settings.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/settings/xml/settings.cpp
+build obj/src/gnu/backtrace.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/gnu/backtrace.cpp
+build obj/src/charset/utf8_iconv.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/charset/utf8_iconv.cpp
+build obj/src/charset/utf8_embed.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/charset/utf8_embed.cpp
+build obj/src/xml/impl/tinyxml/documenthandler.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/xml/impl/tinyxml/documenthandler.cpp
+build obj/src/xml/impl/tinyxml/nodehandler.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/xml/impl/tinyxml/nodehandler.cpp
+build obj/src/netlib/curl/manager.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/curl/manager.cpp
+build obj/src/netlib/curl/request.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/curl/request.cpp
+build obj/src/main.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/main.cpp
+build obj/src/assert.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/assert.cpp
+build obj/src/url.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/url.cpp
+build obj/src/keydefs.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/keydefs.cpp
+build obj/src/functions.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/functions.cpp
+build obj/src/buffer.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/buffer.cpp
+build obj/src/fs.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/fs.cpp
+build obj/src/md5.c.o: compile_c /home/rako/work/middleware/lib/dtv-util/src/md5.c
+build obj/src/string.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/string.cpp
+build obj/src/tool.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/tool.cpp
+build obj/src/registrator.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/registrator.cpp
+build obj/src/log.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/log.cpp
+build obj/src/settings/settings.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/settings/settings.cpp
+build obj/src/settings/settingsdelegate.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/settings/settingsdelegate.cpp
+build obj/src/task/dispatcher.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/task/dispatcher.cpp
+build obj/src/task/dispatcherimpl.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/task/dispatcherimpl.cpp
+build obj/src/timer/handler.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/timer/handler.cpp
+build obj/src/timer/timer.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/timer/timer.cpp
+build obj/src/cfg/propertyvalue.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/propertyvalue.cpp
+build obj/src/cfg/propertynode.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/propertynode.cpp
+build obj/src/cfg/treepath.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/treepath.cpp
+build obj/src/cfg/cfg.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/cfg.cpp
+build obj/src/cfg/configregistrator.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/configregistrator.cpp
+build obj/src/cfg/xmlparser.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/xmlparser.cpp
+build obj/src/cfg/cmd/commandline.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/cmd/commandline.cpp
+build obj/src/cfg/cmd/option.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/cfg/cmd/option.cpp
+build obj/src/io/dispatcher.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/io/dispatcher.cpp
+build obj/src/id/ident.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/id/ident.cpp
+build obj/src/id/pool.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/id/pool.cpp
+build obj/src/process/process.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/process/process.cpp
+build obj/src/net/types.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/types.cpp
+build obj/src/net/config.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/config.cpp
+build obj/src/net/resolver.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/resolver.cpp
+build obj/src/net/socket.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/socket.cpp
+build obj/src/net/sockaddr.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/sockaddr.cpp
+build obj/src/net/ipv4/sockaddr.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/ipv4/sockaddr.cpp
+build obj/src/net/ipv6/sockaddr.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/net/ipv6/sockaddr.cpp
+build obj/src/netlib/manager.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/manager.cpp
+build obj/src/netlib/requestinfo.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/requestinfo.cpp
+build obj/src/netlib/request.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/request.cpp
+build obj/src/netlib/reply.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/reply.cpp
+build obj/src/netlib/types.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/netlib/types.cpp
+build obj/src/serializer/xml.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/serializer/xml.cpp
+build obj/src/serializer/binary.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/serializer/binary.cpp
+build obj/src/xml/documenthandler.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/xml/documenthandler.cpp
+build obj/src/xml/documentserializer.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/xml/documentserializer.cpp
+build obj/src/xml/nodehandler.cpp.o: compile_cxx /home/rako/work/middleware/lib/dtv-util/src/xml/nodehandler.cpp
+
+build util: link obj/src/linux/networkconfig.cpp.o obj/src/linux/fs.cpp.o obj/src/io/ev/dispatcher.cpp.o obj/src/log/api.cpp.o obj/src/log/formatter.cpp.o obj/src/log/message.cpp.o obj/src/log/statics.cpp.o obj/src/log/target.cpp.o obj/src/settings/bdb/settings.cpp.o obj/src/settings/memory/settings.cpp.o obj/src/settings/xml/settings.cpp.o obj/src/gnu/backtrace.cpp.o obj/src/charset/utf8_iconv.cpp.o obj/src/charset/utf8_embed.cpp.o obj/src/xml/impl/tinyxml/documenthandler.cpp.o obj/src/xml/impl/tinyxml/nodehandler.cpp.o obj/src/netlib/curl/manager.cpp.o obj/src/netlib/curl/request.cpp.o obj/src/main.cpp.o obj/src/assert.cpp.o obj/src/url.cpp.o obj/src/keydefs.cpp.o obj/src/functions.cpp.o obj/src/buffer.cpp.o obj/src/fs.cpp.o obj/src/md5.c.o obj/src/string.cpp.o obj/src/tool.cpp.o obj/src/registrator.cpp.o obj/src/log.cpp.o obj/src/settings/settings.cpp.o obj/src/settings/settingsdelegate.cpp.o obj/src/task/dispatcher.cpp.o obj/src/task/dispatcherimpl.cpp.o obj/src/timer/handler.cpp.o obj/src/timer/timer.cpp.o obj/src/cfg/propertyvalue.cpp.o obj/src/cfg/propertynode.cpp.o obj/src/cfg/treepath.cpp.o obj/src/cfg/cfg.cpp.o obj/src/cfg/configregistrator.cpp.o obj/src/cfg/xmlparser.cpp.o obj/src/cfg/cmd/commandline.cpp.o obj/src/cfg/cmd/option.cpp.o obj/src/io/dispatcher.cpp.o obj/src/id/ident.cpp.o obj/src/id/pool.cpp.o obj/src/process/process.cpp.o obj/src/net/types.cpp.o obj/src/net/config.cpp.o obj/src/net/resolver.cpp.o obj/src/net/socket.cpp.o obj/src/net/sockaddr.cpp.o obj/src/net/ipv4/sockaddr.cpp.o obj/src/net/ipv6/sockaddr.cpp.o obj/src/netlib/manager.cpp.o obj/src/netlib/requestinfo.cpp.o obj/src/netlib/request.cpp.o obj/src/netlib/reply.cpp.o obj/src/netlib/types.cpp.o obj/src/serializer/xml.cpp.o obj/src/serializer/binary.cpp.o obj/src/xml/documenthandler.cpp.o obj/src/xml/documentserializer.cpp.o obj/src/xml/nodehandler.cpp.o
+

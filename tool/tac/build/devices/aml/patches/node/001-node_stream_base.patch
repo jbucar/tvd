@@ -1,0 +1,20 @@
+--- a/src/stream_base.h	2015-12-17 09:05:05.711145663 -0300
++++ b/src/stream_base.h	2015-12-17 09:16:06.752217984 -0300
+@@ -131,7 +131,7 @@
+ 
+   StreamResource() {
+   }
+-  virtual ~StreamResource() = default;
++  virtual ~StreamResource() {};
+ 
+   virtual int DoShutdown(ShutdownWrap* req_wrap) = 0;
+   virtual int DoTryWrite(uv_buf_t** bufs, size_t* count);
+@@ -215,7 +215,7 @@
+   explicit StreamBase(Environment* env) : env_(env), consumed_(false) {
+   }
+ 
+-  virtual ~StreamBase() = default;
++  virtual ~StreamBase() {};
+ 
+   // One of these must be implemented
+   virtual AsyncWrap* GetAsyncWrap();

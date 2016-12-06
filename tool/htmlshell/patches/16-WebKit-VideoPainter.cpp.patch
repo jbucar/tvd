@@ -1,0 +1,15 @@
+--- third_party/WebKit/Source/core/paint/VideoPainter.cpp.orig
++++ third_party/WebKit/Source/core/paint/VideoPainter.cpp
+@@ -45,10 +45,10 @@ void VideoPainter::paintReplaced(const PaintInfo& paintInfo, const LayoutPoint&
+     // Video frames are only painted in software for printing or capturing node images via web APIs.
+     bool forceSoftwareVideoPaint = paintInfo.globalPaintFlags() & GlobalPaintFlattenCompositingLayers;
+ 
+-    if (displayingPoster || !forceSoftwareVideoPaint) {
++    if (displayingPoster) {
+         // This wil display the poster image, if one is present, and otherwise paint nothing.
+         ImagePainter(m_layoutVideo).paintIntoRect(context, rect);
+-    } else {
++    } else if (forceSoftwareVideoPaint || !m_layoutVideo.acceleratedRenderingInUse()) {
+         SkPaint videoPaint = context.fillPaint();
+         videoPaint.setColor(SK_ColorBLACK);
+         m_layoutVideo.videoElement()->paintCurrentFrame(context.canvas(), pixelSnappedIntRect(rect), &videoPaint);

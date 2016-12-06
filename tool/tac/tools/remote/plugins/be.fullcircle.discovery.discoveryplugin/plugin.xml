@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    	id="be.fullcircle.discovery.discoveryplugin"
+    	version="0.0.1">
+    <name>DiscoveryPlugin</name>
+
+    <author>Mathieu Allaert - mathieu.allaert@opus-magnum.be</author>
+
+    <description>Network broadcasting plugin to discover devices on network</description>
+
+    <license>MIT</license>
+
+    <js-module src="www/discovery.js" name="discovery">
+        <clobbers target="discovery" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version="&gt;=3.0.0" />
+    </engines>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DiscoveryPlugin" >
+                <param name="android-package" value="be.fullcircle.discovery.DiscoveryPlugin"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+        <source-file src="src/android/be/fullcircle/discovery/DiscoveryPlugin.java" target-dir="src/be/fullcircle/discovery" />
+		<source-file src="src/android/be/fullcircle/discovery/Discoverer.java" target-dir="src/be/fullcircle/discovery" />
+    </platform>
+</plugin>

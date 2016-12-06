@@ -1,0 +1,12 @@
+--- a/etc/inittab	2014-12-10 09:19:20.729343788 -0300
++++ b/etc/inittab	2015-03-19 09:45:39.653810243 -0300
+@@ -26,9 +26,6 @@
+ # now run any rc scripts
+ ::sysinit:/etc/init.d/rcS
+ 
+-# run telnet
+-null::sysinit:/usr/sbin/telnetd -l /bin/sh
+-
+ # Set up a couple of getty's
+ tty1::respawn:/sbin/getty 38400 tty1
+ tty2::respawn:/sbin/getty 38400 tty2

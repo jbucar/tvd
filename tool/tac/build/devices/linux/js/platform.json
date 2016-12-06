@@ -1,0 +1,351 @@
+{
+	"htmlshell": {
+		"cmd": "htmlshell",
+		"args": [
+			"--enable-logging=stderr",
+			"--log-level=1",
+			"--v=0",
+			"--ozone-platform=egltest",
+			"--enable-crash-reporter",
+			"--disable-gpu-vsync",
+			"--allow-file-access-from-files"
+		],
+		"startTimeout": 5000,
+		"stopTimeout": 2000,
+		"keepAliveTimeout": 1000
+	},
+	"keyboardLayout": {
+		"VK_PAUSE": {
+			"virtual": 19,
+			"raw": 119
+		},
+		"VK_HELP": {
+			"virtual": -1,
+			"raw": 138
+		},
+		"VK_FAST_FWD": {
+			"virtual": -1,
+			"raw": 208
+		},
+		"VK_TRACK_NEXT": {
+			"virtual": -1,
+			"raw": 392
+		},
+		"VK_NEXT_FAVORITE_CHANNEL": {
+			"virtual": -1,
+			"raw": 0
+		},
+		"VK_REWIND": {
+			"virtual": -1,
+			"raw": 168
+		},
+		"VK_PLAY": {
+			"virtual": -1,
+			"raw": 207
+		},
+		"VK_SUBTITLE": {
+			"virtual": -1,
+			"raw": 370
+		},
+		"VK_BACK": {
+			"virtual": 8,
+			"raw": 158
+		},
+		"VK_ENTER": {
+			"virtual": 13,
+			"raw": 28
+		},
+		"VK_EXIT": {
+			"virtual": 27,
+			"raw": 1
+		},
+		"VK_PAGE_UP": {
+			"virtual": 33,
+			"raw": 104
+		},
+		"VK_PAGE_DOWN": {
+			"virtual": 34,
+			"raw": 109
+		},
+		"VK_LEFT": {
+			"virtual": 37,
+			"raw": 105
+		},
+		"VK_UP": {
+			"virtual": 38,
+			"raw": 103
+		},
+		"VK_RIGHT": {
+			"virtual": 39,
+			"raw": 106
+		},
+		"VK_DOWN": {
+			"virtual": 40,
+			"raw": 108
+		},
+		"VK_0": {
+			"virtual": 48,
+			"raw": 11
+		},
+		"VK_1": {
+			"virtual": 49,
+			"raw": 2
+		},
+		"VK_2": {
+			"virtual": 50,
+			"raw": 3
+		},
+		"VK_3": {
+			"virtual": 51,
+			"raw": 4
+		},
+		"VK_4": {
+			"virtual": 52,
+			"raw": 5
+		},
+		"VK_5": {
+			"virtual": 53,
+			"raw": 6
+		},
+		"VK_6": {
+			"virtual": 54,
+			"raw": 7
+		},
+		"VK_7": {
+			"virtual": 55,
+			"raw": 8
+		},
+		"VK_8": {
+			"virtual": 56,
+			"raw": 9
+		},
+		"VK_9": {
+			"virtual": 57,
+			"raw": 10
+		},
+		"VK_POWER": {
+			"virtual": 123,
+			"raw": 116
+		},
+		"VK_HOME": {
+			"virtual": 18,
+			"raw": 139
+		},
+		"VK_MUTE": {
+			"virtual": 106,
+			"raw": 113
+		},
+		"VK_VOLUME_DOWN": {
+			"virtual": 109,
+			"raw": 114
+		},
+		"VK_VOLUME_UP": {
+			"virtual": 107,
+			"raw": 115
+		},
+		"VK_RED": {
+			"virtual": 112,
+			"raw": 398
+		},
+		"VK_GREEN": {
+			"virtual": 113,
+			"raw": 399
+		},
+		"VK_YELLOW": {
+			"virtual": 114,
+			"raw": 400
+		},
+		"VK_BLUE": {
+			"virtual": 115,
+			"raw": 401
+		},
+		"VK_CHANNEL_UP": {
+			"virtual": 116,
+			"raw": 402
+		},
+		"VK_CHANNEL_DOWN": {
+			"virtual": 117,
+			"raw": 403
+		},
+		"VK_LIST": {
+			"virtual": 118,
+			"raw": 395
+		},
+		"VK_RECALL_FAVORITE_0": {
+			"virtual": 119,
+			"raw": 364
+		},
+		"VK_INFO": {
+			"virtual": 121,
+			"raw": 358
+		},
+		"VK_GUIDE": {
+			"virtual": 120,
+			"raw": 365
+		},
+		"VK_LAST": {
+			"virtual": 122,
+			"raw": 405
+		},
+		"VK_GO_TO_START": {
+			"virtual": 36,
+			"raw": 0
+		},
+		"VK_GO_TO_END": {
+			"virtual": 35,
+			"raw": 107
+		},
+		"VK_BACKSPACE": {
+			"virtual": 8,
+			"raw": 14
+		},
+		"VK_SPACE": {
+			"virtual": 32,
+			"raw": 57
+		},
+		"VK_COMMA": {
+			"virtual": 188,
+			"raw": 51
+		},
+		"VK_PERIOD": {
+			"virtual": 190,
+			"raw": 52
+		},
+		"VK_SLASH": {
+			"virtual": 191,
+			"raw": 53
+		},
+		"VK_SHIFT": {
+			"virtual": 16,
+			"raw": 42
+		},
+		"VK_APOSTROPHE": {
+			"virtual": 39,
+			"raw": 40
+		},
+		"VK_MINUS": {
+			"virtual": 45,
+			"raw": 12
+		},
+		"VK_EQUALS": {
+			"virtual": 61,
+			"raw": 13
+		},
+		"VK_SEMICOLON": {
+			"virtual": 59,
+			"raw": 39
+		},
+		"VK_A": {
+			"virtual": 65,
+			"raw": 30
+		},
+		"VK_B": {
+			"virtual": 66,
+			"raw": 48
+		},
+		"VK_C": {
+			"virtual": 67,
+			"raw": 46
+		},
+		"VK_D": {
+			"virtual": 68,
+			"raw": 32
+		},
+		"VK_E": {
+			"virtual": 69,
+			"raw": 18
+		},
+		"VK_F": {
+			"virtual": 70,
+			"raw": 33
+		},
+		"VK_G": {
+			"virtual": 71,
+			"raw": 34
+		},
+		"VK_H": {
+			"virtual": 72,
+			"raw": 35
+		},
+		"VK_I": {
+			"virtual": 73,
+			"raw": 23
+		},
+		"VK_J": {
+			"virtual": 74,
+			"raw": 36
+		},
+		"VK_K": {
+			"virtual": 75,
+			"raw": 37
+		},
+		"VK_L": {
+			"virtual": 76,
+			"raw": 38
+		},
+		"VK_M": {
+			"virtual": 77,
+			"raw": 50
+		},
+		"VK_N": {
+			"virtual": 78,
+			"raw": 49
+		},
+		"VK_O": {
+			"virtual": 79,
+			"raw": 24
+		},
+		"VK_P": {
+			"virtual": 80,
+			"raw": 25
+		},
+		"VK_Q": {
+			"virtual": 81,
+			"raw": 16
+		},
+		"VK_R": {
+			"virtual": 82,
+			"raw": 19
+		},
+		"VK_S": {
+			"virtual": 83,
+			"raw": 31
+		},
+		"VK_T": {
+			"virtual": 84,
+			"raw": 20
+		},
+		"VK_U": {
+			"virtual": 85,
+			"raw": 22
+		},
+		"VK_V": {
+			"virtual": 86,
+			"raw": 47
+		},
+		"VK_W": {
+			"virtual": 87,
+			"raw": 17
+		},
+		"VK_X": {
+			"virtual": 88,
+			"raw": 45
+		},
+		"VK_Y": {
+			"virtual": 89,
+			"raw": 21
+		},
+		"VK_Z": {
+			"virtual": 90,
+			"raw": 44
+		}
+	},
+	"mouseLayout": {
+		"BTN_LEFT": {
+			"raw": 272
+		},
+		"BTN_RIGHT": {
+			"raw": 273
+		}
+	}
+}

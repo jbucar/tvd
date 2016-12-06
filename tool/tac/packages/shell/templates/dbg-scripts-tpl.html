@@ -1,0 +1,46 @@
+	<script>
+		function mockAssets( resource ) {
+			return "$mockSrc/" + resource;
+		}
+	</script>
+	<script src="$enyoSrc/enyo/enyo.js"></script>
+	<script src="$package_path/package.js" type="text/javascript"></script>
+	<script>
+		enyo.kind({
+			name: 'SpotlightCurrentLogger',
+			components: [
+				{ kind: "Signals", onSpotlightCurrentChanged: "changed" },
+			],
+			old: undefined,
+			changed: function(oSender, oEvent) {
+				log.info('SpotlightCurrentLogger', 'changed', 'old=%s current=%s', this.old? this.old.name : 'undefined', oEvent.current.name);
+				this.old = oEvent.current;
+			}
+		});
+
+		var app; // Main application.
+
+		window.onload = function() {
+			var view = getURIParameter("view") || 'TAC';
+			var logLvl = getURIParameter("log") || log.level.INFO;
+			var filter = getURIParameter("filter");
+			var trackSpot = getURIParameter("trackSpot");
+
+			// enyo.setLogLevel(-1);
+			enyo.Spotlight.disablePointerMode();
+			enyo.Spotlight.Accelerator.frequency = [1, 1, 1, 1, 1, 1, 1];
+			log.setLevel(logLvl);
+			if (filter) {
+				log.setFilter(filter);
+			}
+			document.title = view + " DEBUG MODE";
+
+			if (trackSpot) {
+				new SpotlightCurrentLogger().render();
+			}
+
+			var bm = enyo.dev.bench();
+			eval('app = new ' + view + '().renderInto("app-wrapper");');
+			bm.stop();
+		}
+	</script>

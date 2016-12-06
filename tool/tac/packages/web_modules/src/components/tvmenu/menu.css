@@ -1,0 +1,98 @@
+#Menu {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+}
+
+#MenuHeader {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	z-index: 1;
+}
+
+#MenuBody {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.CarrouselMenu {
+	position: absolute;
+	top: 28%;
+	left: 10%;
+}
+
+.MenuPopupContainer {
+	position: absolute;
+	width: 28.907vw;
+	height: 100%;
+	z-index: 2;
+}
+
+.MenuPopupBox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+#TVMenu_MenuIcon {
+	margin-left: 8%;
+	margin-bottom: 3%;
+	width: 14%;
+	display: flex;
+}
+
+#TVMenu_MenuIconImg {
+	margin: auto;
+}
+
+#TVMenu_MenuIcon.alignRight {
+	transition: margin-left 1s;
+	margin-left: 83%;
+}
+
+#MenuSections {
+	width: 100%;
+}
+
+.MenuSection {
+	width: 100%;
+	height: 6.667vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.MenuSectionIcon {
+	margin: auto 0% auto 10%;
+	width: 8.11%;
+	display: flex;
+	align-items: center;
+}
+
+.MenuSectionIcon.alignRight {
+	transition: margin-left 1s;
+	margin-left: 85%;
+}
+
+.MenuSectionIcon img {
+	margin: auto;
+	width: 100%;
+}
+
+.blured {
+	-webkit-filter: opacity(50%);
+}
+
+.MenuSectionLabel {
+	color: white;
+	font-family: Oswald-Light;
+	font-size: 1.55rem;
+	margin-left: 5%;
+}

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+
+<title>Test Comunication</title>
+
+<script type="text/javascript">
+function quit( err, result ) {
+	console.log("checkParamsType callback called: result=" + result);
+	HtmlShellCall("JsApiTestStop", [result]);
+}
+
+function main() {
+	console.log("Testing parameters types");
+	HtmlShellCall("JsApiTestParams", ["string", 1, 1.2, true, false, null, ["array"]], quit);
+}
+window.onload = main;
+</script>
+
+</head>
+
+<body>
+<h1>Comunication test</h1>
+<p>Testea la comunicacion entre los procesos render y browser</p>
+</body>
+
+</html>

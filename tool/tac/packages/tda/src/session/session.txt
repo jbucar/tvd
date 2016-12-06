@@ -1,0 +1,7 @@
+{
+	"enabled" : "CONTRASEÑA CREADA",
+	"disabled": "CONTRASEÑA ELIMINADA",
+	"active": "SESIÓN INICIADA",
+	"blocked": "SESIÓN FINALIZADA",
+	"btnSession": "Iniciar sesión"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "audio",
+	"version": "1.0.0",
+	"description": "TAC audio service",
+	"main": "src/main.js",
+	"dependencies": {
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.3.4",
+		"audio_alsa": "file:../node_modules/audio_alsa",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

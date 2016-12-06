@@ -1,0 +1,113 @@
+.ch-infoaction-view {
+	width: 240px;
+	min-width: 240px;
+	height: 220px;
+	min-height: 200px;
+	border-radius: 5px;
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.ch-detail-options {
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ch-detail-options > .icons-wrapper {
+	position: absolute;
+	display: flex;
+	top: 0;
+	justify-content: flex-end;
+	width: 100%
+}
+
+.ch-detail-options > .icons-wrapper > .fav-icon {
+	margin: 10px 10px 10px 0px;
+	align-self: flex-end;
+}
+
+.ch-detail-options > .video-placeholder {
+	width: 240px;
+	height: 180px;
+	min-width: 240px;
+	min-height: 170px;
+	align-self: center;
+}
+
+.ch-detail-progress {
+	margin-top: 10px;
+}
+
+.ch-title-container {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+.ch-icon-wrapper {
+	width: 40px;
+	min-width: 40px;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ch-title-icon {
+	width: 32px;
+	height: 32px;
+	position: relative;
+	left: 11%;
+	top: 11%;
+	display: block;
+}
+
+.chinfo {
+	height: 100%;
+}
+
+.ch-title-text {
+	margin-left: 10px;
+}
+
+/* Popup Details */
+
+.popup-details {
+	width: 490px !important;
+	height: 483px !important;
+	padding-bottom: 30px !important;
+	padding-top: 10px !important;
+}
+
+.popup-tiny-text {
+	font-family: 'Oswald-Light';
+	font-size: 15px;
+}
+
+.popup-details-components {
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	align-items: flex-start !important;
+}
+
+.popup-details-title {
+	font-family: 'Oswald-Regular';
+	border-bottom: 1px solid;
+	border-bottom-color: rgb(214, 143, 45);
+	margin-top: 5px;
+}
+
+.popup-group-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.unavailable-progress {
+	margin-top: -5px;
+	width: 240px;
+	text-align: center;
+	font-size: 13pt;
+	color: white;
+	font-family: "Oswald-Light";
+}

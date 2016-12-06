@@ -1,0 +1,78 @@
+
+\label{chap:util}
+
+La librería \emph{util} agrupa funcionalidad genérica y variada; algunas de las funciones más importantes son:
+
+\textbf{Configuración de propiedades}: Se provee una API que permite registrar propiedades que pueden ser accedidas en cualquier punto y momento en la ejecución de la aplicación, ya sea para realizar operaciones de lectura o escritura; la API se encuentra definida en el archivo \texttt{lib/dtv-util/cfg/cfg.h}. Para registrar propiedades se debe utilizar la macro \texttt{REGISTER\_INIT\_CONFIG}.
+
+\textbf{Tool}: Clase que sirve como punto de inicio para la ejecución de la aplicación, subclasificándola se puede implementar una nueva \emph{tool}. La instanciación de las mismas se hace mediante la macro \texttt{CREATE\_TOOL} que genera automáticamente la función \texttt{main} del programa. La clase \texttt{Tool}, además, resuelve aspectos como el parseo y definición de opciones de línea de comando y la exportación e importación de archivos de configuración.
+Los archivos de configuración son archivos XML que definen valores para propiedades, y son registradas por medio de la utilidad para configuración de propiedades.
+
+\textbf{Log}: Existen un conjunto de macros cuyo fin es imprimir mensajes que permitan a la aplicación notificar al usuario ciertos mensajes. Estos mensajes poseen, además del texto que se desea comunicar, un grupo, una categoría y un nivel. Éstos últimos describen al mensaje y pueden ser utilizados para permitir un posterior filtrado; por ejemplo, se podrían imprimir sólo los mensajes pertenecientes a un determinado nivel. Los mensajes, por defecto, son impresos en la salida estándar, pero pueden ser almacenados en un archivo. Tanto el criterio de filtrado como la selección de la salida del \emph{Log} son especificados por medio de la \texttt{configuración de propiedades}.
+
+\textbf{Funciones de red}: Se proveen clases para realizar manejo de sockets tanto en ipv4 como ipv6.
+
+\textbf{Manipulación de procesos}: Se define la clase \emph{Process}, la cual permite iniciar la ejecución de procesos, como así también el manejo de sus parámetros.
+
+\begin{lstlisting}[
+	language=XML,
+	title=Ejemplo de un bloque de archivo de configuración,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	tabsize=4,
+	showstringspaces=false,
+	columns=fullflexible,
+	breaklines=true,
+	frame=none]
+<?xml version="1.0" encoding="UTF-16" standalone="no" ?>
+<root>
+	<gui>
+		<use>gtk</use>
+		<window>
+			<use>gtk</use>
+			<title>Dummy</title>
+			<icon></icon>
+			<fullscreen>false</fullscreen>
+			<winID>0</winID>
+			<size>
+				<width>720</width>
+				<height>576</height>
+			</size>
+		</window>
+		<player>
+			<use>vlc</use>
+			<vlc>
+				<quiet>true</quiet>
+			</vlc>
+		</player>
+		<fontManager>
+			<use>fontconfig</use>
+		</fontManager>
+		<canvas>
+			<use>cairo</use>
+			<size>
+				<width>720</width>
+				<height>576</height>
+			</size>
+		</canvas>
+	</gui>
+	<log>
+		<enabled>true</enabled>
+		<filter>
+			<all>
+				<all>info</all>
+			</all>
+		</filter>
+		<output>
+			<stdout>
+				<use>true</use>
+			</stdout>
+			<file>
+				<use>false</use>
+				<filename>/tmp/tool.log</filename>
+			</file>
+		</output>
+	</log>
+</root>
+\end{lstlisting}

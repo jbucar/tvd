@@ -1,0 +1,25 @@
+{
+	"name": "diskmgr",
+	"version": "1.0.0",
+	"description": "TAC diskmgr service",
+	"main": "src/main.js",
+	"dependencies": {
+		"bluebird": "^3.1.4",
+		"dbus": "file:../node_modules/dbus",
+		"tvdutil": "file:../node_modules/tvdutil"
+	},
+	"devDependencies": {
+		"mock-fs": "^3.6.0",
+		"chai": "^3.4.1",
+		"jshint": "^2.9.1",
+		"istanbul": "^0.4.2",
+		"lodash": "^4.0.0",
+		"mocha": "^2.3.4",
+		"mocks": "file:../node_modules/mocks"
+	},
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC"
+}

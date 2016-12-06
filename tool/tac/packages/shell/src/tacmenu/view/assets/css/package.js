@@ -1,0 +1,23 @@
+enyo.depends(
+	"wizard.css",
+	"tooltip.css",
+	"tacmenu.css",
+	"about.css",
+	"apps.css",
+	"appsinfo.css",
+	"config.css",
+	"images.css",
+	"channels.css",
+	"chinfo.css",
+	"guide.css",
+	"userbar.css",
+	"navbar.css",
+	"common.css",
+	"parental.css",
+	"infobox.css",
+	"mainvideo.css",
+	"blocked_program.css",
+	"help.css",
+	"services.css",
+	"ginga.css"
+);

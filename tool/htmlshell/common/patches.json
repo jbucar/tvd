@@ -1,0 +1,9 @@
+[
+	"03-ppapi-un-sandboxed-plugins.patch",
+	"04-mouse-events-hack.patch",
+	"05-ui-ozone-enable-wheel-events.patch",
+	"06-fix-keyboard-input.patch",
+	"07-browser_test_base.cc.patch",
+	"11-tools-gritsettings-resource_ids.patch",
+	"12-keyboard_mapping.patch"
+]

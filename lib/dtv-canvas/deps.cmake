@@ -1,0 +1,13 @@
+DEF_OPTIONS(CANVAS_SYSTEM directfb gtk x11 qt android ios win32 ppapi DEFAULT gtk ON)
+DEF_OPTIONS(CANVAS_2D gl cairo skia DEFAULT cairo ON)
+DEF_OPTIONS(CANVAS_FONTMANAGER fontconfig DEFAULT fontconfig on)
+DEF_OPTIONS(CANVAS_WINDOW fb egl remote DEFAULT remote on)
+DEF_OPTIONS(CANVAS_X11_RENDER vdpau vaapi cairo skia gl)
+DEF_OPTIONS(CANVAS_INPUT lirc linux)
+DEF_OPTIONS(CANVAS_HTML cef gtk)
+DEF_OPTIONS(CANVAS_PLAYER vlc xine ffmpeg gst DEFAULT vlc on)
+DEF_OPTIONS(CANVAS_REMOTE shared local DEFAULT shared on)
+DEF_OPTIONS(CANVAS_AUDIO pulse alsa DEFAULT pulse on)
+
+ADD_BOOST_COMPONENTS(system filesystem thread)
+ADD_INTERNAL_COMPONENTS(util)

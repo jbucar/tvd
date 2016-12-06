@@ -1,0 +1,578 @@
+[
+    {
+        "name": "Paka Paka",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59169",
+        "channelID": "22.02",
+        "logo": "_nacional-22.02-paka-paka.svg"
+    },
+    {
+        "name": "TaTeTi",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59170",
+        "channelID": "22.03",
+        "logo": "ta-te-ti.svg"
+    },
+    {
+        "name": "Incaa TV",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59171",
+        "channelID": "22.04",
+        "logo": "logo-inca-TV.svg"
+    },
+    {
+        "name": "Tecnópolis ",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59172",
+        "channelID": "22.05",
+        "logo": "tec-tv.svg"
+    },
+    {
+        "name": "Encuentro",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59192",
+        "channelID": "22.31",
+        "logo": "3_82.svg"
+    },
+    {
+        "name": "Encuentro",
+        "frequency": "521",
+        "nitID": "1849",
+        "tsID": "1849",
+        "srvID": "59168",
+        "channelID": "22.01",
+        "logo": "3_82.svg"
+    },
+    {
+        "name": "Construir",
+        "frequency": "527",
+        "nitID": "1850",
+        "tsID": "1850",
+        "srvID": "59202",
+        "channelID": "23.03",
+        "logo": "_construir.svg"
+    },
+    {
+        "name": "TV Pública",
+        "frequency": "527",
+        "nitID": "1850",
+        "tsID": "1850",
+        "srvID": "59224",
+        "channelID": "23.31",
+        "logo": "tv-publica-8_87.svg"
+    },
+    {
+        "name": "TV Pública",
+        "frequency": "527",
+        "nitID": "1850",
+        "tsID": "1850",
+        "srvID": "59201",
+        "channelID": "23.02",
+        "logo": "tv-publica-8_87.svg"
+    },
+    {
+        "name": "DEPORTV ",
+        "frequency": "533",
+        "nitID": "1851",
+        "tsID": "1851",
+        "srvID": "59232",
+        "channelID": "24.01",
+        "logo": "Logo_Dxtv_2015.svg"
+    },
+    {
+        "name": "DEPORTV ",
+        "frequency": "533",
+        "nitID": "1851",
+        "tsID": "1851",
+        "srvID": "59256",
+        "channelID": "24.31",
+        "logo": "Logo_Dxtv_2015.svg"
+    },
+    {
+        "name": "Rock & Pop SE VE",
+        "frequency": "533",
+        "nitID": "1851",
+        "tsID": "1851",
+        "srvID": "59233",
+        "channelID": "24.02",
+        "logo": "rock-and-pop.svg"
+    },
+    {
+        "name": "Arpeggio",
+        "frequency": "533",
+        "nitID": "1851",
+        "tsID": "1851",
+        "srvID": "59234",
+        "channelID": "24.03",
+        "logo": "Arpeggio-.png"
+    },
+    {
+        "name": "Viajar",
+        "frequency": "533",
+        "nitID": "1851",
+        "tsID": "1851",
+        "srvID": "59235",
+        "channelID": "24.05",
+        "logo": "viajar-.svg"
+    },
+    {
+        "name": "CN23",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59264",
+        "channelID": "25.01",
+        "logo": "17_90.svg"
+    },
+    {
+        "name": "CN23",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59288",
+        "channelID": "25.31",
+        "logo": "17_90.svg"
+    },
+    {
+        "name": "C5N",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59265",
+        "channelID": "25.02",
+        "logo": "C5N_logo.svg"
+    },
+    {
+        "name": "TeleSur",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59266",
+        "channelID": "25.03",
+        "logo": "telesur_.svg"
+    },
+    {
+        "name": "360 TV",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59267",
+        "channelID": "25.04",
+        "logo": "360-tv.svg"
+    },
+    {
+        "name": "RT",
+        "frequency": "539",
+        "nitID": "1852",
+        "tsID": "1852",
+        "srvID": "59268",
+        "channelID": "25.05",
+        "logo": "RT.svg"
+    },
+    {
+        "name": "Canal 26",
+        "frequency": "545",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "26.01",
+        "logo": "26_TV.svg"
+    },
+    {
+        "name": "Telemax",
+        "frequency": "545",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "26.02",
+        "logo": "TLX.svg"
+    },
+    {
+        "name": "C5N",
+        "frequency": "551",
+        "nitID": "733",
+        "tsID": "733",
+        "srvID": "23456",
+        "channelID": "27.01",
+        "logo": "C5N_logo.svg"
+    },
+    {
+        "name": "C5N",
+        "frequency": "551",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "27.31",
+        "logo": "C5N_logo.svg"
+    },
+    {
+        "name": "One TV",
+        "frequency": "551",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "27.02",
+        "logo": "_caba-amba-27.02.png"
+    },
+    {
+        "name": "Canal 13",
+        "frequency": "587",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "33.01",
+        "logo": "el_trece_.svg"
+    },
+    {
+        "name": "Telefe",
+        "frequency": "593",
+        "nitID": "65282",
+        "tsID": "65282",
+        "srvID": "57409",
+        "channelID": "34.02",
+        "logo": "telefe.svg"
+    },
+    {
+        "name": "Telefe",
+        "frequency": "593",
+        "nitID": "65282",
+        "tsID": "65282",
+        "srvID": "57408",
+        "channelID": "34.01",
+        "logo": "telefe.svg"
+    },
+    {
+        "name": "Telefe",
+        "frequency": "593",
+        "nitID": "65282",
+        "tsID": "65282",
+        "srvID": "57432",
+        "channelID": "34.31",
+        "logo": "telefe.svg"
+    },
+    {
+        "name": "ACUA Mayor",
+        "frequency": "593",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "34.03",
+        "logo": "caba-amba-35.03.svg"
+    },
+    {
+        "name": "Canal 9",
+        "frequency": "599",
+        "nitID": "110",
+        "tsID": "110",
+        "srvID": "3520",
+        "channelID": "35.01",
+        "logo": "canal_9.png"
+    },
+    {
+        "name": "Canal 9",
+        "frequency": "599",
+        "nitID": "110",
+        "tsID": "110",
+        "srvID": "3521",
+        "channelID": "35.02",
+        "logo": "canal_9.png"
+    },
+    {
+        "name": "Canal 9",
+        "frequency": "599",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "35.31",
+        "logo": "canal_9.png"
+    },
+    {
+        "name": "ACUA Federal",
+        "frequency": "599",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "35.03",
+        "logo": "_caba-amba-34.03.svg"
+    },
+    {
+        "name": "América",
+        "frequency": "605",
+        "nitID": "65283",
+        "tsID": "65283",
+        "srvID": "57440",
+        "channelID": "36.01",
+        "logo": "America_caba-amba-36.01.svg"
+    },
+    {
+        "name": "América",
+        "frequency": "605",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "36.31",
+        "logo": "America_caba-amba-36.01.svg"
+    },
+    {
+        "name": "A24",
+        "frequency": "605",
+        "nitID": "65283",
+        "tsID": "65283",
+        "srvID": "57442",
+        "channelID": "36.03",
+        "logo": "A24.svg"
+    },
+    {
+        "name": "DIGO TV",
+        "frequency": "581",
+        "nitID": "",
+        "tsID": "1859",
+        "srvID": "59488",
+        "channelID": "32.01",
+        "logo": "_la-plata-32.1.svg"
+    },
+    {
+        "name": "DIGO TV",
+        "frequency": "581",
+        "nitID": "",
+        "tsID": "1859",
+        "srvID": "",
+        "channelID": "32.31",
+        "logo": "_la-plata-32.1.svg"
+    },
+    {
+        "name": "DIGO TV",
+        "frequency": "581",
+        "nitID": "",
+        "tsID": "1859",
+        "srvID": "",
+        "channelID": "32.02",
+        "logo": "_la-plata-32.1.svg"
+    },
+    {
+        "name": "TV Universidad",
+        "frequency": null,
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "56.01",
+        "logo": "23_85-2014.svg"
+    },
+    {
+        "name": "Cba24N",
+        "frequency": "575",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "31.01",
+        "logo": "cordoba-31.01.svg"
+    },
+    {
+        "name": "Cba24N",
+        "frequency": "575",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "31.31",
+        "logo": "cordoba-31.01.svg"
+    },
+    {
+        "name": "Canal 10 de Córdoba",
+        "frequency": "575",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "31.02",
+        "logo": "28_84.png"
+    },
+    {
+        "name": "Canal 7 Jujuy",
+        "frequency": "605",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "36.33",
+        "logo": "38_92.svg"
+    },
+    {
+        "name": "Canal 7 Jujuy",
+        "frequency": "605",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "36.10",
+        "logo": "38_92.svg"
+    },
+    {
+        "name": "Canal 9 La Rioja",
+        "frequency": "563",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "29.31",
+        "logo": "Radio_tv_Riojana.svg"
+    },
+    {
+        "name": "Canal 9 La Rioja",
+        "frequency": "563",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "29.01",
+        "logo": "Radio_tv_Riojana.svg"
+    },
+    {
+        "name": "Acequia TV",
+        "frequency": "563",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "29.01",
+        "logo": "81_132.svg"
+    },
+    {
+        "name": "Señal U",
+        "frequency": "569",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "30.01",
+        "logo": "Marca-SENAL-U-.svg"
+    },
+    {
+        "name": "Grupo Televisión Litoral",
+        "frequency": "581",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "32.01",
+        "logo": "canal-3-rosario_.svg"
+    },
+    {
+        "name": "Canal 5 Rosario",
+        "frequency": "617",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "38.31",
+        "logo": "Canal5_rosario.svg"
+    },
+    {
+        "name": "Canal 5 Rosario",
+        "frequency": "617",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "38.01",
+        "logo": "Canal5_rosario.svg"
+    },
+    {
+        "name": "Canal 5 Rosario",
+        "frequency": "617",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "38.02",
+        "logo": "Canal5_rosario.svg"
+    },
+    {
+        "name": "CAS TV Sgo. del Estero",
+        "frequency": "641",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "07.31",
+        "logo": "_castv.png"
+    },
+    {
+        "name": "CAS TV Sgo. del Estero",
+        "frequency": "641",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "00.72",
+        "logo": "_castv.png"
+    },
+    {
+        "name": "CAS TV Sgo. del Estero",
+        "frequency": "641",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "00.71",
+        "logo": "_castv.png"
+    },
+    {
+        "name": "Chaco TV",
+        "frequency": "557",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "28.02",
+        "logo": "73_104.svg"
+    },
+    {
+        "name": "Lapacho TV",
+        "frequency": "563",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "29.31",
+        "logo": "Lapacho_tv.svg"
+    },
+    {
+        "name": "Lapacho TV",
+        "frequency": "563",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "29.01",
+        "logo": "Lapacho_tv.svg"
+    },
+    {
+        "name": "Canal 3 Santa Rosa",
+        "frequency": null,
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "03.02",
+        "logo": "3-santa-rosa-48_96.svg"
+    },
+    {
+        "name": "Canal 3 Santa Rosa",
+        "frequency": null,
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "03.01",
+        "logo": "3-santa-rosa-48_96.svg"
+    },
+    {
+        "name": "TV Canal 12 Posadas",
+        "frequency": "569",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "30.31",
+        "logo": "49_97.png"
+    },
+    {
+        "name": "TV Canal 12 Posadas",
+        "frequency": "569",
+        "nitID": "0",
+        "tsID": "0",
+        "srvID": "0",
+        "channelID": "30.01",
+        "logo": "49_97.png"
+    }
+]

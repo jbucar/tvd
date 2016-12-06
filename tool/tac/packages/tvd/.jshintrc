@@ -1,0 +1,8 @@
+// Documentation: http://www.jshint.com/docs/options/
+{
+	"extends": "../../tools/jshint/jshintconf.json",
+	"globals": {
+		"plugin": true
+	}
+}
+

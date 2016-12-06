@@ -1,0 +1,10 @@
+ADD_SOURCES(
+	src/impl/skia/canvas.h
+	src/impl/skia/canvas.cpp
+	src/impl/skia/font.h
+	src/impl/skia/font.cpp
+	src/impl/skia/glyphrun.h
+	src/impl/skia/glyphrun.cpp
+	src/impl/skia/surface.h
+	src/impl/skia/surface.cpp
+)

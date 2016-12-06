@@ -1,0 +1,122 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Manifest",
+	"description": "A package manifest",
+	"type": "object",
+	"properties": {
+		"id": { "type": "string", "minLength": 5 },
+		"description": { "type": "string" },
+		"manifest-version": { "type": "string" },
+		"version": { "type": "string" },
+		"vendor": { "type": "string" },
+		"vendor-url": { "type": "string" },
+		"api-level": { "type": "string" },
+		"platform": { "type": "string" },
+		"system": { "type": "boolean" },
+		"update": { "type": "boolean" },
+		"user": { "type": "boolean"},
+		"components": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"oneOf": [
+					{ "$ref": "#/definitions/service" },
+					{ "$ref": "#/definitions/app" },
+					{ "$ref": "#/definitions/browser_plugin" },
+					{ "$ref": "#/definitions/binary" }
+				]
+			},
+			"minItems": 1,
+			"uniqueItems": true
+		}
+	},
+	"definitions": {
+		"service": {
+			"properties": {
+				"id": { "type": "string", "minLength": 5 },
+				"name": { "type": "string" },
+				"description": { "type": "string" },
+				"type": { "enum": [ "service" ] },
+				"version": { "type": "string" },
+				"main": { "type": "string" },
+				"icon": { "type": "string" },
+				"user": { "type": "boolean"},
+				"configure": { "type": "string" },
+				"dependencies": { "type": "array" },
+				"runs": { "enum": [ "onStartup", "onDemand" ] }
+			},
+			"required": [ "id", "name", "type", "main" ],
+			"additionalProperties": false
+		},
+		"app": {
+			"properties": {
+				"id": { "type": "string", "minLength": 5 },
+				"name": { "type": "string" },
+				"description": { "type": "string" },
+				"categories": { "type": "array" },
+				"vendor": { "type": "string" },
+				"user": { "type": "boolean"},
+				"bg_transparent": { "type": "boolean" },
+				"enable_mouse": { "type": "boolean" },
+				"enable_geolocation": { "type": "boolean" },
+				"hw_codecs_only": { "type": "boolean" },
+				"extra_ua": { "type": "string" },
+				"plugins": { "type": "array" },
+				"type": { "enum": [ "app" ] },
+				"version":{ "type": "string" },
+				"main": { "type": "string" },
+				"icon": { "type": "string" },
+				"dependencies": { "type": "array" }
+			},
+			"required": [ "id", "name", "type", "main" ],
+			"additionalProperties": false
+		},
+		"browser_plugin": {
+			"properties": {
+				"type": { "enum": [ "browser_plugin" ] },
+				"id": { "type": "string", "minLength": 5 },
+				"name": { "type": "string" },
+				"main": { "type": "string" },
+				"out_of_process": { "type": "boolean" },
+				"sandboxed": { "type": "boolean" },
+				"version": { "type": "string" },
+				"mime_types": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"oneOf": [
+							{ "$ref": "#/definitions/mime_type" }
+						]
+					},
+					"minItems": 1,
+					"uniqueItems": true
+				}
+			},
+			"required": [ "id", "name", "type", "main", "mime_types" ],
+			"additionalProperties": false
+		},
+		"mime_type": {
+			"properties": {
+				"type": { "type": "string" },
+				"extensions": { "type": "string" },
+				"description": { "type": "string" },
+				"aditional_params": { "type": "array" }
+			},
+			"required": [ "type", "extensions", "description" ],
+			"additionalProperties": false
+		},
+		"binary": {
+			"properties": {
+				"id": { "type": "string", "minLength": 5 },
+				"name": { "type": "string" },
+				"description": { "type": "string" },
+				"type": { "enum": [ "binary" ] },
+				"version": { "type": "string" }
+			},
+			"required": [ "id", "name", "type" ],
+			"additionalProperties": false
+		}
+	},
+	"required": ["id", "version", "vendor", "api-level", "platform", "components"],
+	"additionalProperties": false
+}

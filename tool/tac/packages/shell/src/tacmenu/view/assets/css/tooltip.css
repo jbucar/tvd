@@ -1,0 +1,86 @@
+.tooltip {
+	position: absolute;
+	top: 535px;
+	display: table;
+	height: 110px;
+	width: 540px;
+	z-index: 3;
+}
+
+.tooltip:before {
+	position: absolute;
+	display: block;
+	content: "";
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	border-style: solid;
+	border-width: 14px;
+	height: 0px;
+	width: 0px;
+	position: absolute;
+	top: 109px;
+	left: 60px;
+}
+
+.tooltip > .msg {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+	line-height: 18pt;
+	letter-spacing: 0.05em;
+	color: white;
+	z-index: 3;
+	position: absolute;
+	margin-left: 47px;
+	margin-right: 47px;
+	margin-top: 17px;
+	width: 446px;
+	height: 93px;
+}
+
+.tooltip.menu > .msg {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Oswald-Light';
+	font-size: 16pt;
+	line-height: 18pt;
+	letter-spacing: 0.05em;
+	color: white;
+	z-index: 3;
+	margin-left: 0px;
+	margin-right: 0px;
+	position: absolute;
+	margin-top: 17px;
+	width: 388px;
+	height: 82px;
+}
+
+.tooltip.menu {
+	position: absolute;
+	top: 175px;
+	left: 20px;
+	z-index: 2;
+	width: 388px;
+	height: 82px;
+	display: table;
+}
+
+.tooltip.menu:before {
+	position: absolute;
+	display: block;
+	content: "";
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-left-color: transparent;
+	border-style: solid;
+	border-width: 14px;
+	height: 0px;
+	width: 0px;
+	position: absolute;
+	top: -28px;
+	left: 70px;
+}

@@ -1,0 +1,88 @@
+.apps-infoaction-view {
+	width: 240px;
+	height: 190px;
+	min-width: 240px;
+	min-height: 190px;
+	background-color: rgba(255, 255, 255, 0.15);
+	display: flex;
+	flex-direction: row;
+}
+
+/* AppsDetailOptions */
+
+.app-detail-options {
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.app-iconbar {
+	top: 0;
+	position: absolute;
+}
+
+.icons-wrapper > .fav-icon {
+	margin: 10px 10px 10px 0;
+}
+
+.app-detail-options > .img {
+	max-width: 135px;
+	max-height: 135px;
+	align-self: center;
+}
+
+/* End AppsDetailOptions */
+
+.apps-info-details {
+	margin: 0 20px 20px 0;
+	color: white;
+}
+
+.info-details-title {
+	font-family: 'Oswald-Bold';
+	font-size: 40px;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	letter-spacing: 0.015em;
+}
+
+.info-details-title.apps {
+	margin-bottom: 20px;
+}
+
+.info-details-description {
+	font-family: 'Oswald-Light';
+	font-size: 15pt;
+	height: 156px;
+	line-height: 26px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	letter-spacing: 0.015em;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	margin: 15px 60px 0 0;
+}
+
+.apps-data-field {
+	font-family: 'Oswald-Light';
+	font-size: 15pt;
+	line-height: 26px;
+	letter-spacing: 0.01em;
+}
+
+/*new design*/
+.apps-area-left {
+	padding-top: 30px;
+	min-width: 300px;
+	max-width: 300px;
+}
+
+.apps-area-right {
+	min-width: 800px;
+	max-width: 800px;
+	padding-top: 86px;
+}

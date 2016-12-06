@@ -1,0 +1,12 @@
+require 'testSystem.testSystem'
+TType = "table"
+
+assertEquals( type(settings), TType, "Se esperaba que settings sea una tabla" )
+
+-- override settings.service
+assertThrow( function () settings = 1 end )
+assertEquals( type(settings), TType, "Se esperaba que settings sea una tabla" )
+
+-- add test
+assertThrow( function () settings.myVar = 1 end )
+assertEquals( settings.myVar, nil )

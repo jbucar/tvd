@@ -1,0 +1,4 @@
+.moon-input-decorator:not(.moon-input-header-input-decorator).spotlight, .moon-textarea-decorator.spotlight {
+	border-width: 2px !important;
+	background: rgba(0, 0, 0, .3);
+}

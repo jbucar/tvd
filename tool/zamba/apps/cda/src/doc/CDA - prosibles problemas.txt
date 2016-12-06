@@ -1,0 +1,59 @@
+Obtención y parseo de recursos en la aplicación de CDA
+
+En caso de que surja algún tipo de problema al obtener los recursos, ya sea binarios(imagen, video) o datos(texto), se puede recurrir al siguiente texto para tratar de llegar al problema de manera rápida:
+
+Obtener los datos:
+
+- Obtener datos de una categoría:
+
+ wget \
+   --header='apikey: 3b215471706c796964217d6172705d' \
+   --header='Host: api.prod.cda.dcarsat.com.ar.' \
+   -U 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4).'  \
+   --post-data='response=json&call=categories&type=serie' \
+    http://api.prod.cda.dcarsat.com.ar/servicios/api/
+
+Ver resultado esperado en archivo cda/doc/series.json
+
+
+- Obtener datos de una serie en una categoría:
+
+ wget \
+   --header='apikey: 3b215471706c796964217d6172705d' \
+   --header='Host: api.prod.cda.dcarsat.com.ar.' \
+   -U 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4).'  \
+   --post-data='response=json&call=list&type=serie&category_id=8' \
+    http://api.prod.cda.dcarsat.com.ar/servicios/api/
+
+Ver resultado esperado en archivo cda/doc/documentales.json
+
+- Obtener datos de un item:
+
+ wget \
+   --header='apikey: 3b215471706c796964217d6172705d' \
+   --header='Host: api.prod.cda.dcarsat.com.ar.' \
+   -U 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4).'  \
+   --post-data='response=json&call=item&type=serie&item_id=2387' \
+    http://api.prod.cda.dcarsat.com.ar/servicios/api/
+
+Ver resultado esperado en archivo cda/doc/item.json
+
+Para más información de los valores para cada atributo(ej: response o type) consultar a API de CDA.
+
+Cliente para obtener/enviar datos de la aplicación CDA:
+
+ cda/src/widgets/Client.lua
+
+Generar el source de video a reproducir:
+
+	Tools.makeUrl( streamer, type, source, id, bitrate ) en cda/src/Tools/Tools.lua
+	Los parametros de esta función se encuentran en la respuesta que se obtiene a travez de la función Client:requestItem(callbackF, aType, item_id, category_id) en cda/src/widgets/Client.lua
+
+Parsing de datos obtenidos por Client.lua:
+
+	jsonParser:decode( data ) se encuentra en cda/src/widgets/JSON.lua y se usa en ItemStage.lua, MainStage.lua
+
+Obtener una imagen:
+
+	Función RemoteImage:fetch( url ), se utiliza en la clase cda/src/widgets/RemoteImage.lua
+	que llama a la función Client:fetchResource() de la clase cda/src/widgets/Client.lua

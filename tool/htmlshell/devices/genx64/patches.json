@@ -1,0 +1,5 @@
+[
+	"02-ffmpeg-00-ffmpeg-ts-support.patch",
+	"02-ffmpeg-01-build_ffmpeg.py.patch",
+	"10-context_state_impl_autogen.h.patch"
+]

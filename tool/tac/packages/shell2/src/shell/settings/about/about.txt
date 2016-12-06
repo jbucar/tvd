@@ -1,0 +1,44 @@
+{
+	"carrouselName": "Acerca de",
+	"btn_about": "Información Tac Tv",
+	"btn_update": "Buscar actualización",
+	"btn_update_searching": "Buscando actualización...",
+	"btn_update_download": "Descargar actualización",
+	"btn_update_downloading": "Descargando actualización...",
+	"btn_update_install": "Instalar actualización",
+	"btn_update_installing": "Instalando actualización...",
+	"btn_reset": "Restablecer",
+	"last_search": "Última búsqueda",
+	"desc_about": [
+		"Versión del TAC TV: %s (%s)",
+		"Configuración: %s (%s, %s)",
+		"Api Level: %s",
+		"ID: %s",
+		"Plataforma: %s, versión: %s (%s)",
+		"La Terminal de Acceso al Conocimiento, es el último avanze tecnológico de la Television Digital Abierta, para garantizar el acceso universal a los mejores contenidos audiovisuales en Alta Definicion. Con la TAC TV, además de recibir la señal gratuita de la Television Digital Abierta, podes acceder a Internet, navegar por la web, ingresar a redes sociales, ver videos, series y películas a demanda, descargar aplicaciones, mirar fotos, escuchar música, y muchas más."
+	],
+	"desc_update": [
+		"Para poder disfrutar de su TAC TV al máximo es necesario mantenerla actualizada. Puede buscar las actualizaciones disponibles manualmente, mediante el botón BUSCAR ACTUALIZACIÓN. Recuerde que debe estar conectado a internet para poder actualizar su TAC TV."
+	],
+	"desc_update_searching": [
+		"La búsqueda puede demorar unos minutos, por favor espere hasta que haya finalizado"
+	],
+	"desc_update_download": [
+		"Para poder comenzar a disfrutar de la nueva actualización debe descargarla presionando el botón DESCARGAR ACTUALIZACIÓN."
+	],
+	"desc_update_downloading": [
+		"La descarga de la nueva actualización puede demorar unos minutos, por favor espere hasta que haya finalizado"
+	],
+	"desc_update_install": [
+		"Presione INSTALAR ACTUALIZACIÓN para instalar la actualización del sistema. La TAC TV se reiniciará de manera automática."
+	],
+	"desc_update_installing": [
+		"Se esta instalando la actualización. La TAC TV se reiniciará de manera automática."
+	],
+	"desc_reset": [
+		"Por medio de la opción RESTABLECER usted podrá volver el equipo a su configuración de fábrica."
+	],
+	"update_confirm_text": "Esta instalación eliminará todas las configuraciones actuales.",
+	"reset_confirm_title": "RESTABLECER SISTEMA",
+	"reset_confirm_text": "Se eliminarán todas las configuraciones realizadas. Desea continuar?"
+}

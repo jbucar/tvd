@@ -1,0 +1,91 @@
+
+.preloader {
+	position: relative;
+	background-color: white;
+	height: 15px;
+}
+
+.preloader .animate {
+	content: "";
+	position: absolute;
+	-webkit-animation: anim 2s linear infinite;
+}
+
+.preloader > span {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.preloader .bar {
+	position: relative;
+}
+
+@-webkit-keyframes anim {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 20px 20px;
+	}
+}
+
+.ballpreloader {
+	display: flex;
+}
+
+.ball {
+	background-color: #fff;
+	width: 11px;
+	height: 11px;
+	display: inline;
+	-webkit-animation-name: ballsWave;
+	-webkit-animation-duration: 0.9s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	border-radius: 7px;
+	margin-left: 4px;
+}
+
+.ball.b1 {
+	-webkit-animation-delay:0.36s;
+}
+
+.ball.b2 {
+	-webkit-animation-delay:0.45s;
+}
+
+.ball.b3 {
+	-webkit-animation-delay:0.54s;
+}
+
+.ball.b4 {
+	-webkit-animation-delay:0.63s;
+}
+
+.ball.b5 {
+	-webkit-animation-delay:0.72s;
+}
+
+.ball.b6 {
+	-webkit-animation-delay:0.81s;
+}
+
+.ball.b7 {
+	-webkit-animation-delay:0.9s;
+}
+
+.ball.b8 {
+	-webkit-animation-delay:0.99s;
+}
+
+@-webkit-keyframes ballsWave {
+	0% {
+		background-color:#fff;
+	}
+	100% {
+		background-color:#2f6db3;
+	}
+}

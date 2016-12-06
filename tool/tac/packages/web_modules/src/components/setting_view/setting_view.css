@@ -1,0 +1,156 @@
+#SettingView {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+
+.left_section_base {
+	width: 69%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.left_section {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+    flex-shrink: 0;
+}
+
+.right_section {
+	width: 31%;
+	height: 100%;
+}
+
+.image_container.full_size {
+	border: none;
+	width: 17.403vw;
+}
+
+.image_container.full_size > .image {
+	width: 100%;
+	margin-bottom: auto;
+}
+
+.image_container {
+	width: 10.625vw;
+	height: 18.89vh;
+	margin-top: 25.8%;
+	margin-left: 15%;
+	border: 2px groove white;
+	display: flex;
+}
+
+.image {
+	margin: auto;
+	width: 80%;
+}
+
+.title p {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	font-size: 1.833rem;
+}
+
+.title p.subtitle {
+	font-size: 1rem;
+}
+
+.text {
+	width: 65%;
+	margin-top: 25%;
+	margin-left: 4%;
+	text-align: left;
+	font-size: 1.416rem;
+	color: white;
+	font-family: 'Oswald-Regular';
+}
+
+.text section {
+	margin-bottom: 2%;
+	margin-right: 6%;
+}
+
+.hbox_center {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.buttons {
+	width: 100%;
+	height: 71.667%;
+	margin-top: 51.414%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	position: relative;
+	height: 11.945vh;
+	width: 100%;
+	flex-shrink: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: rgb(146,154,158);
+}
+
+.progress_bar {
+	position: absolute;
+	top: 94%;
+	height: 6%;
+	width: 100%;
+	background-color: rgb(70,112,127);
+}
+
+.progress_bar section {
+	transition: width 1s;
+	background-color: rgb(104,156,173);
+	height: 100%;
+}
+
+.button:focus {
+	color: white;
+}
+
+.button_left {
+	justify-content: flex-start;
+	width: 80%;
+	font-family: 'Oswald-Light';
+	font-size: 1.583rem;
+}
+
+.button:focus .button_left img {
+	-webkit-filter: invert(0%);
+}
+
+.button_left img {
+	width: 9%;
+	margin-left: 10%;
+	margin-right: 4%;
+	-webkit-filter: invert(40%)
+}
+
+.button:focus .button_right * {
+	-webkit-filter: invert(0%);
+}
+
+.button_right * {
+	margin-right:31%;
+	-webkit-filter: invert(40%);
+}
+
+.button_right {
+	justify-content: flex-end;
+	width: 20%;
+	font-family: 'Oswald-Regular';
+	font-size: 1.333rem;
+}
+
+.button_right img {
+	width: 16.39%;
+}

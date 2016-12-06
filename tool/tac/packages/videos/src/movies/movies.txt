@@ -1,0 +1,11 @@
+{
+    "resume": "Continuar viendo",
+    "play": "Reproducir",
+    "view": "Vista",
+    "summary": "Ver sinopsis",
+    "labels": "Etiquetas",
+    "remove": "Eliminar",
+    "movies": "PELÍCULAS",
+    "remove_confirm_title": "ELIMINAR PELÍCULA",
+    "remove_confirm_text": "Esta seguro que desea eliminar la película?"
+}

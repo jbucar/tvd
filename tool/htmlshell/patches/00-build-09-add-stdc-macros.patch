@@ -1,0 +1,11 @@
+--- build/common.gypi.orig
++++ build/common.gypi
+@@ -2689,7 +2689,7 @@
+       ['branding=="Chrome"', {
+         'defines': ['GOOGLE_CHROME_BUILD'],
+       }, {  # else: branding!="Chrome"
+-        'defines': ['CHROMIUM_BUILD'],
++        'defines': ['CHROMIUM_BUILD', '__STDC_LIMIT_MACROS', '__STDC_CONSTANT_MACROS'],
+       }],
+       ['OS=="mac" and component=="shared_library"', {
+         'xcode_settings': {

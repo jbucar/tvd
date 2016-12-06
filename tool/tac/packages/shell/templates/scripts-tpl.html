@@ -1,0 +1,35 @@
+	<script src="build/enyo.js"></script>
+	<script src="build/third-party.js"></script>
+	<script src="build/components.js"></script>
+	<script>
+		var main = getURIParameter("main");
+		var app = undefined;
+
+		var configure = function() {
+			enyo.setLogLevel(-1);
+			enyo.Spotlight.disablePointerMode();
+			enyo.Spotlight.Accelerator.frequency = [1, 1, 1, 1, 1, 1, 1];
+			log.setLevel(log.level.ERROR);
+		}
+
+		var head=document.getElementsByTagName("head")[0];
+		var script=document.createElement("script");
+		script.type="text/javascript";
+
+		if (main === "notification") {
+			script.src= "build/notification.js";
+			document.title = "Notification layer";
+			script.onload = function() {
+				configure();
+				app = new Shell.Notification().renderInto("app-wrapper");
+			};
+		} else {
+			document.title = "Shell";
+			script.src= "build/tacmenu.js";
+			script.onload = function() {
+				configure();
+				app = new TAC().renderInto("app-wrapper");
+			};
+		}
+		head.appendChild(script);
+	</script>

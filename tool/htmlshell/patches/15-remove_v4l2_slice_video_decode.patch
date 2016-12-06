@@ -1,0 +1,44 @@
+--- content/common/gpu/media/gpu_video_decode_accelerator.cc
++++ content/common/gpu/media/gpu_video_decode_accelerator.cc
+@@ -37,7 +37,7 @@
+ #elif defined(OS_CHROMEOS)
+ #if defined(USE_V4L2_CODEC)
+ #include "content/common/gpu/media/v4l2_device.h"
+-#include "content/common/gpu/media/v4l2_slice_video_decode_accelerator.h"
++//#include "content/common/gpu/media/v4l2_slice_video_decode_accelerator.h"
+ #include "content/common/gpu/media/v4l2_video_decode_accelerator.h"
+ #endif
+ #if defined(ARCH_CPU_X86_FAMILY)
+@@ -170,9 +170,9 @@ GpuVideoDecodeAccelerator::GetSupportedProfiles() {
+   vda_profiles = V4L2VideoDecodeAccelerator::GetSupportedProfiles();
+   GpuVideoAcceleratorUtil::InsertUniqueDecodeProfiles(
+       vda_profiles, &capabilities.supported_profiles);
+-  vda_profiles = V4L2SliceVideoDecodeAccelerator::GetSupportedProfiles();
+-  GpuVideoAcceleratorUtil::InsertUniqueDecodeProfiles(
+-      vda_profiles, &capabilities.supported_profiles);
++  vda_profiles = V4L2SliceVideoDecodeAccelerator::GetSupportedProfiles();
++  GpuVideoAcceleratorUtil::InsertUniqueDecodeProfiles(
++      vda_profiles, &capabilities.supported_profiles);
+ #endif
+ #if defined(ARCH_CPU_X86_FAMILY)
+   vda_profiles = VaapiVideoDecodeAccelerator::GetSupportedProfiles();
+@@ -413,7 +413,7 @@ GpuVideoDecodeAccelerator::CreateV4L2VDA() {
+ scoped_ptr<media::VideoDecodeAccelerator>
+ GpuVideoDecodeAccelerator::CreateV4L2SliceVDA() {
+   scoped_ptr<media::VideoDecodeAccelerator> decoder;
+-#if defined(OS_CHROMEOS) && defined(USE_V4L2_CODEC)
++#if defined(OS_CHROMEOS) && defined(USE_V4L2_CODEC) && 0
+   scoped_refptr<V4L2Device> device = V4L2Device::Create(V4L2Device::kDecoder);
+   if (device.get()) {
+     decoder.reset(new V4L2SliceVideoDecodeAccelerator(
+--- content/content_common.gypi
++++ content/content_common.gypi
+@@ -919,8 +919,6 @@
+         'common/gpu/media/v4l2_image_processor.h',
+         'common/gpu/media/v4l2_jpeg_decode_accelerator.cc',
+         'common/gpu/media/v4l2_jpeg_decode_accelerator.h',
+-        'common/gpu/media/v4l2_slice_video_decode_accelerator.cc',
+-        'common/gpu/media/v4l2_slice_video_decode_accelerator.h',
+         'common/gpu/media/v4l2_video_decode_accelerator.cc',
+         'common/gpu/media/v4l2_video_decode_accelerator.h',
+         'common/gpu/media/v4l2_video_encode_accelerator.cc',

@@ -1,0 +1,48 @@
+ADD_HEADERS(
+	src/types.h
+	src/zapper.h
+	src/player.h
+	src/mount/mount.h
+	src/update/info.h
+	src/update/update.h
+	src/update/provider.h
+	src/middleware/application.h
+	src/middleware/middleware.h
+	src/middleware/provider.h
+)
+
+ADD_SOURCES(
+	src/zapper.cpp
+	src/player.cpp
+	src/captionviewer.h
+	src/captionviewer.cpp
+	src/unzip.cpp
+	src/mount/mount.cpp
+	src/update/info.cpp
+	src/update/update.cpp
+	src/update/provider.cpp
+	src/update/network/provider.h
+	src/update/network/provider.cpp
+	src/middleware/application.cpp
+	src/middleware/middleware.cpp
+	src/fetcher/fetcher.h
+	src/fetcher/fetcher.cpp
+	src/fetcher/ssl-cert-pem.h
+	src/dvb/delegate.h
+	src/dvb/delegate.cpp
+	src/dvb/update/provider.h
+	src/dvb/update/provider.cpp
+	src/dvb/ginga/provider.h
+	src/dvb/ginga/provider.cpp
+	src/dvb/ginga/application.h
+	src/dvb/ginga/application.cpp
+	src/dvb/ginga/controller.h
+	src/dvb/ginga/controller.cpp
+	src/dvb/ginga/player/mediaplayeradapter.h
+	src/dvb/ginga/player/mediaplayeradapter.cpp
+	src/dvb/ginga/player/elementaryplayeradapter.h
+	src/dvb/ginga/player/elementaryplayeradapter.cpp
+	src/dvb/ginga/player/sbtvdplayeradapter.h
+	src/dvb/ginga/player/sbtvdplayeradapter.cpp
+)
+

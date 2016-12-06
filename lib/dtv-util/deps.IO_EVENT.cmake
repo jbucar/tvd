@@ -1,0 +1,2 @@
+Find_Package( LibEvent REQUIRED )
+ADD_DEPENDENTS( LIBEVENT )

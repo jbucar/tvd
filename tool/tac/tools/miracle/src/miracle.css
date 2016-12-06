@@ -1,0 +1,19 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: arial, tahoma;
+    font-size: 11px;
+	margin: 0;
+}
+
+#screenSection {
+	width: 100vw;
+	height: 100vh;
+}
+
+#screen {
+    margin: 0 auto;
+    display: block;
+	width: 70%;
+}
+

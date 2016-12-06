@@ -1,0 +1,12 @@
+{
+	"name": "shell",
+	"version": "1.0.0",
+	"description": "TAC shell app",
+	"main": "src/main.js",
+	"scripts": {
+		"test": "test.py"
+	},
+	"author": "LIFIA",
+	"license": "ISC",
+	"tac_disable_linter": true
+}

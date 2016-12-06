@@ -1,0 +1,112 @@
+div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: middle;
+}
+
+body, .moon-body-text {
+	font-family: "Oswald-Regular";
+	font-size: 22pt;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.shell-fit {
+	height: 100%;
+}
+
+.home-upper-component {
+	height: 100px;
+}
+
+.middle-component {
+	position: absolute;
+	height: 620px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.middle-item {
+	opacity: 0.5;
+}
+
+.selected.middle-item {
+	opacity: 1;
+}
+
+.bottom-component {
+	position: absolute;
+	bottom: 0px;
+	height: 55px;
+}
+
+/* Tooltips */
+.tooltip.tacmenu {
+	top: 535px;
+	height: 110px;
+	width: 540px;
+}
+
+.tooltip.tacmenu.ch {
+	background-color: rgb(241, 116, 0);
+	left: 16%;
+}
+
+.tooltip.tacmenu.ch:before {
+	border-top-color: rgb(241, 116, 0);
+	left: 225px;
+}
+
+.tooltip.tacmenu.imgs {
+	background-color: rgb(0, 169, 227);
+	left: 27%;
+}
+
+.tooltip.tacmenu.imgs:before {
+	border-top-color: rgb(0, 169, 227);
+	left: 230px;
+}
+
+.tooltip.tacmenu.apps {
+	background-color: rgb(0, 145, 120);
+	left: 40%;
+}
+
+.tooltip.tacmenu.apps:before {
+	border-top-color: rgb(0, 145, 120);
+	left: 230px;
+}
+
+.tooltip.tacmenu.config {
+	background-color: rgb(144, 38, 30);
+	left: 52%;
+}
+
+.tooltip.config:before {
+	border-top-color: rgb(144, 38, 30);
+	left: 290px;
+}
+
+/* Home Keyboard */
+.home-keyboard-action.spotlight {
+	background: rgb(0, 92, 168);
+}
+
+.home-keyboard-btn.spotlight {
+	color: rgb(0, 92, 168);
+}
+
+/* Home Dialog */
+.dialog .actions.home > *.spotlight {
+	background: rgb(0, 92, 168);
+}
+
+.dialog .title.home {
+	color: rgb(0, 92, 168);
+}
+
+.dialog .icon.home {
+	background: rgb(0, 92, 168);
+}

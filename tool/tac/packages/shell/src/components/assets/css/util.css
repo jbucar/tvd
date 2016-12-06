@@ -1,0 +1,36 @@
+
+/* Fonts */
+.oswald-light {
+    font-family: 'Oswald-Light';
+}
+
+.oswald-regular {
+    font-family: 'Oswald-Regular';
+}
+
+/* Flex layout */
+
+.flex {
+    display: flex;
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
+.flex.vertical {
+    flex-direction: column;
+}
+
+.flex.vertical.start {
+    align-items: flex-start;
+}
+
+
+.flex.vertical.center {
+    align-items: center;
+}
+
+.flex.horizontal.center {
+    justify-content: center;
+}

@@ -1,0 +1,23 @@
+[
+	"00-build-01-replace_default_constructors_and_destructors.patch",
+	"00-build-02-common.gypi.patch",
+	"00-build-03-internal_blob_data.h.patch",
+	"00-build-04-row_common.cc.patch",
+	"00-build-05-string_split.cc.patch",
+	"00-build-06-macros.h.patch",
+	"00-build-07-breakpad.patch",
+	"00-build-08-task_graph_work_queue.h.patch",
+	"00-build-09-add-stdc-macros.patch",
+	"00-build-10-webgraphicscontext3d_in_process_command_buffer_impl.cc.patch",
+	"00-build-11-WebKit-Source-modules.patch",
+	"01-vda-00-gpu_data_manager_impl_private.cc.patch",
+	"01-vda-01-gpu_video_decode_accelerator.cc.patch",
+	"01-vda-02-video_frame_compositor.patch",
+	"01-vda-03-webmediaplayer_impl.patch",
+	"01-vda-04-decoder_stream.patch",
+	"01-vda-05-gpu_video_decoder.cc.patch",
+	"01-vda-06-video_renderer_impl.cc.patch",
+	"13-setuid_sandbox_client.cc.patch",
+	"14-media-player-proxy.patch",
+	"16-WebKit-VideoPainter.cpp.patch"
+]

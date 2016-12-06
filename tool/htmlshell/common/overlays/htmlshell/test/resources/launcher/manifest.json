@@ -1,0 +1,12 @@
+{
+	"name" : "Test Launcher",
+	"version": "1.0",
+	"sdk_version": "1.0",
+	"main": "src/index.html",
+	"libs": [
+		"libs/libtestinitsucceed.so",
+		"libs/libtestapis.so",
+		"libs/libtestinteraction.so",
+		"libs/libtestwebapi.so"
+	]
+}

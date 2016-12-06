@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<root>
+  <Items>
+	<item>mpg</item>
+	<item>mpeg</item>
+	<item>mp2</item>
+	<item>mp4</item>
+	<item>flv</item>
+	<item>ts</item>
+	<item>avi</item>
+	<item>m2ts</item>
+	<item>vob</item>
+	<item>mkv</item>
+	<item>divx3</item>
+	<item>divx4</item>
+	<item>divx5</item>
+	<item>xvid</item>
+	<item>wmv</item>
+	<item>mov</item>
+	<item>rm</item>
+	<item>rmvb</item>
+  </Items>
+</root>

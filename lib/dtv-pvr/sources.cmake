@@ -1,0 +1,62 @@
+ADD_HEADERS(
+	src/types.h
+	src/pvr.h
+	src/time.h
+	src/channel.h
+	src/channels.h
+	src/channels/persister.h
+	src/show.h
+	src/player.h
+	src/captionplayer.h
+	src/tuner.h
+	src/tunerplayer.h
+	src/dvb/tuner.h
+	src/dvb/delegate.h
+	src/dvb/time.h
+	src/parental/session.h
+	src/parental/control.h
+	src/service/provider.h
+	src/service/service.h
+	src/logos/provider.h
+	src/logos/service.h
+)
+
+ADD_SOURCES(
+	src/types.cpp
+	src/pvr.cpp
+	src/channels.h
+	src/channels.cpp
+	src/channels/persister.cpp
+	src/channels/xmlpersister.h
+	src/channels/xmlpersister.cpp
+	src/channels/settingspersister.h
+	src/channels/settingspersister.cpp
+	src/channel.h
+	src/channel.cpp
+	src/show.h
+	src/show.cpp
+	src/player.h
+	src/captionplayer.cpp
+	src/player.cpp
+	src/time.cpp
+	src/parental/session.cpp
+	src/parental/control.cpp
+	src/service/provider.cpp
+	src/logos/provider.cpp
+	src/logos/service.cpp
+	src/tuner.cpp
+	src/tunerplayer.cpp
+	src/dvb/tuner.cpp
+	src/dvb/delegate.cpp
+	src/dvb/tunerplayer.h
+	src/dvb/tunerplayer.cpp
+	src/dvb/captionviewer.h
+	src/dvb/captionviewer.cpp
+	src/dvb/time.cpp
+	src/dvb/control.h
+	src/dvb/control.cpp
+	src/dvb/category.cpp
+	src/dvb/show.h
+	src/dvb/show.cpp
+)
+

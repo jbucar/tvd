@@ -1,0 +1,78 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"DiscoveryPlugin\"><param name=\"android-package\" value=\"be.fullcircle.discovery.DiscoveryPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "be.fullcircle.discovery.discoveryplugin": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "ar.edu.unlp.info.lifia.tvd.remote"
+        }
+    },
+    "dependent_plugins": {}
+}

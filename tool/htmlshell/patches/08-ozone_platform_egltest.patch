@@ -1,0 +1,83 @@
+--- ui/ozone/platform/egltest/ozone_platform_egltest.cc.orig
++++ ui/ozone/platform/egltest/ozone_platform_egltest.cc
+@@ -37,6 +37,7 @@
+ #include "ui/ozone/public/system_input_injector.h"
+ #include "ui/platform_window/platform_window.h"
+ #include "ui/platform_window/platform_window_delegate.h"
++#include "htmlshell/src/util.h"
+ 
+ namespace ui {
+ 
+@@ -126,7 +127,8 @@ EgltestWindow::EgltestWindow(PlatformWindowDelegate* delegate,
+       event_factory_(event_factory),
+       bounds_(bounds),
+       window_id_(SHIM_NO_WINDOW_ID) {
+-  window_id_ = eglplatform_shim_->ShimCreateWindow();
++  gfx::Size winSize = tvd::util::getWindowSize();
++  window_id_ = eglplatform_shim_->ShimCreateWindow(winSize.width(), winSize.height());
+   delegate_->OnAcceleratedWidgetAvailable(window_id_, 1.f);
+   ui::PlatformEventSource::GetInstance()->AddPlatformEventDispatcher(this);
+ }
+--- ui/ozone/platform/egltest/eglplatform_shim.h.orig
++++ ui/ozone/platform/egltest/eglplatform_shim.h
+@@ -39,7 +39,7 @@ SHIM_EXPORT bool ShimInitialize(void);
+ SHIM_EXPORT bool ShimTerminate(void);
+ 
+ // Create window handle & query window properties (called from browser process).
+-SHIM_EXPORT ShimNativeWindowId ShimCreateWindow(void);
++SHIM_EXPORT ShimNativeWindowId ShimCreateWindow(int width, int height);
+ SHIM_EXPORT bool ShimQueryWindow(ShimNativeWindowId window_id,
+                                  int attribute,
+                                  int* value);
+--- ui/ozone/platform/egltest/eglplatform_shim_xeleven.cc.orig
++++ ui/ozone/platform/egltest/eglplatform_shim_xeleven.cc
+@@ -42,17 +42,17 @@
+   return true;
+ }
+ 
+-ShimNativeWindowId ShimCreateWindow(void) {
++ShimNativeWindowId ShimCreateWindow(int width, int height) {
+   XSetWindowAttributes swa;
+   memset(&swa, 0, sizeof(swa));
+   swa.event_mask = 0;
+ 
+   Window window = XCreateWindow(g_display,
+                                 DefaultRootWindow(g_display),
+                                 kDefaultX,
+                                 kDefaultY,
+-                                kDefaultWidth,
+-                                kDefaultHeight,
++                                width,
++                                height,
+                                 kDefaultBorderWidth,
+                                 CopyFromParent,
+                                 InputOutput,
+@@ -61,6 +61,28 @@ ShimNativeWindowId ShimCreateWindow(void) {
+                                 &swa);
+ 
+   XMapWindow(g_display, window);
++  { // Remove decorations
++    typedef struct {
++      unsigned long flags;
++      unsigned long functions;
++      unsigned long decorations;
++      long inputMode;
++      unsigned long status;
++    } Hints;
++    Hints hints;
++    memset(&hints, 0, sizeof(hints));
++    Atom prop = XInternAtom(g_display, "_MOTIF_WM_HINTS", False);
++    hints.flags |= 2;
++    XChangeProperty(g_display, window, prop, prop, 32, PropModeReplace, (unsigned char *) &hints, 5);
++  }
++  { // Fixed size
++    XSizeHints *xsh = XAllocSizeHints();
++    xsh->flags = PMinSize | PMaxSize;
++    xsh->min_width  = xsh->max_width  = width;
++    xsh->min_height = xsh->max_height = height;
++    XSetWMNormalHints(g_display, window, xsh);
++    XFree(xsh);
++  }
+   XStoreName(g_display, window, "EGL test");
+   XFlush(g_display);
+ 

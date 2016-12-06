@@ -1,0 +1,10 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+INCLUDE($ENV{DEPOT}/config/Tvd.cmake)
+
+Add_Bin (
+	PROJECT_NAME "dvbtool"
+	PROJECT_DESCRIPTION "This is the DVB tool project."
+	PROJECT_VERSION 1.0.0.0
+	BIN_DESTINATION bin
+)
+

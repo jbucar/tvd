@@ -1,0 +1,11 @@
+--- gpu/blink/webgraphicscontext3d_in_process_command_buffer_impl.cc.orig
++++ gpu/blink/webgraphicscontext3d_in_process_command_buffer_impl.cc
+@@ -75,7 +75,7 @@ WebGraphicsContext3DInProcessCommandBufferImpl::WrapContext(
+ 
+ WebGraphicsContext3DInProcessCommandBufferImpl::
+     WebGraphicsContext3DInProcessCommandBufferImpl(
+-        scoped_ptr<::gpu::GLInProcessContext> context,
++        scoped_ptr< ::gpu::GLInProcessContext> context,
+         const blink::WebGraphicsContext3D::Attributes& attributes,
+         bool lose_context_when_out_of_memory,
+         bool is_offscreen,

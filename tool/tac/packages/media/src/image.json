@@ -1,0 +1,66 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		"image": {
+			"type": "object",
+			"properties": {
+				"type": { "type": "string", "enum": [ "image" ] },
+				"provider": { "type": "string", "minLength": 1 },
+				"id": { "type": "string", "minLength": 1 },
+				"name": { "type": "string", "minLength": 1 },
+				"url": { "type": "string", "minLength": 1 },
+				"width": { "type": "integer" },
+				"height": { "type": "integer" },
+				"size": { "type": "integer" },
+				"camera": {
+					"type": "object",
+					"properties": {
+						"make": { "type": "string" },
+						"model": { "type": "string" }
+					},
+					"additionalProperties": false
+				},
+				"orientation": { "type": "number" },
+				"exposureTime": { "type": "number" },
+				"exposureCompensation": { "type": "number" },
+				"apertureValue": { "type": "number" },
+				"iso": { "type": "number" },
+				"flash": { "type": "number" },
+				"date": { "type": "string" },
+				"gps": {
+					"type": "object",
+					"properties": {
+						"latitudeRef": { "type": "string" },
+						"latitude": { "type": "number" },
+						"longitudeRef": { "type": "string" },
+						"longitude": { "type": "number" },
+						"altitudeRef": { "type": "number" },
+						"altitude": { "type": "number" }
+					},
+					"additionalProperties": false
+				}
+			},
+			"required": [ "provider", "id", "type", "name", "url" ],
+			"additionalProperties": false
+		},
+		"album": {
+			"type": "object",
+			"properties": {
+				"type": { "type": "string", "enum": [ "album" ] },
+				"provider": { "type": "string", "minLength": 1 },
+				"id": { "type": "string", "minLength": 1 },
+				"name": { "type": "string", "minLength": 1 },
+				"date": { "type": "string" },
+				"description": { "type": "string" }
+			},
+			"required": [ "provider", "id", "type", "name" ],
+			"additionalProperties": false
+		}
+	},
+	"type": "object",
+	"oneOf": [
+		{ "$ref": "#/definitions/image" },
+		{ "$ref": "#/definitions/album" }
+	]
+}
+

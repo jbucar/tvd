@@ -1,0 +1,49 @@
+require 'src.config.Modules'
+local main
+local item
+
+function start( mainSurface )
+	FiniteStateMachine_Init()
+	EventManager_Init()
+	EventManager_disableKeys()
+	-- LOADING STAGES
+	main	= MainStage:new( mainSurface )
+	item	= ItemStage:new( mainSurface )
+	FiniteStateMachine_addTransition( "ToMain", main )
+	FiniteStateMachine_addTransition( "ToItem", item )
+	main:load()
+	item:load()
+	FiniteStateMachine_setInitialStage( main )
+	-- START APPLICATION
+	FiniteStateMachine_start()
+	EventManager_enableKeys()
+	return true
+end
+
+function stop()
+	main:destroy()
+	item:destroy()
+	client:cancelAllRequests()
+	return true
+end
+
+function handleEvent( evt )
+	return EventManager_handler(evt)
+end
+
+function describe()
+	local app = {}
+	app.name = "CDA"
+	app.desc = "Contenidos Digitales Abiertos"
+	app.version = "0.1"
+	app.interactive = true
+	app.icon = "resources/images/cdaBlanco.png"
+	app.selectedIcon = "resources/images/cdaNaranja.png"
+	app.enableDefault = true
+	app.methods = {
+		['start'] = start,
+		['stop'] = stop,
+		['handleEvent'] = handleEvent,
+	}
+	return app
+end

@@ -1,0 +1,17 @@
+--- content/public/test/browser_test_base.cc.orig
++++ content/public/test/browser_test_base.cc
+@@ -171,10 +171,10 @@ BrowserTestBase::~BrowserTestBase() {
+   spawned_test_server_.reset(NULL);
+ #endif
+ 
+-  CHECK(set_up_called_) << "SetUp was not called. This probably means that the "
+-                           "developer has overridden the method and not called "
+-                           "the superclass version. In this case, the test "
+-                           "does not run and reports a false positive result.";
++  // CHECK(set_up_called_) << "SetUp was not called. This probably means that the "
++  //                          "developer has overridden the method and not called "
++  //                          "the superclass version. In this case, the test "
++  //                          "does not run and reports a false positive result.";
+ }
+ 
+ void BrowserTestBase::SetUp() {

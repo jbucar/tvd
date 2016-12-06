@@ -1,0 +1,11 @@
+--- base/strings/string_split.cc.orig
++++ base/strings/string_split.cc
+@@ -137,7 +137,7 @@ void SplitStringUsingSubstrT(BasicStringPiece<Str> input,
+                              SplitResult result_type,
+                              std::vector<OutputStringType>* result) {
+   using Piece = BasicStringPiece<Str>;
+-  using size_type = typename Piece::size_type;
++  using size_type = typename BasicStringPiece<Str>::size_type;
+ 
+   result->clear();
+   for (size_type begin_index = 0, end_index = 0; end_index != Piece::npos;

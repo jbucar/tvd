@@ -1,0 +1,65 @@
+--- a/lib/spotlight/enyo.Spotlight.Container.js.orig
++++ b/lib/spotlight/enyo.Spotlight.Container.js
+@@ -161,6 +161,46 @@
+     * @returns {Boolean}
+     * @public
+     */
++
++    var pathTrack = function() {
++        var path = [];
++        var self = {};
++
++        self.dispatchLeaveEvent = function(oSender, evtType) {
++            // If some contianer is freezed no event is dispatched
++            if (path.find(function(c) {
++                return c.freezeContainer;
++            })) {
++                return;
++            }
++            var last = path[path.length-1];
++            var inner = !last || (last && oSender.isDescendantOf(last));
++
++            if (!inner) {
++                var sDirection = evtType.replace('onSpotlight', '').toUpperCase();
++                var p = path.reverse();
++                var pos = p.length;
++                for(i=0; i < p.length; i++) {
++                    var c = p[i];
++                    if (oSender.isDescendantOf(c)) {
++                        pos = i;
++                        break;
++                    }
++
++                    enyo.Spotlight.Util.dispatchEvent('onSpotlightContainerLeave', {
++                        direction: sDirection
++                    }, c);
++
++                }
++
++                path = p.splice(pos, path.length).reverse();
++            }
++            path.push(oSender);
++        }
++
++        return self;
++    }();
++
+     this.onSpotlightFocused = function(oSender, oEvent) {
+         if (enyo.Spotlight.isInitialized() && enyo.Spotlight.getPointerMode()) {
+             return true;
+@@ -181,11 +215,13 @@
+                     oSender
+                 );
+             }
+-            _focusLeave(oSender, s5WayEventType);
++            // _focusLeave(oSender, s5WayEventType); // Remove this cause dispatchLeaveEvent dispatch the focus leave now
+
+             // Focus came from outside or this was a programmatic spot
+         } else {
+-            var oLastFocusedChild = this.getLastFocusedChild(oSender);
++            pathTrack.dispatchLeaveEvent(oSender, s5WayEventType);
++            var oLastFocusedChild = oSender.memory ? this.getLastFocusedChild(oSender) : enyo.Spotlight.getFirstChild(oSender);
++
+             if (oLastFocusedChild) {
+                 enyo.Spotlight.spot(oLastFocusedChild);
+             } else {

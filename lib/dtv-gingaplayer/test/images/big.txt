@@ -1,0 +1,12 @@
+Esto es un texto largo.
+
+Aca vamos a probar mucho texto. Abecedario: ABCDEFGHIJKLMNOPQRSTUVWXYZ.
+
+TEXTO FUERA DE LOS LIMITES. Test para probar si una palabra se va fuera de los limites. No hay /n en este test hasta el siguiente punto.
+Bueno, eso es todo.
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz!"·$%&/()=?¿*:;·}[]}][{¬~#@|<>++--++--++--++--++--++--
+
+Chau.
+
+.

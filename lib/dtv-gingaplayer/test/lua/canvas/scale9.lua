@@ -1,0 +1,13 @@
+-- Testea #attrScale: escalar un canvas pasando false como parametro (no permitido).
+local subCanvas = canvas:new(200,200)
+subCanvas:attrColor("green")
+subCanvas:drawRect("fill",0,0,100,100)
+subCanvas:attrColor("red")
+subCanvas:drawRect("fill",0,100,100,100)
+subCanvas:attrColor("blue")
+subCanvas:drawRect("fill",100,0,100,100)
+subCanvas:attrColor("yellow")
+subCanvas:drawRect("fill",100,100,100,100)
+subCanvas:attrScale(false, 100)
+canvas:compose(0,0,subCanvas)
+canvas:flush()
