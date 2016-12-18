@@ -116,6 +116,9 @@ function ServerProxy(adapter, server, port) {
 		if (ct === undefined) {
 			ct = 'text/html';
 		}
+		if (body === undefined) {
+			body = '';
+		}
 		var headers = {
 			'Content-Type': ct,
 			'Content-Length': Buffer.byteLength(body)

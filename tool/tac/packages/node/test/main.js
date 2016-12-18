@@ -22,8 +22,4 @@ describe('Node', function() {
 		assert( require('tvdutil') );
 		done();
 	});
-
-	it('check node version', function() {
-		assert.equal( process.version, 'v6.3.1' );
-	});
 });

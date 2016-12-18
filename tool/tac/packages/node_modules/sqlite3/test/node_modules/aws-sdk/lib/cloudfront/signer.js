@@ -1,6 +1,6 @@
-var crypto = require('crypto'),
-    url = require('url'),
-    AWS = require('../core'),
+var AWS = require('../core'),
+    url = AWS.util.url,
+    crypto = AWS.util.crypto.lib,
     base64Encode = AWS.util.base64.encode,
     inherit = AWS.util.inherit;
 

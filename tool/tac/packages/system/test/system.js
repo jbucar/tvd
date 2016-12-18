@@ -180,15 +180,6 @@ describe('System', function() {
 			}
 			return meta;
 		}
-
-		it.only('should do instrospection', function(done) {
-			sys.onStart(function(err,api) {
-				assert.equal(err);
-				assert.isObject(api);
-
-				console.log( 'api=%j', introspection( api, adapter.info() ) );
-			});
-		});
 	});
 
 	describe('onStop', function() {

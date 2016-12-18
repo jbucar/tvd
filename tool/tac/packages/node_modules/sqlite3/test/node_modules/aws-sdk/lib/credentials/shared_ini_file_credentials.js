@@ -1,5 +1,6 @@
 var AWS = require('../core');
 var path = require('path');
+var STS = require('../../clients/sts');
 
 /**
  * Represents credentials loaded from shared credentials file
@@ -141,6 +142,8 @@ AWS.SharedIniFileCredentials = AWS.util.inherit(AWS.Credentials, {
       );
     }
 
+    this.roleArn = roleArn;
+
     var sourceCredentials = {
       accessKeyId: sourceProfile['aws_access_key_id'],
       secretAccessKey: sourceProfile['aws_secret_access_key'],
@@ -156,7 +159,7 @@ AWS.SharedIniFileCredentials = AWS.util.inherit(AWS.Credentials, {
       );
     }
 
-    var sts = new AWS.STS({
+    var sts = new STS({
       credentials: new AWS.Credentials(sourceCredentials)
     });
 

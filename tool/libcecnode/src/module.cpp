@@ -111,10 +111,6 @@ namespace tvd {
 //	Node implementation
 v8::Persistent<v8::Function> Cec::_constructor;
 
-inline v8::Local<v8::String> _val( CEC::cec_osd_name value ) {
-	return _val(value.name);
-}
-
 inline v8::Local<v8::Integer> _val( CEC::cec_logical_addresses addrs ) {
 	int result = -1;
 	if (!addrs.IsEmpty()) {
@@ -125,9 +121,9 @@ inline v8::Local<v8::Integer> _val( CEC::cec_logical_addresses addrs ) {
 
 namespace impl {
 
-static int CecLogMessage( void * /*cbParam*/, const CEC::cec_log_message message ) {
+static void CecLogMessage( void * /*cbParam*/, const CEC::cec_log_message *message ) {
 	LOG_LEVEL_TYPE tvdLevel = LOG_LEVEL_UNKNOWN;
-	switch (message.level) {
+	switch (message->level) {
 		case CEC::CEC_LOG_ERROR:
 			tvdLevel = LOG_LEVEL_ERROR;
 			break;
@@ -149,10 +145,8 @@ static int CecLogMessage( void * /*cbParam*/, const CEC::cec_log_message message
 	};
 
 	if (util::log::canLog( tvdLevel, "libcecnode", "libcec" )) {
-		util::log::log( tvdLevel, "libcecnode", "libcec", "%s", message.message );
+		util::log::log( tvdLevel, "libcecnode", "libcec", "%s", message->message );
 	}
-
-	return 0;
 }
 
 class Notify {
@@ -170,11 +164,10 @@ private:
 	boost::function<void (void)> _cb;
 };
 
-static int CecKeyPress(void *cbParam, const CEC::cec_keypress key) {
+static void CecKeyPress(void *cbParam, const CEC::cec_keypress *key) {
 	DTV_ASSERT(cbParam);
 	Cec *cec = (Cec *)cbParam;
-	cec->send( new Notify( cec, boost::bind(&Cec::keyPress,cec,(int)key.keycode,(int)key.duration) ) );
-	return 1;
+	cec->send( new Notify( cec, boost::bind(&Cec::keyPress,cec,(int)key->keycode,(int)key->duration) ) );
 }
 
 static void CecSourceActivated( void *cbParam, const CEC::cec_logical_address addr, const uint8_t active ) {
@@ -398,11 +391,11 @@ Cec::Cec()
 	//	Setup callbacks
 	_callbacks = new CEC::ICECCallbacks();
 	_callbacks->Clear();
-	_callbacks->CBCecLogMessage = &impl::CecLogMessage;
-	_callbacks->CBCecKeyPress = &impl::CecKeyPress;
+	_callbacks->logMessage = &impl::CecLogMessage;
+	_callbacks->keyPress = &impl::CecKeyPress;
 	// g_callbacks->CBCecCommand     = &CecCommand;
 	// g_callbacks->CBCecAlert       = &CecAlert;
-	_callbacks->CBCecSourceActivated = &impl::CecSourceActivated;
+	_callbacks->sourceActivated = &impl::CecSourceActivated;
 
 	_cfg->callbackParam = this;
 	_cfg->callbacks = _callbacks;
@@ -676,7 +669,7 @@ void Cec::getDeviceVendorId( const v8::FunctionCallbackInfo<v8::Value>& args ) {
 }
 
 void Cec::getDeviceOSDName( const v8::FunctionCallbackInfo<v8::Value>& args ) {
-	DO_ASYNC_BASIC_P1( CEC::cec_osd_name, GetDeviceOSDName );
+	DO_ASYNC_BASIC_P1( std::string, GetDeviceOSDName );
 }
 
 void Cec::getDeviceCecVersion( const v8::FunctionCallbackInfo<v8::Value>& args ) {

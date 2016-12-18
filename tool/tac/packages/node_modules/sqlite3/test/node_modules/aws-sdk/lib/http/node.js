@@ -1,7 +1,7 @@
 var AWS = require('../core');
-var Stream = AWS.util.nodeRequire('stream').Stream;
-var TransformStream = AWS.util.nodeRequire('stream').Transform;
-var ReadableStream = AWS.util.nodeRequire('stream').Readable;
+var Stream = AWS.util.stream.Stream;
+var TransformStream = AWS.util.stream.Transform;
+var ReadableStream = AWS.util.stream.Readable;
 require('../http');
 
 /**
@@ -119,7 +119,12 @@ AWS.NodeHttpClient = AWS.util.inherit({
       Object.defineProperty(AWS.NodeHttpClient.sslAgent, 'maxSockets', {
         enumerable: true,
         get: function() {
-          return https.globalAgent.maxSockets !== Infinity ? https.globalAgent.maxSockets : 50;
+          var defaultMaxSockets = 50;
+          var globalAgent = https.globalAgent;
+          if (globalAgent && globalAgent.maxSockets !== Infinity && typeof globalAgent.maxSockets === 'number') {
+            return globalAgent.maxSockets;
+          }
+          return defaultMaxSockets;
         }
       });
     }

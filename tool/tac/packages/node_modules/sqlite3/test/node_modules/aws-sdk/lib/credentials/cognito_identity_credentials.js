@@ -1,4 +1,6 @@
 var AWS = require('../core');
+var CognitoIdentity = require('../../clients/cognitoidentity');
+var STS = require('../../clients/sts');
 
 /**
  * Represents credentials retrieved from STS Web Identity Federation using
@@ -287,8 +289,8 @@ AWS.CognitoIdentityCredentials = AWS.util.inherit(AWS.Credentials, {
     this.webIdentityCredentials = this.webIdentityCredentials ||
       new AWS.WebIdentityCredentials(this.params);
     this.cognito = this.cognito ||
-      new AWS.CognitoIdentity({params: this.params});
-    this.sts = this.sts || new AWS.STS();
+      new CognitoIdentity({params: this.params});
+    this.sts = this.sts || new STS();
   },
 
   /**
@@ -329,8 +331,14 @@ AWS.CognitoIdentityCredentials = AWS.util.inherit(AWS.Credentials, {
    */
   storage: (function() {
     try {
-      return AWS.util.isBrowser() && window.localStorage !== null && typeof window.localStorage === 'object' ?
-             window.localStorage : {};
+      var storage = AWS.util.isBrowser() && window.localStorage !== null && typeof window.localStorage === 'object' ?
+          window.localStorage : {};
+
+      // Test set/remove which would throw an error in Safari's private browsing
+      storage['aws.test-storage'] = 'foobar';
+      delete storage['aws.test-storage'];
+
+      return storage;
     } catch (_) {
       return {};
     }

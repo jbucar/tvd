@@ -1099,21 +1099,7 @@ describe('PackageManager', function() {
 		describe('install(options,cb)', function() {
 			it('should not install with invalid size', function(done) {
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
-					"md5": 'be1303e467b240bae5883c060ce2f880'
-				};
-				pkgMgr.install(opts, function(err,pkgID) {
-					assert.isDefined( err );
-					assert.strictEqual( err.message,  'Invalid md5/size' );
-					assert.isTrue( installPackageCalled === 0 );
-					assert.strictEqual( getTempFiles().length, 0 );
-					done();
-				});
-			});
-
-			it('should not install with invalid size', function(done) {
-				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
+					"url": 'http://127.0.0.1/tests//test_app1.tpk',
 					"md5": 'be1303e467b240bae5883c060ce2f880'
 				};
 				pkgMgr.install(opts, function(err,pkgID) {
@@ -1126,10 +1112,11 @@ describe('PackageManager', function() {
 			});
 
 			it('should not check size if inDevelopmentMode', function(done) {
+				let server = Mocks.createServer(__dirname);				
 				tac.enableDevelopmentMode(true);
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
-					"md5": 'be1303e467b240bae5883c060ce2f880'
+					"url": 'http://127.0.0.1:8125/test_app1.tpk',
+					"md5": '59820b4734e61675221a8a0f51e5ce4b'
 				};
 				pkgMgr.install(opts, function(err,pkgID) {
 					assert.isUndefined( err );
@@ -1137,7 +1124,7 @@ describe('PackageManager', function() {
 					assert.strictEqual( installPackageCalled, 1 );
 					checkDB( "ar.edu.unlp.info.lifia.tvd.html5_test" );
 					tac.enableDevelopmentMode(false);
-					done();
+					server.close(done);
 				});
 			});
 
@@ -1156,17 +1143,18 @@ describe('PackageManager', function() {
 			});
 
 			it('should install remote package', function(done) {
+				let server = Mocks.createServer(__dirname);
 				var fnc = function(err,pkgID) {
 					assert.isTrue( err === undefined );
 					assert.isTrue( pkgID === 'ar.edu.unlp.info.lifia.tvd.html5_test' );
 					assert.isTrue( installPackageCalled === 1 );
 					checkDB( "ar.edu.unlp.info.lifia.tvd.html5_test" );
-					done();
+					server.close(done);
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
-					"md5": 'be1303e467b240bae5883c060ce2f880',
-					"size": 317
+					"url": 'http://127.0.0.1:8125/test_app1.tpk',
+					"md5": '59820b4734e61675221a8a0f51e5ce4b',
+					"size": 318
 				};
 				pkgMgr.install( opts, fnc );
 			});
@@ -1243,32 +1231,34 @@ describe('PackageManager', function() {
 			});
 
 			it('should check for invalid size', function(done) {
+				let server = Mocks.createServer(__dirname);
 				var fnc = function(err,pkgID) {
 					assert.isFalse( err === undefined );
 					assert.isTrue( err.message === 'Downloaded file differ in size' );
 					assert.isTrue( installPackageCalled === 0 );
 					assert.strictEqual( getTempFiles().length, 0 );
-					done();
+					server.close(done);
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
-					"md5": 'be1303e467b240bae5883c060ce2f880',
+					"url": 'http://127.0.0.1:8125/test_app1.tpk',
+					"md5": '59820b4734e61675221a8a0f51e5ce4b',
 					"size": 0
 				};
 				pkgMgr.install( opts, fnc );
 			});
 
 			it('should check for invalid size 2', function(done) {
+				let server = Mocks.createServer(__dirname);
 				var fnc = function(err,pkgID) {
 					assert.isFalse( err === undefined );
 					assert.isTrue( err.message === 'Downloaded file differ in size' );
 					assert.isTrue( installPackageCalled === 0 );
 					assert.strictEqual( getTempFiles().length, 0 );
-					done();
+					server.close(done);
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
-					"md5": 'be1303e467b240bae5883c060ce2f880',
+					"url": 'http://127.0.0.1:8125/test_app1.tpk',
+					"md5": '59820b4734e61675221a8a0f51e5ce4b',
 					"size": 20
 				};
 				pkgMgr.install( opts, fnc );
@@ -1282,7 +1272,7 @@ describe('PackageManager', function() {
 					done();
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
+					"url": 'file://' + path.join(__dirname,'test_app1.tpk'),
 					"md5": 'be1303e467b240bae5883c060ce2f880',
 					"size": 317
 				};
@@ -1290,17 +1280,18 @@ describe('PackageManager', function() {
 			});
 
 			it('should handle error if check signature fail', function(done) {
+				let server = Mocks.createServer(__dirname);
 				var fnc = function(err,pkgID) {
 					assert.isFalse( err === undefined );
 					assert.isTrue( err.message === 'Signature error' );
 					assert.isTrue( installPackageCalled === 0 );
 					assert.strictEqual( getTempFiles().length, 0 );
-					done();
+					server.close(done);
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
+					"url": 'http://127.0.0.1:8125/test_app1.tpk',
 					"md5": 'be1303e467b240bae5883c060ce2f881',
-					"size": 317
+					"size": 318
 				};
 				pkgMgr.install( opts, fnc );
 			});
@@ -1378,7 +1369,7 @@ describe('PackageManager', function() {
 					done();
 				}
 				var opts = {
-					"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
+					"url": 'file://' + path.join(__dirname,'test_app1.tpk'),
 					"md5": 'be1303e467b240bae5883c060ce2f880',
 					"size": 317
 				};
@@ -1555,6 +1546,7 @@ describe('PackageManager', function() {
 			});
 
 			it('should handle error when size is invalid', function(done) {
+				let server = Mocks.createServer(__dirname);
 				function fncOnInstall(err,pkgID) {
 					//	Checks for install
 					assert.equal(err);
@@ -1564,7 +1556,7 @@ describe('PackageManager', function() {
 					//	Begin update
 					var uopts = {
 						"id": pkgID,
-						"url": 'http://172.16.0.206/tac_testcases/test_app1.tpk',
+						"url": 'http://127.0.0.1:8125/test_app1.tpk',
 						"md5": 'be1303e467b240bae5883c060ce2f880',
 						"size": 0
 					};
@@ -1580,7 +1572,7 @@ describe('PackageManager', function() {
 						assert.strictEqual( getTempFiles().length, 0 );
 						assert.isFalse( tvdutil.isDirectory(backupPath()) );
 
-						done();
+						server.close(done);
 					});
 				}
 

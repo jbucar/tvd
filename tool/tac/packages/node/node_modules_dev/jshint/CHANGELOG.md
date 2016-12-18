@@ -1,3 +1,45 @@
+<a name="2.9.4"></a>
+## [2.9.4](https://github.com/jshint/jshint/compare/2.9.3...v2.9.4) (2016-10-20)
+
+
+### Bug Fixes
+
+* Allow RegExp literal as `yield` operand (#3011) ([b646aea](https://github.com/jshint/jshint/commit/b646aea))
+* Allow W100 to be ignored during lookahead ([a2b3881](https://github.com/jshint/jshint/commit/a2b3881)), closes [#3013](https://github.com/jshint/jshint/issues/3013)
+* Avoid crashing on invalid input (#3046) ([bec152c](https://github.com/jshint/jshint/commit/bec152c))
+* Correct interpretation of ASI (#3045) ([9803e11](https://github.com/jshint/jshint/commit/9803e11))
+* Do not duplicate reported warnings/errors ([dc4a4fe](https://github.com/jshint/jshint/commit/dc4a4fe))
+* Enforce TDZ within initializer of lexical declaration [8e9d406](https://github.com/jshint/jshint/commit/8e9d406)), closes [#2637](https://github.com/jshint/jshint/issues/2637)
+* Enforce TDZ within class heritage definition [8e9d406](https://github.com/jshint/jshint/commit/8e9d406))
+* Enforce TDZ within for in/of head [8e9d406](https://github.com/jshint/jshint/commit/8e9d406)), closes [#2693](https://github.com/jshint/jshint/issues/2693)
+* Offset line no.s of errors from eval code ([2a31c94](https://github.com/jshint/jshint/commit/2a31c94))
+* Remove `null` value from `errors` array (#3049) ([f7eb3d7](https://github.com/jshint/jshint/commit/f7eb3d7))
+* Report error for offending token value ([3b06d01](https://github.com/jshint/jshint/commit/3b06d01))
+
+
+
+<a name="2.9.3"></a>
+## [2.9.3](https://github.com/jshint/jshint/compare/2.9.2...v2.9.3) (2016-08-18)
+
+
+### Bug Fixes
+
+* Add TypedArray globals for ES2015 ([ee0acab](https://github.com/jshint/jshint/commit/ee0acab))
+* Allow Expression within for-in head ([56c95d0](https://github.com/jshint/jshint/commit/56c95d0))
+* Avoid crash when peeking past end of prog (#2937) ([330d429](https://github.com/jshint/jshint/commit/330d429))
+* Correct behavior of singleGroups (#2951) ([97fefb7](https://github.com/jshint/jshint/commit/97fefb7))
+* Correct interpretation of ASI (#2977) ([3ef7a03](https://github.com/jshint/jshint/commit/3ef7a03))
+* Correctly recognize asi after directives ([039ee2e](https://github.com/jshint/jshint/commit/039ee2e)), closes [#2714](https://github.com/jshint/jshint/issues/2714)
+* Disallow Import declarations below top lvl ([d800e44](https://github.com/jshint/jshint/commit/d800e44))
+* Support `y` RegExp flag in ES2015 code (#2999) ([a801433](https://github.com/jshint/jshint/commit/a801433))
+* Support semicolons within arrow fn params (#3003) ([179a9d6](https://github.com/jshint/jshint/commit/179a9d6))
+
+### Features
+
+* Error for literals on rhs of `instanceof` ([e3e745b](https://github.com/jshint/jshint/commit/e3e745b)), closes [#2777](https://github.com/jshint/jshint/issues/2777)
+
+
+
 <a name="2.9.2"></a>
 ## [2.9.2](https://github.com/jshint/jshint/compare/2.9.1...v2.9.2) (2016-04-19)
 
