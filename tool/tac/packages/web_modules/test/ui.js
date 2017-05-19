@@ -95,7 +95,7 @@ describe('ui.js', function() {
 	it('should construct', function() {
 		var ui = new UI( createResources() );
 		assert(ui);
-		assert.equal( Object.keys(ui).length, 13 );
+		assert.equal( Object.keys(ui).length, 14 );
 	});
 
 	describe( 'getResources', function() {
