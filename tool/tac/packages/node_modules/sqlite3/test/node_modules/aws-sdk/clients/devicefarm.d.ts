@@ -20,6 +20,14 @@ declare class DeviceFarm extends Service {
    */
   createDevicePool(callback?: (err: AWSError, data: DeviceFarm.Types.CreateDevicePoolResult) => void): Request<DeviceFarm.Types.CreateDevicePoolResult, AWSError>;
   /**
+   * Creates a network profile.
+   */
+  createNetworkProfile(params: DeviceFarm.Types.CreateNetworkProfileRequest, callback?: (err: AWSError, data: DeviceFarm.Types.CreateNetworkProfileResult) => void): Request<DeviceFarm.Types.CreateNetworkProfileResult, AWSError>;
+  /**
+   * Creates a network profile.
+   */
+  createNetworkProfile(callback?: (err: AWSError, data: DeviceFarm.Types.CreateNetworkProfileResult) => void): Request<DeviceFarm.Types.CreateNetworkProfileResult, AWSError>;
+  /**
    * Creates a new project.
    */
   createProject(params: DeviceFarm.Types.CreateProjectRequest, callback?: (err: AWSError, data: DeviceFarm.Types.CreateProjectResult) => void): Request<DeviceFarm.Types.CreateProjectResult, AWSError>;
@@ -51,6 +59,14 @@ declare class DeviceFarm extends Service {
    * Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.
    */
   deleteDevicePool(callback?: (err: AWSError, data: DeviceFarm.Types.DeleteDevicePoolResult) => void): Request<DeviceFarm.Types.DeleteDevicePoolResult, AWSError>;
+  /**
+   * Deletes a network profile.
+   */
+  deleteNetworkProfile(params: DeviceFarm.Types.DeleteNetworkProfileRequest, callback?: (err: AWSError, data: DeviceFarm.Types.DeleteNetworkProfileResult) => void): Request<DeviceFarm.Types.DeleteNetworkProfileResult, AWSError>;
+  /**
+   * Deletes a network profile.
+   */
+  deleteNetworkProfile(callback?: (err: AWSError, data: DeviceFarm.Types.DeleteNetworkProfileResult) => void): Request<DeviceFarm.Types.DeleteNetworkProfileResult, AWSError>;
   /**
    * Deletes an AWS Device Farm project, given the project ARN.  Note Deleting this resource does not stop an in-progress run.
    */
@@ -123,6 +139,14 @@ declare class DeviceFarm extends Service {
    * Gets information about a job.
    */
   getJob(callback?: (err: AWSError, data: DeviceFarm.Types.GetJobResult) => void): Request<DeviceFarm.Types.GetJobResult, AWSError>;
+  /**
+   * Returns information about a network profile.
+   */
+  getNetworkProfile(params: DeviceFarm.Types.GetNetworkProfileRequest, callback?: (err: AWSError, data: DeviceFarm.Types.GetNetworkProfileResult) => void): Request<DeviceFarm.Types.GetNetworkProfileResult, AWSError>;
+  /**
+   * Returns information about a network profile.
+   */
+  getNetworkProfile(callback?: (err: AWSError, data: DeviceFarm.Types.GetNetworkProfileResult) => void): Request<DeviceFarm.Types.GetNetworkProfileResult, AWSError>;
   /**
    * Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a NotEligible error if the user is not permitted to invoke the operation. Please contact aws-devicefarm-support@amazon.com if you believe that you should be able to invoke this operation.
    */
@@ -219,6 +243,22 @@ declare class DeviceFarm extends Service {
    * Gets information about jobs.
    */
   listJobs(callback?: (err: AWSError, data: DeviceFarm.Types.ListJobsResult) => void): Request<DeviceFarm.Types.ListJobsResult, AWSError>;
+  /**
+   * Returns the list of available network profiles.
+   */
+  listNetworkProfiles(params: DeviceFarm.Types.ListNetworkProfilesRequest, callback?: (err: AWSError, data: DeviceFarm.Types.ListNetworkProfilesResult) => void): Request<DeviceFarm.Types.ListNetworkProfilesResult, AWSError>;
+  /**
+   * Returns the list of available network profiles.
+   */
+  listNetworkProfiles(callback?: (err: AWSError, data: DeviceFarm.Types.ListNetworkProfilesResult) => void): Request<DeviceFarm.Types.ListNetworkProfilesResult, AWSError>;
+  /**
+   * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a NotEligible error if the caller is not permitted to invoke the operation. Contact aws-devicefarm-support@amazon.com if you believe that you should be able to invoke this operation.
+   */
+  listOfferingPromotions(params: DeviceFarm.Types.ListOfferingPromotionsRequest, callback?: (err: AWSError, data: DeviceFarm.Types.ListOfferingPromotionsResult) => void): Request<DeviceFarm.Types.ListOfferingPromotionsResult, AWSError>;
+  /**
+   * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a NotEligible error if the caller is not permitted to invoke the operation. Contact aws-devicefarm-support@amazon.com if you believe that you should be able to invoke this operation.
+   */
+  listOfferingPromotions(callback?: (err: AWSError, data: DeviceFarm.Types.ListOfferingPromotionsResult) => void): Request<DeviceFarm.Types.ListOfferingPromotionsResult, AWSError>;
   /**
    * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a NotEligible error if the user is not permitted to invoke the operation. Please contact aws-devicefarm-support@amazon.com if you believe that you should be able to invoke this operation.
    */
@@ -348,6 +388,14 @@ declare class DeviceFarm extends Service {
    */
   updateDevicePool(callback?: (err: AWSError, data: DeviceFarm.Types.UpdateDevicePoolResult) => void): Request<DeviceFarm.Types.UpdateDevicePoolResult, AWSError>;
   /**
+   * Updates the network profile with specific settings.
+   */
+  updateNetworkProfile(params: DeviceFarm.Types.UpdateNetworkProfileRequest, callback?: (err: AWSError, data: DeviceFarm.Types.UpdateNetworkProfileResult) => void): Request<DeviceFarm.Types.UpdateNetworkProfileResult, AWSError>;
+  /**
+   * Updates the network profile with specific settings.
+   */
+  updateNetworkProfile(callback?: (err: AWSError, data: DeviceFarm.Types.UpdateNetworkProfileResult) => void): Request<DeviceFarm.Types.UpdateNetworkProfileResult, AWSError>;
+  /**
    * Modifies the specified project name, given the project ARN and a new name.
    */
   updateProject(params: DeviceFarm.Types.UpdateProjectRequest, callback?: (err: AWSError, data: DeviceFarm.Types.UpdateProjectResult) => void): Request<DeviceFarm.Types.UpdateProjectResult, AWSError>;
@@ -371,9 +419,27 @@ declare namespace DeviceFarm {
      * Returns the unmetered remote access devices you have purchased or want to purchase.
      */
     unmeteredRemoteAccessDevices?: PurchasedDevicesMap;
+    /**
+     * The maximum number of minutes a test run will execute before it times out.
+     */
+    maxJobTimeoutMinutes?: JobTimeoutMinutes;
+    /**
+     * Information about an AWS account's usage of free trial device minutes.
+     */
+    trialMinutes?: TrialMinutes;
+    /**
+     * The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an offering-id:number pair, where the offering-id represents one of the IDs returned by the ListOfferings command.
+     */
+    maxSlots?: MaxSlotMap;
+    /**
+     * The default number of minutes (at the account level) a test run will execute before it times out. Default value is 60 minutes.
+     */
+    defaultJobTimeoutMinutes?: JobTimeoutMinutes;
   }
+  export type AccountsCleanup = boolean;
   export type AmazonResourceName = string;
   export type AmazonResourceNames = AmazonResourceName[];
+  export type AppPackagesCleanup = boolean;
   export interface Artifact {
     /**
      * The artifact's ARN.
@@ -470,11 +536,71 @@ declare namespace DeviceFarm {
      */
     devicePool?: DevicePool;
   }
+  export interface CreateNetworkProfileRequest {
+    /**
+     * The Amazon Resource Name (ARN) of the project for which you want to create a network profile.
+     */
+    projectArn: AmazonResourceName;
+    /**
+     * The name you wish to specify for the new network profile.
+     */
+    name: Name;
+    /**
+     * The description of the network profile.
+     */
+    description?: Message;
+    /**
+     * The type of network profile you wish to create. Valid values are listed below.
+     */
+    type?: NetworkProfileType;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    uplinkBandwidthBits?: Long;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    downlinkBandwidthBits?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkDelayMs?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkDelayMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkJitterMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkJitterMs?: Long;
+    /**
+     * Proportion of transmitted packets that fail to arrive from 0 to 100 percent.
+     */
+    uplinkLossPercent?: PercentInteger;
+    /**
+     * Proportion of received packets that fail to arrive from 0 to 100 percent.
+     */
+    downlinkLossPercent?: PercentInteger;
+  }
+  export interface CreateNetworkProfileResult {
+    /**
+     * The network profile that is returned by the create network profile request.
+     */
+    networkProfile?: NetworkProfile;
+  }
   export interface CreateProjectRequest {
     /**
      * The project's name.
      */
     name: Name;
+    /**
+     * Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified execution timeout value unless overridden when scheduling a run.
+     */
+    defaultJobTimeoutMinutes?: JobTimeoutMinutes;
   }
   export interface CreateProjectResult {
     /**
@@ -546,6 +672,14 @@ declare namespace DeviceFarm {
   }
   export interface DeleteDevicePoolResult {
   }
+  export interface DeleteNetworkProfileRequest {
+    /**
+     * The Amazon Resource Name (ARN) of the network profile you want to delete.
+     */
+    arn: AmazonResourceName;
+  }
+  export interface DeleteNetworkProfileResult {
+  }
   export interface DeleteProjectRequest {
     /**
      * Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
@@ -611,6 +745,9 @@ declare namespace DeviceFarm {
      * Information about the device's CPU.
      */
     cpu?: CPU;
+    /**
+     * The resolution of the device.
+     */
     resolution?: Resolution;
     /**
      * The device's heap size, expressed in bytes.
@@ -645,7 +782,7 @@ declare namespace DeviceFarm {
      */
     fleetName?: String;
   }
-  export type DeviceAttribute = "ARN"|"PLATFORM"|"FORM_FACTOR"|"MANUFACTURER"|"REMOTE_ACCESS_ENABLED"|string;
+  export type DeviceAttribute = "ARN"|"PLATFORM"|"FORM_FACTOR"|"MANUFACTURER"|"REMOTE_ACCESS_ENABLED"|"APPIUM_VERSION"|string;
   export type DeviceFormFactor = "PHONE"|"TABLET"|string;
   export interface DeviceMinutes {
     /**
@@ -685,6 +822,9 @@ declare namespace DeviceFarm {
     rules?: Rules;
   }
   export interface DevicePoolCompatibilityResult {
+    /**
+     * The device (phone or tablet) that you wish to return information about.
+     */
     device?: Device;
     /**
      * Whether the result was compatible with the device pool.
@@ -700,12 +840,29 @@ declare namespace DeviceFarm {
   export type DevicePools = DevicePool[];
   export type Devices = Device[];
   export type Double = number;
+  export interface ExecutionConfiguration {
+    /**
+     * The number of minutes a test run will execute before it times out.
+     */
+    jobTimeoutMinutes?: JobTimeoutMinutes;
+    /**
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+    accountsCleanup?: AccountsCleanup;
+    /**
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+    appPackagesCleanup?: AppPackagesCleanup;
+  }
   export type ExecutionResult = "PENDING"|"PASSED"|"WARNED"|"FAILED"|"SKIPPED"|"ERRORED"|"STOPPED"|string;
   export type ExecutionStatus = "PENDING"|"PENDING_CONCURRENCY"|"PENDING_DEVICE"|"PROCESSING"|"SCHEDULING"|"PREPARING"|"RUNNING"|"COMPLETED"|"STOPPING"|string;
   export type Filter = string;
   export interface GetAccountSettingsRequest {
   }
   export interface GetAccountSettingsResult {
+    /**
+     * The account settings.
+     */
     accountSettings?: AccountSettings;
   }
   export interface GetDevicePoolCompatibilityRequest {
@@ -721,6 +878,10 @@ declare namespace DeviceFarm {
      * The test type for the specified device pool. Allowed values include the following:   BUILTIN_FUZZ: The built-in fuzz type.   BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.   APPIUM_JAVA_JUNIT: The Appium Java JUnit type.   APPIUM_JAVA_TESTNG: The Appium Java TestNG type.   APPIUM_PYTHON: The Appium Python type.   APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.   APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.   APPIUM_WEB_PYTHON: The Appium Python type for Web apps.   CALABASH: The Calabash type.   INSTRUMENTATION: The Instrumentation type.   UIAUTOMATION: The uiautomation type.   UIAUTOMATOR: The uiautomator type.   XCTEST: The XCode test type.   XCTEST_UI: The XCode UI test type.  
      */
     testType?: TestType;
+    /**
+     * Information about the uploaded test to be run against the device pool.
+     */
+    test?: ScheduleRunTest;
   }
   export interface GetDevicePoolCompatibilityResult {
     /**
@@ -739,6 +900,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetDevicePoolResult {
+    /**
+     * An object containing information about the requested device pool.
+     */
     devicePool?: DevicePool;
   }
   export interface GetDeviceRequest {
@@ -748,6 +912,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetDeviceResult {
+    /**
+     * An object containing information about the requested device.
+     */
     device?: Device;
   }
   export interface GetJobRequest {
@@ -757,7 +924,22 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetJobResult {
+    /**
+     * An object containing information about the requested job.
+     */
     job?: Job;
+  }
+  export interface GetNetworkProfileRequest {
+    /**
+     * The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     */
+    arn: AmazonResourceName;
+  }
+  export interface GetNetworkProfileResult {
+    /**
+     * The network profile.
+     */
+    networkProfile?: NetworkProfile;
   }
   export interface GetOfferingStatusRequest {
     /**
@@ -786,6 +968,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetProjectResult {
+    /**
+     * The project you wish to get information about.
+     */
     project?: Project;
   }
   export interface GetRemoteAccessSessionRequest {
@@ -807,6 +992,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetRunResult {
+    /**
+     * The run you wish to get results from.
+     */
     run?: Run;
   }
   export interface GetSuiteRequest {
@@ -816,6 +1004,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetSuiteResult {
+    /**
+     * A collection of one or more tests.
+     */
     suite?: Suite;
   }
   export interface GetTestRequest {
@@ -825,6 +1016,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetTestResult {
+    /**
+     * A test condition that is evaluated.
+     */
     test?: Test;
   }
   export interface GetUploadRequest {
@@ -834,6 +1028,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface GetUploadResult {
+    /**
+     * An app or a set of one or more tests to upload or that have been uploaded.
+     */
     upload?: Upload;
   }
   export interface IncompatibilityMessage {
@@ -842,7 +1039,7 @@ declare namespace DeviceFarm {
      */
     message?: Message;
     /**
-     * The type of incompatibility. Allowed values include:   ARN: The ARN.   FORM_FACTOR: The form factor (for example, phone or tablet).   MANUFACTURER: The manufacturer.   PLATFORM: The platform (for example, Android or iOS).  
+     * The type of incompatibility. Allowed values include:   ARN: The ARN.   FORM_FACTOR: The form factor (for example, phone or tablet).   MANUFACTURER: The manufacturer.   PLATFORM: The platform (for example, Android or iOS).   REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.   APPIUM_VERSION: The Appium version for the test.  
      */
     type?: DeviceAttribute;
   }
@@ -858,6 +1055,9 @@ declare namespace DeviceFarm {
     appArn: AmazonResourceName;
   }
   export interface InstallToRemoteAccessSessionResult {
+    /**
+     * An app to upload or that has been uploaded.
+     */
     appUpload?: Upload;
   }
   export type Integer = number;
@@ -902,12 +1102,16 @@ declare namespace DeviceFarm {
      * A message about the job's result.
      */
     message?: Message;
+    /**
+     * The device (phone or tablet).
+     */
     device?: Device;
     /**
      * Represents the total (metered or unmetered) minutes used by the job.
      */
     deviceMinutes?: DeviceMinutes;
   }
+  export type JobTimeoutMinutes = number;
   export type Jobs = Job[];
   export interface ListArtifactsRequest {
     /**
@@ -994,6 +1198,46 @@ declare namespace DeviceFarm {
     jobs?: Jobs;
     /**
      * If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.
+     */
+    nextToken?: PaginationToken;
+  }
+  export interface ListNetworkProfilesRequest {
+    /**
+     * The Amazon Resource Name (ARN) of the project for which you want to list network profiles.
+     */
+    arn: AmazonResourceName;
+    /**
+     * The type of network profile you wish to return information about. Valid values are listed below.
+     */
+    type?: NetworkProfileType;
+    /**
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
+     */
+    nextToken?: PaginationToken;
+  }
+  export interface ListNetworkProfilesResult {
+    /**
+     * A list of the available network profiles.
+     */
+    networkProfiles?: NetworkProfiles;
+    /**
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
+     */
+    nextToken?: PaginationToken;
+  }
+  export interface ListOfferingPromotionsRequest {
+    /**
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
+     */
+    nextToken?: PaginationToken;
+  }
+  export interface ListOfferingPromotionsResult {
+    /**
+     * Information about the offering promotions.
+     */
+    offeringPromotions?: OfferingPromotions;
+    /**
+     * An identifier to be used in the next call to this operation, to return the next set of items in the list.
      */
     nextToken?: PaginationToken;
   }
@@ -1200,6 +1444,7 @@ declare namespace DeviceFarm {
     longitude: Double;
   }
   export type Long = number;
+  export type MaxSlotMap = {[key: string]: Integer};
   export type Message = string;
   export type Metadata = string;
   export interface MonetaryAmount {
@@ -1213,6 +1458,58 @@ declare namespace DeviceFarm {
     currencyCode?: CurrencyCode;
   }
   export type Name = string;
+  export interface NetworkProfile {
+    /**
+     * The Amazon Resource Name (ARN) of the network profile.
+     */
+    arn?: AmazonResourceName;
+    /**
+     * The name of the network profile.
+     */
+    name?: Name;
+    /**
+     * The description of the network profile.
+     */
+    description?: Message;
+    /**
+     * The type of network profile. Valid values are listed below.
+     */
+    type?: NetworkProfileType;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    uplinkBandwidthBits?: Long;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    downlinkBandwidthBits?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkDelayMs?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkDelayMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkJitterMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkJitterMs?: Long;
+    /**
+     * Proportion of transmitted packets that fail to arrive from 0 to 100 percent.
+     */
+    uplinkLossPercent?: PercentInteger;
+    /**
+     * Proportion of received packets that fail to arrive from 0 to 100 percent.
+     */
+    downlinkLossPercent?: PercentInteger;
+  }
+  export type NetworkProfileType = "CURATED"|"PRIVATE"|string;
+  export type NetworkProfiles = NetworkProfile[];
   export interface Offering {
     /**
      * The ID that corresponds to a device offering.
@@ -1236,6 +1533,18 @@ declare namespace DeviceFarm {
     recurringCharges?: RecurringCharges;
   }
   export type OfferingIdentifier = string;
+  export interface OfferingPromotion {
+    /**
+     * The ID of the offering promotion.
+     */
+    id?: OfferingPromotionIdentifier;
+    /**
+     * A string describing the offering promotion.
+     */
+    description?: Message;
+  }
+  export type OfferingPromotionIdentifier = string;
+  export type OfferingPromotions = OfferingPromotion[];
   export interface OfferingStatus {
     /**
      * The type specified for the offering status.
@@ -1265,6 +1574,10 @@ declare namespace DeviceFarm {
      */
     transactionId?: TransactionIdentifier;
     /**
+     * The ID that corresponds to a device offering promotion.
+     */
+    offeringPromotionId?: OfferingPromotionIdentifier;
+    /**
      * The date on which an offering transaction was created.
      */
     createdOn?: DateTime;
@@ -1278,6 +1591,7 @@ declare namespace DeviceFarm {
   export type OfferingType = "RECURRING"|string;
   export type Offerings = Offering[];
   export type PaginationToken = string;
+  export type PercentInteger = number;
   export interface Problem {
     /**
      * Information about the associated run.
@@ -1329,6 +1643,10 @@ declare namespace DeviceFarm {
      */
     name?: Name;
     /**
+     * The default number of minutes (at the project level) a test run will execute before it times out. Default value is 60 minutes.
+     */
+    defaultJobTimeoutMinutes?: JobTimeoutMinutes;
+    /**
      * When the project was created.
      */
     created?: DateTime;
@@ -1343,6 +1661,10 @@ declare namespace DeviceFarm {
      * The number of device slots you wish to purchase in an offering request.
      */
     quantity?: Integer;
+    /**
+     * The ID of the offering promotion to be applied to the purchase.
+     */
+    offeringPromotionId?: OfferingPromotionIdentifier;
   }
   export interface PurchaseOfferingResult {
     /**
@@ -1414,11 +1736,17 @@ declare namespace DeviceFarm {
      * The date and time the remote access session was stopped.
      */
     stopped?: DateTime;
+    /**
+     * The device (phone or tablet) used in the remote access session.
+     */
     device?: Device;
     /**
      * The billing method of the remote access session. Possible values include METERED or UNMETERED. For more information about metered devices, see AWS Device Farm terminology."
      */
     billingMethod?: BillingMethod;
+    /**
+     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     */
     deviceMinutes?: DeviceMinutes;
     /**
      * The endpoint for the remote access sesssion.
@@ -1454,11 +1782,11 @@ declare namespace DeviceFarm {
   }
   export interface Rule {
     /**
-     * The rule's stringified attribute. For example, specify the value as "\"abc\"". Allowed values include:   ARN: The ARN.   FORM_FACTOR: The form factor (for example, phone or tablet).   MANUFACTURER: The manufacturer.   PLATFORM: The platform (for example, Android or iOS).  
+     * The rule's stringified attribute. For example, specify the value as "\"abc\"". Allowed values include:   ARN: The ARN.   FORM_FACTOR: The form factor (for example, phone or tablet).   MANUFACTURER: The manufacturer.   PLATFORM: The platform (for example, Android or iOS).   REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.   APPIUM_VERSION: The Appium version for the test.  
      */
     attribute?: DeviceAttribute;
     /**
-     * The rule's operator.   EQUALS: The equals operator.   GREATER_THAN: The greater-than operator.   IN: The in operator.   LESS_THAN: The less-than operator.   NOT_IN: The not-in operator.  
+     * The rule's operator.   EQUALS: The equals operator.   GREATER_THAN: The greater-than operator.   IN: The in operator.   LESS_THAN: The less-than operator.   NOT_IN: The not-in operator.   CONTAINS: The contains operator.  
      */
     operator?: RuleOperator;
     /**
@@ -1466,7 +1794,7 @@ declare namespace DeviceFarm {
      */
     value?: String;
   }
-  export type RuleOperator = "EQUALS"|"LESS_THAN"|"GREATER_THAN"|"IN"|"NOT_IN"|string;
+  export type RuleOperator = "EQUALS"|"LESS_THAN"|"GREATER_THAN"|"IN"|"NOT_IN"|"CONTAINS"|string;
   export type Rules = Rule[];
   export interface Run {
     /**
@@ -1529,6 +1857,10 @@ declare namespace DeviceFarm {
      * Represents the total (metered or unmetered) minutes used by the test run.
      */
     deviceMinutes?: DeviceMinutes;
+    /**
+     * The network profile being used for a test run.
+     */
+    networkProfile?: NetworkProfile;
   }
   export type Runs = Run[];
   export interface Sample {
@@ -1602,6 +1934,10 @@ declare namespace DeviceFarm {
      * Information about the settings for the run to be scheduled.
      */
     configuration?: ScheduleRunConfiguration;
+    /**
+     * Specifies configuration information about a test run, such as the execution timeout (in minutes).
+     */
+    executionConfiguration?: ExecutionConfiguration;
   }
   export interface ScheduleRunResult {
     /**
@@ -1623,7 +1959,7 @@ declare namespace DeviceFarm {
      */
     filter?: Filter;
     /**
-     * The test's parameters, such as test framework parameters and fixture settings.
+     * The test's parameters, such as the following test framework parameters and fixture settings: For Calabash tests:   profile: A cucumber profile, for example, "my_profile_name".   tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for example, "@smoke" or "@smoke,~@wip".   For Appium tests (all types):   appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and "default".   “latest” will run the latest Appium version supported by Device Farm (1.6.3).   For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.   This behavior is subject to change.     For Fuzz tests (Android only):   event_count: The number of events, between 1 and 10000, that the UI fuzz test should perform.   throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.   seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.   For Explorer tests:   username: A username to use if the Explorer encounters a login form. If not supplied, no username will be inserted.   password: A password to use if the Explorer encounters a login form. If not supplied, no password will be inserted.   For Instrumentation:   filter: A test filter string. Examples:   Running a single test case: "com.android.abc.Test1"   Running a single test: "com.android.abc.Test1#smoke"   Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"     For XCTest and XCTestUI:   filter: A test filter string. Examples:   Running a single test class: "LoginTests"   Running a multiple test classes: "LoginTests,SmokeTests"   Running a single test: "LoginTests/testValid"   Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"     For UIAutomator:   filter: A test filter string. Examples:   Running a single test case: "com.android.abc.Test1"   Running a single test: "com.android.abc.Test1#smoke"   Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"    
      */
     parameters?: TestParameters;
   }
@@ -1646,6 +1982,9 @@ declare namespace DeviceFarm {
     arn: AmazonResourceName;
   }
   export interface StopRunResult {
+    /**
+     * The run that was stopped.
+     */
     run?: Run;
   }
   export type String = string;
@@ -1746,6 +2085,16 @@ declare namespace DeviceFarm {
   export type TestType = "BUILTIN_FUZZ"|"BUILTIN_EXPLORER"|"APPIUM_JAVA_JUNIT"|"APPIUM_JAVA_TESTNG"|"APPIUM_PYTHON"|"APPIUM_WEB_JAVA_JUNIT"|"APPIUM_WEB_JAVA_TESTNG"|"APPIUM_WEB_PYTHON"|"CALABASH"|"INSTRUMENTATION"|"UIAUTOMATION"|"UIAUTOMATOR"|"XCTEST"|"XCTEST_UI"|string;
   export type Tests = Test[];
   export type TransactionIdentifier = string;
+  export interface TrialMinutes {
+    /**
+     * The total number of free trial minutes that the account started with.
+     */
+    total?: Double;
+    /**
+     * The number of free trial minutes remaining in the account.
+     */
+    remaining?: Double;
+  }
   export type URL = string;
   export interface UniqueProblem {
     /**
@@ -1778,7 +2127,66 @@ declare namespace DeviceFarm {
     rules?: Rules;
   }
   export interface UpdateDevicePoolResult {
+    /**
+     * The device pool you just updated.
+     */
     devicePool?: DevicePool;
+  }
+  export interface UpdateNetworkProfileRequest {
+    /**
+     * The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     */
+    arn: AmazonResourceName;
+    /**
+     * The name of the network profile about which you are returning information.
+     */
+    name?: Name;
+    /**
+     * The descriptoin of the network profile about which you are returning information.
+     */
+    description?: Message;
+    /**
+     * The type of network profile you wish to return information about. Valid values are listed below.
+     */
+    type?: NetworkProfileType;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    uplinkBandwidthBits?: Long;
+    /**
+     * The data throughput rate in bits per second, as an integer from 0 to 104857600.
+     */
+    downlinkBandwidthBits?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkDelayMs?: Long;
+    /**
+     * Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkDelayMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    uplinkJitterMs?: Long;
+    /**
+     * Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.
+     */
+    downlinkJitterMs?: Long;
+    /**
+     * Proportion of transmitted packets that fail to arrive from 0 to 100 percent.
+     */
+    uplinkLossPercent?: PercentInteger;
+    /**
+     * Proportion of received packets that fail to arrive from 0 to 100 percent.
+     */
+    downlinkLossPercent?: PercentInteger;
+  }
+  export interface UpdateNetworkProfileResult {
+    /**
+     * A list of the available network profiles.
+     */
+    networkProfile?: NetworkProfile;
   }
   export interface UpdateProjectRequest {
     /**
@@ -1789,8 +2197,15 @@ declare namespace DeviceFarm {
      * A string representing the new name of the project that you are updating.
      */
     name?: Name;
+    /**
+     * The number of minutes a test run in the project will execute before it times out.
+     */
+    defaultJobTimeoutMinutes?: JobTimeoutMinutes;
   }
   export interface UpdateProjectResult {
+    /**
+     * The project you wish to update.
+     */
     project?: Project;
   }
   export interface Upload {

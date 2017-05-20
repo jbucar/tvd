@@ -73,7 +73,9 @@ var SourceCoverage = function (_classes$FileCoverage) {
             this.data.fnMap[f] = {
                 name: name,
                 decl: cloneLocation(decl),
-                loc: cloneLocation(loc)
+                loc: cloneLocation(loc),
+                // DEPRECATED: some legacy reports require this info.
+                line: loc && loc.start.line
             };
             this.data.f[f] = 0;
             this.meta.last.f += 1;
@@ -87,7 +89,9 @@ var SourceCoverage = function (_classes$FileCoverage) {
             this.data.branchMap[b] = {
                 loc: cloneLocation(loc),
                 type: type,
-                locations: []
+                locations: [],
+                // DEPRECATED: some legacy reports require this info.
+                line: loc && loc.start.line
             };
             this.meta.last.b += 1;
             return b;

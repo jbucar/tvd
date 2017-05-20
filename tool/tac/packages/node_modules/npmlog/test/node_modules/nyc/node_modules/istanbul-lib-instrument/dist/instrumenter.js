@@ -120,7 +120,8 @@ var Instrumenter = function () {
             var opts = this.opts;
             var ast = babylon.parse(code, {
                 allowReturnOutsideFunction: opts.autoWrap,
-                sourceType: opts.esModules ? "module" : "script"
+                sourceType: opts.esModules ? "module" : "script",
+                plugins: ['asyncGenerators', 'dynamicImport', 'flow', 'jsx']
             });
             var ee = (0, _visitor2.default)(t, filename, {
                 coverageVariable: opts.coverageVariable,
